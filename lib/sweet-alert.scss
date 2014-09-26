@@ -1,0 +1,35 @@
+// SweetAlert
+// 2014 (c) - Tristan Edwards
+// github.com/t4t5/sweetalert
+
+.sweet-overlay {
+	background-color: rgba(black, 0.4);
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	z-index: 1000;
+}
+
+.sweet-alert {
+	$width: 478px;
+	$height: 303px;
+	$padding: 17px;
+
+	background-color: white;
+	width: $width;
+	height: $height;
+	padding: $padding;
+	border-radius: 5px;
+
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -($width/2 + $padding);
+	margin-top: -($height/2 + $padding);
+
+	z-index: 2000;
+}
