@@ -4,6 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
   <title>SweetAlert</title>
 
   <link rel="stylesheet" type="text/css" href="./example.css">
@@ -18,11 +19,21 @@
 
 <body>
 
-	<button onclick="sweetAlert('Simple')">sweetAlert('Simple')</button>
-	<button onclick="sweetAlert('A text', 'subtext', 'success')">sweetAlert('A text', 'subtext')</button>
-	<button onclick="sweetAlert({'title':1, 'allowOutsideClick':true, 'showCancelButton':true})">sweetAlert({'title':1})</button>
+	<button id="test">Test</button>
 
-  <!-- SweetAlert template is loaded here -->
+	<script>
+	$('#test').click(function(){
+		sweetAlert({
+			title: "Oops...",
+			text: "Something went wrong.",
+			type: "success",
+			showCancelButton: true
+		}, 
+		function(){
+			alert("Wohooo!");
+		});
+	});
+	</script>
 
 </body>
 

@@ -39,6 +39,14 @@
 	display: none;
 	z-index: 2000;
 
+	@media all and (max-width: 540px) {
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+		left: 15px;
+		right: 15px;
+	}
+
 	h2 {
 		color: #575757;
 		font-size: 30px;
@@ -167,24 +175,83 @@
 		&.success {
 			$green: #A5DC86;
 			border-color: $green;
+			&::before, &::after { // Checkmark
+				border-radius: 50%;
+			  position: absolute;
+			  content: '';
+			  width: 44px;
+			  height: 88px;
+			  background: white;
+			  transform: rotate(45deg);
+
+			  width: 60px;
+				height: 120px;
+			}
+			&::before {
+			  border-radius: 88px 0 0 88px;
+			  top: -4px;
+			  left: -4px;
+			  transform: rotate(-45deg);
+
+			  border-radius: 120px 0 0 120px;
+				top: -7px;
+				left: -33px;
+				-webkit-transform-origin: 60px 60px;
+			  transform-origin: 60px 60px;
+			}
+			&::after {
+			  border-radius: 0 88px 88px 0;
+			  top: -4px;
+			  left: 40px;
+			  transform: rotate(-45deg);
+
+			  border-radius: 0 120px 120px 0;
+				top: -11px;
+				left: 30px;
+				-webkit-transform-origin: 0px 60px;
+			  transform-origin: 0px 60px;
+			}
+
+			.placeholder { // Ring
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				border: 4px solid rgba($green, 0.2);
+				border-radius: 50%;
+				left: -4px;
+				top: -4px;
+				z-index: 2;
+			}
+			.fix {	// Hide the corners that are left from animation
+				transform: rotate(-45deg);
+				width: 5px;
+				height: 90px;
+				background-color: white;
+				position: absolute;
+				left: 28px;
+				top: 8px;
+				z-index: 1;
+			}
+
 			.line {
 				position: absolute;
 				height: 5px;
 				background-color: $green;
 				display: block;
 				border-radius: 2px;
+				z-index: 2;
 				&.tip {
 					width: 25px;
 					-webkit-transform: rotate(45deg);
     			transform: rotate(45deg);
-    			left: 12px;
+    			left: 14px;
 					top: 46px;
 				}
 				&.long {
 					width: 47px;
 					-webkit-transform: rotate(-45deg);
     			transform: rotate(-45deg);
-    			right: 10px;
+    			right: 8px;
 					top: 38px;
 				}
 			}
@@ -195,7 +262,7 @@
 
 
 
-// ShowSweetAlert animation
+// Modal animation
 
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
@@ -216,19 +283,56 @@
 }
 
 @include keyframes(showSweetAlert) {
-  0% 		{ transform:scale(0.7); 	}
-	45% 	{ transform:scale(1.05); 	}
-	80% 	{ transform:scale(0.95); 	}
-	100% 	{ transform:scale(1); 		}
+  0% 		{ transform: scale(0.7); 	}
+	45% 	{ transform: scale(1.05); }
+	80% 	{ transform: scale(0.95); }
+	100% 	{ transform: scale(1); 		}
 }
 @include keyframes(hideSweetAlert) {
-  0% 		{ transform:scale(1); 		}
-	100% 	{ transform:scale(0.5); 	}
+  0% 		{ transform: scale(1); 		}
+	100% 	{ transform: scale(0.5); 	}
+}
+
+
+
+// Success icon animation
+
+@include keyframes(animateSuccessTip) {
+	0%		{ width: 0; 		left: 1px; 		top: 19px; }
+	54%		{ width: 0; 		left: 1px; 		top: 19px; }
+	70%		{ width: 50px; 	left: -8px; 	top: 37px; }
+	84%		{ width: 17px; 	left: 21px; 	top: 48px; }
+	100%	{ width: 25px; 	left: 14px; 	top: 45px; }
+}
+@include keyframes(animateSuccessLong) {
+	0%		{ width: 0; 		right: 46px; 	top: 54px; }
+	65%		{ width: 0; 		right: 46px; 	top: 54px; }
+	84%		{ width: 55px; 	right: 0px; 	top: 35px; }
+	100%	{ width: 47px; 	right: 8px; 	top: 38px; }
+}
+
+@include keyframes(rotatePlaceholder) {
+	0% 		{ transform: rotate(-45deg); 	}
+	5% 		{ transform: rotate(-45deg); 	}
+  12% 	{ transform: rotate(-405deg);	}
+  100% 	{ transform: rotate(-405deg);	}
 }
 
 .showSweetAlert {
-  @include animation('showSweetAlert 0.2s');
+  @include animation('showSweetAlert 0.4s');
 }
 .hideSweetAlert {
-  @include animation('hideSweetAlert 0.1s');
+  @include animation('hideSweetAlert 0.2s');
+}
+
+.animateSuccessTip {
+	@include animation('animateSuccessTip 0.75s');
+}
+.animateSuccessLong {
+	@include animation('animateSuccessLong 0.75s');
+}
+
+.icon.success.animate::after {
+	-webkit-animation: rotatePlaceholder 4.25s ease-in;
+  animation: rotatePlaceholder 4.25s ease-in;
 }
