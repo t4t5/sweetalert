@@ -60,13 +60,134 @@
 		font-weight: 500;
 		border-radius: 5px;
 		padding: 10px 32px;
+		margin: 0 5px;
 		margin-top: 26px;
 		cursor: pointer;
 		&:focus {
 			outline: none;
 		}
+		&:hover {
+			background-color: #A2CEE2;
+		}
+		&:active {
+			background-color: #91B6C7;
+		}
 		&.cancel {
 			background-color: #D0D0D0;
+			&:hover {
+				background-color: #C4C4C4;
+			}
+			&:active {
+				background-color: #A3A3A3;
+			}
+		}
+	}
+
+
+	.icon {
+		width: 80px;
+		height: 80px;
+		border: 4px solid gray;
+		border-radius: 50%;
+		margin: 20px auto;
+		position: relative;
+		&.error {
+			$red: #F27474;
+			border-color: $red;
+			.line {
+				position: absolute;
+				height: 5px;
+				width: 47px;
+				background-color: $red;
+				display: block;
+				top: 37px;
+				border-radius: 2px;
+				&.left {
+					-webkit-transform: rotate(45deg);
+    			transform: rotate(45deg);
+    			left: 17px;
+				}
+				&.right {
+					-webkit-transform: rotate(-45deg);
+    			transform: rotate(-45deg);
+    			right: 16px;
+				}
+			}
+		}
+		&.warning {
+			$orange: #F8BB86;
+			border-color: $orange;
+			&::before { // Exclamation mark body
+				content: "";
+				position: absolute;
+				width: 5px;
+				height: 47px;
+				left: 50%;
+				top: 10px;
+				border-radius: 2px;
+				margin-left: -2px;
+				background-color: $orange;
+			}
+			&::after { // Exclamation mark dot
+				content: "";
+				position: absolute;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				margin-left: -3px;
+				bottom: 10px;
+				background-color: $orange;
+			}
+		}
+		&.info {
+			$blue: #C9DAE1;
+			border-color: $blue;
+			&::before { // i body
+				content: "";
+				position: absolute;
+				width: 5px;
+				height: 34px;
+				left: 50%;
+				bottom: 14px;
+				border-radius: 2px;
+				margin-left: -2px;
+				background-color: $blue;
+			}
+			&::after { // i dot
+				content: "";
+				position: absolute;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				margin-left: -3px;
+				top: 19px;
+				background-color: $blue;
+			}
+		}
+		&.success {
+			$green: #A5DC86;
+			border-color: $green;
+			.line {
+				position: absolute;
+				height: 5px;
+				background-color: $green;
+				display: block;
+				border-radius: 2px;
+				&.tip {
+					width: 25px;
+					-webkit-transform: rotate(45deg);
+    			transform: rotate(45deg);
+    			left: 12px;
+					top: 46px;
+				}
+				&.long {
+					width: 47px;
+					-webkit-transform: rotate(-45deg);
+    			transform: rotate(-45deg);
+    			right: 10px;
+					top: 38px;
+				}
+			}
 		}
 	}
 
