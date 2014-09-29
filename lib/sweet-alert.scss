@@ -34,6 +34,7 @@
 	margin-left: -($width/2 + $padding);
 	margin-top: -200px;
 
+	overflow: hidden;
 	display: none;
 	z-index: 2000;
 
@@ -277,6 +278,13 @@
     			transform: rotate(-45deg);
 				}
 			}
+		}
+		&.custom {
+			background-size: contain;
+			border-radius: 0;
+			border: none;
+			background-position: center center;
+			background-repeat: no-repeat;
 		}
 	}
 
