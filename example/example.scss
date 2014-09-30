@@ -71,6 +71,10 @@ h3 {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 p {
   max-width: 826px;
   margin: 30px auto;
@@ -90,7 +94,6 @@ p {
   a {
     color: #9ECADF;
     font-weight: 600;
-    text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
@@ -372,5 +375,32 @@ table {
         font-size: 13px;
       }
     }
+  }
+}
+
+footer {
+  margin-top: 100px;
+  padding-bottom: 30px;
+  color: #9A999F;
+  display: inline-block;
+  position: relative;
+  color: gray;
+  font-weight: 400;
+  color: rgb(147, 161, 170);
+  font-weight: 300;
+
+  .te-logo {
+    text-indent: -99999px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url("images/te-logo-small.svg");
+    position: absolute;
+    left: -22px;
+    top: 3px;
   }
 }

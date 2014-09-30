@@ -117,23 +117,25 @@
 
 <p class="center">For sweetAlert to work, you need <strong>jQuery</strong> and the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
 
-<a class="button">Download files</a>
+<a class="button" href="https://github.com/sweetalert/archive/master.zip" download>Download files</a>
 
 <ol>
 	<li>
 		<p>Initialize the plugin by referencing the necessary files:</p>
 		<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://code.jquery.com/jquery-1.11.1.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"lib/sweet-alert.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"lib/sweet-alert.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
 &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/sweet-alert.css"</span>&gt;</pre>
 	</li>
 
 	<li>
 		<p>Call the sweetAlert-function</p>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
-&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
-&nbsp;&nbsp;type: <span class="str">"error"</span>,
-&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
+		<pre><span class="tag">$</span>(<span class="func"><i>document</i></span>).ready(<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;swal({
+&nbsp;&nbsp;&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;type: <span class="str">"error"</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
+&nbsp;&nbsp;});
 });</pre>
 	</li>
 </ol>
@@ -209,6 +211,11 @@
 <h3>Contribute</h3>
 <p>SweetAlert was created by <a href="http://tristanedwards.me" target="_blank">Tristan Edwards</a>, you can follow him on <a href="https://twitter.com/t4t5" target="_blank" class="twitter">Twitter</a> or <a href="https://dribbble.com/tristanedwards" target="_blank" class="dribbble">Dribbble</a> for updates and other cool projects!</p>
 <p>Feel free to fork sweetAlert on <a href="https://github.com/t4t5/sweetalert" class="github">GitHub</a> if you have any features that you want to add!</p>
+
+
+<footer>
+	<span class="te-logo">TE</span> • 2014
+</footer>
 
 
 <script>
