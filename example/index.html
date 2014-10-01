@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" href="./example.css">
 
   <!-- This is what you need -->
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="../lib/sweet-alert.js"></script>
   <link rel="stylesheet" type="text/css" href="../lib/sweet-alert.css">
   <!--.......................-->
@@ -32,7 +31,7 @@
 	<button>Show error message</button>
 
 	<h5>Code:</h5>
-	<pre><span class="func">alert</span>(<span class="str">Oops... Something went wrong!"</span>);
+	<pre><span class="func">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
 
 	</pre>
 
@@ -91,7 +90,7 @@
 &nbsp;&nbsp;text: <span class="str">"Click OK if you like living dangerously..."</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
-}, 
+},
 <span class="func"><i>function</i></span>(){
 &nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Booyah!"</span>);
 });</pre>
@@ -115,28 +114,26 @@
 <!-- Download & Install -->
 <h3 id="download-section">Download & install</h3>
 
-<p class="center">For sweetAlert to work, you need <strong>jQuery</strong> and the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
+<p class="center">For sweetAlert to work, you need the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
 
 <a class="button" href="https://github.com/t4t5/sweetalert/archive/master.zip" download>Download files</a>
 
 <ol>
 	<li>
 		<p>Initialize the plugin by referencing the necessary files:</p>
-		<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://code.jquery.com/jquery-1.11.1.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"lib/sweet-alert.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+		<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"lib/sweet-alert.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
 &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/sweet-alert.css"</span>&gt;</pre>
 	</li>
 
 	<li>
-		<p>Call the sweetAlert-function</p>
-		<pre><span class="tag">$</span>(<span class="func"><i>document</i></span>).ready(<span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;swal({
-&nbsp;&nbsp;&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
-&nbsp;&nbsp;&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
-&nbsp;&nbsp;&nbsp;&nbsp;type: <span class="str">"error"</span>,
-&nbsp;&nbsp;&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
-&nbsp;&nbsp;});
-});</pre>
+		<p>Call the sweetAlert-function after the page has loaded</p>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
+&nbsp;&nbsp;type: <span class="str">"error"</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
+});
+</pre>
 	</li>
 </ol>
 
@@ -220,49 +217,49 @@
 
 <script>
 
-$('button.download').click(function(){
+document.querySelector('button.download').onclick = function(){
 	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
-});
+};
 
-$('.showcase.normal button').click(function(){
+document.querySelector('.showcase.normal button').onclick = function(){
 	alert("Oops... Something went wrong!");
-});
+};
 
-$('.showcase.sweet button').click(function(){
+document.querySelector('.showcase.sweet button').onclick = function(){
 	swal("Oops...", "Something went wrong!", "error");
-});
+};
 
-$('ul.examples li.message button').click(function(){
+document.querySelector('ul.examples li.message button').onclick = function(){
 	swal("Here's a message!");
-});
+};
 
-$('ul.examples li.title-text button').click(function(){
+document.querySelector('ul.examples li.title-text button').onclick = function(){
 	swal("Here's a message!", "It's pretty, isn't it?")
-});
+};
 
-$('ul.examples li.success button').click(function(){
+document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
-});
+};
 
-$('ul.examples li.warning button').click(function(){
+document.querySelector('ul.examples li.warning button').onclick = function(){
 	swal({
 		title: "Are you sure?",
 		text: "Click 'Confirm' if you like to live dangerously...",
 		type: "warning",
 		showCancelButton: true,
-	}, 
+	},
 	function(){
 		alert("Booyah!");
 	});
-});
+};
 
-$('ul.examples li.custom-icon button').click(function(){
+document.querySelector('ul.examples li.custom-icon button').onclick = function(){
 	swal({
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
 	});
-});
+};
 
 </script>
 
