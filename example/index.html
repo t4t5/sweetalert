@@ -109,6 +109,24 @@
 });</pre>
 	</li>
 
+	<li class="using-promises">
+		<div class="ui">
+			<p>Chaining with promises.<br />Works on all modal types!</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"You're on your way!</span>",
+&nbsp;&nbsp;text: <span class="str">"What you do next is up to you.</span>",
+&nbsp;&nbsp;type: <span class="str">"success</span>",
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>
+	})
+	.then(<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Off we go!</span>");
+	}, <span class="func"><i>function</i></span>() { 
+&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Dismissed!"</span>); 
+});</pre>
+	</li>
+
 </ul>
 
 
@@ -177,7 +195,7 @@
 	<tr>
 		<td><b>allowOutsideClick</b></td>
 		<td><i>false</i></td>
-		<td>If set to <strong>true</strong>, the user can dismiss the modal by clicking outside it.</td>
+		<td>If set to <strong>true</strong>, the user can dismiss the modal by clicking outside it.  Dismissal will reject the deferred.</td>
 	</tr>
 	<tr>
 		<td><b>showCancelButton</b></td>
@@ -253,6 +271,20 @@ $('ul.examples li.warning button').click(function(){
 	}, 
 	function(){
 		alert("Booyah!");
+	});
+});
+
+$('ul.examples li.using-promises button').click(function(){
+	swal({
+		title: "You're on your way!",
+		text: "What you do next is up to you.",
+		type: "success",
+		showCancelButton: true
+	})
+	.then(function(){
+		alert("Off we go!");
+	}, function () { 
+		alert("Dismissed!"); 
 	});
 });
 
