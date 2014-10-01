@@ -1,0 +1,14 @@
+{
+  "name": "sweetalert",
+  "version": "0.0.1",
+  "homepage": "https://github.com/t4t5/sweetalert",
+  "authors": [
+    "Tristan Edwards https://github.com/t4t5"
+  ],
+  "description": "An awesome replacement for JavaScript's alert.",
+  "main": "lib/sweet-alert.js",
+  "keywords": [
+    "alert"
+  ],
+  "license": "MIT"
+}
