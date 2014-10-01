@@ -90,6 +90,7 @@
 &nbsp;&nbsp;text: <span class="str">"Click OK if you like living dangerously..."</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#98e069"</span>
 },
 <span class="func"><i>function</i></span>(){
 &nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Booyah!"</span>);
@@ -187,6 +188,11 @@
 		<td>Use this to change the text on the "Confirm"-button. If showCancelButton is set as true, the confirm button will automatically show "Confirm" instead of "OK".</td>
 	</tr>
 	<tr>
+		<td><b>confirmButtonColor</b></td>
+		<td><i>"#AEDEF4"</i></td>
+		<td>Use this to change the background color of the "Confirm"-button.</td>
+	</tr>
+	<tr>
 		<td><b>cancelButtonText</b></td>
 		<td><i>"Cancel"</i></td>
 		<td>Use this to change the text on the "Cancel"-button.</td>
@@ -247,6 +253,7 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		text: "Click 'Confirm' if you like to live dangerously...",
 		type: "warning",
 		showCancelButton: true,
+		confirmButtonColor: '#98e069'
 	},
 	function(){
 		alert("Booyah!");
