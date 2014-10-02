@@ -93,6 +93,9 @@
 },
 <span class="func"><i>function</i></span>(){
 &nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Booyah!"</span>);
+},
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Canceled!"</span>);
 });</pre>
 	</li>
 
@@ -251,10 +254,13 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		title: "Are you sure?",
 		text: "Click 'Confirm' if you like to live dangerously...",
 		type: "warning",
-		showCancelButton: true,
+		showCancelButton: true
 	},
 	function(){
 		alert("Booyah!");
+	},
+	function(){
+		alert("Canceled!");
 	});
 };
 
