@@ -13,7 +13,6 @@
   <script src="../lib/sweet-alert.js"></script>
   <link rel="stylesheet" type="text/css" href="../lib/sweet-alert.css">
   <!--.......................-->
-
 </head>
 
 <body>
@@ -239,7 +238,7 @@ document.querySelector('ul.examples li.message button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.title-text button').onclick = function(){
-	swal("Here's a message!", "It's pretty, isn't it?")
+	swal("Here's a message!", "It's pretty, isn't it?");
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
@@ -251,7 +250,7 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		title: "Are you sure?",
 		text: "Click 'Confirm' if you like to live dangerously...",
 		type: "warning",
-		showCancelButton: true,
+		showCancelButton: true
 	},
 	function(){
 		alert("Booyah!");

@@ -82,6 +82,7 @@
 		cursor: pointer;
 		&:focus {
 			outline: none;
+			box-shadow: 0 0 3px rgba(151, 16, 16, 0.7);
 		}
 		&:hover {
 			background-color: darken($btnBlue, 3%);
