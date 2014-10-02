@@ -96,6 +96,23 @@
 });</pre>
 	</li>
 
+	<li class="warning no-close">
+		<div class="ui">
+			<p>A warning message, with an additional sweet alert function as a callback</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
+&nbsp;&nbsp;text: <span class="str">"Click OK if you like living dangerously..."</span>,
+&nbsp;&nbsp;type: <span class="str">"warning"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
+},
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Booyah!"</span>);
+});</pre>
+	</li>
+
 	<li class="custom-icon">
 		<div class="ui">
 			<p>A message with a custom icon</p>
@@ -241,7 +258,7 @@ document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
 };
 
-document.querySelector('ul.examples li.warning button').onclick = function(){
+document.querySelector('ul.examples li.warning:not(.no-close) button').onclick = function(){
 	swal({
 		title: "Are you sure?",
 		text: "Click 'Confirm' if you like to live dangerously...",
@@ -250,6 +267,19 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 	},
 	function(){
 		alert("Booyah!");
+	});
+};
+
+document.querySelector('ul.examples li.warning.no-close button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "Click 'Confirm' if you like to live dangerously...",
+		type: "warning",
+		showCancelButton: true,
+		closeOnConfirm: false
+	},
+	function(){
+		swal("Booyah!");
 	});
 };
 
