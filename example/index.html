@@ -13,6 +13,7 @@
   <script src="../lib/sweet-alert.js"></script>
   <link rel="stylesheet" type="text/css" href="../lib/sweet-alert.css">
   <!--.......................-->
+
 </head>
 
 <body>
@@ -86,12 +87,14 @@
 		</div>
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
-&nbsp;&nbsp;text: <span class="str">"Click OK if you like living dangerously..."</span>,
+&nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>
 },
 <span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Booyah!"</span>);
+&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Deleted!"</span>);
 });</pre>
 	</li>
 
@@ -191,6 +194,11 @@
 		<td>Use this to change the text on the "Confirm"-button. If showCancelButton is set as true, the confirm button will automatically show "Confirm" instead of "OK".</td>
 	</tr>
 	<tr>
+		<td><b>confirmButtonColor</b></td>
+		<td><i>"#AEDEF4"</i></td>
+		<td>Use this to change the background color of the "Confirm"-button (must be a HEX value).</td>
+	</tr>
+	<tr>
 		<td><b>cancelButtonText</b></td>
 		<td><i>"Cancel"</i></td>
 		<td>Use this to change the text on the "Cancel"-button.</td>
@@ -238,7 +246,7 @@ document.querySelector('ul.examples li.message button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.title-text button').onclick = function(){
-	swal("Here's a message!", "It's pretty, isn't it?");
+	swal("Here's a message!", "It's pretty, isn't it?")
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
@@ -248,12 +256,14 @@ document.querySelector('ul.examples li.success button').onclick = function(){
 document.querySelector('ul.examples li.warning button').onclick = function(){
 	swal({
 		title: "Are you sure?",
-		text: "Click 'Confirm' if you like to live dangerously...",
+		text: "You will not be able to recover this imaginary file!",
 		type: "warning",
-		showCancelButton: true
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!'
 	},
 	function(){
-		alert("Booyah!");
+		alert("Deleted!");
 	});
 };
 
