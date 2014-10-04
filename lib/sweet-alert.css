@@ -59,6 +59,7 @@
     cursor: pointer; }
     .sweet-alert button:focus {
       outline: none;
+      /*border: 1px dotted rgba(0,0,0,0.1);*/
       box-shadow: 0px 0px 3px rgba(94, 193, 240, 0.43); }
     .sweet-alert button:hover {
       background-color: #a1d9f2; }
