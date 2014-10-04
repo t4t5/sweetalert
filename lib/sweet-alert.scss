@@ -113,6 +113,7 @@
 		border-radius: 50%;
 		margin: 20px auto;
 		position: relative;
+		box-sizing: content-box;
 
 		&.error {
 			border-color: $red;
