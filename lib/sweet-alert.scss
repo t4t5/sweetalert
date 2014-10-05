@@ -82,7 +82,7 @@
 		cursor: pointer;
 		&:focus {
 			outline: none;
-			box-shadow: 0 0 3px rgba(151, 16, 16, 0.7);
+			box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 		}
 		&:hover {
 			background-color: darken($btnBlue, 3%);
@@ -98,7 +98,16 @@
 			&:active {
 				background-color: darken($btnGray, 10%);
 			}
+			// Cancel button should keep the same style
+			&:focus {
+				box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important;
+			}
 		}
+	}
+
+	// Only show focus-style when there is multiple choice of actions
+	&[data-has-cancel-button=false] button {
+		box-shadow: none !important;
 	}
 
 
