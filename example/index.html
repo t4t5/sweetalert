@@ -80,6 +80,14 @@
 		</div>
 		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
 	</li>
+    
+	<li class="multiple-lines">
+		<div class="ui">
+			<p>A message with multiple lines</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal(<span class="str">"Success!"</span>, <span class="str">["Now you can", "display a message", "with multiple lines!"]</span>, <span class="str">"success"</span>)</pre>
+	</li>
 
 	<li class="warning">
 		<div class="ui">
@@ -252,6 +260,10 @@ document.querySelector('ul.examples li.title-text button').onclick = function(){
 
 document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
+};
+
+document.querySelector('ul.examples li.multiple-lines button').onclick = function(){
+	swal("Success!", ["Now you can", "display a message", "with multiple lines!"], "success");
 };
 
 document.querySelector('ul.examples li.warning button').onclick = function(){
