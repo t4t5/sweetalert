@@ -80,7 +80,8 @@
     border: 4px solid gray;
     border-radius: 50%;
     margin: 20px auto;
-    position: relative; }
+    position: relative;
+    box-sizing: content-box; }
     .sweet-alert .icon.error {
       border-color: #F27474; }
       .sweet-alert .icon.error .x-mark {
@@ -119,6 +120,7 @@
         height: 7px;
         border-radius: 50%;
         margin-left: -3px;
+        left: 50%;
         bottom: 10px;
         background-color: #F8BB86; }
     .sweet-alert .icon.info {
@@ -173,6 +175,7 @@
         height: 80px;
         border: 4px solid rgba(165, 220, 134, 0.2);
         border-radius: 50%;
+        box-sizing: content-box;
         position: absolute;
         left: -4px;
         top: -4px;
