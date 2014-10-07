@@ -2,7 +2,7 @@
 // 2014 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300); // Open Sans font
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300); // Open Sans font
 
 .sweet-overlay {
 	background-color: rgba(black, 0.4);
@@ -82,6 +82,7 @@
 		cursor: pointer;
 		&:focus {
 			outline: none;
+			box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 		}
 		&:hover {
 			background-color: darken($btnBlue, 3%);
@@ -97,7 +98,16 @@
 			&:active {
 				background-color: darken($btnGray, 10%);
 			}
+			// Cancel button should keep the same style
+			&:focus {
+				box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important;
+			}
 		}
+	}
+
+	// Only show focus-style when there is multiple choice of actions
+	&[data-has-cancel-button=false] button {
+		box-shadow: none !important;
 	}
 
 
@@ -113,6 +123,7 @@
 		border-radius: 50%;
 		margin: 20px auto;
 		position: relative;
+		box-sizing: content-box;
 
 		&.error {
 			border-color: $red;
@@ -162,6 +173,7 @@
 				height: 7px;
 				border-radius: 50%;
 				margin-left: -3px;
+				left: 50%;
 				bottom: 10px;
 				background-color: $orange;
 			}
@@ -229,6 +241,7 @@
 				height: 80px;
 				border: 4px solid rgba($green, 0.2);
 				border-radius: 50%;
+				box-sizing: content-box;
 
 				position: absolute;
 				left: -4px;
