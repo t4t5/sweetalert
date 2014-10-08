@@ -110,6 +110,19 @@
 &nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
 });</pre>
 	</li>
+	
+	<li class="notification">
+		<div class="ui">
+			<p>A simple notification</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Done!"</span>,
+&nbsp;&nbsp;type: <span class="str">"success"</span>,
+&nbsp;&nbsp;noButton: <span class="val">true</span>,
+&nbsp;&nbsp;timeout: <span class="val">2</span>
+});</pre>
+	</li>
 
 </ul>
 
@@ -182,7 +195,7 @@
 	<tr>
 		<td><b>timeout</b></td>
 		<td><i>null</i></td>
-		<td>The time (in ms) before the closing of the SweetAlert.</td>
+		<td>The time (in s) before the closing of the SweetAlert.</td>
 	</tr>
 	<tr>
 		<td><b>allowOutsideClick</b></td>
@@ -266,7 +279,9 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!'
+		confirmButtonText: 'Yes, delete it!',
+		timeout: 1, 
+		noButton: true
 	},
 	function(){
 		alert("Deleted!");
@@ -278,6 +293,15 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+document.querySelector('ul.examples li.notification button').onclick = function(){
+	swal({
+		title: "Done!",
+		type: "success",
+		timeout: 1,
+		noButton: true
 	});
 };
 
