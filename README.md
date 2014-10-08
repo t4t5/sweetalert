@@ -20,3 +20,8 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <script src="lib/sweet-alert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
+
+#SASS
+The css is built with the `--style compressed` and `--sourcemap=none` options:
+
+    sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
