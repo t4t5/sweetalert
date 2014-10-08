@@ -195,7 +195,12 @@
 	<tr>
 		<td><b>timeout</b></td>
 		<td><i>null</i></td>
-		<td>The time (in s) before the closing of the SweetAlert.</td>
+		<td>The time (in seconds) before the closing of the SweetAlert.</td>
+	</tr>
+	<tr>
+		<td><b>noButton</b></td>
+		<td><i>false</i></td>
+		<td>If set to <strong>true</strong>, no button will be shown. <br/>(usefull with <code>timeout</code> or <code>allowOutsideClick</code>)</td>
 	</tr>
 	<tr>
 		<td><b>allowOutsideClick</b></td>
@@ -279,9 +284,7 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!',
-		timeout: 1, 
-		noButton: true
+		confirmButtonText: 'Yes, delete it!'
 	},
 	function(){
 		alert("Deleted!");
