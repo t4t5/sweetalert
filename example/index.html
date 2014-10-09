@@ -99,6 +99,24 @@
 });</pre>
 	</li>
 
+	<li class="input">
+		<div class="ui">
+			<p>An information message that accepts an input text value and passes it to a function on confirmation</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+	&nbsp;&nbsp;title: <span class="str">"Information"</span>,
+	&nbsp;&nbsp;text: <span class="str">"Please enter your first and last name"</span>,
+	&nbsp;&nbsp;type: <span class="str">"info"</span>,
+	&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+	&nbsp;&nbsp;confirmButtonText: <span class="str">"Ok"</span>,
+	&nbsp;&nbsp;inputField: <span class="str">true</span>
+	},
+	<span class="func"><i>function</i></span>(){
+	&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"<user input value>"</span>);
+	});</pre>
+	</li>
+
 	<li class="custom-icon">
 		<div class="ui">
 			<p>A message with a custom icon</p>
@@ -214,6 +232,11 @@
 		<td><i>"80x80"</i></td>
 		<td>If imageUrl is set, you can specify imageSize to describes how big you want the icon to be in px. Pass in a string with two values separated by an "x". The first value is the width, the second is the height.</td>
 	</tr>
+	<tr>
+		<td><b>inputField</b></td>
+		<td><i>true</i></td>
+		<td>Set this value to true to have an input button present. The default value is false.</td>
+	</tr>
 </table>
 
 
@@ -261,10 +284,25 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!'
+		confirmButtonText: 'Yes, delete it!',
+		inputField: false
 	},
 	function(){
-		alert("Deleted!");
+		alert("Deleted!!");
+	});
+};
+
+document.querySelector('ul.examples li.input button').onclick = function(){
+	swal({
+		title: "Information",
+		text: "Please enter your first and last name",
+		type: "info",
+		showCancelButton: true,
+		confirmButtonText: 'Ok',
+		inputField: true
+	},
+	function(input){
+		alert(input);
 	});
 };
 
