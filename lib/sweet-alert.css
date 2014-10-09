@@ -215,6 +215,18 @@
       border: none;
       background-position: center center;
       background-repeat: no-repeat; }
+    .sweet-alert .form-input {
+      text-align: left;
+      width: 200px;
+      height: 20px;
+      display: block;
+      margin : 0 auto;
+    }
+    .sweet-alert .input {
+      text-align: center;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
 
 /*
  * Animations
