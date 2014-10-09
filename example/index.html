@@ -92,27 +92,11 @@
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
-&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>
-},
-<span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Deleted!"</span>);
-});</pre>
-	</li>
-
-	<li class="warning no-close">
-		<div class="ui">
-			<p>A warning message, with an additional sweet alert function as a callback</p>
-			<button>Try me!</button>
-		</div>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
-&nbsp;&nbsp;text: <span class="str">"Click OK if you like living dangerously..."</span>,
-&nbsp;&nbsp;type: <span class="str">"warning"</span>,
-&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
 },
 <span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Booyah!"</span>, <span class="str">"You like to live dangerously!"</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success</span>);
 });</pre>
 	</li>
 
@@ -222,6 +206,11 @@
 		<td>Use this to change the text on the "Cancel"-button.</td>
 	</tr>
 	<tr>
+		<td><b>closeOnConfirm</b></td>
+		<td><i>true</i></td>
+		<td>Set to <i>false</i> if you want the modal to stay open even if the user presses the "Confirm"-button. This is especially useful if the function attached to the "Confirm"-button is another SweetAlert.</td>
+	</tr>
+	<tr>
 		<td><b>imageUrl</b></td>
 		<td><i>null</i></td>
 		<td>Add a customized icon for the modal. Should contain a string with the path to the image.</td>
@@ -278,23 +267,11 @@ document.querySelector('ul.examples li.warning:not(.no-close) button').onclick =
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!'
-	},
-	function(){
-		alert("Deleted!");
-	});
-};
-
-document.querySelector('ul.examples li.warning.no-close button').onclick = function(){
-	swal({
-		title: "Are you sure?",
-		text: "Click 'Confirm' if you like to live dangerously...",
-		type: "warning",
-		showCancelButton: true,
+		confirmButtonText: 'Yes, delete it!',
 		closeOnConfirm: false
 	},
 	function(){
-		swal("Booyah!", "You like to live dangerously!", "success");
+		swal("Deleted!", "Your imaginary file has been deleted!", "success");
 	});
 };
 
