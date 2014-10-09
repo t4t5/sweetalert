@@ -342,9 +342,17 @@
 
 .showSweetAlert {
   @include animation('showSweetAlert 0.3s');
+
+  &.no-animation{
+  	@include animation('none');
+  }
 }
 .hideSweetAlert {
   @include animation('hideSweetAlert 0.2s');
+
+  &.no-animation{
+  	@include animation('none');
+  }
 }
 
 
