@@ -71,7 +71,7 @@
       .sweet-alert button.cancel:active {
         background-color: #b6b6b6; }
       .sweet-alert button.cancel:focus {
-        box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important; }
+        box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.04706) 0px 0px 0px 1px inset !important; }
   .sweet-alert[data-has-cancel-button=false] button {
     box-shadow: none !important; }
   .sweet-alert .icon {
@@ -283,11 +283,19 @@
   -webkit-animation: showSweetAlert 0.3s;
   -moz-animation: showSweetAlert 0.3s;
   animation: showSweetAlert 0.3s; }
+  .showSweetAlert.no-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none; }
 
 .hideSweetAlert {
   -webkit-animation: hideSweetAlert 0.2s;
   -moz-animation: hideSweetAlert 0.2s;
   animation: hideSweetAlert 0.2s; }
+  .hideSweetAlert.no-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none; }
 
 @-webkit-keyframes animateSuccessTip {
   0% {
@@ -600,3 +608,5 @@
   -webkit-animation: pulseWarningIns 0.75s infinite alternate;
   -moz-animation: pulseWarningIns 0.75s infinite alternate;
   animation: pulseWarningIns 0.75s infinite alternate; }
+
+/*# sourceMappingURL=sweet-alert.css.map */
