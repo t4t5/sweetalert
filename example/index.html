@@ -3,15 +3,16 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert</title>
 
-  <link rel="stylesheet" type="text/css" href="./example.css">
+  <link rel="stylesheet" href="./example.css">
 
   <!-- This is what you need -->
   <script src="../lib/sweet-alert.js"></script>
-  <link rel="stylesheet" type="text/css" href="../lib/sweet-alert.css">
+  <link rel="stylesheet" href="../lib/sweet-alert.css">
   <!--.......................-->
 
 </head>
@@ -90,11 +91,12 @@
 &nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
-&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>
-&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
 },
 <span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">alert</span>(<span class="str">"Deleted!"</span>);
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success</span>);
 });</pre>
 	</li>
 
@@ -149,7 +151,7 @@
 <!-- Configuration -->
 <h3>Configuration</h3>
 
-<p class="center">Here are the keys that you can use if you pass an associative array into the sweetAlert:</p>
+<p class="center">Here are the keys that you can use if you pass an object into sweetAlert:</p>
 
 <table>
 	<tr class="titles">
@@ -166,12 +168,12 @@
 	<tr>
 		<td><b>title</b></td>
 		<td><i>null (required)</i></td>
-		<td>The title of the modal. It can either be put in the array under the key "title" or passed as the first parameter of the function.</td>
+		<td>The title of the modal. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
 	</tr>
 	<tr>
 		<td><b>text</b></td>
 		<td><i>null</i></td>
-		<td>A description for the modal. It can either be put in the array under the key "text" or passed as the second parameter of the function.</td>
+		<td>A description for the modal. It can either be added to the object under the key "text" or passed as the second parameter of the function.</td>
 	</tr>
 	<tr>
 		<td><b>type</b></td>
@@ -202,6 +204,11 @@
 		<td><b>cancelButtonText</b></td>
 		<td><i>"Cancel"</i></td>
 		<td>Use this to change the text on the "Cancel"-button.</td>
+	</tr>
+	<tr>
+		<td><b>closeOnConfirm</b></td>
+		<td><i>true</i></td>
+		<td>Set to <i>false</i> if you want the modal to stay open even if the user presses the "Confirm"-button. This is especially useful if the function attached to the "Confirm"-button is another SweetAlert.</td>
 	</tr>
 	<tr>
 		<td><b>imageUrl</b></td>
@@ -253,17 +260,18 @@ document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
 };
 
-document.querySelector('ul.examples li.warning button').onclick = function(){
+document.querySelector('ul.examples li.warning:not(.no-close) button').onclick = function(){
 	swal({
 		title: "Are you sure?",
 		text: "You will not be able to recover this imaginary file!",
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
-		confirmButtonText: 'Yes, delete it!'
+		confirmButtonText: 'Yes, delete it!',
+		closeOnConfirm: false
 	},
 	function(){
-		alert("Deleted!");
+		swal("Deleted!", "Your imaginary file has been deleted!", "success");
 	});
 };
 

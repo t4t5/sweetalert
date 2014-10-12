@@ -123,6 +123,7 @@
 		border-radius: 50%;
 		margin: 20px auto;
 		position: relative;
+		box-sizing: content-box;
 
 		&.error {
 			border-color: $red;
@@ -172,6 +173,7 @@
 				height: 7px;
 				border-radius: 50%;
 				margin-left: -3px;
+				left: 50%;
 				bottom: 10px;
 				background-color: $orange;
 			}
@@ -239,6 +241,7 @@
 				height: 80px;
 				border: 4px solid rgba($green, 0.2);
 				border-radius: 50%;
+				box-sizing: content-box;
 
 				position: absolute;
 				left: -4px;
