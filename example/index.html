@@ -81,9 +81,9 @@
 		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
 	</li>
 
-	<li class="warning">
+	<li class="warning confirm">
 		<div class="ui">
-			<p>A warning message, with a function attached to the "Confirm"-button</p>
+			<p>A warning message, with a function attached to the "Confirm"-button...</p>
 			<button>Try me!</button>
 		</div>
 		<pre>swal({
@@ -96,7 +96,32 @@
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
 },
 <span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success</span>);
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
+});</pre>
+	</li>
+
+	<li class="warning cancel">
+		<div class="ui">
+			<p>... and by passing a parameter, you can execute something else for "Cancel".</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
+&nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
+&nbsp;&nbsp;type: <span class="str">"warning"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
+&nbsp;&nbsp;cancelButtonText: <span class="str">"No, cancel plx!"</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;closeOnCancel: <span class="val">false</span>
+},
+<span class="func"><i>function</i></span>(isConfirm){
+&nbsp;&nbsp;<span class="tag">if</span> (isConfirm) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;} <span class="tag">else</span> {
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Cancelled"</span>, <span class="str">"Your imaginary file is safe :)"</span>, <span class="str">"error"</span>);
+&nbsp;&nbsp;}
 });</pre>
 	</li>
 
@@ -260,7 +285,7 @@ document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
 };
 
-document.querySelector('ul.examples li.warning:not(.no-close) button').onclick = function(){
+document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
 	swal({
 		title: "Are you sure?",
 		text: "You will not be able to recover this imaginary file!",
@@ -268,10 +293,32 @@ document.querySelector('ul.examples li.warning:not(.no-close) button').onclick =
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
 		confirmButtonText: 'Yes, delete it!',
-		closeOnConfirm: false
+		closeOnConfirm: false,
+		//closeOnCancel: false
 	},
 	function(){
 		swal("Deleted!", "Your imaginary file has been deleted!", "success");
+	});
+};
+
+document.querySelector('ul.examples li.warning.cancel button').onclick = function(){
+	swal({
+		title: "Are you sure?",
+		text: "You will not be able to recover this imaginary file!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Yes, delete it!',
+		cancelButtonText: "No, cancel plx!",
+		closeOnConfirm: false,
+		closeOnCancel: false
+	},
+	function(isConfirm){
+    if (isConfirm){
+      swal("Deleted!", "Your imaginary file has been deleted!", "success");
+    } else {
+      swal("Cancelled", "Your imaginary file is safe :)", "error");
+    }
 	});
 };
 
