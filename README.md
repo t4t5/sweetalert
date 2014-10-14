@@ -21,6 +21,12 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
 
+#SASS
+
+The css is built with the `--style compressed` and `--sourcemap=none` options:
+
+`sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css`
+
 #Contribute
 
 To make use of automated Grunt tasks, make sure you have Node.js and Grunt installed.
