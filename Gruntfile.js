@@ -53,8 +53,8 @@ module.exports = function(grunt)	{
 
 	});
 
-	grunt.registerTasks('default', ['watch']);
-	grunt.registerTasks('build', [
+	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', [
 		'uglify',
 		'sass',
 		'cssmin'
