@@ -48,6 +48,14 @@ module.exports = function(grunt)	{
 				options: {
 					spawn: false
 				}
+			},
+
+			script: {
+				files: ['src/sweet-alert.js'],
+				tasks: ['lib/sweet-alert.min.js'],
+				options: {
+					spawn: false
+				}
 			}
 		}
 
