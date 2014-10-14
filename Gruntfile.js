@@ -14,7 +14,7 @@ module.exports = function(grunt)	{
 					style: 'expanded'
 				},
 				files: {
-					'lib/sweet-alert.css':'lib/sweet-alert.scss'
+					'src/sweet-alert.css':'src/sweet-alert.scss'
 				}
 			}
 		},
@@ -22,7 +22,7 @@ module.exports = function(grunt)	{
 		cssmin: {
 			dist: {
 				files: {
-					'lib/sweet-alert.min.css': ['lib/sweet-alert.css']
+					'lib/sweet-alert.min.css': ['src/sweet-alert.css']
 				},
 				options: {
 					banner: '/*! <%= pkg.name %> | v<%= pkg.version %> | <%= pkg.author %> | <%= pkg.license %> | <%= pkg.homepage %> */ \n'
@@ -32,7 +32,7 @@ module.exports = function(grunt)	{
 
 		uglify: {
 			build: {
-				src: 'lib/sweet-alert.js',
+				src: 'src/sweet-alert.js',
 				dest: 'lib/sweet-alert.min.js'
 			},
 			options: {
@@ -43,7 +43,7 @@ module.exports = function(grunt)	{
 		
 		watch: {
 			sass: {
-				files: ['lib/sweet-alert.scss'],
+				files: ['src/sweet-alert.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false
