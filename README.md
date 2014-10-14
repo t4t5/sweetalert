@@ -18,10 +18,28 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 
 ```html
 <script src="lib/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+<link rel="stylesheet" type="text/css" href="lib/sweet-alert.min.css">
 ```
 
 #SASS
+
 The css is built with the `--style compressed` and `--sourcemap=none` options:
 
-    sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
+`sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css`
+
+#Contribute
+
+To make use of automated Grunt tasks, make sure you have Node.js and Grunt installed.
+
++ Fork repository.
++ Create branch for your features `$ git checkout -b YOUR_FEATURE`
++ Run `$ npm install` to install dev dependencies
++ Run `$ grunt` to watch the changes for JavaScript and SASS
++ Add/edit the JavaScript or SASS
++ Use `$ grunt build` to generate the minified versions of CSS and JavaScript
++ Commit and create a pull request
+
+
+#License
+
+MIT License

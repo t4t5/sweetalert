@@ -5,14 +5,20 @@
     "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
-  "main": ["lib/sweet-alert.js", "lib/sweet-alert.css"],
+  "main": [
+    "lib/sweet-alert.min.js",
+    "lib/sweet-alert.min.css"
+  ],
   "keywords": [
     "alert",
     "modal"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:t4t5/sweetalert.git"
-  },
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
