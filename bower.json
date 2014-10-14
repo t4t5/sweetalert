@@ -6,8 +6,8 @@
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
   "main": [
-    "lib/sweet-alert.js",
-    "lib/sweet-alert.css"
+    "lib/sweet-alert.min.js",
+    "lib/sweet-alert.min.css"
   ],
   "keywords": [
     "alert",
