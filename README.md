@@ -20,6 +20,13 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <script src="lib/sweet-alert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
+#Gulp
+
+Now with Gulp support!
+To use it, `cd` into the `gulp/` directory and type
+```bash
+sudo npm install
+```
 
 #SASS
 The css is built with the `--style compressed` and `--sourcemap=none` options:
