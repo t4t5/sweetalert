@@ -103,9 +103,9 @@ button, .button {
   button:focus, .button:focus {
     outline: none; }
   button:hover, .button:hover {
-    background-color: #a1d9f2; }
+    background-color: #a1daf2; }
   button:active, .button:active {
-    background-color: #81ccee; }
+    background-color: #81cdee; }
   button.cancel, .button.cancel {
     background-color: #D0D0D0; }
     button.cancel:hover, .button.cancel:hover {
