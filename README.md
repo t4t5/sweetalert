@@ -1,27 +1,27 @@
-#SweetAlert
+# SweetAlert for Bootstrap
 
 An awesome replacement for JavaScript's alert.
 
-[See it in action!](http://tristanedwards.me/sweetalert)
 
-![A success modal](https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif)
+#### This is a clone for Bootstrap. For more refer to the [original project](https://github.com/t4t5/sweetalert).
 
-#Usage
 
-You can install SweetAlert through bower:
+## Usage
 
-```bash
-bower install sweetalert
-```
+If your project is using Less and the original source of Bootstrap then just
+include the `sweet-alert.less` file in your building process.
 
-Alternatively, download the package and reference the JavaScript and CSS files manually:
+Otherwise include the JavaScript and CSS files manually:
 
 ```html
 <script src="lib/sweet-alert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
 
-#SASS
-The css is built with the `--style compressed` and `--sourcemap=none` options:
 
-    sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
+## Development
+
+```shell
+$ npm install
+$ grunt
+```
