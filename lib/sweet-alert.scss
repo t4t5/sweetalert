@@ -221,7 +221,7 @@
 				left: -33px;
 
 			   -webkit-transform: rotate(-45deg);
-			  transform: rotate(-45deg);		
+			  transform: rotate(-45deg);
 				-webkit-transform-origin: 60px 60px;
 			  transform-origin: 60px 60px;
 			}
@@ -274,7 +274,7 @@
 
 				&.tip {
 					width: 25px;
-					
+
     			left: 14px;
 					top: 46px;
 
@@ -283,7 +283,7 @@
 				}
 				&.long {
 					width: 47px;
-					
+
     			right: 8px;
 					top: 38px;
 
@@ -313,16 +313,12 @@
   @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
   @keyframes #{$animation-name} {
     @content;
   }
 }
 @mixin animation($str) {
   -webkit-animation: #{$str};
-  -moz-animation: #{$str};
   animation: #{$str};
 }
 
