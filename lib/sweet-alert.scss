@@ -303,7 +303,9 @@
 
 }
 
-
+.open-sweet-alert {
+  overflow: hidden;
+}
 
 /*
  * Animations
@@ -328,6 +330,7 @@
 
 
 // Modal animation
+// Default Scale
 
 @include keyframes(showSweetAlert) {
   0% 		{ transform: scale(0.7); 	-webkit-transform: scale(0.7); 	}
@@ -347,7 +350,78 @@
   @include animation('hideSweetAlert 0.2s');
 }
 
+// Slide Left
 
+@include keyframes(showSweetAlertSlideLeft) {
+  0% 		{ transform: translateX(-200px); 	-webkit-transform: translateX(-200px); 	}
+  100% 	{ transform: translateX(0px); 		-webkit-transform: translateX(0px); 		}
+}
+@include keyframes(hideSweetAlertSlideLeft) {
+  0% 		{ transform: translateX(0px); 		-webkit-transform: translateX(0px); 		}
+  100% 	{ transform: translateX(-200px); 	-webkit-transform: translateX(-200px); 	}
+}
+
+.showSweetAlertSlideLeft {
+  @include animation('showSweetAlertSlideLeft 0.3s');
+}
+.hideSweetAlertSlideLeft {
+  @include animation('hideSweetAlertSlideLeft 0.2s');
+}
+
+// Slide Right
+
+@include keyframes(showSweetAlertSlideRight) {
+  0% 		{ transform: translateX(200px); 	-webkit-transform: translateX(200px); 	}
+  100% 	{ transform: translateX(0px); 		-webkit-transform: translateX(0px); 		}
+}
+@include keyframes(hideSweetAlertSlideRight) {
+  0% 		{ transform: translateX(0px); 		-webkit-transform: translateX(0px); 		}
+  100% 	{ transform: translateX(200px); 	-webkit-transform: translateX(200px); 	}
+}
+
+.showSweetAlertSlideRight {
+  @include animation('showSweetAlertSlideRight 0.3s');
+}
+.hideSweetAlertSlideRight {
+  @include animation('hideSweetAlertSlideRight 0.2s');
+}
+
+
+// Slide Down
+
+@include keyframes(showSweetAlertSlideDown) {
+  0% 		{ transform: translateY(-200px); 	-webkit-transform: translateY(-200px); 	}
+  100% 	{ transform: translateY(0px); 		-webkit-transform: translateY(0px); 		}
+}
+@include keyframes(hideSweetAlertSlideDown) {
+  0% 		{ transform: translateY(0px); 		-webkit-transform: translateY(0px); 		}
+  100% 	{ transform: translateY(-200px); 	-webkit-transform: translateY(-200px); 	}
+}
+
+.showSweetAlertSlideDown {
+  @include animation('showSweetAlertSlideDown 0.3s');
+}
+.hideSweetAlertSlideDown {
+  @include animation('hideSweetAlertSlideDown 0.2s');
+}
+
+// Slide Up
+
+@include keyframes(showSweetAlertSlideUp) {
+  0% 		{ transform: translateY(200px); 	-webkit-transform: translateY(200px); 	}
+  100% 	{ transform: translateY(0px); 		-webkit-transform: translateY(0px); 		}
+}
+@include keyframes(hideSweetAlertSlideUp) {
+  0% 		{ transform: translateY(0px); 		-webkit-transform: translateY(0px); 		}
+  100% 	{ transform: translateY(200px); 	-webkit-transform: translateY(200px); 	}
+}
+
+.showSweetAlertSlideUp {
+  @include animation('showSweetAlertSlideUp 0.3s');
+}
+.hideSweetAlertSlideUp {
+  @include animation('hideSweetAlertSlideUp 0.2s');
+}
 
 // Success icon animation
 
