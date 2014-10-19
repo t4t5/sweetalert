@@ -137,6 +137,20 @@
 });</pre>
 	</li>
 
+    <li class="custom-animations">
+        <div class="ui">
+            <p>Custom animations on open and close</p>
+            <button>Try me!</button>
+        </div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Well done!"</span>,
+&nbsp;&nbsp;text: <span class="str">""</span>,
+&nbsp;&nbsp;type: <span class="str">"success"</span>,
+&nbsp;&nbsp;onOpenAnimation: <span class="str">'slideDown'</span>
+&nbsp;&nbsp;onCloseAnimation: <span class="str">'slideUp'</span>
+});</pre>
+    </li>
+
 </ul>
 
 
@@ -245,6 +259,16 @@
 		<td><i>"80x80"</i></td>
 		<td>If imageUrl is set, you can specify imageSize to describes how big you want the icon to be in px. Pass in a string with two values separated by an "x". The first value is the width, the second is the height.</td>
 	</tr>
+    <tr>
+        <td><b>onOpenAnimation</b></td>
+        <td><i>"scale"</i></td>
+        <td>Custom animation on modal open event.</td>
+    </tr>
+    <tr>
+        <td><b>onCloseAnimation</b></td>
+        <td><i>"scale"</i></td>
+        <td>Custom animation on modal close event.</td>
+    </tr>
 </table>
 
 
@@ -330,6 +354,15 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 	});
 };
 
+document.querySelector('ul.examples li.custom-animations button').onclick = function(){
+    swal({
+                title: "Well done!",
+                text: "",
+                type: "success",
+                onOpenAnimation: 'slideDown',
+                onCloseAnimation: 'slideUp'
+            });
+};
 </script>
 
 
