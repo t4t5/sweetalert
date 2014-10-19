@@ -2,17 +2,23 @@
   "name": "sweetalert",
   "homepage": "http://tristanedwards.me/sweetalert",
   "authors": [
-    "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)"
+    "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
+    "Panayiotis Lipiridis <lipiridis@gmail.com> (http://lip.is)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
-  "main": ["lib/sweet-alert.js", "lib/sweet-alert.css"],
+  "main": [
+    "lib/sweet-alert.js",
+    "lib/sweet-alert.css",
+    "lib/sweet-alert.less",
+    "lib/sweet-alert-animations.less"
+  ],
   "keywords": [
     "alert",
     "modal"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:t4t5/sweetalert.git"
+    "url": "git@github.com:lipis/sweetalert.git"
   },
   "license": "MIT"
 }

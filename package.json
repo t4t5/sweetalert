@@ -1,0 +1,12 @@
+{
+  "name": "sweetalert",
+  "devDependencies": {
+    "grunt": "~0",
+    "grunt-contrib-connect": "~0",
+    "grunt-contrib-less": "~0.10",
+    "grunt-contrib-watch": "~0",
+    "grunt-contrib-uglify": "~0",
+    "grunt-open": "~0",
+    "load-grunt-tasks": "~0"
+  }
+}
