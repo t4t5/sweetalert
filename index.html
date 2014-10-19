@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SweetAlert for Bootstrap</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-2.1.1.js"></script>
+
+    <!-- Debug -->
+    <script src="//localhost:32123/livereload.js"></script>
+
+    <!-- This is what you need -->
+    <script src="lib/sweet-alert.js"></script>
+    <link rel="stylesheet" href="lib/sweet-alert.css">
+    <!--.......................-->
+
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>SweetAlert for Bootstrap</h1>
+      <hr>
+      <p><button class="btn btn-primary sweet-basic">A basic message</button></p>
+      <p><button class="btn btn-primary sweet-text">A title with a text under</button></p>
+      <p><button class="btn btn-primary sweet-success">A success message!</button></p>
+      <p><button class="btn btn-primary sweet-warning">A warning message, with a function attached to the "Confirm"-button...</button></p>
+      <p><button class="btn btn-primary sweet-cancel">...and by passing a parameter, you can execute something else for "Cancel".</button></p>
+      <p><button class="btn btn-primary sweet-custom">A message with a custom icon</button></p>
+      <hr>
+      <p><button class="btn btn-primary sweet-basic-primary">Primary Message</button></p>
+      <p><button class="btn btn-info sweet-basic-info">Info Message</button></p>
+      <p><button class="btn btn-success sweet-basic-success">Success Message</button></p>
+      <p><button class="btn btn-warning sweet-basic-warning">Warning Message</button></p>
+      <p><button class="btn btn-danger sweet-basic-danger">Danger Message</button></p>
+    </div>
+
+    <script>
+      document.querySelector('.sweet-basic').onclick = function(){
+        swal("Here's a message!");
+      };
+
+      document.querySelector('.sweet-text').onclick = function(){
+        swal("Here's a message!", "It's pretty, isn't it?")
+      };
+
+      document.querySelector('.sweet-success').onclick = function(){
+        swal("Good job!", "You clicked the button!", "success");
+      };
+
+      document.querySelector('.sweet-warning').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-danger',
+          confirmButtonText: 'Yes, delete it!',
+          closeOnConfirm: false,
+          //closeOnCancel: false
+        },
+        function(){
+          swal("Deleted!", "Your imaginary file has been deleted!", "success");
+        });
+      };
+
+      document.querySelector('.sweet-cancel').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-danger',
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: "No, cancel plx!",
+          closeOnConfirm: false,
+          closeOnCancel: false
+        },
+        function(isConfirm){
+          window.console.log('fuck', isConfirm);
+          if (isConfirm){
+            swal("Deleted!", "Your imaginary file has been deleted!", "success");
+          } else {
+            swal("Cancelled", "Your imaginary file is safe :)", "error");
+          }
+        });
+      };
+
+      document.querySelector('.sweet-custom').onclick = function(){
+        swal({
+          title: "Sweet!",
+          text: "Here's a custom image.",
+          imageUrl: 'thumbs-up.jpg'
+        });
+      };
+
+      document.querySelector('.sweet-basic-primary').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "info",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-primary',
+          confirmButtonText: 'Primary!'
+        });
+      };
+
+      document.querySelector('.sweet-basic-info').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "info",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-info',
+          confirmButtonText: 'Info!'
+        });
+      };
+
+      document.querySelector('.sweet-basic-success').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "success",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-success',
+          confirmButtonText: 'Success!'
+        });
+      };
+
+      document.querySelector('.sweet-basic-warning').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-warning',
+          confirmButtonText: 'Warning!'
+        });
+      };
+
+      document.querySelector('.sweet-basic-danger').onclick = function(){
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "error",
+          showCancelButton: true,
+          confirmButtonClass: 'btn-danger',
+          confirmButtonText: 'Danger!'
+        });
+      };
+    </script>
+  </body>
+</html>
