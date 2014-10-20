@@ -16,7 +16,7 @@ module.exports = (grunt) ->
       lib:
         options:
           livereload: 32123
-        files: ['**/*.{less,html}', 'lib/sweet-alert.js']
+        files: ['**/*.{less,html,css}', 'lib/sweet-alert.js']
         tasks: ['compile']
 
     open:
