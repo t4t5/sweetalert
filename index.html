@@ -42,14 +42,28 @@
           View on GitHub
         </a>
       </p>
+      <ul class="jumbotron-links">
+        <li><a href="http://lipis.github.io/bootstrap-social" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'bootstrap-social']);"><i class="fa fa-group"></i> bootstrap-social</a></li>
+        <li><a href="http://lipis.github.io/flag-icon-css"  onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'flag-icon-css']);"><i class="fa fa-flag"></i> flag-icon-css</a></li>
+      </ul>
+
       <iframe src="http://ghbtns.com/github-btn.html?user=lipis&amp;repo=bootstrap-sweetalert&amp;type=watch&amp;count=true" class="social-share"></iframe>
       <a href="https://twitter.com/share" class="social-share twitter-share-button" data-url="http://lipis.github.io/bootstrap-sweetalert/" data-text="SweetAlert for Bootstrap! A beautiful replacement for JavaScript's 'alert'." data-via="lipis" data-hashtags="bootstrap css js">Tweet</a>
     </div>
 
     <div class="container">
-      <h2 class="text-center">Original Examples</h2>
+      <h2>Install via Bower</h2>
 
-      <hr>
+      <pre>$ bower install bootstrap-sweetalert</pre>
+
+      <h2>Download and Include</h2>
+
+      <pre>
+&lt;script src="lib/sweet-alert.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="lib/sweet-alert.css"&gt;</pre>
+
+      <h2>Original Examples</h2>
+
       <h4>Basic example</h4>
       <div class="row">
         <div class="col-sm-2 text-center">
@@ -59,7 +73,6 @@
           <pre class="code">swal("Here's a message!")</pre>
         </div>
       </div>
-      <hr>
 
       <h4>A title with a text under</h4>
       <div class="row">
@@ -70,7 +83,6 @@
           <pre>swal("Here's a message!", "It's pretty, isn't it?")</pre>
         </div>
       </div>
-      <hr>
 
       <h4>A success message!</h4>
       <div class="row">
@@ -81,7 +93,6 @@
           <pre>swal("Good job!", "You clicked the button!", "success")</pre>
         </div>
       </div>
-      <hr>
 
       <h4>A warning message, with a function attached to the "Confirm" button...</h4>
       <div class="row">
@@ -104,7 +115,6 @@ function(){
 });</pre>
         </div>
       </div>
-      <hr>
 
       <h4>...and by passing a parameter, you can execute something else for "Cancel".</h4>
       <div class="row">
@@ -133,7 +143,6 @@ function(isConfirm) {
 });</pre>
         </div>
       </div>
-      <hr>
 
       <h4>A message with a custom icon</h4>
       <div class="row">
@@ -149,7 +158,6 @@ swal({
 });</pre>
         </div>
       </div>
-      <hr>
 
       <h2 class="text-center">More Examples</h2>
       <div class="text-center">
@@ -159,8 +167,17 @@ swal({
         <button class="btn btn-warning sweet-13">Warning</button>
         <button class="btn btn-danger sweet-14">Danger</button>
       </div>
-      <hr>
+
     </div>
+    <footer>
+      <ul class="links">
+        <li><a href="http://lip.is" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Lipis']);">Lipis</a></li>
+        <li><a href="http://github.com/lipis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);"><i class="fa fa-github"></i> GitHub</a></li>
+        <li><a href="http://twitter.com/lipis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><i class="fa fa-twitter"></i> Twitter</a></li>
+        <li><a href="http://google.com/+PanayiotisLipiridis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Google+']);"><i class="fa fa-google-plus"></i> Google+</a></li>
+        <li><a href="http://opensource.org/licenses/MIT" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'MIT']);"><i class="fa fa-building"></i> MIT License</a></li>
+      </ul>
+    </footer>
 
     <script>
       document.querySelector('.sweet-1').onclick = function(){
