@@ -82,6 +82,8 @@
   max-width: 680px;
 }
 
+
+h1,
 h2 {
   font-weight: 300;
   color: #555;
@@ -110,6 +112,14 @@ footer {
   padding: 40px 0;
   margin-top: 40px;
   border-top: 1px solid #ccc;
+}
+
+.examples {
+  text-align: center;
+}
+
+.examples .btn {
+  margin-bottom: 4px;
 }
 
 .links {
