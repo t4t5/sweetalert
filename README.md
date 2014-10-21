@@ -14,7 +14,7 @@ You can install SweetAlert through bower:
 bower install sweetalert
 ```
 
-Alternatively, download the package and reference the JavaScript and CSS files manually:
+Alternatively, you can download the package and reference the JavaScript and CSS files manually:
 
 ```html
 <script src="lib/sweet-alert.min.js"></script>
