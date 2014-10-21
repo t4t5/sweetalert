@@ -72,6 +72,8 @@
         background-color: #b6b6b6; }
       .sweet-alert button.cancel:focus {
         box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important; }
+    .sweet-alert button::-moz-focus-inner {
+      border: 0; }
   .sweet-alert[data-has-cancel-button=false] button {
     box-shadow: none !important; }
   .sweet-alert .icon {
@@ -153,6 +155,7 @@
         width: 60px;
         height: 120px;
         background: white;
+        -webkit-transform: rotate(45deg);
         transform: rotate(45deg); }
       .sweet-alert .icon.success::before {
         border-radius: 120px 0 0 120px;
