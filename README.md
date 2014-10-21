@@ -8,13 +8,13 @@ An awesome _replacement_ for JavaScript's `alert()` made for Bootstrap.
 
 ## Usage
 
-Refer to the original [SweetAlert](http://tristanedwards.me/sweetalert) project
-on how to use it.
+On how to use these alerts, read the docs from the original
+[SweetAlert](http://tristanedwards.me/sweetalert) project.
 
-The main difference here is that instead of using the `confirmButtonColor`
-you will have to use the `confirmButtonClass`. It can take any of the default
-Bootstrap classes for buttons like: `btn-danger`, `btn-success`, etc. The rest
-remain exactly the same.
+The main difference here is that instead of using the `confirmButtonColor` you
+should use the `confirmButtonClass`. It can take any of the default Bootstrap
+classes for buttons like: `btn-danger`, `btn-success`, etc. The rest of the API
+remains exactly the same.
 
 Also if you are using Less in your project, then instead of including the
 `*.css` files include the
