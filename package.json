@@ -1,5 +1,18 @@
 {
   "name": "bootstrap-sweetalert",
+  "description": "A beautiful 'replacement' for JavaScript's alert",
+  "homepage": "http://lipis.github.io/bootstrap-sweetalert/",
+  "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/lipis/bootstrap-sweetalert"
+  },
   "devDependencies": {
     "grunt": "~0",
     "grunt-contrib-connect": "~0",

@@ -29,6 +29,10 @@
   margin: 2px;
 }
 
+.jumbotron .follow {
+  width: 140px!important;
+}
+
 
 .jumbotron p a,
 .jumbotron-links a {
