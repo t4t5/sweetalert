@@ -1,6 +1,7 @@
 {
   "name": "bootstrap-sweetalert",
   "description": "A beautiful 'replacement' for JavaScript's alert",
+  "version": "0.4.2",
   "homepage": "http://lipis.github.io/bootstrap-sweetalert/",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "licenses": [
