@@ -25,3 +25,6 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 The css is built with the `--style compressed` and `--sourcemap=none` options:
 
     sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
+    
+#Related projects
+ - [AngularJS wrapper for SweetAlert](https://github.com/oitozero/ngSweetAlert)
