@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "~3"
-  }
+  },
   "devDependencies": {
     "grunt": "~0",
     "grunt-contrib-connect": "~0",
