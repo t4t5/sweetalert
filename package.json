@@ -1,5 +1,5 @@
 {
-  "name": "sweetalert",
+  "name": "bootstrap-sweetalert",
   "devDependencies": {
     "grunt": "~0",
     "grunt-contrib-connect": "~0",
