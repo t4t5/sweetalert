@@ -351,6 +351,21 @@
 }
 
 
+@include keyframes(showSweetAlertNoBounce) {
+  0% 		{ transform: scale(0.7); 	-webkit-transform: scale(0.7); 	}
+	100% 	{ transform: scale(1); 		-webkit-transform: scale(1); 		}
+}
+@include keyframes(hideSweetAlertNoBounce) {
+  0% 		{ transform: scale(1); 		-webkit-transform: scale(1); 		}
+	100% 	{ transform: scale(0.5); 	-webkit-transform: scale(0.5); 	}
+}
+
+.showSweetAlertNoBounce {
+  @include animation('showSweetAlertNoBounce 0.3s');
+}
+.hideSweetAlertNoBounce {
+  @include animation('hideSweetAlertNoBounce 0.2s');
+}
 
 // Success icon animation
 
