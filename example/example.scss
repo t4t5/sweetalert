@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300); // Open Sans font
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);   // Condensed
-
 @mixin retina-background($url, $type:png) {
   background-image: url("#{$url}.#{$type}");
   background-image: -webkit-image-set(url("#{$url}.#{$type}") 1x,
@@ -14,7 +11,7 @@ body {
 }
 
 h1 {
-  @include retina-background("images/logo_big"); 
+  @include retina-background("images/logo_big");
   width: 385px;
   height: 81px;
   text-indent: -9999px;
@@ -218,7 +215,7 @@ pre {
     height: 25px;
     margin-top: -3px;
     text-indent: -9999px;
-    @include retina-background("images/logo_small"); 
+    @include retina-background("images/logo_small");
   }
   h5 {
     margin-bottom: -7px;
@@ -330,7 +327,7 @@ table {
   text-align: left;
   border-collapse: collapse;
   @media all and (max-width: 750px) {
-    width: auto; 
+    width: auto;
     margin: 10px 20px;
   }
 
