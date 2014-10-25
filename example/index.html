@@ -81,6 +81,18 @@
 		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
 	</li>
 
+	<li class="timer">
+		<div class="ui">
+			<p>A message with auto close timer</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
+&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
+&nbsp;&nbsp;timer: <span class="str">2000</span>
+});</pre>
+	</li>
+
 	<li class="warning confirm">
 		<div class="ui">
 			<p>A warning message, with a function attached to the "Confirm"-button...</p>
@@ -88,7 +100,7 @@
 		</div>
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
-&nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
+&nbsp;&nbsp;text: <span class="str">"You will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
@@ -107,7 +119,7 @@
 		</div>
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
-&nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
+&nbsp;&nbsp;text: <span class="str">"You will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
@@ -245,6 +257,11 @@
 		<td><i>"80x80"</i></td>
 		<td>If imageUrl is set, you can specify imageSize to describes how big you want the icon to be in px. Pass in a string with two values separated by an "x". The first value is the width, the second is the height.</td>
 	</tr>
+	<tr>
+		<td><b>timer</b></td>
+		<td><i>null</i></td>
+		<td>Auto close timer of the modal. Set in ms (milliseconds).</td>
+	</tr>
 </table>
 
 
@@ -275,6 +292,14 @@ document.querySelector('.showcase.sweet button').onclick = function(){
 
 document.querySelector('ul.examples li.message button').onclick = function(){
 	swal("Here's a message!");
+};
+
+document.querySelector('ul.examples li.timer button').onclick = function(){
+	swal({
+		title: "Auto close alert!",
+		text: "I will close in 2 seconds.",
+		timer: 2000
+	});
 };
 
 document.querySelector('ul.examples li.title-text button').onclick = function(){
