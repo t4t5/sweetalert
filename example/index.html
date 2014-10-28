@@ -91,6 +91,17 @@
 &nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
 &nbsp;&nbsp;timer: <span class="str">2000</span>
 });</pre>
+
+	</li><li class="prompt">
+		<div class="ui">
+			<p>Prompt message</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
+&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
+&nbsp;&nbsp;timer: <span class="str">2000</span>
+});</pre>
 	</li>
 
 	<li class="warning confirm">
@@ -299,6 +310,14 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 		title: "Auto close alert!",
 		text: "I will close in 2 seconds.",
 		timer: 2000
+	});
+};
+
+document.querySelector('ul.examples li.prompt button').onclick = function(){
+	swal({
+		title: "Auto close alert!",
+		text: "I will close in 2 seconds.",
+		type: "prompt"
 	});
 };
 
