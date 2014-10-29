@@ -98,9 +98,14 @@
 			<button>Try me!</button>
 		</div>
 		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
-&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
-&nbsp;&nbsp;timer: <span class="str">2000</span>
+&nbsp;&nbsp;type: <span class="str">"prompt"</span>,
+&nbsp;&nbsp;title: <span class="str">"Prompt!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Enter your text here:"</span>,
+&nbsp;&nbsp;promptPlaceholder: <span class="str">"Your text goes here..."</span>,
+&nbsp;&nbsp;promptDefaultValue: <span class="str">"Some sweet default value"</span>,
+},
+<span class="func"><i>function</i></span>(value){
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Here's a message!"</span>, <span class="str">"Your prompt was: "</span> + value, <span class="str">"success"</span>);
 });</pre>
 	</li>
 
@@ -315,9 +320,13 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 
 document.querySelector('ul.examples li.prompt button').onclick = function(){
 	swal({
-		title: "Auto close alert!",
-		text: "I will close in 2 seconds.",
-		type: "prompt"
+		type: "prompt",
+		title: "Prompt!",
+		text: "Enter your text here:",
+		promptPlaceholder: "Your text goes here...",
+		promptDefaultValue: "Some sweet default value"
+	}, function(value) {
+		swal("Here's a message!", "Your prompt was: " + value, "success");
 	});
 };
 
