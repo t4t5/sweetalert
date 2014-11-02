@@ -255,7 +255,7 @@ pre {
 
 ul.examples {
   list-style-type: none;
-  width: 700px;
+  width: 900px;
   margin: 0 auto;
   text-align: left;
   padding-left: 0;
@@ -292,7 +292,7 @@ ul.examples {
   }
 
   pre {
-    max-width: 370px;
+    max-width: 500px;
     margin-top: 67px;
 
     @media all and (max-width: 758px) {

@@ -104,7 +104,34 @@
 			}
 		}
 	}
-
+    .sweet-body{
+        width:100%;
+        display:block;
+        input{
+            z-index: 1;
+        }
+        &:after{
+            clear:both;
+            display:table;
+            content:"";
+        }
+        table{
+            width:100%;
+            padding:0;
+            text-align:center;
+            tr{
+                padding:0;
+            }
+            td{
+                padding:0;
+                width:auto;
+                vertical-align: middle;
+                button{
+                    margin: 0px 5px 0 5px;
+                }
+            }
+        }
+    }
 	// Only show focus-style when there is multiple choice of actions
 	&[data-has-cancel-button=false] button {
 		box-shadow: none !important;

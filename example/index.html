@@ -110,7 +110,54 @@
 &nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
 });</pre>
 	</li>
-
+    
+<li class="sweet-form">
+		<div class="ui">
+			<p>An interactive pop up screen (note i am using nodes fill modal body u can use string as well, check source code for more info currently onclick attributes only get the event argument but you can use onclick as opposed to setting a className and corresponding buttonAction property)</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Favorite Games"</span>,
+&nbsp;&nbsp;text: <span class="str">"Heres a list of my favorite games"</span>,
+&nbsp;&nbsp;body: nodeElment
+&nbsp;&nbsp;buttonActions: {
+&nbsp;&nbsp;&nbsp;&nbsp;addRow: function(e){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">//table was defined when creating nodeElement</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swal({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:<span class="str">"Enter Game Information"</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:addRowElement,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showCancelButton:true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;confirmButtonText:<span class="str">Save</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, function(e){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var modal = e.target.parentNode
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row = table.insertRow();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nameCell = row.insertCell(0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ratingCell = row.insertCell(1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnCell = row.insertCell(2);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nameCell.innerHTML = modal.querySelector(<span class="str">'input[name="gameTitle"]'</span>).value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ratingCell.innerHTML = modal.querySelector(<span class="str">'select[name="gameRating"]'</span>).value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnCell.appendChild(delBtn.cloneNode(<span class="str">true</span>));//delbtn is defined when creating nodeElement
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;delRow: function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var row = e.target.parentNode.parentNode,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = row.rowIndex,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gName = row.querySelector('td:first-child').innerHTML;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swal({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"Are You Sure?",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:'warning',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text:'This will remove ' + gName + ' from the list',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showCancelButton:true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;confirmButtonText:'Yes I\'m sure',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancelButtonText:'No what am I thinking',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayImmediately:true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.deleteRow(index);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+});</pre>
+	</li>
 </ul>
 
 
@@ -174,6 +221,16 @@
 		<td><i>null</i></td>
 		<td>A description for the modal. It can either be put in the array under the key "text" or passed as the second parameter of the function.</td>
 	</tr>
+    <tr>
+        <td><b>body</b></td>
+        <td><i>null</i></td>
+        <td>An HTML area to place forms and other snippets. you can pass string or nodes to this</td>
+    </tr>
+    <tr>
+        <td><b>buttonActions</b></td>
+        <td><i>Empty Object {}</i></td>
+        <td>This is an object which holds functions for buttons based on their class ex{testBtn: function(){do something}} also buttons can use onclick functions but only passes event for now</td>
+    </tr>
 	<tr>
 		<td><b>type</b></td>
 		<td><i>null</i></td>
@@ -214,6 +271,11 @@
 		<td><i>"80x80"</i></td>
 		<td>If imageUrl is set, you can specify imageSize to describes how big you want the icon to be in px. Pass in a string with two values separated by an "x". The first value is the width, the second is the height.</td>
 	</tr>
+    <tr>
+        <td><b>displayImmediately</b></td>
+        <td><i>if no modal true otherwise false</i></td>
+        <td>This is used to override the current modal if modal on display</td>
+    </tr>
 </table>
 
 
@@ -233,27 +295,21 @@
 document.querySelector('button.download').onclick = function(){
 	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
 };
-
 document.querySelector('.showcase.normal button').onclick = function(){
 	alert("Oops... Something went wrong!");
 };
-
 document.querySelector('.showcase.sweet button').onclick = function(){
 	swal("Oops...", "Something went wrong!", "error");
 };
-
 document.querySelector('ul.examples li.message button').onclick = function(){
 	swal("Here's a message!");
 };
-
 document.querySelector('ul.examples li.title-text button').onclick = function(){
 	swal("Here's a message!", "It's pretty, isn't it?")
 };
-
 document.querySelector('ul.examples li.success button').onclick = function(){
 	swal("Good job!", "You clicked the button!", "success");
 };
-
 document.querySelector('ul.examples li.warning button').onclick = function(){
 	swal({
 		title: "Are you sure?",
@@ -267,7 +323,6 @@ document.querySelector('ul.examples li.warning button').onclick = function(){
 		alert("Deleted!");
 	});
 };
-
 document.querySelector('ul.examples li.custom-icon button').onclick = function(){
 	swal({
 		title: "Sweet!",
@@ -275,7 +330,71 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		imageUrl: 'images/thumbs-up.jpg'
 	});
 };
-
+document.querySelector('ul.examples li.sweet-form button').onclick = function(){
+    var sweetBody = document.createElement('div'),
+        addBtn = document.createElement('button'),
+        table = document.createElement('table'),
+        row = table.insertRow(0),
+        nameCell = row.insertCell(0),
+        ratingCell = row.insertCell(1),
+        btnCell = row.insertCell(2),
+        delBtn = document.createElement('button');
+    addBtn.className = 'addRow';
+    addBtn.innerHTML = 'New Game';
+    nameCell.innerHTML = 'Minecraft';
+    ratingCell.innerHTML = '10';
+    delBtn.className = 'delRow';
+    delBtn.innerHTML = 'Delete Game';
+    btnCell.appendChild(delBtn);
+    sweetBody.appendChild(addBtn);
+    sweetBody.appendChild(table);
+    
+    swal({
+        title:'Favorite Games',
+        text:'Heres a list of my Favorite Games',
+        body:sweetBody,
+        buttonActions:{
+            addRow:function(e){
+                swal({
+                    title:"New Game",
+                    text:"Fill in fields to add new game",
+                    body:'<input type="text" name="gameTitle" placeholder="Please enter title"/><select name="gameRating"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>',
+                    showCancelButton:true,
+                    displayImmediately:true,
+                    confirmButtonText:'Save Game'
+                },function(e){
+                    var modal = e.target.parentNode,
+                        name = modal.querySelector('input[name="gameTitle"]').value,
+                        rating = modal.querySelector('select[name="gameRating"]').value,
+                        nrow = table.insertRow(),
+                        ncell = nrow.insertCell(0),
+                        rcell = nrow.insertCell(1),
+                        bcell = nrow.insertCell(2);
+                    ncell.innerHTML = name;
+                    rcell.innerHTML = rating.toString();
+                    bcell.appendChild(delBtn.cloneNode(true));
+                });
+            },
+            delRow:function(e){
+                var row = e.target.parentNode.parentNode,
+                    index = row.rowIndex,
+                    gName = row.querySelector('td:first-child').innerHTML;
+                swal({
+                    title:"Are You Sure?",
+                    type:'warning',
+                    text:'This will remove ' + gName + ' from the list',
+                    showCancelButton:true,
+                    confirmButtonText:'Yes I\'m sure',
+                    cancelButtonText:'No what am I thinking',
+                    displayImmediately:true
+                },function(e){
+                    table.deleteRow(index);
+                });
+            }
+        },
+    },function(e){
+    });
+};
 </script>
 
 
