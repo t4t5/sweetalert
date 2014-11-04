@@ -46,6 +46,19 @@
     position: relative;
     margin: 0;
     line-height: normal; }
+  .sweet-alert .prompt-input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    margin-top: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px; }
   .sweet-alert button {
     background-color: #AEDEF4;
     color: white;
@@ -71,7 +84,7 @@
       .sweet-alert button.cancel:active {
         background-color: #b6b6b6; }
       .sweet-alert button.cancel:focus {
-        box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important; }
+        box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.04706) 0px 0px 0px 1px inset !important; }
     .sweet-alert button::-moz-focus-inner {
       border: 0; }
   .sweet-alert[data-has-cancel-button=false] button {
@@ -125,9 +138,9 @@
         left: 50%;
         bottom: 10px;
         background-color: #F8BB86; }
-    .sweet-alert .icon.info {
+    .sweet-alert .icon.info, .sweet-alert .icon.prompt {
       border-color: #C9DAE1; }
-      .sweet-alert .icon.info::before {
+      .sweet-alert .icon.info::before, .sweet-alert .icon.prompt::before {
         content: "";
         position: absolute;
         width: 5px;
@@ -137,7 +150,7 @@
         border-radius: 2px;
         margin-left: -2px;
         background-color: #C9DAE1; }
-      .sweet-alert .icon.info::after {
+      .sweet-alert .icon.info::after, .sweet-alert .icon.prompt::after {
         content: "";
         position: absolute;
         width: 7px;
@@ -603,3 +616,5 @@
   -webkit-animation: pulseWarningIns 0.75s infinite alternate;
   -moz-animation: pulseWarningIns 0.75s infinite alternate;
   animation: pulseWarningIns 0.75s infinite alternate; }
+
+/*# sourceMappingURL=sweet-alert.css.map */
