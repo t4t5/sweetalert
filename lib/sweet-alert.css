@@ -218,7 +218,12 @@
       border: none;
       background-position: center center;
       background-repeat: no-repeat; }
-
+	.sweet-alert .countdown {
+	display: none; 
+	color: #797979;
+    font-size: 16px;
+    font-weight: 300;} 
+	
 /*
  * Animations
  */

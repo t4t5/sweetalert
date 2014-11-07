@@ -92,6 +92,19 @@
 &nbsp;&nbsp;timer: <span class="str">2000</span>
 });</pre>
 	</li>
+	
+<li class="timer countdown">
+		<div class="ui">
+			<p>A message with auto close timer and countdown</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
+&nbsp;&nbsp;text: <span class="str">"This alert will self destruct in:"</span>,
+&nbsp;&nbsp;timer: <span class="str">6000,</span>
+&nbsp;&nbsp;countdown: <span class="str">true</span>
+});</pre>
+	</li>	
 
 	<li class="warning confirm">
 		<div class="ui">
@@ -299,6 +312,16 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 		title: "Auto close alert!",
 		text: "I will close in 2 seconds.",
 		timer: 2000
+	});
+};
+
+
+document.querySelector('ul.examples li.timer.countdown button').onclick = function(){
+	swal({
+		title: "Auto close alert!",
+		text: "This alert will self destruct in:",
+		timer: 6000,
+		countdown: true
 	});
 };
 
