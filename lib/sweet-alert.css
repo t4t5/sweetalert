@@ -1,5 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 .sweet-overlay {
+  background-color: rgb(0, 0, 0);/* IE8 */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";/* IE8 */
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
