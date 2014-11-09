@@ -21,7 +21,42 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
 
-#SASS
-The css is built with the `--style compressed` and `--sourcemap=none` options:
+#Examples
 
-    sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
+The most basic message:
+
+```javascript
+sweetAlert("Hello world!");
+```
+
+A message signaling an error:
+
+```javascript
+sweetAlert("Oops...", "Something went wrong!", "error");
+```
+
+A warning message, with a function attached to the "Confirm"-button..
+
+```javascript
+sweetAlert({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+}, function(){
+  swal("Deleted!",
+  "Your imaginary file has been deleted.",
+  "success");
+});
+```
+
+[View more examples](http://tristanedwards.me/sweetalert)
+
+#Related projects
+
+* [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
+* [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
+

@@ -54,6 +54,10 @@
 		font-weight: 600;
 		text-transform: none;
 		position: relative;
+		margin: 25px 0;
+		padding: 0;
+		line-height: 25px;
+		display: block;
 	}
 
 	p {
@@ -63,6 +67,7 @@
 		font-weight: 300;
 		position: relative;
 		margin: 0;
+		padding: 0;
 		line-height: normal;
 	}
 
@@ -126,6 +131,7 @@
 		border: 4px solid gray;
 		border-radius: 50%;
 		margin: 20px auto;
+		padding: 0;
 		position: relative;
 		box-sizing: content-box;
 
@@ -403,17 +409,6 @@
 .animateXMark {
 	@include animation('animateXMark 0.5s');
 }
-
-
-// Warning and info animation
-
-/*@include keyframes(simpleRotate) {
-	0%		{ transform: rotateY(0deg);    }
-  100% 	{ transform: rotateY(-360deg); }
-}
-.simpleRotate {
-	@include animation('simpleRotate 0.75s');
-}*/
 
 @include keyframes(pulseWarning) {
 	0%		{ border-color: #F8D486; }
