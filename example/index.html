@@ -307,7 +307,7 @@ document.querySelector('ul.examples li.title-text button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
-	swal("Good job!", "You clicked the button!", "success");
+	swal("Good job!", "You clicked the button, <strong>hooray!</strong>", "success");
 };
 
 document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
@@ -332,6 +332,7 @@ document.querySelector('ul.examples li.warning.cancel button').onclick = functio
 		text: "You will not be able to recover this imaginary file!",
 		type: "warning",
 		showCancelButton: true,
+		snowDenyButton: true,
 		confirmButtonColor: '#DD6B55',
 		confirmButtonText: 'Yes, delete it!',
 		cancelButtonText: "No, cancel plx!",
