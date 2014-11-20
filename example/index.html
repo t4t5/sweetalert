@@ -159,6 +159,23 @@
 });</pre>
 	</li>
 
+	<li class="save_diologue">
+		<div class="ui">
+			<p>File has changed before exit</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Save before exiting?",</span>
+&nbsp;&nbsp;text: <span class="str">"Your changes to foo.js have not been saved. Do you want to save them before exiting?"</span>,
+&nbsp;&nbsp;type:<span class="str"> "warning"</span>,
+&nbsp;&nbsp;showCancelButton:<span class="str"> true</span>,
+&nbsp;&nbsp;showrejectButton:<span class="str"> true</span>,
+&nbsp;&nbsp;confirmButtonText:<span class="str"> "Save"</span>,
+&nbsp;&nbsp;cancelButtonText:<span class="str"> "Cancel"</span>,
+&nbsp;&nbsp;rejectButtonText:<span class="str"> "Don't save"</span>
+});</pre>
+	</li>
+
 </ul>
 
 
@@ -183,12 +200,7 @@
 
 	<li>
 		<p>Call the sweetAlert-function after the page has loaded</p>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
-&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
-&nbsp;&nbsp;type: <span class="str">"error"</span>,
-&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
-});
+		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)
 </pre>
 	</li>
 </ol>
@@ -317,7 +329,7 @@ document.querySelector('ul.examples li.title-text button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
-	swal("Good job!", "You clicked the button!", "success");
+	swal("Good job!", "You clicked the button, <strong>hooray!</strong>", "success");
 };
 
 document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
@@ -362,6 +374,18 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+document.querySelector('ul.examples li.save_diologue button').onclick = function(){
+	swal({
+		title: "Save before exiting?",
+		text: "Your changes to foo.js have not been saved. Do you want to save them before exiting?",
+		type: "warning",
+		showCancelButton: true,
+		showrejectButton: true,
+		confirmButtonText: 'Save',
+		cancelButtonText: "Cancel",
+		rejectButtonText: "Don't save"
 	});
 };
 

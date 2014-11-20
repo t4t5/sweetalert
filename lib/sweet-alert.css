@@ -565,17 +565,17 @@
 
 @-webkit-keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: #FDD092; }
   100% {
     border-color: #F8BB86; } }
 @-moz-keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: #FDD092; }
   100% {
     border-color: #F8BB86; } }
 @keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: #FDD092; }
   100% {
     border-color: #F8BB86; } }
 .pulseWarning {
