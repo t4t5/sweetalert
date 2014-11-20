@@ -148,6 +148,16 @@
 &nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
 });</pre>
 	</li>
+	<li class="scrollable">
+		<div class="ui">
+			<p>Long text is scrollable</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Some very long text<br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon"</span>
+});</pre>
+	</li>
 
 </ul>
 
@@ -352,6 +362,14 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+document.querySelector('ul.examples li.scrollable button').onclick = function(){
+	swal({
+		title: "Sweet!",
+		text: "Some very long text<br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon<br><br>lorem ipsum bacon",
+		type: "success"
 	});
 };
 
