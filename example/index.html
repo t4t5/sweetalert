@@ -103,9 +103,12 @@
 &nbsp;&nbsp;text: <span class="str">"Enter your text here:"</span>,
 &nbsp;&nbsp;promptPlaceholder: <span class="str">"Your text goes here..."</span>,
 &nbsp;&nbsp;promptDefaultValue: <span class="str">"Some sweet default value"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 },
-<span class="func"><i>function</i></span>(value){
+<span class="func"><i>function</i></span>(isConfirm, value){
+&nbsp;&nbsp;<span class="tag">if</span> (isConfirm) {
 &nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Here's a message!"</span>, <span class="str">"Your prompt was: "</span> + value, <span class="str">"success"</span>);
+&nbsp;&nbsp;}
 });</pre>
 	</li>
 
@@ -324,9 +327,12 @@ document.querySelector('ul.examples li.prompt button').onclick = function(){
 		title: "Prompt!",
 		text: "Enter your text here:",
 		promptPlaceholder: "Your text goes here...",
-		promptDefaultValue: "Some sweet default value"
-	}, function(value) {
-		swal("Here's a message!", "Your prompt was: " + value, "success");
+		promptDefaultValue: "Some sweet default value",
+		showCancelButton: true,
+  }, function(isConfirm, value) {
+    if(isConfirm) {
+  		swal("Here's a message!", "Your prompt was: " + value, "success");
+    }
 	});
 };
 
