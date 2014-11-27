@@ -64,7 +64,8 @@
 		</div>
 		<pre>swal(<span class="str">"Here's a message!"</span>)</pre>
 	</li>
-
+	
+	
 	<li class="title-text">
 		<div class="ui">
 			<p>A title with a text under</p>
@@ -78,7 +79,8 @@
 			<p>A success message!</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
+		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>,
+		)</pre>
 	</li>
 
 	<li class="timer">
@@ -149,7 +151,19 @@
 });</pre>
 	</li>
 
+	<li class="videoUrl">
+			<div class="ui">
+				<p>A message with a youtube video</p>
+				<button>Try me!</button>
+			</div>
+			<pre>swal({
+	&nbsp;&nbsp;<span class="str">title: "GO CANUCKS GO!"</span>
+	&nbsp;&nbsp;<span class="str">videoUrl: 'http://www.youtube.com/embed/pvG73bCcGVc'</span>
+	});</pre>
+		</li>
 </ul>
+
+	
 
 
 <!-- Download & Install -->
@@ -352,6 +366,14 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+document.querySelector('ul.examples li.videoUrl button').onclick = function(){
+	swal({
+		title: "GO CANUCKS GO!",
+		videoUrl: 'http://www.youtube.com/embed/pvG73bCcGVc'
+			
 	});
 };
 
