@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.dltk.mod.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>JavaPrimitive</name>
+			<type>2</type>
+			<locationURI>typespace://JavaPrimitive/?group=JavaPrimitive</locationURI>
+		</link>
+		<link>
+			<name>JsBrowserLib</name>
+			<type>2</type>
+			<locationURI>typespace://JsBrowserLib/?group=JsBrowserLib</locationURI>
+		</link>
+		<link>
+			<name>JsNativeLib</name>
+			<type>2</type>
+			<locationURI>typespace://JsNativeLib/?group=JsNativeLib</locationURI>
+		</link>
+		<link>
+			<name>VjoSelfDescribed</name>
+			<type>2</type>
+			<locationURI>typespace://VjoSelfDescribed/?group=VjoSelfDescribed</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.dltk.mod.launching.PREF_INTERPRETER_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<interpreterSettings>\n<interpreterType id\="org.eclipse.vjet.eclipse.launcher.GenericRhinoInstallType">\n<interpreter environmentId\="org.eclipse.dltk.mod.core.environment.localEnvironment" id\="org.eclipse.vjet.eclipse.launching.embeddedRhino" name\="VJET Rhino Interpreter" path\="/home/linux/eclipse"/>\n</interpreterType>\n</interpreterSettings>\n

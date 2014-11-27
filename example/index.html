@@ -76,10 +76,10 @@
 
 	<li class="success">
 		<div class="ui">
-			<p>A success message!</p>
+			<p>A success message, with select bolded text</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>,
+		<pre>swal(<span class="str">"Good job!", "You clicked the button, &ltstrong&gthooray!&lt/strong&gt"</span>, <span class="str">"success"</span>
 		)</pre>
 	</li>
 
@@ -345,7 +345,7 @@ document.querySelector('ul.examples li.title-text button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
-	swal("Good job!", "You clicked the button, <strong>hooray!</strong>", "success");
+	swal("Good job!", "You clicked the button,<strong>hooray!</strong>", "success");
 };
 
 document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
@@ -392,6 +392,8 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		imageUrl: 'images/thumbs-up.jpg'
 	});
 };
+
+
 document.querySelector('ul.examples li.save_diologue button').onclick = function(){
 	swal({
 		title: "Save before exiting?",
@@ -420,12 +422,19 @@ document.querySelector('ul.examples li.videoUrl button').onclick = function(){
 		videoUrl: 'http://www.youtube.com/embed/pvG73bCcGVc'
 			
 	});
-};
+  };
 
 </script>
-
 
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+      

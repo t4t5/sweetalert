@@ -1,0 +1,609 @@
+!SESSION 2014-11-13 12:19:17.440 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.ui.browser 2 0 2014-11-13 12:19:44.749
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.ui 4 0 2014-11-13 12:30:22.649
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Argument not valid
+	at org.eclipse.swt.SWT.error(SWT.java:4378)
+	at org.eclipse.swt.SWT.error(SWT.java:4312)
+	at org.eclipse.swt.SWT.error(SWT.java:4283)
+	at org.eclipse.swt.custom.StyledText.getOffsetAtLocation(StyledText.java:4399)
+	at org.eclipse.epp.internal.mpc.ui.wizards.DiscoveryItem$LinkListener.mouseUp(DiscoveryItem.java:131)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3742)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3363)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:826)
+	at org.eclipse.jface.window.Window.open(Window.java:802)
+	at org.eclipse.epp.internal.mpc.ui.commands.MarketplaceWizardCommand.execute(MarketplaceWizardCommand.java:191)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:290)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:622)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:243)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:224)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:167)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.executeItem(HandledContributionItem.java:850)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.handleWidgetSelection(HandledContributionItem.java:743)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.access$7(HandledContributionItem.java:727)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem$4.handleEvent(HandledContributionItem.java:662)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3742)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3363)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:622)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-11-13 12:34:56.188
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.equinox.p2.operations.ProfileModificationJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-11-13 12:34:56.189
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.equinox.internal.p2.artifact.repository.simple.DownloadJob
+!SESSION 2014-11-13 12:34:56.880 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 2 0 2014-11-13 12:35:00.367
+!MESSAGE An error occurred while loading the manifest /home/linux/eclipse/plugins/org.eclipse.wst.css.core_1.1.702.v201312092033.jar.
+!STACK 0
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:132)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.basicLoadManifest(BundlesAction.java:626)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.loadManifest(BundlesAction.java:597)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescription(BundlesAction.java:574)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescriptionIgnoringExceptions(BundlesAction.java:558)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.processBundle(RepositoryListener.java:141)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.process(RepositoryListener.java:136)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.added(RepositoryListener.java:117)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.added(BundlePoolFilteredListener.java:42)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.added(SiteListener.java:336)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.processFile(DirectoryWatcher.java:197)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.scanDirectories(DirectoryWatcher.java:160)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:108)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:111)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationArtifactRepository.ensureInitialized(ExtensionLocationArtifactRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationArtifactRepository.getProperties(ExtensionLocationArtifactRepository.java:259)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.touchpoint.eclipse.Util.getRunnableRepositories(Util.java:157)
+	at org.eclipse.equinox.internal.p2.touchpoint.eclipse.Util.getAggregatedBundleRepository(Util.java:149)
+	at org.eclipse.equinox.internal.p2.extensionlocation.Activator.getBundlePoolRepository(Activator.java:87)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.<init>(BundlePoolFilteredListener.java:29)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:109)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.ensureInitialized(ExtensionLocationMetadataRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.getProperties(ExtensionLocationMetadataRepository.java:194)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.loadMetadataRepository(Activator.java:99)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.synchronizeConfiguration(PlatformXmlListener.java:227)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.stopPoll(PlatformXmlListener.java:133)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.stopPoll(DirectoryWatcher.java:171)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:109)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.watchConfiguration(Activator.java:518)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:174)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 2 0 2014-11-13 12:35:00.499
+!MESSAGE An error occurred while loading the manifest /home/linux/eclipse/plugins/org.eclipse.wst.css.core_1.1.702.v201312092033.jar.
+!STACK 0
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:132)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.basicLoadManifest(BundlesAction.java:626)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.loadManifest(BundlesAction.java:597)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescription(BundlesAction.java:574)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescriptionIgnoringExceptions(BundlesAction.java:558)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.processBundle(RepositoryListener.java:141)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.process(RepositoryListener.java:136)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.added(RepositoryListener.java:117)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.added(BundlePoolFilteredListener.java:42)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.added(SiteListener.java:336)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.processFile(DirectoryWatcher.java:197)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.scanDirectories(DirectoryWatcher.java:160)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:108)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:111)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.ensureInitialized(ExtensionLocationMetadataRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.getProperties(ExtensionLocationMetadataRepository.java:194)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.loadMetadataRepository(Activator.java:99)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.synchronizeConfiguration(PlatformXmlListener.java:227)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.stopPoll(PlatformXmlListener.java:133)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.stopPoll(DirectoryWatcher.java:171)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:109)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.watchConfiguration(Activator.java:518)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:174)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.update.configurator 4 0 2014-11-13 12:35:00.916
+!MESSAGE Unable to access file "plugins/org.eclipse.wst.css.core_1.1.702.v201312092033.jar!META-INF/MANIFEST.MF".
+
+!ENTRY org.eclipse.ui.browser 2 0 2014-11-13 12:35:24.478
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:09.056
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:16.926
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:18.284
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:20.520
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:21.427
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:22.670
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:24.018
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:24.888
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:25.663
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:26.396
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:27.975
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:28.704
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:29.710
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:30.482
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:31.203
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:31.921
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:32.878
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:37.626
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:38.584
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:39.298
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:43.151
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:44.066
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:45.415
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:46.382
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:47.393
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:48.200
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:49.025
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:50.734
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:51.586
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:52.586
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:53.190
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:53.990
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:57.876
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:58.689
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:36:59.498
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:00.153
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:00.913
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:01.757
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:02.988
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:03.742
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:04.506
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:05.260
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:06.270
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:07.249
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:08.364
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:09.199
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:10.167
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:11.471
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:12.381
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:13.942
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:15.514
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:16.681
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:17.431
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:18.256
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:19.187
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:20.099
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:21.057
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:21.888
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:23.164
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:23.780
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:24.599
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:25.314
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:26.129
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:26.761
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:27.611
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:28.891
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:29.654
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:30.557
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:31.338
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:32.208
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:33.351
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:34.217
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:35.013
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:35.685
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:36.481
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:38.065
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:38.672
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:39.385
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:43.096
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:43.991
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:44.873
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:45.568
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:46.324
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:47.002
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:47.722
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:48.410
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:49.660
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:50.462
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:51.179
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:51.897
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:52.912
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:53.667
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:54.536
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:56.002
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:56.999
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:58.064
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:37:59.134
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:38:11.461
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2014-11-13 12:38:18.677
+!MESSAGE Server returned lastModified <= 0 for http://maven.apache.org/download.cgi/artifacts.jar
+!SESSION 2014-11-13 12:39:36.591 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 2 0 2014-11-13 12:39:44.312
+!MESSAGE An error occurred while loading the manifest /home/linux/eclipse/plugins/org.eclipse.wst.css.core_1.1.702.v201312092033.jar.
+!STACK 0
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:132)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.basicLoadManifest(BundlesAction.java:626)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.loadManifest(BundlesAction.java:597)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescription(BundlesAction.java:574)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescriptionIgnoringExceptions(BundlesAction.java:558)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.processBundle(RepositoryListener.java:141)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.process(RepositoryListener.java:136)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.added(RepositoryListener.java:117)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.added(BundlePoolFilteredListener.java:42)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.added(SiteListener.java:336)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.processFile(DirectoryWatcher.java:197)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.scanDirectories(DirectoryWatcher.java:160)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:108)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:111)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationArtifactRepository.ensureInitialized(ExtensionLocationArtifactRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationArtifactRepository.getProperties(ExtensionLocationArtifactRepository.java:259)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.touchpoint.eclipse.Util.getRunnableRepositories(Util.java:157)
+	at org.eclipse.equinox.internal.p2.touchpoint.eclipse.Util.getAggregatedBundleRepository(Util.java:149)
+	at org.eclipse.equinox.internal.p2.extensionlocation.Activator.getBundlePoolRepository(Activator.java:87)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.<init>(BundlePoolFilteredListener.java:29)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:109)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.ensureInitialized(ExtensionLocationMetadataRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.getProperties(ExtensionLocationMetadataRepository.java:194)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.loadMetadataRepository(Activator.java:99)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.synchronizeConfiguration(PlatformXmlListener.java:227)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.stopPoll(PlatformXmlListener.java:133)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.stopPoll(DirectoryWatcher.java:171)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:109)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.watchConfiguration(Activator.java:518)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:174)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 2 0 2014-11-13 12:39:44.498
+!MESSAGE An error occurred while loading the manifest /home/linux/eclipse/plugins/org.eclipse.wst.css.core_1.1.702.v201312092033.jar.
+!STACK 0
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:132)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.basicLoadManifest(BundlesAction.java:626)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.loadManifest(BundlesAction.java:597)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescription(BundlesAction.java:574)
+	at org.eclipse.equinox.p2.publisher.eclipse.BundlesAction.createBundleDescriptionIgnoringExceptions(BundlesAction.java:558)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.processBundle(RepositoryListener.java:141)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.process(RepositoryListener.java:136)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.RepositoryListener.added(RepositoryListener.java:117)
+	at org.eclipse.equinox.internal.p2.extensionlocation.BundlePoolFilteredListener.added(BundlePoolFilteredListener.java:42)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.added(SiteListener.java:336)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.processFile(DirectoryWatcher.java:197)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.scanDirectories(DirectoryWatcher.java:160)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:108)
+	at org.eclipse.equinox.internal.p2.extensionlocation.SiteListener.synchronizeRepositories(SiteListener.java:111)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.ensureInitialized(ExtensionLocationMetadataRepository.java:66)
+	at org.eclipse.equinox.internal.p2.extensionlocation.ExtensionLocationMetadataRepository.getProperties(ExtensionLocationMetadataRepository.java:194)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:129)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:674)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.loadMetadataRepository(Activator.java:99)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.synchronizeConfiguration(PlatformXmlListener.java:227)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.PlatformXmlListener.stopPoll(PlatformXmlListener.java:133)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.stopPoll(DirectoryWatcher.java:171)
+	at org.eclipse.equinox.internal.provisional.p2.directorywatcher.DirectoryWatcher.poll(DirectoryWatcher.java:109)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.watchConfiguration(Activator.java:518)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:174)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
