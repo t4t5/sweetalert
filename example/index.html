@@ -64,7 +64,8 @@
 		</div>
 		<pre>swal(<span class="str">"Here's a message!"</span>)</pre>
 	</li>
-
+	
+	
 	<li class="title-text">
 		<div class="ui">
 			<p>A title with a text under</p>
@@ -75,10 +76,11 @@
 
 	<li class="success">
 		<div class="ui">
-			<p>A success message!</p>
+			<p>A success message, with select bolded text</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
+		<pre>swal(<span class="str">"Good job!", "You clicked the button, &ltstrong&gthooray!&lt/strong&gt"</span>, <span class="str">"success"</span>
+		)</pre>
 	</li>
 
 	<li class="timer">
@@ -148,8 +150,49 @@
 &nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
 });</pre>
 	</li>
+	<li class="scrollable">
+		<div class="ui">
+			<p>Long text is scrollable</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Long Text"</span>,
+&nbsp;&nbsp;text: <span class="str">"Some very long service agreement&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon&lt;br&gt;lorem ipsum bacon"</span>,
+&nbsp;&nbsp;type: <span class="str">"Success"</span>,
+&nbsp;&nbsp;scrollHeight: <span class="str">"140"</span>
+});</pre>
+	</li>
 
+	<li class="save_diologue">
+		<div class="ui">
+			<p>File has changed before exit</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Save before exiting?",</span>
+&nbsp;&nbsp;text: <span class="str">"Your changes to foo.js have not been saved. Do you want to save them before exiting?"</span>,
+&nbsp;&nbsp;type:<span class="str"> "warning"</span>,
+&nbsp;&nbsp;showCancelButton:<span class="str"> true</span>,
+&nbsp;&nbsp;showrejectButton:<span class="str"> true</span>,
+&nbsp;&nbsp;confirmButtonText:<span class="str"> "Save"</span>,
+&nbsp;&nbsp;cancelButtonText:<span class="str"> "Cancel"</span>,
+&nbsp;&nbsp;rejectButtonText:<span class="str"> "Don't save"</span>
+});</pre>
+	</li>
+
+	<li class="videoUrl">
+			<div class="ui">
+				<p>A message with a youtube video</p>
+				<button>Try me!</button>
+			</div>
+			<pre>swal({
+	&nbsp;&nbsp;<span class="str">title: "GO CANUCKS GO!"</span>
+	&nbsp;&nbsp;<span class="str">videoUrl: 'http://www.youtube.com/embed/pvG73bCcGVc'</span>
+	});</pre>
+		</li>
 </ul>
+
+	
 
 
 <!-- Download & Install -->
@@ -173,12 +216,7 @@
 
 	<li>
 		<p>Call the sweetAlert-function after the page has loaded</p>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Error!"</span>,
-&nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
-&nbsp;&nbsp;type: <span class="str">"error"</span>,
-&nbsp;&nbsp;confirmButtonText: <span class="str">"Cool"</span>
-});
+		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)
 </pre>
 	</li>
 </ol>
@@ -287,7 +325,7 @@ document.querySelector('.showcase.normal button').onclick = function(){
 };
 
 document.querySelector('.showcase.sweet button').onclick = function(){
-	swal("Oops...", "Something went wrong!", "error");
+	swal("Oops...", "<strong><h2>Something</h2> went <i>wrong!</i></strong>", "error");
 };
 
 document.querySelector('ul.examples li.message button').onclick = function(){
@@ -307,7 +345,7 @@ document.querySelector('ul.examples li.title-text button').onclick = function(){
 };
 
 document.querySelector('ul.examples li.success button').onclick = function(){
-	swal("Good job!", "You clicked the button!", "success");
+	swal("Good job!", "You clicked the button,<strong>hooray!</strong>", "success");
 };
 
 document.querySelector('ul.examples li.warning.confirm button').onclick = function(){
@@ -355,10 +393,48 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 	});
 };
 
-</script>
 
+document.querySelector('ul.examples li.save_diologue button').onclick = function(){
+	swal({
+		title: "Save before exiting?",
+		text: "Your changes to foo.js have not been saved. Do you want to save them before exiting?",
+		type: "warning",
+		showCancelButton: true,
+		showrejectButton: true,
+		confirmButtonText: 'Save',
+		cancelButtonText: "Cancel",
+		rejectButtonText: "Don't save"
+	});
+};
+
+document.querySelector('ul.examples li.scrollable button').onclick = function(){
+	swal({
+		title: "Long Text",
+		text: "Some very long service agreement<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon<br>lorem ipsum bacon",
+		type: "success",
+		scrollHeight: 140
+	});
+};
+
+document.querySelector('ul.examples li.videoUrl button').onclick = function(){
+	swal({
+		title: "GO CANUCKS GO!",
+		videoUrl: 'http://www.youtube.com/embed/pvG73bCcGVc'
+			
+	});
+  };
+
+</script>
 
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+      
