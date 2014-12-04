@@ -7,7 +7,7 @@
   top: 0;
   bottom: 0;
   display: none;
-  z-index: 1000; }
+  z-index: 10000; }
 
 .sweet-alert {
   background-color: white;
@@ -23,7 +23,7 @@
   margin-top: -200px;
   overflow: hidden;
   display: none;
-  z-index: 2000; }
+  z-index: 99999; }
   @media all and (max-width: 540px) {
     .sweet-alert {
       width: auto;
