@@ -42,6 +42,7 @@ sweetAlert({
   title: "Are you sure?",
   text: "You will not be able to recover this imaginary file!",
   type: "warning",
+  showConfirmButton: true,
   showCancelButton: true,
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
