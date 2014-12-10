@@ -1,4 +1,4 @@
-#SweetAlert
+#SweetAlert with *'showConfirmButton'* option
 
 An awesome replacement for JavaScript's alert.
 
