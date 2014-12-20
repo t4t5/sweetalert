@@ -148,6 +148,7 @@
         position: absolute;
         width: 7px;
         height: 7px;
+        left: 50%;          /* fix for info icon dot */
         border-radius: 50%;
         margin-left: -3px;
         top: 19px;
