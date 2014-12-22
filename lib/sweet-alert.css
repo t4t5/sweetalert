@@ -40,7 +40,7 @@
     position: relative;
     margin: 25px 0;
     padding: 0;
-    line-height: 25px;
+    line-height: 40px;
     display: block; }
   .sweet-alert p {
     color: #797979;
@@ -48,6 +48,8 @@
     text-align: center;
     font-weight: 300;
     position: relative;
+    text-align: inherit;
+    float: none;
     margin: 0;
     padding: 0;
     line-height: normal; }
