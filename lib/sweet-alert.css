@@ -1,4 +1,3 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 .sweet-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -11,7 +10,7 @@
 
 .sweet-alert {
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 478px;
   padding: 17px;
   border-radius: 5px;
