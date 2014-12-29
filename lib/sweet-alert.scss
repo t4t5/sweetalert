@@ -346,13 +346,22 @@
 	80% 	{ transform: scale(0.95); -webkit-tranform: scale(0.95); 	}
 	100% 	{ transform: scale(1); 		-webkit-transform: scale(1); 		}
 }
+@include keyframes(showSweetAlertSmoothEasing) {
+  0% 		{ transform: scale(0.7); 	-webkit-transform: scale(0.7); 	}
+	100% 	{ transform: scale(1); 		-webkit-transform: scale(1); 		}
+}
 @include keyframes(hideSweetAlert) {
   0% 		{ transform: scale(1); 		-webkit-transform: scale(1); 		}
 	100% 	{ transform: scale(0.5); 	-webkit-transform: scale(0.5); 	}
 }
 
 .showSweetAlert {
-  @include animation('showSweetAlert 0.3s');
+	&.smoothEasing {
+		@include animation('showSweetAlertSmoothEasing 0.3s');
+	}
+	&:not(.smoothEasing) {
+		@include animation('showSweetAlert 0.3s');
+	}
 }
 .hideSweetAlert {
   @include animation('hideSweetAlert 0.2s');
