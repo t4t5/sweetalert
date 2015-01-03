@@ -45,7 +45,8 @@ sweetAlert({
   showCancelButton: true,
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
+  closeOnConfirm: false,
+  html: false
 }, function(){
   swal("Deleted!",
   "Your imaginary file has been deleted.",
