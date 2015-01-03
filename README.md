@@ -1,24 +1,24 @@
-#SweetAlert
+#SweetAlert2
 
 An awesome replacement for JavaScript's alert.
 
-[See it in action!](http://tristanedwards.me/sweetalert)
+[See it in action!](https://limonte.github.io/sweetalert2/)
 
-![A success modal](https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif)
+![A success modal](https://raw.github.com/limonte/sweetalert2/master/sweetalert.gif)
 
 #Usage
 
-You can install SweetAlert through bower:
+You can install SweetAlert2 through bower:
 
 ```bash
-bower install sweetalert
+bower install sweetalert2
 ```
 
 Alternatively, download the package and reference the JavaScript and CSS files manually:
 
 ```html
-<script src="lib/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+<script src="dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/sweetalert2.css">
 ```
 
 #Examples
@@ -46,17 +46,18 @@ sweetAlert({
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
   closeOnConfirm: false
-}, function(){
+}, function() {
   swal("Deleted!",
   "Your imaginary file has been deleted.",
   "success");
 });
 ```
 
-[View more examples](http://tristanedwards.me/sweetalert)
+[View more examples](https://limonte.github.io/sweetalert2/)
 
 #Related projects
 
+* [SweetAlert](https://github.com/t4t5/sweetalert)
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
 
