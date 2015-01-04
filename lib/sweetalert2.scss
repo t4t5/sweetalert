@@ -2,8 +2,6 @@
 // 2014 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300); // Open Sans font
-
 .sweet-overlay {
 	background-color: rgba(black, 0.4);
 
@@ -22,7 +20,7 @@
 	$padding: 17px;
 
 	background-color: white;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	width: $width;
 	padding: $padding;
 	border-radius: 5px;
