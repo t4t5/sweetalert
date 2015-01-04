@@ -117,7 +117,7 @@
 &nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
 },
-<span class="func"><i>function</i></span>(){
+<span class="func"><i>function</i></span>() {
 &nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
 });</pre>
   </li>
@@ -138,7 +138,7 @@
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
 &nbsp;&nbsp;closeOnCancel: <span class="val">false</span>
 },
-<span class="func"><i>function</i></span>(isConfirm){
+<span class="func"><i>function</i></span>(isConfirm) {
 &nbsp;&nbsp;<span class="tag">if</span> (isConfirm) {
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
 &nbsp;&nbsp;} <span class="tag">else</span> {
@@ -297,6 +297,16 @@
     <td><b>timer</b></td>
     <td><i>null</i></td>
     <td>Auto close timer of the modal. Set in ms (milliseconds).</td>
+  </tr>
+  <tr>
+    <td><b>width</b></td>
+    <td><i>500</i></td>
+    <td>Modal window width.</td>
+  </tr>
+  <tr>
+    <td><b>padding</b></td>
+    <td><i>17</i></td>
+    <td>Modal window padding.</td>
   </tr>
 </table>
 

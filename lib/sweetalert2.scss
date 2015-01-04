@@ -16,34 +16,20 @@
 }
 
 .sweet-alert {
-  $width: 478px;
-  $padding: 17px;
-
   background-color: white;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: $width;
-  padding: $padding;
   border-radius: 5px;
+  box-sizing: border-box;
   text-align: center;
 
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -($width/2 + $padding);
   margin-top: -200px;
 
   overflow: hidden;
   display: none;
   z-index: 2000;
-
-  @media all and (max-width: 540px) {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-
-    left: 15px;
-    right: 15px;
-  }
 
   h2 {
     color: #575757;
