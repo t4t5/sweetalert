@@ -93,6 +93,16 @@
 });</pre>
   </li>
 
+  <li class="html">
+    <div class="ui">
+      <p>Custom HTML description</p>
+      <button>Try me!</button>
+    </div>
+    <pre>swal({
+&nbsp;&nbsp;html: <span class="str">'&lt;b&gt;Custom HTML&lt;/b&gt;: &lt;a href="https://github.com/"&gt;Link example&lt;/a&gt;'</span>,
+});</pre>
+  </li>
+
   <li class="warning confirm">
     <div class="ui">
       <p>A warning message, with a function attached to the "Confirm"-button...</p>
@@ -204,13 +214,18 @@
   </tr>
   <tr>
     <td><b>title</b></td>
-    <td><i>null (required)</i></td>
+    <td><i>null</i></td>
     <td>The title of the modal. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
   </tr>
   <tr>
     <td><b>text</b></td>
     <td><i>null</i></td>
     <td>A description for the modal. It can either be added to the object under the key "text" or passed as the second parameter of the function.</td>
+  </tr>
+  <tr>
+    <td><b>html</b></td>
+    <td><i>null</i></td>
+    <td>A HTML description for the modal. If "text" and "html" parameters are provided in the same time, "text" will be used.</td>
   </tr>
   <tr>
     <td><b>type</b></td>
@@ -297,6 +312,12 @@ document.querySelector('ul.examples li.timer button').onclick = function() {
     title: 'Auto close alert!',
     text: 'I will close in 2 seconds.',
     timer: 2000
+  });
+};
+
+document.querySelector('ul.examples li.html button').onclick = function() {
+  swal({
+    html: '<b>Custom HTML</b>: <a href="https://github.com/">Link example</a>'
   });
 };
 
