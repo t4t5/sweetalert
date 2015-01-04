@@ -311,11 +311,19 @@
   -webkit-animation: showSweetAlert 0.3s;
   -moz-animation: showSweetAlert 0.3s;
   animation: showSweetAlert 0.3s; }
+  .showSweetAlert.no-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none; }
 
 .hideSweetAlert {
   -webkit-animation: hideSweetAlert 0.2s;
   -moz-animation: hideSweetAlert 0.2s;
   animation: hideSweetAlert 0.2s; }
+  .hideSweetAlert.no-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none; }
 
 @-webkit-keyframes animateSuccessTip {
   0% {

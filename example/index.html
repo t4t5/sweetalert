@@ -149,13 +149,14 @@
 
   <li class="custom-icon">
     <div class="ui">
-      <p>A message with a custom icon</p>
+      <p>A message with a custom icon and CSS animation disabled</p>
       <button>Try me!</button>
     </div>
     <pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
 &nbsp;&nbsp;text: <span class="str">"Here's a custom image."</span>,
-&nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
+&nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>,
+&nbsp;&nbsp;animation: <span class="str">false</span>
 });</pre>
   </li>
 
@@ -236,6 +237,11 @@
     <td><b>customClass</b></td>
     <td><i>null</i></td>
     <td>A custom CSS class for the modal. It can be added to the object under the key "customClass".</td>
+  </tr>
+  <tr>
+    <td><b>animation</b></td>
+    <td><i>true</i></td>
+    <td>If set to <strong>false</strong>, modal CSS animation will be disabled.</td>
   </tr>
   <tr>
     <td><b>allowOutsideClick</b></td>
@@ -380,7 +386,8 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
   swal({
     title: 'Sweet!',
     text: 'Here\'s a custom image.',
-    imageUrl: 'images/thumbs-up.jpg'
+    imageUrl: 'images/thumbs-up.jpg',
+    animation: false
   });
 };
 </script>
