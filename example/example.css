@@ -1,31 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 body {
   background-color: #f2f4f6;
   font-family: 'Open Sans', sans-serif;
   text-align: center; }
 
 h1 {
-  background-image: url("images/logo_big.png");
-  background-image: -webkit-image-set(url("images/logo_big.png") 1x, url("images/logo_big@2x.png") 2x);
-  width: 385px;
-  height: 81px;
-  text-indent: -9999px;
+  font-family: 'Courgette', serif;
+  font-size: 60px;
+  color: #aaa;
   white-space: nowrap;
   margin: 50px auto; }
-  @media all and (max-width: 420px) {
-    h1 {
-      width: 300px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media all and (max-width: 330px) {
-    h1 {
-      width: 250px; } }
+  h1 span {
+    margin: 0 10px;
+    color: #f77; }
 
 h2 {
   font-size: 20px;
-  color: #A9B2BC;
+  color: #a9b2bc;
   line-height: 25px;
   text-transform: uppercase;
   font-weight: 300;
@@ -34,17 +26,17 @@ h2 {
 
 h3 {
   font-size: 28px;
-  color: #C7CCD1;
+  color: #c7ccd1;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed', sans-serif;
   margin-top: 100px;
   text-align: center;
   position: relative; }
-  h3#download-section {
+  h3.download-section {
     margin-top: 50px;
     padding-top: 40px; }
   h3::after {
-    content: "";
+    content: '';
     background-color: #e2e5e8;
     height: 4px;
     width: 700px;
@@ -68,37 +60,34 @@ p {
   margin: 30px auto;
   font-size: 17px;
   font-weight: 300;
-  color: #848D94;
+  color: #848d94;
   line-height: 25px;
   text-align: left; }
   p.center {
     text-align: center; }
   p strong {
-    color: #8A8F94;
+    color: #8a8f94;
     font-weight: 600; }
   p a {
-    color: #9ECADF;
+    color: #9ecadf;
     font-weight: 600; }
     p a:hover {
       text-decoration: underline; }
     p a.twitter {
       color: #5eaade; }
-    p a.dribbble {
-      color: #f26798; }
     p a.github {
       color: #323131; }
 
 button, .button {
-  background-color: #AEDEF4;
-  color: white;
-  border: none;
+  background-color: #aedef4;
+  color: #fff;
+  border: 0;
   box-shadow: none;
   font-size: 17px;
   font-weight: 500;
-  font-weight: 600;
   border-radius: 3px;
   padding: 15px 35px;
-  margin: 26px 5px 0 5px;
+  margin: 26px 5px 0;
   cursor: pointer; }
   button:focus, .button:focus {
     outline: none; }
@@ -107,7 +96,7 @@ button, .button {
   button:active, .button:active {
     background-color: #81ccee; }
   button.cancel, .button.cancel {
-    background-color: #D0D0D0; }
+    background-color: #d0d0d0; }
     button.cancel:hover, .button.cancel:hover {
       background-color: #c8c8c8; }
     button.cancel:active, .button.cancel:active {
@@ -117,7 +106,7 @@ button, .button {
     right: 30px;
     top: 0;
     background-color: rgba(255, 255, 255, 0.9);
-    color: #ABCADA;
+    color: #abcada;
     font-weight: 500;
     text-transform: uppercase;
     z-index: 3; }
@@ -165,17 +154,17 @@ pre {
       width: auto; } }
   .showcase h4 {
     font-size: 16px;
-    color: #BCBCBC;
+    color: #bcbcbc;
     line-height: 22px;
     margin: 0 auto;
     font-weight: 400; }
   .showcase.sweet h4 {
-    width: 117px;
-    height: 25px;
-    margin-top: -3px;
-    text-indent: -9999px;
-    background-image: url("images/logo_small.png");
-    background-image: -webkit-image-set(url("images/logo_small.png") 1x, url("images/logo_small@2x.png") 2x); }
+    font-family: 'Courgette', serif;
+    font-size: 24px;
+    color: #aaa; }
+    .showcase.sweet h4 span {
+      margin: 0 4px;
+      color: #f77; }
   .showcase h5 {
     margin-bottom: -7px;
     text-align: left;
@@ -202,41 +191,41 @@ pre {
         top: auto;
         bottom: -35px; } }
 
-ul.examples {
+.examples {
   list-style-type: none;
   width: 700px;
   margin: 0 auto;
   text-align: left;
   padding-left: 0; }
   @media all and (max-width: 758px) {
-    ul.examples {
+    .examples {
       width: auto; } }
-  ul.examples li {
+  .examples li {
     padding-left: 0; }
-  ul.examples .ui, ul.examples pre {
+  .examples .ui, .examples pre {
     display: inline-block;
     vertical-align: top; }
     @media all and (max-width: 758px) {
-      ul.examples .ui, ul.examples pre {
+      .examples .ui, .examples pre {
         display: block;
         max-width: none;
         margin: 0 auto; } }
-  ul.examples .ui {
+  .examples .ui {
     width: 300px;
     text-align: center; }
-    ul.examples .ui button {
+    .examples .ui button {
       margin-top: 12px; }
-    ul.examples .ui p {
+    .examples .ui p {
       text-align: center;
       margin-bottom: 0; }
-  ul.examples pre {
+  .examples pre {
     max-width: 370px;
     margin-top: 67px; }
     @media all and (max-width: 758px) {
-      ul.examples pre {
+      .examples pre {
         margin-top: 16px !important;
         margin-bottom: 60px; } }
-  ul.examples .warning pre {
+  .examples .warning pre {
     margin-top: 93px; }
 
 ol {
@@ -245,7 +234,7 @@ ol {
   list-style-position: inside;
   padding-left: 0; }
   ol li {
-    color: #A7ADB2; }
+    color: #a7adb2; }
     ol li p {
       margin-bottom: 10px; }
 
@@ -261,7 +250,7 @@ table {
       width: auto;
       margin: 10px 20px; } }
   table th {
-    background-color: white;
+    background-color: #fff;
     padding: 9px;
     color: #acb9be;
     font-weight: 400;
@@ -269,7 +258,7 @@ table {
     position: relative; }
     table th .border-left, table th .border-right {
       position: absolute;
-      background-color: white;
+      background-color: #fff;
       border-radius: 50%;
       top: 0;
       left: -17px;
@@ -280,17 +269,19 @@ table {
       right: -17px; }
     @media all and (max-width: 750px) {
       table th:nth-child(2) {
-        display: none; } }
+        display: none; }
+ }
   table td {
     padding: 10px 20px;
     vertical-align: top; }
     table td:first-child {
-      padding-left: 0px; }
+      padding-left: 0; }
     table td:last-child {
-      padding-right: 0px; }
+      padding-right: 0; }
     @media all and (max-width: 750px) {
       table td:nth-child(2) {
-        display: none; } }
+        display: none; }
+ }
     @media all and (max-width: 360px) {
       table td {
         padding: 10px 4px; }
@@ -300,13 +291,10 @@ table {
 footer {
   margin-top: 100px;
   padding-bottom: 30px;
-  color: #9A999F;
+  color: #9a999f;
   display: inline-block;
   position: relative;
-  color: gray;
-  font-weight: 400;
-  color: #93a1aa;
-  font-weight: 300; }
+  font-weight: 400; }
   footer .te-logo {
     text-indent: -99999px;
     background-size: contain;
@@ -316,7 +304,7 @@ footer {
     width: 16px;
     display: inline-block;
     margin-right: 5px;
-    background-image: url("images/te-logo-small.svg");
+    background-image: url('images/te-logo-small.svg');
     position: absolute;
     left: -22px;
     top: 3px; }

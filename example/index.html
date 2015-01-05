@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert2</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette">
   <link rel="stylesheet" href="./example.css">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
@@ -20,13 +21,13 @@
 
 <body>
 
-<h1>SweetAlert2</h1>
+<h1>Sweet<span>Alert</span>2</h1>
 <h2>A beautiful replacement for Javascript's "Alert"</h2>
 <button class="download">Download</button>
 
 <!-- What does it do? -->
 <h3>So... What does it do?</h3>
-<p>Here’s a comparison of a standard error message. The first one uses the built-in <strong>alert</strong>-function, while the second is using <strong>sweetAlert</strong>.</p>
+<p>Here’s a comparison of a standard error message. The first one uses the built-in <strong>alert</strong>-function, while the second is using <strong>SweetAlert2</strong>.</p>
 
 <div class="showcase normal">
   <h4>Normal alert</h4>
@@ -41,7 +42,7 @@
 </div>
 
 <div class="showcase sweet">
-  <h4>Sweet Alert 2</h4>
+  <h4>Sweet<span>Alert</span>2</h4>
   <button>Show error message</button>
 
   <h5>Code:</h5>
@@ -54,7 +55,7 @@
 <!-- Examples -->
 <h3>More examples</h3>
 
-<p class="center">In these examples, we're using the shorthand function <strong>swal</strong> to call sweetAlert2.</p>
+<p class="center">In these examples, we're using the shorthand function <strong>swal</strong>.</p>
 
 <ul class="examples">
 
@@ -165,7 +166,7 @@
 
 
 <!-- Download & Install -->
-<h3 id="download-section">Download & install</h3>
+<h3 class="download-section">Download & install</h3>
 
 <div class="center-container">
   <p class="center"><b>Method 1:</b> Install through bower:</p>
@@ -319,7 +320,7 @@
 
 <script>
 document.querySelector('button.download').onclick = function() {
-  $('html, body').animate({ scrollTop: $('#download-section').offset().top }, 1000);
+  $('html, body').animate({ scrollTop: $('.download-section').offset().top }, 1000);
 };
 
 document.querySelector('.showcase.normal button').onclick = function() {

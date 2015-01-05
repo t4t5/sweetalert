@@ -8,51 +8,50 @@
 }
 
 body {
-	background-color: #f2f4f6;
+  background-color: #f2f4f6;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
 h1 {
-  @include retina-background("images/logo_big"); 
-  width: 385px;
-  height: 81px;
-  text-indent: -9999px;
+  font-family: 'Courgette', serif;
+  font-size: 60px;
+  color: #aaa;
   white-space: nowrap;
   margin: 50px auto;
-  @media all and (max-width: 420px) {
-    width: 300px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  @media all and (max-width: 330px) {
-    width: 250px;
+
+  span {
+    margin: 0 10px;
+    color: #f77;
   }
 }
+
 h2 {
   font-size: 20px;
-  color: #A9B2BC;
+  color: #a9b2bc;
   line-height: 25px;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
   display: block;
 }
+
 h3 {
   font-size: 28px;
-  color: #C7CCD1;
+  color: #c7ccd1;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed', sans-serif;
   margin-top: 100px;
   text-align: center;
   position: relative;
-  &#download-section {
+
+  &.download-section {
     margin-top: 50px;
     padding-top: 40px;
   }
+
   &::after {
-    content: "";
+    content: '';
     background-color: #e2e5e8;
     height: 4px;
     width: 700px;
@@ -80,74 +79,83 @@ p {
   margin: 30px auto;
   font-size: 17px;
   font-weight: 300;
-  color: #848D94;
+  color: #848d94;
   line-height: 25px;
   text-align: left;
+
   &.center {
     text-align: center;
   }
 
   strong {
-    color: #8A8F94;
+    color: #8a8f94;
     font-weight: 600;
   }
+
   a {
-    color: #9ECADF;
+    color: #9ecadf;
     font-weight: 600;
+
     &:hover {
       text-decoration: underline;
     }
+
     &.twitter {
       color: #5eaade;
     }
-    &.dribbble {
-      color: #f26798;
-    }
+
     &.github {
       color: #323131;
     }
   }
 }
 
-button, .button {
-  $btnBlue: #AEDEF4;
-  $btnGray: #D0D0D0;
+button,
+.button {
+  $btn-blue: #aedef4;
+  $btn-gray: #d0d0d0;
 
-  background-color: $btnBlue;
-  color: white;
-  border: none;
+  background-color: $btn-blue;
+  color: #fff;
+  border: 0;
   box-shadow: none;
   font-size: 17px;
   font-weight: 500;
-  font-weight: 600;
   border-radius: 3px;
   padding: 15px 35px;
-  margin: 26px 5px 0 5px;
+  margin: 26px 5px 0;
   cursor: pointer;
+
   &:focus {
     outline: none;
   }
+
   &:hover {
-    background-color: darken($btnBlue, 3%);
+    background-color: darken($btn-blue, 3%);
   }
+
   &:active {
-    background-color: darken($btnBlue, 10%);
+    background-color: darken($btn-blue, 10%);
   }
+
   &.cancel {
-    background-color: $btnGray;
+    background-color: $btn-gray;
+
     &:hover {
-      background-color: darken($btnGray, 3%);
+      background-color: darken($btn-gray, 3%);
     }
+
     &:active {
-      background-color: darken($btnGray, 10%);
+      background-color: darken($btn-gray, 10%);
     }
   }
+
   &.download {
     position: fixed;
     right: 30px;
     top: 0;
-    background-color: rgba(white, 0.9);
-    color: #ABCADA;
+    background-color: rgba(#fff, .9);
+    color: #abcada;
     font-weight: 500;
     text-transform: uppercase;
     z-index: 3;
@@ -176,15 +184,19 @@ pre {
   .str {
     color: #e6db74;
   }
+
   .func {
     color: #66d9ef;
   }
+
   .val {
     color: #a381ff;
   }
+
   .tag {
     color: #e92772;
   }
+
   .attr {
     color: #a6e22d;
   }
@@ -208,18 +220,23 @@ pre {
 
   h4 {
     font-size: 16px;
-    color: #BCBCBC;
+    color: #bcbcbc;
     line-height: 22px;
     margin: 0 auto;
     font-weight: 400;
   }
+
   &.sweet h4 {
-    width: 117px;
-    height: 25px;
-    margin-top: -3px;
-    text-indent: -9999px;
-    @include retina-background("images/logo_small"); 
+    font-family: 'Courgette', serif;
+    font-size: 24px;
+    color: #aaa;
+
+    span {
+      margin: 0 4px;
+      color: #f77;
+    }
   }
+
   h5 {
     margin-bottom: -7px;
     text-align: left;
@@ -233,7 +250,7 @@ pre {
   }
 
   .vs-icon {
-    @include retina-background("images/vs_icon");
+    @include retina-background('images/vs_icon');
     width: 69px;
     height: 69px;
     position: absolute;
@@ -253,7 +270,7 @@ pre {
 }
 
 
-ul.examples {
+.examples {
   list-style-type: none;
   width: 700px;
   margin: 0 auto;
@@ -267,7 +284,8 @@ ul.examples {
     padding-left: 0;
   }
 
-  .ui, pre {
+  .ui,
+  pre {
     display: inline-block;
     vertical-align: top;
 
@@ -277,6 +295,7 @@ ul.examples {
       margin: 0 auto;
     }
   }
+
   .ui {
     width: 300px;
     text-align: center;
@@ -300,6 +319,7 @@ ul.examples {
       margin-bottom: 60px;
     }
   }
+
   .warning pre {
     margin-top: 93px;
   }
@@ -313,7 +333,7 @@ ol {
   padding-left: 0;
 
   li {
-    color: #A7ADB2;
+    color: #a7adb2;
 
     p {
       margin-bottom: 10px;
@@ -330,33 +350,37 @@ table {
   text-align: left;
   border-collapse: collapse;
   @media all and (max-width: 750px) {
-    width: auto; 
+    width: auto;
     margin: 10px 20px;
   }
 
   th {
-    background-color: white;
+    background-color: #fff;
     padding: 9px;
     color: rgb(172, 185, 190);
     font-weight: 400;
     text-align: center;
     position: relative;
-    .border-left, .border-right {
+
+    .border-left,
+    .border-right {
       position: absolute;
-      background-color: white;
+      background-color: #fff;
       border-radius: 50%;
       top: 0;
       left: -17px;
       width: 37px;
       height: 37px;
     }
+
     .border-right {
       left: auto;
       right: -17px;
     }
+
     @media all and (max-width: 750px) {
       &:nth-child(2) {
-       display: none;
+        display: none;
      }
     }
   }
@@ -364,19 +388,23 @@ table {
   td {
     padding: 10px 20px;
     vertical-align: top;
+
     &:first-child {
-      padding-left: 0px;
+      padding-left: 0;
     }
+
     &:last-child {
-      padding-right: 0px;
+      padding-right: 0;
     }
+
     @media all and (max-width: 750px) {
       &:nth-child(2) {
-       display: none;
+        display: none;
      }
     }
     @media all and (max-width: 360px) {
       padding: 10px 4px;
+
       b {
         font-size: 13px;
       }
@@ -387,13 +415,10 @@ table {
 footer {
   margin-top: 100px;
   padding-bottom: 30px;
-  color: #9A999F;
+  color: #9a999f;
   display: inline-block;
   position: relative;
-  color: gray;
   font-weight: 400;
-  color: rgb(147, 161, 170);
-  font-weight: 300;
 
   .te-logo {
     text-indent: -99999px;
@@ -404,7 +429,7 @@ footer {
     width: 16px;
     display: inline-block;
     margin-right: 5px;
-    background-image: url("images/te-logo-small.svg");
+    background-image: url('images/te-logo-small.svg');
     position: absolute;
     left: -22px;
     top: 3px;
