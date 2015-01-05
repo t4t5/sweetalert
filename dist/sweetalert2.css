@@ -50,16 +50,13 @@
     margin: 26px 5px 0;
     cursor: pointer; }
     .sweet-alert button:focus {
-      outline: none;
-      box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
+      outline: none; }
     .sweet-alert button.cancel {
-      background-color: #d0d0d0; }
-      .sweet-alert button.cancel:hover {
-        background-color: #c8c8c8; }
+      background-color: #aaa; }
+      .sweet-alert button.cancel:hover, .sweet-alert button.cancel:focus {
+        background-color: #a2a2a2; }
       .sweet-alert button.cancel:active {
-        background-color: #b6b6b6; }
-      .sweet-alert button.cancel:focus {
-        box-shadow: rgba(197, 205, 211, 0.8) 0 0 2px, rgba(0, 0, 0, 0.0470588) 0 0 0 1px inset !important; }
+        background-color: #909090; }
     .sweet-alert button::-moz-focus-inner {
       border: 0; }
   .sweet-alert[data-has-cancel-button=false] button {

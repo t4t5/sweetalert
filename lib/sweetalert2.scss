@@ -54,7 +54,7 @@
   }
 
   button {
-    $btn-gray: #d0d0d0;
+    $btn-gray: #aaa;
 
     color: #fff;
     border: 0;
@@ -68,22 +68,18 @@
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 2px rgba(128, 179, 235, .5), inset 0 0 0 1px rgba(0, 0, 0, .05);
     }
 
     &.cancel {
       background-color: $btn-gray;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: darken($btn-gray, 3%);
       }
 
       &:active {
         background-color: darken($btn-gray, 10%);
-      }
-      // Cancel button should keep the same style
-      &:focus {
-        box-shadow: rgba(197, 205, 211, .8) 0 0 2px, rgba(0, 0, 0, .0470588) 0 0 0 1px inset !important;
       }
     }
     // Removes selection outline in Firefox

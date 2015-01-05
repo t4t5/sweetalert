@@ -287,24 +287,3 @@ table {
         padding: 10px 4px; }
         table td b {
           font-size: 13px; } }
-
-footer {
-  margin-top: 100px;
-  padding-bottom: 30px;
-  color: #9a999f;
-  display: inline-block;
-  position: relative;
-  font-weight: 400; }
-  footer .te-logo {
-    text-indent: -99999px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 16px;
-    width: 16px;
-    display: inline-block;
-    margin-right: 5px;
-    background-image: url('images/te-logo-small.svg');
-    position: absolute;
-    left: -22px;
-    top: 3px; }
