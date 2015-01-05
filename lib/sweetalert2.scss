@@ -3,7 +3,7 @@
 // github.com/t4t5/sweetalert
 
 .sweet-overlay {
-  background-color: rgba(black, 0.4);
+  background-color: rgba(#000, .4);
 
   position: fixed;
   left: 0;
@@ -16,7 +16,7 @@
 }
 
 .sweet-alert {
-  background-color: white;
+  background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-radius: 5px;
   box-sizing: border-box;
@@ -47,7 +47,6 @@
     text-align: center;
     font-weight: 300;
     position: relative;
-    text-align: inherit;
     float: none;
     margin: 0;
     padding: 0;
@@ -55,40 +54,46 @@
   }
 
   button {
-    $btnBlue: #AEDEF4;
-    $btnGray: #D0D0D0;
+    $btn-blue: #aedef4;
+    $btn-gray: #d0d0d0;
 
-    background-color: $btnBlue;
-    color: white;
-    border: none;
+    background-color: $btn-blue;
+    color: #fff;
+    border: 0;
     box-shadow: none;
     font-size: 17px;
     font-weight: 500;
     border-radius: 5px;
     padding: 10px 32px;
-    margin: 26px 5px 0 5px;
+    margin: 26px 5px 0;
     cursor: pointer;
+
     &:focus {
       outline: none;
-      box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 2px rgba(128, 179, 235, .5), inset 0 0 0 1px rgba(0, 0, 0, .05);
     }
+
     &:hover {
-      background-color: darken($btnBlue, 3%);
+      background-color: darken($btn-blue, 3%);
     }
+
     &:active {
-      background-color: darken($btnBlue, 10%);
+      background-color: darken($btn-blue, 10%);
     }
+
     &.cancel {
-      background-color: $btnGray;
+      background-color: $btn-gray;
+
       &:hover {
-        background-color: darken($btnGray, 3%);
+        background-color: darken($btn-gray, 3%);
       }
+
       &:active {
-        background-color: darken($btnGray, 10%);
+        background-color: darken($btn-gray, 10%);
       }
       // Cancel button should keep the same style
       &:focus {
-        box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important;
+        box-shadow: rgba(197, 205, 211, .8) 0 0 2px, rgba(0, 0, 0, .0470588) 0 0 0 1px inset !important;
       }
     }
     // Removes selection outline in Firefox
@@ -104,14 +109,14 @@
 
 
   .icon {
-    $red:     #F27474;
-    $orange:   #F8BB86;
-    $blue:     #C9DAE1;
-    $green:   #A5DC86;
+    $red:    #f27474;
+    $orange: #f8bb86;
+    $blue:   #c9dae1;
+    $green:  #a5dc86;
 
     width: 80px;
     height: 80px;
-    border: 4px solid gray;
+    border: 4px solid #808080;
     border-radius: 50%;
     margin: 20px auto;
     padding: 0;
@@ -136,17 +141,17 @@
         border-radius: 2px;
 
         &.left {
-          -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
           left: 17px;
         }
+
         &.right {
-          -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
           right: 16px;
         }
       }
     }
+
     &.warning {
       border-color: $orange;
 
@@ -171,11 +176,12 @@
         background-color: $orange;
       }
     }
+
     &.info {
       border-color: $blue;
 
       &::before { // i-letter body
-        content: "";
+        content: '';
         position: absolute;
         width: 5px;
         height: 29px;
@@ -186,7 +192,7 @@
         background-color: $blue;
       }
       &::after { // i-letter dot
-        content: "";
+        content: '';
         position: absolute;
         width: 7px;
         height: 7px;
@@ -196,44 +202,43 @@
         background-color: $blue;
       }
     }
+
     &.success {
       border-color: $green;
 
-      &::before, &::after { // Emulate moving circular line
+      &::before,
+      &::after { // Emulate moving circular line
         content: '';
         border-radius: 50%;
         position: absolute;
         width: 60px;
         height: 120px;
-        background: white;
-        -webkit-transform: rotate(45deg);
+        background: #fff;
         transform: rotate(45deg);
       }
+
       &::before {
         border-radius: 120px 0 0 120px;
         top: -7px;
         left: -33px;
 
-         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        -webkit-transform-origin: 60px 60px;
         transform-origin: 60px 60px;
       }
+
       &::after {
         border-radius: 0 120px 120px 0;
         top: -11px;
         left: 30px;
 
-        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        -webkit-transform-origin: 0px 60px;
-        transform-origin: 0px 60px;
+        transform-origin: 0 60px;
       }
 
       .placeholder { // Ring
         width: 80px;
         height: 80px;
-        border: 4px solid rgba($green, 0.2);
+        border: 4px solid rgba($green, .2);
         border-radius: 50%;
         box-sizing: content-box;
 
@@ -246,14 +251,13 @@
       .fix {  // Hide corners left from animation
         width: 5px;
         height: 90px;
-        background-color: white;
+        background-color: #fff;
 
         position: absolute;
         left: 28px;
         top: 8px;
         z-index: 1;
 
-        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
 
@@ -272,24 +276,24 @@
           left: 14px;
           top: 46px;
 
-          -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
         }
+
         &.long {
           width: 47px;
 
           right: 8px;
           top: 38px;
 
-          -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
         }
       }
     }
+
     &.custom {
       background-size: contain;
       border-radius: 0;
-      border: none;
+      border: 0;
       background-position: center center;
       background-repeat: no-repeat;
     }
@@ -297,24 +301,15 @@
 
 }
 
-/*
- * Animations
- */
+// Animations
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
   @keyframes #{$animation-name} {
     @content;
   }
 }
+
 @mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
   animation: #{$str};
 }
 
@@ -322,27 +317,45 @@
 // Modal animation
 
 @include keyframes(showSweetAlert) {
-  0%    { transform: scale(0.7);  -webkit-transform: scale(0.7);  }
-  45%   { transform: scale(1.05); -webkit-transform: scale(1.05); }
-  80%   { transform: scale(0.95); -webkit-tranform: scale(0.95);  }
-  100%  { transform: scale(1);    -webkit-transform: scale(1);    }
-}
-@include keyframes(hideSweetAlert) {
-  0%    { transform: scale(1);    -webkit-transform: scale(1);    }
-  100%  { transform: scale(0.5);  -webkit-transform: scale(0.5);  }
+  0% {
+    transform: scale(.7);
+  }
+
+  45% {
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-.showSweetAlert {
+@include keyframes(hideSweetAlert) {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.5);
+  }
+}
+
+.show-sweet-alert {
   @include animation('showSweetAlert 0.3s');
 
-  &.no-animation{
+  &.no-animation {
     @include animation('none');
   }
 }
-.hideSweetAlert {
+
+.hide-sweet-alert {
   @include animation('hideSweetAlert 0.2s');
 
-  &.no-animation{
+  &.no-animation {
     @include animation('none');
   }
 }
@@ -351,32 +364,90 @@
 
 // Success icon animation
 
-@include keyframes(animateSuccessTip) {
-  0%    { width: 0;     left: 1px;    top: 19px; }
-  54%   { width: 0;     left: 1px;    top: 19px; }
-  70%   { width: 50px;  left: -8px;   top: 37px; }
-  84%   { width: 17px;  left: 21px;   top: 48px; }
-  100%  { width: 25px;  left: 14px;   top: 45px; }
-}
-@include keyframes(animateSuccessLong) {
-  0%    { width: 0;     right: 46px;  top: 54px; }
-  65%   { width: 0;     right: 46px;  top: 54px; }
-  84%   { width: 55px;  right: 0px;   top: 35px; }
-  100%  { width: 47px;  right: 8px;   top: 38px; }
-}
-@include keyframes(rotatePlaceholder) {
-  0%    { transform: rotate(-45deg);  -webkit-transform: rotate(-45deg);  }
-  5%    { transform: rotate(-45deg);  -webkit-transform: rotate(-45deg);  }
-  12%   { transform: rotate(-405deg); -webkit-transform: rotate(-405deg); }
-  100%  { transform: rotate(-405deg); -webkit-transform: rotate(-405deg); }
+@include keyframes(animate-success-tip) {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
 }
 
-.animateSuccessTip {
-  @include animation('animateSuccessTip 0.75s');
+@include keyframes(animate-success-long) {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px;
+  }
+
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
 }
-.animateSuccessLong {
-  @include animation('animateSuccessLong 0.75s');
+
+@include keyframes(rotatePlaceholder) {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  5% {
+    transform: rotate(-45deg);
+  }
+
+  12% {
+    transform: rotate(-405deg);
+  }
+
+  100% {
+    transform: rotate(-405deg);
+  }
 }
+
+.animate-success-tip {
+  @include animation('animate-success-tip 0.75s');
+}
+
+.animate-success-long {
+  @include animation('animate-success-long 0.75s');
+}
+
 .icon.success.animate::after {
   @include animation('rotatePlaceholder 4.25s ease-in');
 }
@@ -384,35 +455,75 @@
 
 // Error icon animation
 
-@include keyframes(animateErrorIcon) {
-  0%    { transform: rotateX(100deg); -webkit-transform: rotateX(100deg); opacity: 0; }
-  100%  { transform: rotateX(0deg);   -webkit-transform: rotateX(0deg);   opacity: 1; }
-}
-.animateErrorIcon {
-  @include animation('animateErrorIcon 0.5s');
-}
-@include keyframes(animateXMark) {
-  0%    { transform: scale(0.4);  -webkit-transform: scale(0.4);  margin-top: 26px;  opacity: 0; }
-  50%   { transform: scale(0.4);  -webkit-transform: scale(0.4);  margin-top: 26px;  opacity: 0; }
-  80%   { transform: scale(1.15); -webkit-transform: scale(1.15); margin-top: -6px;              }
-  100%  { transform: scale(1);    -webkit-transform: scale(1);    margin-top: 0;     opacity: 1; }
-}
-.animateXMark {
-  @include animation('animateXMark 0.5s');
+@include keyframes(animate-error-icon) {
+  0% {
+    transform: rotateX(100deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
 
-@include keyframes(pulseWarning) {
-  0%    { border-color: #F8D486; }
-  100%  { border-color: #F8BB86; }
-}
-.pulseWarning {
-  @include animation('pulseWarning 0.75s infinite alternate');
+.animate-error-icon {
+  @include animation('animate-error-icon 0.5s');
 }
 
-@include keyframes(pulseWarningIns) {
-  0%    { background-color: #F8D486; }
-  100%  { background-color: #F8BB86; }
+@include keyframes(animate-x-mark) {
+  0% {
+    transform: scale(.4);
+    margin-top: 26px;
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(.4);
+    margin-top: 26px;
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.15);
+    margin-top: -6px;
+  }
+
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    opacity: 1;
+  }
 }
-.pulseWarningIns {
-  @include animation('pulseWarningIns 0.75s infinite alternate');
+
+.animate-x-mark {
+  @include animation('animate-x-mark 0.5s');
+}
+
+@include keyframes(pulse-warning) {
+  0% {
+    border-color: #f8d486;
+  }
+
+  100% {
+    border-color: #f8bb86;
+  }
+}
+
+.pulse-warning {
+  @include animation('pulse-warning 0.75s infinite alternate');
+}
+
+@include keyframes(pulse-warning-ins) {
+  0% {
+    background-color: #f8d486;
+  }
+
+  100% {
+    background-color: #f8bb86;
+  }
+}
+
+.pulse-warning-ins {
+  @include animation('pulse-warning-ins 0.75s infinite alternate');
 }
