@@ -40,7 +40,6 @@
     padding: 0;
     line-height: normal; }
   .sweet-alert button {
-    background-color: #aedef4;
     color: #fff;
     border: 0;
     box-shadow: none;
@@ -53,10 +52,6 @@
     .sweet-alert button:focus {
       outline: none;
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
-    .sweet-alert button:hover {
-      background-color: #a1d9f2; }
-    .sweet-alert button:active {
-      background-color: #81ccee; }
     .sweet-alert button.cancel {
       background-color: #d0d0d0; }
       .sweet-alert button.cancel:hover {

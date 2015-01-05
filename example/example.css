@@ -79,7 +79,7 @@ p {
       color: #323131; }
 
 button, .button {
-  background-color: #aedef4;
+  background-color: #3085d6;
   color: #fff;
   border: 0;
   box-shadow: none;
@@ -92,9 +92,9 @@ button, .button {
   button:focus, .button:focus {
     outline: none; }
   button:hover, .button:hover {
-    background-color: #a1d9f2; }
+    background-color: #297dce; }
   button:active, .button:active {
-    background-color: #81ccee; }
+    background-color: #236bb0; }
   button.cancel, .button.cancel {
     background-color: #d0d0d0; }
     button.cancel:hover, .button.cancel:hover {
