@@ -13,7 +13,7 @@ Why fork?
 
 This fork provides the same functionality as the original by [t4t5](https://github.com/t4t5/sweetalert) but supports HTML code in modal, configuring modal width, padding and some other options.
 
-The old repository seems to be unactive. There's a bunch of Pull Requests without any replies, last merged pull request was on Nov 9, 2014.
+The old repository seems to be inactive. There's a bunch of Pull Requests without any replies, last merged pull request was on Nov 9, 2014.
 
 I will maintain this repo and I will accept pull requests.
 

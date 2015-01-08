@@ -15,5 +15,6 @@
     "type": "git",
     "url": "git@github.com:limonte/sweetalert2.git"
   },
+  "ignore": ["example", "gulpfile.js", "sweetalert.gif"],
   "license": "MIT"
 }
