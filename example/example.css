@@ -23,6 +23,8 @@ h2 {
   font-weight: 300;
   text-align: center;
   display: block; }
+  h2 a {
+    color: #3085d6; }
 
 h3 {
   font-size: 28px;

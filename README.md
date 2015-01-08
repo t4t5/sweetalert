@@ -1,4 +1,5 @@
-#SweetAlert2
+SweetAlert2
+-----------
 
 An awesome replacement for JavaScript's alert.
 
@@ -6,7 +7,19 @@ An awesome replacement for JavaScript's alert.
 
 ![A success modal](https://raw.github.com/limonte/sweetalert2/master/sweetalert.gif)
 
-#Usage
+
+Why fork?
+---------------
+
+This fork provides the same functionality as the original by [t4t5](https://github.com/t4t5/sweetalert) but supports HTML code in modal, configuring modal width, padding and some other options.
+
+The old repository seems to be unactive. There's a bunch of Pull Requests without any replies, last merged pull request was on Nov 9, 2014.
+
+I will maintain this repo and I will accept pull requests.
+
+
+Usage
+-----
 
 You can install SweetAlert2 through bower:
 
@@ -21,7 +34,9 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <link rel="stylesheet" type="text/css" href="dist/sweetalert2.css">
 ```
 
-#Examples
+
+Examples
+--------
 
 The most basic message:
 
@@ -55,7 +70,8 @@ sweetAlert({
 
 [View more examples](https://limonte.github.io/sweetalert2/)
 
-#Related projects
+Related projects
+----------------
 
 * [SweetAlert](https://github.com/t4t5/sweetalert)
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
