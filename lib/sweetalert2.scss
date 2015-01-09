@@ -54,8 +54,6 @@
   }
 
   button {
-    $btn-gray: #aaa;
-
     color: #fff;
     border: 0;
     box-shadow: none;
@@ -70,18 +68,6 @@
       outline: none;
     }
 
-    &.cancel {
-      background-color: $btn-gray;
-
-      &:hover,
-      &:focus {
-        background-color: darken($btn-gray, 3%);
-      }
-
-      &:active {
-        background-color: darken($btn-gray, 10%);
-      }
-    }
     // Removes selection outline in Firefox
     &::-moz-focus-inner {
       border: 0;

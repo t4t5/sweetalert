@@ -51,12 +51,6 @@
     cursor: pointer; }
     .sweet-alert button:focus {
       outline: none; }
-    .sweet-alert button.cancel {
-      background-color: #aaa; }
-      .sweet-alert button.cancel:hover, .sweet-alert button.cancel:focus {
-        background-color: #a2a2a2; }
-      .sweet-alert button.cancel:active {
-        background-color: #909090; }
     .sweet-alert button::-moz-focus-inner {
       border: 0; }
   .sweet-alert[data-has-cancel-button=false] button {
