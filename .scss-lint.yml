@@ -1,0 +1,6 @@
+linters:
+  PropertySortOrder:
+    enabled: false
+
+  NestingDepth:
+    max_depth: 5
