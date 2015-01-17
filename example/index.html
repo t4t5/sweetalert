@@ -149,6 +149,18 @@
 });</pre>
 	</li>
 
+	<li class="message-html">
+		<div class="ui">
+			<p>A html message</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"HTML &lt;small&gt;Title&lt;/small&gt;!"</span>,
+&nbsp;&nbsp;text: <span class="str">"A custom &lt;span style="color:#F8BB86"&gt;html&lt;span&gt; message."</span>,
+&nbsp;&nbsp;html: <span class="str">true</span>
+});</pre>
+	</li>
+
 </ul>
 
 
@@ -267,6 +279,11 @@
 		<td><i>null</i></td>
 		<td>Auto close timer of the modal. Set in ms (milliseconds).</td>
 	</tr>
+	<tr>
+		<td><b>html</b></td>
+		<td><i>false</i></td>
+		<td>If set to true, will not escape title and text parameters. (Set to false if you're worried about XSS attacks.)</td>
+	</tr>
 </table>
 
 
@@ -357,6 +374,14 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+document.querySelector('ul.examples li.message-html button').onclick = function(){
+	swal({
+		title: "HTML <small>Title</small>!",
+		text: 'A custom <span style="color:#F8BB86">html<span> message.',
+		html: true
 	});
 };
 
