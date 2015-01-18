@@ -51,6 +51,8 @@
     float: none;
     margin: 0;
     padding: 0;
+    text-align: inherit;
+    float: none;
     line-height: normal; }
   .sweet-alert button {
     background-color: #AEDEF4;
