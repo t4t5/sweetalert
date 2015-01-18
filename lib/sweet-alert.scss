@@ -322,16 +322,12 @@
   @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
   @keyframes #{$animation-name} {
     @content;
   }
 }
 @mixin animation($str) {
   -webkit-animation: #{$str};
-  -moz-animation: #{$str};
   animation: #{$str};
 }
 
@@ -351,9 +347,17 @@
 
 .showSweetAlert {
   @include animation('showSweetAlert 0.3s');
+  
+  &[data-animation=none] {
+		@include animation('none');
+	}
 }
 .hideSweetAlert {
   @include animation('hideSweetAlert 0.2s');
+
+  &[data-animation=none] {
+		@include animation('none');
+	}
 }
 
 

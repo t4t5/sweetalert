@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert</title>
-
+  
   <link rel="stylesheet" href="./example.css">
 
   <!-- This is what you need -->
@@ -284,7 +284,43 @@
 		<td><i>false</i></td>
 		<td>If set to true, will not escape title and text parameters. (Set to false if you're worried about XSS attacks.)</td>
 	</tr>
+	<tr>
+		<td><b>animation</b></td>
+		<td><i>true</i></td>
+		<td>If set to <strong>false</strong>, the modal's animation will be disabled.</td>
+	</tr>
 </table>
+
+
+<!-- Methods -->
+<h3>Methods</h3>
+
+<p class="center">SweetAlert also comes with some simple methods that you can call:</p>
+
+<table>
+	<tr class="titles">
+		<th>
+			<div class="border-left"></div>
+			Function
+		</th>
+		<th>Example</th>
+		<th>
+			<div class="border-right"></div>
+			Description
+		</th>
+	</tr>
+	<tr>
+		<td>setDefaults</td>
+		<td><i>swal.setDefaults({ confirmButtonColor: '#0000' });</i></td>
+		<td>If you end up using a lot of the same settings when calling SweetAlert, you can use setDefaults at the start of your program to set them once and for all!</td>
+	</tr>
+	<tr>
+		<td>close</td>
+		<td><i>swal.close();</i></td>
+		<td>Close the currently open SweetAlert programatically.</td>
+	</tr>
+</table>
+
 
 
 <!-- Contribute -->
@@ -299,6 +335,10 @@
 
 
 <script>
+
+swal.setDefaults({
+	confirmButtonColor: 'blue',
+});
 
 document.querySelector('button.download').onclick = function(){
 	$("html, body").animate({ scrollTop: $("#download-section").offset().top }, 1000);
@@ -340,8 +380,7 @@ document.querySelector('ul.examples li.warning.confirm button').onclick = functi
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
 		confirmButtonText: 'Yes, delete it!',
-		closeOnConfirm: false,
-		//closeOnCancel: false
+		closeOnConfirm: false
 	},
 	function(){
 		swal("Deleted!", "Your imaginary file has been deleted!", "success");
