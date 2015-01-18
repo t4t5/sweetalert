@@ -12,7 +12,7 @@
 	bottom: 0;
 
 	display: none;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 .sweet-alert {
@@ -34,7 +34,7 @@
 
 	overflow: hidden;
 	display: none;
-	z-index: 2000;
+	z-index: 99999;
 
 	@media all and (max-width: 540px) {
 		width: auto;
@@ -347,7 +347,7 @@
 
 .showSweetAlert {
   @include animation('showSweetAlert 0.3s');
-  
+
   &[data-animation=none] {
 		@include animation('none');
 	}
