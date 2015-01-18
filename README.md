@@ -45,7 +45,8 @@ sweetAlert({
   showCancelButton: true,
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
+  closeOnConfirm: false,
+  html: false
 }, function(){
   swal("Deleted!",
   "Your imaginary file has been deleted.",
@@ -54,6 +55,23 @@ sweetAlert({
 ```
 
 [View more examples](http://tristanedwards.me/sweetalert)
+
+
+#Contributing
+
+If you want to contribute:
+
+1. Fork the repo
+
+2. Make sure you have [Node](http://nodejs.org/), [NPM](https://www.npmjs.com/) and [Gulp](http://gulpjs.com/) installed. When in the SweetAlert directory, run the command:
+```
+npm install
+```
+to install the dependencies and make Gulp automatically minify the SCSS and JS-files.
+
+3. After you're done, make a pull request and wait for approval! :)
+
+
 
 #Related projects
 

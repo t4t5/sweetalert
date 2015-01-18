@@ -2,8 +2,6 @@
 // 2014 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300); // Open Sans font
-
 .sweet-overlay {
 	background-color: rgba(black, 0.4);
 
@@ -14,7 +12,7 @@
 	bottom: 0;
 
 	display: none;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 .sweet-alert {
@@ -22,7 +20,7 @@
 	$padding: 17px;
 
 	background-color: white;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	width: $width;
 	padding: $padding;
 	border-radius: 5px;
@@ -36,7 +34,7 @@
 
 	overflow: hidden;
 	display: none;
-	z-index: 2000;
+	z-index: 99999;
 
 	@media all and (max-width: 540px) {
 		width: auto;
@@ -324,16 +322,12 @@
   @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
   @keyframes #{$animation-name} {
     @content;
   }
 }
 @mixin animation($str) {
   -webkit-animation: #{$str};
-  -moz-animation: #{$str};
   animation: #{$str};
 }
 
@@ -353,9 +347,17 @@
 
 .showSweetAlert {
   @include animation('showSweetAlert 0.3s');
+
+  &[data-animation=none] {
+		@include animation('none');
+	}
 }
 .hideSweetAlert {
   @include animation('hideSweetAlert 0.2s');
+
+  &[data-animation=none] {
+		@include animation('none');
+	}
 }
 
 
