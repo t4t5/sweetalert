@@ -22,8 +22,9 @@ gulp.task('sass', function () {
   .pipe(rename('example.css'))
   .pipe(gulp.dest('example'));
 
-  return gulp.src('lib/sweet-alert.css')
-  .pipe(sass({style: 'compact'}))
+  return gulp.src('lib/sweet-alert.scss')
+  .pipe(sass())
+  .pipe(rename('sweet-alert.css'))
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
     cascade: false
