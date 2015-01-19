@@ -17,8 +17,8 @@ bower install sweetalert
 Alternatively, download the package and reference the JavaScript and CSS files manually:
 
 ```html
-<script src="lib/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+<script src="dist/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/sweet-alert.css">
 ```
 
 #Examples
@@ -77,4 +77,3 @@ to install the dependencies and make Gulp automatically minify the SCSS and JS-f
 
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
-
