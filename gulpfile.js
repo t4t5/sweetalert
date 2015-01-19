@@ -14,18 +14,14 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// Compile Our Sass
-gulp.task('sass', function() {
+// Compile Our Sass & add Browser Prefixes
+gulp.task('sass', function () {
 
   gulp.src('example/example.scss')
-    .pipe(sass())
-    .pipe(rename('example.css'))
-    .pipe(gulp.dest('example'));
-    
-});
+  .pipe(sass())
+  .pipe(rename('example.css'))
+  .pipe(gulp.dest('example'));
 
-//Add Browser Prefixes
-gulp.task('autoprefixer', function () {
   return gulp.src('lib/sweet-alert.css')
   .pipe(sass({style: 'compact'}))
   .pipe(autoprefixer({
@@ -48,8 +44,8 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('lib/*.js', ['lint', 'scripts']);
-  gulp.watch('lib/*.scss', ['sass', 'autoprefixer']);
+  gulp.watch('lib/*.scss', ['sass']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'autoprefixer','scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);

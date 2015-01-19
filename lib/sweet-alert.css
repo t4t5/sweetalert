@@ -261,7 +261,6 @@
   background-repeat: no-repeat; }
 
 @-webkit-keyframes showSweetAlert {
-
   0% {
     -webkit-transform: scale(.7);
     transform: scale(.7); }
@@ -296,7 +295,6 @@
     transform: scale(1); } }
 
 @-webkit-keyframes hideSweetAlert {
-
   0% {
     -webkit-transform: scale(1);
     transform: scale(1); }
@@ -331,7 +329,6 @@
   animation: none; }
 
 @-webkit-keyframes animateSuccessTip {
-
   0% {
     width: 0;
     left: 1px;
@@ -384,7 +381,6 @@
     top: 45px; } }
 
 @-webkit-keyframes animateSuccessLong {
-
   0% {
     width: 0;
     right: 46px;
@@ -427,7 +423,6 @@
     top: 38px; } }
 
 @-webkit-keyframes rotatePlaceholder {
-
   0% {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
@@ -474,7 +469,6 @@
   animation: rotatePlaceholder 4.25s ease-in; }
 
 @-webkit-keyframes animateErrorIcon {
-
   0% {
     -webkit-transform: rotateX(100deg);
     transform: rotateX(100deg);
@@ -501,7 +495,6 @@
   animation: animateErrorIcon .5s 1 normal; }
 
 @-webkit-keyframes animateXMark {
-
   0% {
     -webkit-transform: scale(.4);
     transform: scale(.4);
@@ -554,7 +547,6 @@
   animation: animateXMark .5s 1 normal; }
 
 @-webkit-keyframes pulseWarning {
-
   0% {
     border-color: #f8d486; }
 
@@ -573,7 +565,6 @@
   animation: pulseWarning .75s infinite alternate; }
 
 @-webkit-keyframes pulseWarningIns {
-
   0% {
     background-color: #f8d486; }
 
