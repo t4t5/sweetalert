@@ -104,11 +104,9 @@
         top: 37px;
         border-radius: 2px; }
         .sweet-alert .icon.error .line.left {
-          -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
           left: 17px; }
         .sweet-alert .icon.error .line.right {
-          -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
           right: 16px; }
     .sweet-alert .icon.warning {
@@ -161,23 +159,18 @@
         width: 60px;
         height: 120px;
         background: #fff;
-        -webkit-transform: rotate(45deg);
         transform: rotate(45deg); }
       .sweet-alert .icon.success::before {
         border-radius: 120px 0 0 120px;
         top: -7px;
         left: -33px;
-        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        -webkit-transform-origin: 60px 60px;
         transform-origin: 60px 60px; }
       .sweet-alert .icon.success::after {
         border-radius: 0 120px 120px 0;
         top: -11px;
         left: 30px;
-        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        -webkit-transform-origin: 0px 60px;
         transform-origin: 0px 60px; }
       .sweet-alert .icon.success .placeholder {
         width: 80px;
@@ -197,7 +190,6 @@
         left: 28px;
         top: 8px;
         z-index: 1;
-        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg); }
       .sweet-alert .icon.success .line {
         height: 5px;
@@ -210,13 +202,11 @@
           width: 25px;
           left: 14px;
           top: 46px;
-          -webkit-transform: rotate(45deg);
           transform: rotate(45deg); }
         .sweet-alert .icon.success .line.long {
           width: 47px;
           right: 8px;
           top: 38px;
-          -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg); }
     .sweet-alert .icon.custom {
       background-size: contain;
@@ -225,100 +215,35 @@
       background-position: center center;
       background-repeat: no-repeat; }
 
-@-webkit-keyframes showSweetAlert {
-
-  0% {
-    -webkit-transform: scale(.7);
-    transform: scale(.7); }
-
-  45% {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05); }
-
-  80% {
-    -webkit-transform: scale(.95);
-    transform: scale(.95); }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
-
 @keyframes showSweetAlert {
   0% {
-    -webkit-transform: scale(.7);
     transform: scale(.7); }
 
   45% {
-    -webkit-transform: scale(1.05);
     transform: scale(1.05); }
 
   80% {
-    -webkit-transform: scale(.95);
     transform: scale(.95); }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1); } }
-
-@-webkit-keyframes hideSweetAlert {
-
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-
-  100% {
-    -webkit-transform: scale(.5);
-    transform: scale(.5); } }
 
 @keyframes hideSweetAlert {
   0% {
-    -webkit-transform: scale(1);
     transform: scale(1); }
 
   100% {
-    -webkit-transform: scale(.5);
     transform: scale(.5); } }
 
 .showSweetAlert {
-  -webkit-animation: showSweetAlert .3s 1 normal;
   animation: showSweetAlert .3s 1 normal; }
   .showSweetAlert[data-animation=none] {
-    -webkit-animation: none;
     animation: none; }
 
 .hideSweetAlert {
-  -webkit-animation: hideSweetAlert .2s 1 normal;
   animation: hideSweetAlert .2s 1 normal; }
   .hideSweetAlert[data-animation=none] {
-    -webkit-animation: none;
     animation: none; }
-
-@-webkit-keyframes animateSuccessTip {
-
-  0% {
-    width: 0;
-    left: 1px;
-    top: 19px; }
-
-  54% {
-    width: 0;
-    left: 1px;
-    top: 19px; }
-
-  70% {
-    width: 50px;
-    left: -8px;
-    top: 37px; }
-
-  84% {
-    width: 17px;
-    left: 21px;
-    top: 48px; }
-
-  100% {
-    width: 25px;
-    left: 14px;
-    top: 45px; } }
 
 @keyframes animateSuccessTip {
   0% {
@@ -346,28 +271,6 @@
     left: 14px;
     top: 45px; } }
 
-@-webkit-keyframes animateSuccessLong {
-
-  0% {
-    width: 0;
-    right: 46px;
-    top: 54px; }
-
-  65% {
-    width: 0;
-    right: 46px;
-    top: 54px; }
-
-  84% {
-    width: 55px;
-    right: 0;
-    top: 35px; }
-
-  100% {
-    width: 47px;
-    right: 8px;
-    top: 38px; } }
-
 @keyframes animateSuccessLong {
   0% {
     width: 0;
@@ -389,140 +292,62 @@
     right: 8px;
     top: 38px; } }
 
-@-webkit-keyframes rotatePlaceholder {
-
-  0% {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-
-  5% {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-
-  12% {
-    -webkit-transform: rotate(-405deg);
-    transform: rotate(-405deg); }
-
-  100% {
-    -webkit-transform: rotate(-405deg);
-    transform: rotate(-405deg); } }
-
 @keyframes rotatePlaceholder {
   0% {
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
   5% {
-    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
   12% {
-    -webkit-transform: rotate(-405deg);
     transform: rotate(-405deg); }
 
   100% {
-    -webkit-transform: rotate(-405deg);
     transform: rotate(-405deg); } }
 
 .animateSuccessTip {
-  -webkit-animation: animateSuccessTip .75s 1 normal;
   animation: animateSuccessTip .75s 1 normal; }
 
 .animateSuccessLong {
-  -webkit-animation: animateSuccessLong .75s 1 normal;
   animation: animateSuccessLong .75s 1 normal; }
 
 .icon.success.animate::after {
-  -webkit-animation: rotatePlaceholder 4.25s ease-in;
   animation: rotatePlaceholder 4.25s ease-in; }
-
-@-webkit-keyframes animateErrorIcon {
-
-  0% {
-    -webkit-transform: rotateX(100deg);
-    transform: rotateX(100deg);
-    opacity: 0; }
-
-  100% {
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    opacity: 1; } }
 
 @keyframes animateErrorIcon {
   0% {
-    -webkit-transform: rotateX(100deg);
     transform: rotateX(100deg);
     opacity: 0; }
 
   100% {
-    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
     opacity: 1; } }
 
 .animateErrorIcon {
-  -webkit-animation: animateErrorIcon .5s 1 normal;
   animation: animateErrorIcon .5s 1 normal; }
-
-@-webkit-keyframes animateXMark {
-
-  0% {
-    -webkit-transform: scale(.4);
-    transform: scale(.4);
-    margin-top: 26px;
-    opacity: 0; }
-
-  50% {
-    -webkit-transform: scale(.4);
-    transform: scale(.4);
-    margin-top: 26px;
-    opacity: 0; }
-
-  80% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-    margin-top: -6px; }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    margin-top: 0;
-    opacity: 1; } }
 
 @keyframes animateXMark {
   0% {
-    -webkit-transform: scale(.4);
     transform: scale(.4);
     margin-top: 26px;
     opacity: 0; }
 
   50% {
-    -webkit-transform: scale(.4);
     transform: scale(.4);
     margin-top: 26px;
     opacity: 0; }
 
   80% {
-    -webkit-transform: scale(1.15);
     transform: scale(1.15);
     margin-top: -6px; }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     margin-top: 0;
     opacity: 1; } }
 
 .animateXMark {
-  -webkit-animation: animateXMark .5s 1 normal;
   animation: animateXMark .5s 1 normal; }
-
-@-webkit-keyframes pulseWarning {
-
-  0% {
-    border-color: #f8d486; }
-
-  100% {
-    border-color: #f8bb86; } }
 
 @keyframes pulseWarning {
   0% {
@@ -532,16 +357,7 @@
     border-color: #f8bb86; } }
 
 .pulseWarning {
-  -webkit-animation: pulseWarning .75s infinite alternate;
   animation: pulseWarning .75s infinite alternate; }
-
-@-webkit-keyframes pulseWarningIns {
-
-  0% {
-    background-color: #f8d486; }
-
-  100% {
-    background-color: #f8bb86; } }
 
 @keyframes pulseWarningIns {
   0% {
@@ -551,5 +367,4 @@
     background-color: #f8bb86; } }
 
 .pulseWarningIns {
-  -webkit-animation: pulseWarningIns .75s infinite alternate;
   animation: pulseWarningIns .75s infinite alternate; }
