@@ -1,7 +1,8 @@
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 
 var jshint = require('gulp-jshint');
 var sass   = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -27,6 +28,17 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('lib'));
 });
 
+//Add Browser Prefixes
+gulp.task('autoprefixer', function () {
+  return gulp.src('lib/sweet-alert.css')
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
+  .pipe(gulp.dest('lib'));
+});
+
+
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
   return gulp.src('lib/sweet-alert.js')
@@ -39,8 +51,8 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('lib/*.js', ['lint', 'scripts']);
-  gulp.watch('lib/*.scss', ['sass']);
+  gulp.watch('lib/*.scss', ['sass', 'autoprefixer']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'autoprefixer','scripts', 'watch']);
