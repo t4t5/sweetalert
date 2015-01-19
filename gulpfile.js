@@ -21,16 +21,13 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(rename('example.css'))
     .pipe(gulp.dest('example'));
-
-  return gulp.src('lib/sweet-alert.scss')
-    .pipe(sass())
-    .pipe(rename('sweet-alert.css'))
-    .pipe(gulp.dest('lib'));
+    
 });
 
 //Add Browser Prefixes
 gulp.task('autoprefixer', function () {
   return gulp.src('lib/sweet-alert.css')
+  .pipe(sass({style: 'compact'}))
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
     cascade: false

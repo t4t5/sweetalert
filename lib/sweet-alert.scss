@@ -71,8 +71,8 @@
   }
 
   button {
-    $btnBlue: #AEDEF4;
-    $btnGray: #D0D0D0;
+    $btnBlue: #aedef4;
+    $btnGray: #d0d0d0;
 
     background-color: $btnBlue;
     color: #fff;
@@ -82,29 +82,35 @@
     font-weight: 500;
     border-radius: 5px;
     padding: 10px 32px;
-    margin: 26px 5px 0 5px;
+    margin: 26px 5px 0;
     cursor: pointer;
+
     &:focus {
       outline: none;
       box-shadow: 0 0 2px rgba(128, 179, 235, .5), inset 0 0 0 1px rgba(0, 0, 0, .05);
     }
+
     &:hover {
       background-color: darken($btnBlue, 3%);
     }
+
     &:active {
       background-color: darken($btnBlue, 10%);
     }
+
     &.cancel {
       background-color: $btnGray;
+
       &:hover {
         background-color: darken($btnGray, 3%);
       }
+
       &:active {
         background-color: darken($btnGray, 10%);
       }
       // Cancel button should keep the same style
       &:focus {
-        box-shadow: rgba(197, 205, 211, .8) 0px 0px 2px, rgba(0, 0, 0, .0470588) 0px 0px 0px 1px inset !important;
+        box-shadow: rgba(197, 205, 211, .8) 0 0 2px, rgba(0, 0, 0, .0470588) 0 0 0 1px inset !important;
       }
     }
     // Removes selection outline in Firefox
@@ -120,14 +126,14 @@
 
 
   .icon {
-    $red:     #F27474;
-    $orange:   #F8BB86;
-    $blue:     #C9DAE1;
-    $green:   #A5DC86;
+    $red:     #f27474;
+    $orange:   #f8bb86;
+    $blue:     #c9dae1;
+    $green:   #a5dc86;
 
     width: 80px;
     height: 80px;
-    border: 4px solid gray;
+    border: 4px solid #808080;
     border-radius: 50%;
     margin: 20px auto;
     padding: 0;
@@ -155,12 +161,14 @@
           transform: rotate(45deg);
           left: 17px;
         }
+
         &.right {
           transform: rotate(-45deg);
           right: 16px;
         }
       }
     }
+
     &.warning {
       border-color: $orange;
 
@@ -174,6 +182,7 @@
         margin-left: -2px;
         background-color: $orange;
       }
+
       .dot { // Exclamation mark dot
         position: absolute;
         width: 7px;
@@ -185,6 +194,7 @@
         background-color: $orange;
       }
     }
+
     &.info {
       border-color: $blue;
 
@@ -199,6 +209,7 @@
         margin-left: -2px;
         background-color: $blue;
       }
+
       &::after { // i-letter dot
         content: '';
         position: absolute;
@@ -210,10 +221,12 @@
         background-color: $blue;
       }
     }
+
     &.success {
       border-color: $green;
 
-      &::before, &::after { // Emulate moving circular line
+      &::before,
+      &::after { // Emulate moving circular line
         content: '';
         border-radius: 50%;
         position: absolute;
@@ -222,6 +235,7 @@
         background: #fff;
         transform: rotate(45deg);
       }
+
       &::before {
         border-radius: 120px 0 0 120px;
         top: -7px;
@@ -230,6 +244,7 @@
         transform: rotate(-45deg);
         transform-origin: 60px 60px;
       }
+
       &::after {
         border-radius: 0 120px 120px 0;
         top: -11px;
@@ -252,7 +267,7 @@
         z-index: 2;
       }
 
-      .fix {  // Hide corners left from animation
+      .fix {  // Hide corners left from
         width: 5px;
         height: 90px;
         background-color: #fff;
@@ -282,6 +297,7 @@
 
           transform: rotate(45deg);
         }
+
         &.long {
           width: 47px;
 
@@ -292,10 +308,11 @@
         }
       }
     }
+
     &.custom {
       background-size: contain;
       border-radius: 0;
-      border: none;
+      border: 0;
       background-position: center center;
       background-repeat: no-repeat;
     }
@@ -303,45 +320,32 @@
 
 }
 
-/*
- * Animations
- */
-
-@mixin keyframes($animation-name) {
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-@mixin animation($str) {
-  animation: #{$str};
-}
-
-
 // Modal animation
 
-@include keyframes(showSweetAlert) {
+@keyframes showSweetAlert {
   0% { transform: scale(.7); }
   45% { transform: scale(1.05); }
   80% { transform: scale(.95);  }
   100% { transform: scale(1); }
 }
-@include keyframes(hideSweetAlert) {
+@keyframes hideSweetAlert {
   0% { transform: scale(1); }
-  100% { transform: scale(0.5); }
+  100% { transform: scale(.5); }
 }
 
 .showSweetAlert {
-  @include animation('showSweetAlert 0.3s');
+  animation: showSweetAlert .3s 1 normal;
 
   &[data-animation=none] {
-    @include animation('none');
+    animation: none;
   }
 }
+
 .hideSweetAlert {
-  @include animation('hideSweetAlert 0.2s');
+  animation: hideSweetAlert .2s 1 normal;
 
   &[data-animation=none] {
-    @include animation('none');
+    animation: none;
   }
 }
 
@@ -349,20 +353,65 @@
 
 // Success icon animation
 
-@include keyframes(animateSuccessTip) {
-  0%    { width: 0;     left: 1px;     top: 19px; }
-  54%    { width: 0;     left: 1px;     top: 19px; }
-  70%    { width: 50px;   left: -8px;   top: 37px; }
-  84%    { width: 17px;   left: 21px;   top: 48px; }
-  100%  { width: 25px;   left: 14px;   top: 45px; }
+@keyframes animateSuccessTip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
 }
-@include keyframes(animateSuccessLong) {
-  0%    { width: 0;     right: 46px;   top: 54px; }
-  65%    { width: 0;     right: 46px;   top: 54px; }
-  84%    { width: 55px;   right: 0px;   top: 35px; }
-  100%  { width: 47px;   right: 8px;   top: 38px; }
+
+@keyframes animateSuccessLong {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px;
+  }
+
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
 }
-@include keyframes(rotatePlaceholder) {
+
+@keyframes rotatePlaceholder {
   0% { transform: rotate(-45deg); }
   5% { transform: rotate(-45deg); }
   12% { transform: rotate(-405deg); }
@@ -370,47 +419,79 @@
 }
 
 .animateSuccessTip {
-  @include animation('animateSuccessTip 0.75s');
+  animation: animateSuccessTip .75s 1 normal;
 }
+
 .animateSuccessLong {
-  @include animation('animateSuccessLong 0.75s');
+  animation: animateSuccessLong .75s 1 normal;
 }
+
 .icon.success.animate::after {
-  @include animation('rotatePlaceholder 4.25s ease-in');
+  animation: rotatePlaceholder 4.25s ease-in;
 }
 
 
 // Error icon animation
 
-@include keyframes(animateErrorIcon) {
-  0%    { transform: rotateX(100deg); opacity: 0; }
-  100%   { transform: rotateX(0deg);  opacity: 1; }
+@keyframes animateErrorIcon {
+  0% {
+    transform: rotateX(100deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
+
 .animateErrorIcon {
-  @include animation('animateErrorIcon 0.5s');
+  animation: animateErrorIcon .5s 1 normal;
 }
-@include keyframes(animateXMark) {
-  0%     { transform: scale(.4); margin-top: 26px;  opacity: 0; }
-  50%   { transform: scale(.4);  margin-top: 26px;  opacity: 0; }
-  80%   { transform: scale(1.15); margin-top: -6px; }
-  100%   { transform: scale(1);   margin-top: 0; opacity: 1; }
+
+@keyframes animateXMark {
+  0% {
+    transform: scale(.4);
+    margin-top: 26px;
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(.4);
+    margin-top: 26px;
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.15);
+    margin-top: -6px;
+  }
+
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    opacity: 1;
+  }
 }
+
 .animateXMark {
-  @include animation('animateXMark 0.5s');
+  animation: animateXMark .5s 1 normal;
 }
 
-@include keyframes(pulseWarning) {
-  0%    { border-color: #F8D486; }
-  100%  { border-color: #F8BB86; }
+@keyframes pulseWarning {
+  0% { border-color: #f8d486; }
+  100% { border-color: #f8bb86; }
 }
+
 .pulseWarning {
-  @include animation('pulseWarning 0.75s infinite alternate');
+  animation: pulseWarning .75s infinite alternate;
 }
 
-@include keyframes(pulseWarningIns) {
-  0%    { background-color: #F8D486; }
-  100%  { background-color: #F8BB86; }
+@keyframes pulseWarningIns {
+  0% { background-color: #f8d486; }
+  100% { background-color: #f8bb86; }
 }
+
 .pulseWarningIns {
-  @include animation('pulseWarningIns 0.75s infinite alternate');
+  animation: pulseWarningIns .75s infinite alternate;
 }
