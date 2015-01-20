@@ -1,10 +1,11 @@
 var gulp = require('gulp'); 
 
-var jshint = require('gulp-jshint');
-var sass   = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var jshint    = require('gulp-jshint');
+var sass      = require('gulp-sass');
+var concat    = require('gulp-concat');
+var uglify    = require('gulp-uglify');
+var rename    = require('gulp-rename');
+var minifyCSS = require('gulp-minify-css');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -21,9 +22,10 @@ gulp.task('sass', function() {
     .pipe(rename('example.css'))
     .pipe(gulp.dest('example'));
 
-  return gulp.src('lib/sweet-alert.scss')
+  return gulp.src(['lib/sweet-alert.scss', 'lib/ie9.css'])
     .pipe(sass())
-    .pipe(rename('sweet-alert.css'))
+    .pipe(concat('sweet-alert.css'))
+    .pipe(minifyCSS())
     .pipe(gulp.dest('lib'));
 });
 
@@ -39,7 +41,7 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('lib/*.js', ['lint', 'scripts']);
-  gulp.watch('lib/*.scss', ['sass']);
+  gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
 });
 
 // Default Task
