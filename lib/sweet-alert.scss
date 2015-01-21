@@ -231,7 +231,9 @@
     &.success {
       border-color: $green;
 
-      &::before, &::after { // Emulate moving circular line
+      // Emulate moving circular line
+      &::before,
+      &::after {
         content: '';
         border-radius: 40px;
         border-radius: 50%;
@@ -257,7 +259,7 @@
         left: 30px;
 
         transform: rotate(-45deg);
-        transform-origin: 0px 60px;
+        transform-origin: 0 60px;
       }
 
       .placeholder { // Ring
@@ -372,7 +374,7 @@
 @keyframes animateSuccessLong {
   0%		{ width: 0; 		right: 46px; 	top: 54px; }
   65%		{ width: 0; 		right: 46px; 	top: 54px; }
-  84%		{ width: 55px; 	right: 0px; 	top: 35px; }
+  84%		{ width: 55px; 	right: 0; 	top: 35px; }
   100%	{ width: 47px; 	right: 8px; 	top: 38px; }
 }
 
