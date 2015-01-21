@@ -57,5 +57,5 @@ gulp.task('watch', function() {
   gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
 });
 
-// Default Task , 'watch'
-gulp.task('default', ['lint', 'sass', 'scripts']);
+// Default Task
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
