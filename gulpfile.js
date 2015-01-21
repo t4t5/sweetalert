@@ -23,7 +23,7 @@ gulp.task('sass', function() {
   .pipe(rename('example.css'))
   .pipe(gulp.dest('example'));
 
-  gulp.src('lib/sweet-alert.scss')
+  gulp.src(['lib/ie8.css', 'lib/sweet-alert.scss', 'lib/ie9.css'])
   .pipe(sass())
   .pipe(autoprefixer({
     browsers: ['Explorer >= 8',
@@ -33,6 +33,7 @@ gulp.task('sass', function() {
                'Opera >=15'],
     cascade: false
   }))
+  .pipe(concat('sweet-alert.css'))
   .pipe(gulp.dest('dist'))
   .pipe(rename('sweet-alert.min.css'))
   .pipe(minifyCSS())
