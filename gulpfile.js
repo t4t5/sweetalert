@@ -1,67 +1,61 @@
 var gulp = require('gulp');
 
-var jshint = require('gulp-jshint');
-var sass   = require('gulp-sass');
+var jshint    = require('gulp-jshint');
+var sass      = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var cssmin = require('gulp-cssmin');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var concat    = require('gulp-concat');
+var uglify    = require('gulp-uglify');
+var rename    = require('gulp-rename');
+var minifyCSS = require('gulp-minify-css');
 
 // Lint Task
 gulp.task('lint', function() {
   return gulp.src('lib/sweet-alert.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
 });
 
-// Compile Our Sass & add Browser Prefixes
-gulp.task('sass', function () {
+// Compile Our Sass
+gulp.task('sass', function() {
 
   gulp.src('example/example.scss')
   .pipe(sass())
   .pipe(rename('example.css'))
   .pipe(gulp.dest('example'));
 
-  return gulp.src('lib/sweet-alert.scss')
+  gulp.src(['lib/ie8.css', 'lib/sweet-alert.scss', 'lib/ie9.css'])
   .pipe(sass())
-  .pipe(gulp.dest('dist'))
-  .pipe(rename('sweet-alert.css'))
   .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
+    browsers: ['Explorer >= 8',
+               'Safari >= 4',
+               'Firefox >= 3',
+               'Chrome >= 14',
+               'Opera >=15'],
     cascade: false
   }))
-  .pipe(cssmin())
-  .pipe(rename({suffix: '.min'}))
+  .pipe(concat('sweet-alert.css'))
+  .pipe(gulp.dest('dist'))
+  .pipe(rename('sweet-alert.min.css'))
+  .pipe(minifyCSS())
   .pipe(gulp.dest('dist'));
-});
 
+});
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
 
-  gulp.src('lib/sweet-alert.js')
-  .pipe(gulp.dest('dist'));
-
   return gulp.src('lib/sweet-alert.js')
-    .pipe(rename('sweet-alert.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'))
+  .pipe(rename('sweet-alert.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('dist'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('lib/*.js', ['lint', 'scripts']);
-  gulp.watch('lib/*.scss', ['sass']);
+  gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
 });
 
-//Minify CSS
-gulp.task('minify CSS', function () {
-  gulp.src('src/**/*.css')
-  .pipe(cssmin())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('dist'));
-});
-
-// Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+// Default Task , 'watch'
+gulp.task('default', ['lint', 'sass', 'scripts']);

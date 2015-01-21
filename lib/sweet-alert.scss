@@ -3,7 +3,9 @@
 // github.com/t4t5/sweetalert
 
 .sweet-overlay {
-  background-color: rgba(#000, .4);
+  $black: #000;
+
+  background-color: rgba($black, .4);
 
   position: fixed;
   left: 0;
@@ -18,8 +20,9 @@
 .sweet-alert {
   $width: 478px;
   $padding: 17px;
+  $white: #fff;
 
-  background-color: #fff;
+  background-color: $white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: $width;
   padding: $padding;
@@ -64,6 +67,7 @@
     text-align: center;
     font-weight: 300;
     position: relative;
+    text-align: inherit;
     float: none;
     margin: 0;
     padding: 0;
@@ -75,7 +79,7 @@
     $btnGray: #d0d0d0;
 
     background-color: $btnBlue;
-    color: #fff;
+    color: $white;
     border: 0;
     box-shadow: none;
     font-size: 17px;
@@ -126,14 +130,16 @@
 
 
   .icon {
-    $red:     #f27474;
-    $orange:   #f8bb86;
-    $blue:     #c9dae1;
-    $green:   #a5dc86;
+    $red: 		#f27474;
+    $orange: 	#f8bb86;
+    $blue: 		#c9dae1;
+    $green: 	#a5dc86;
+    $gray:    #808080;
 
     width: 80px;
     height: 80px;
-    border: 4px solid #808080;
+    border: 4px solid $gray;
+    border-radius: 40px;
     border-radius: 50%;
     margin: 20px auto;
     padding: 0;
@@ -225,14 +231,14 @@
     &.success {
       border-color: $green;
 
-      &::before,
-      &::after { // Emulate moving circular line
+      &::before, &::after { // Emulate moving circular line
         content: '';
+        border-radius: 40px;
         border-radius: 50%;
         position: absolute;
         width: 60px;
         height: 120px;
-        background: #fff;
+        background: $white;
         transform: rotate(45deg);
       }
 
@@ -258,6 +264,7 @@
         width: 80px;
         height: 80px;
         border: 4px solid rgba($green, .2);
+        border-radius: 40px;
         border-radius: 50%;
         box-sizing: content-box;
 
@@ -267,10 +274,10 @@
         z-index: 2;
       }
 
-      .fix {  // Hide corners left from
+      .fix {	// Hide corners left from animation
         width: 5px;
         height: 90px;
-        background-color: #fff;
+        background-color: $white;
 
         position: absolute;
         left: 28px;
@@ -323,14 +330,15 @@
 // Modal animation
 
 @keyframes showSweetAlert {
-  0% { transform: scale(.7); }
-  45% { transform: scale(1.05); }
-  80% { transform: scale(.95);  }
-  100% { transform: scale(1); }
+  0% 		{ transform: scale(.7); 	}
+  45% 	{ transform: scale(1.05); }
+  80% 	{ transform: scale(.95);	}
+  100% 	{ transform: scale(1); 		}
 }
+
 @keyframes hideSweetAlert {
-  0% { transform: scale(1); }
-  100% { transform: scale(.5); }
+  0% 		{ transform: scale(1); 	}
+  100% 	{ transform: scale(.5);}
 }
 
 .showSweetAlert {
@@ -354,68 +362,25 @@
 // Success icon animation
 
 @keyframes animateSuccessTip {
-  0% {
-    width: 0;
-    left: 1px;
-    top: 19px;
-  }
-
-  54% {
-    width: 0;
-    left: 1px;
-    top: 19px;
-  }
-
-  70% {
-    width: 50px;
-    left: -8px;
-    top: 37px;
-  }
-
-  84% {
-    width: 17px;
-    left: 21px;
-    top: 48px;
-  }
-
-  100% {
-    width: 25px;
-    left: 14px;
-    top: 45px;
-  }
+  0%		{ width: 0; 		left: 1px; 		top: 19px; }
+  54%		{ width: 0; 		left: 1px; 		top: 19px; }
+  70%		{ width: 50px; 	left: -8px; 	top: 37px; }
+  84%		{ width: 17px; 	left: 21px; 	top: 48px; }
+  100%	{ width: 25px; 	left: 14px; 	top: 45px; }
 }
 
 @keyframes animateSuccessLong {
-  0% {
-    width: 0;
-    right: 46px;
-    top: 54px;
-  }
-
-  65% {
-    width: 0;
-    right: 46px;
-    top: 54px;
-  }
-
-  84% {
-    width: 55px;
-    right: 0;
-    top: 35px;
-  }
-
-  100% {
-    width: 47px;
-    right: 8px;
-    top: 38px;
-  }
+  0%		{ width: 0; 		right: 46px; 	top: 54px; }
+  65%		{ width: 0; 		right: 46px; 	top: 54px; }
+  84%		{ width: 55px; 	right: 0px; 	top: 35px; }
+  100%	{ width: 47px; 	right: 8px; 	top: 38px; }
 }
 
 @keyframes rotatePlaceholder {
-  0% { transform: rotate(-45deg); }
-  5% { transform: rotate(-45deg); }
-  12% { transform: rotate(-405deg); }
-  100% { transform: rotate(-405deg); }
+  0% 		{ transform: rotate(-45deg); 	}
+  5% 		{ transform: rotate(-45deg);	}
+  12% 	{ transform: rotate(-405deg); }
+  100% 	{ transform: rotate(-405deg); }
 }
 
 .animateSuccessTip {
@@ -434,15 +399,8 @@
 // Error icon animation
 
 @keyframes animateErrorIcon {
-  0% {
-    transform: rotateX(100deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
+  0%		{ transform: rotateX(100deg); opacity: 0; }
+  100% 	{ transform: rotateX(0deg);  	opacity: 1; }
 }
 
 .animateErrorIcon {
@@ -450,28 +408,10 @@
 }
 
 @keyframes animateXMark {
-  0% {
-    transform: scale(.4);
-    margin-top: 26px;
-    opacity: 0;
-  }
-
-  50% {
-    transform: scale(.4);
-    margin-top: 26px;
-    opacity: 0;
-  }
-
-  80% {
-    transform: scale(1.15);
-    margin-top: -6px;
-  }
-
-  100% {
-    transform: scale(1);
-    margin-top: 0;
-    opacity: 1;
-  }
+  0% 		{ transform: scale(.4);  	margin-top: 26px;	opacity: 0; }
+  50% 	{ transform: scale(.4);  	margin-top: 26px;	opacity: 0; }
+  80% 	{ transform: scale(1.15);   margin-top: -6px; 						}
+  100% 	{ transform: scale(1); 			margin-top: 0; 		opacity: 1; }
 }
 
 .animateXMark {
@@ -479,8 +419,8 @@
 }
 
 @keyframes pulseWarning {
-  0% { border-color: #f8d486; }
-  100% { border-color: #f8bb86; }
+  0%		{ border-color: #f8d486; }
+  100%	{ border-color: #f8bb86; }
 }
 
 .pulseWarning {
@@ -488,8 +428,8 @@
 }
 
 @keyframes pulseWarningIns {
-  0% { background-color: #f8d486; }
-  100% { background-color: #f8bb86; }
+  0%		{ background-color: #f8d486; }
+  100%	{ background-color: #f8bb86; }
 }
 
 .pulseWarningIns {

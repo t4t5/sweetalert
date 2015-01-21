@@ -1,0 +1,5 @@
+/* Internet Explorer 8 quirks */
+/* This file is automatically merged into sweet-alert.min.js through Gulp */
+.sweet-overlay {
+  background-color: black;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; }

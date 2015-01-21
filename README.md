@@ -57,19 +57,32 @@ sweetAlert({
 [View more examples](http://tristanedwards.me/sweetalert)
 
 
+#Browser compatibility
+
+SweetAlert works in all major browsers (yes, even IE). Some details:
+
+- **IE8**: Works, but icons (checkmark, x-mark...) are hidden.
+- **IE9**: Works, but icons are not animated.
+- **IE10+**: Works!
+- **Safari 4+**: Works!
+- **Firefox 3+**: Works!
+- **Chrome 14+**: Works!
+- **Opera 15+**: Works!
+
+
 #Contributing
 
 If you want to contribute:
 
-1. Fork the repo
+- Fork the repo
 
-2. Make sure you have [Node](http://nodejs.org/), [NPM](https://www.npmjs.com/) and [Gulp](http://gulpjs.com/) installed. When in the SweetAlert directory, run the command:
+- Make sure you have [Node](http://nodejs.org/), [NPM](https://www.npmjs.com/) and [Gulp](http://gulpjs.com/) installed. When in the SweetAlert directory, run the command:
 ```
 npm install
 ```
 to install the dependencies and make Gulp automatically minify the SCSS and JS-files.
 
-3. After you're done, make a pull request and wait for approval! :)
+- After you're done, make a pull request and wait for approval! :)
 
 
 
@@ -77,3 +90,4 @@ to install the dependencies and make Gulp automatically minify the SCSS and JS-f
 
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
+* [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
