@@ -5,6 +5,8 @@
 .sweet-overlay {
   $black: #000;
 
+  background-color: black;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   background-color: rgba($black, .4);
 
   position: fixed;

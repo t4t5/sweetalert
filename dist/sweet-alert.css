@@ -1,10 +1,6 @@
-/* Internet Explorer 8 quirks */
-/* This file is automatically merged into sweet-alert.min.js through Gulp */
 .sweet-overlay {
   background-color: black;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; }
-
-.sweet-overlay {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
@@ -805,11 +801,3 @@
   -webkit-animation: pulseWarningIns .75s infinite alternate;
   -moz-animation: pulseWarningIns .75s infinite alternate;
   animation: pulseWarningIns .75s infinite alternate; }
-
-/* Internet Explorer 9 has some special quirks that are fixed here */
-/* The icons are not animated. */
-/* This file is automatically merged into sweet-alert.min.js through Gulp */
-/* Error icon */
-/* Success icon */
-.sweet-alert .icon.success {
-  border-color: transparent\9; }
