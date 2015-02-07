@@ -123,7 +123,7 @@
 	}
 
 
-	.icon {
+	.sa-icon {
 		$red: 		#F27474;
 		$orange: 	#F8BB86;
 		$blue: 		#C9DAE1;
@@ -140,7 +140,7 @@
 		position: relative;
 		box-sizing: content-box;
 
-		&.error {
+		&.sa-error {
 			border-color: $red;
 
 			.x-mark {
@@ -169,7 +169,7 @@
 				}
 			}
 		}
-		&.warning {
+		&.sa-warning {
 			border-color: $orange;
 
 			.body { // Exclamation mark body
@@ -195,7 +195,7 @@
 				background-color: $orange;
 			}
 		}
-		&.info {
+		&.sa-info {
 			border-color: $blue;
 
 			&::before { // i-letter body
@@ -220,7 +220,7 @@
 				background-color: $blue;
 			}
 		}
-		&.success {
+		&.sa-success {
 			border-color: $green;
 
 			&::before, &::after { // Emulate moving circular line
@@ -316,7 +316,7 @@
 				}
 			}
 		}
-		&.custom {
+		&.sa-custom {
 			background-size: contain;
 			border-radius: 0;
 			border: none;
@@ -403,7 +403,7 @@
 .animateSuccessLong {
 	@include animation('animateSuccessLong 0.75s');
 }
-.icon.success.animate::after {
+.sa-icon.sa-success.animate::after {
 	@include animation('rotatePlaceholder 4.25s ease-in');
 }
 
