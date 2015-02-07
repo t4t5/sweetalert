@@ -143,12 +143,12 @@
 		&.sa-error {
 			border-color: $red;
 
-			.x-mark {
+			.sa-x-mark {
 				position: relative;
 				display: block;
 			}
 
-			.line {
+			.sa-line {
 				position: absolute;
 				height: 5px;
 				width: 47px;
@@ -157,12 +157,12 @@
 				top: 37px;
 				border-radius: 2px;
 
-				&.left {
+				&.sa-left {
 					-webkit-transform: rotate(45deg);
     			transform: rotate(45deg);
     			left: 17px;
 				}
-				&.right {
+				&.sa-right {
 					-webkit-transform: rotate(-45deg);
     			transform: rotate(-45deg);
     			right: 16px;
@@ -172,7 +172,7 @@
 		&.sa-warning {
 			border-color: $orange;
 
-			.body { // Exclamation mark body
+			.sa-body { // Exclamation mark body
 				position: absolute;
 				width: 5px;
 				height: 47px;
@@ -183,7 +183,7 @@
 				margin-left: -2px;
 				background-color: $orange;
 			}
-			.dot { // Exclamation mark dot
+			.sa-dot { // Exclamation mark dot
 				position: absolute;
 				width: 7px;
 				height: 7px;
@@ -258,7 +258,7 @@
 			  transform-origin: 0px 60px;
 			}
 
-			.placeholder { // Ring
+			.sa-placeholder { // Ring
 				width: 80px;
 				height: 80px;
 				border: 4px solid rgba($green, 0.2);
@@ -273,7 +273,7 @@
 				z-index: 2;
 			}
 
-			.fix {	// Hide corners left from animation
+			.sa-fix {	// Hide corners left from animation
 				width: 5px;
 				height: 90px;
 				background-color: white;
@@ -287,7 +287,7 @@
 				transform: rotate(-45deg);
 			}
 
-			.line {
+			.sa-line {
 				height: 5px;
 				background-color: $green;
 				display: block;
@@ -296,7 +296,7 @@
 				position: absolute;
 				z-index: 2;
 
-				&.tip {
+				&.sa-tip {
 					width: 25px;
 
     			left: 14px;
@@ -305,7 +305,7 @@
 					-webkit-transform: rotate(45deg);
     			transform: rotate(45deg);
 				}
-				&.long {
+				&.sa-long {
 					width: 47px;
 
     			right: 8px;
