@@ -91,4 +91,5 @@ to install the dependencies and make Gulp automatically minify the SCSS and JS-f
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
 * [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
+* [SweetAlert for RubyOnRails](https://github.com/sharshenov/sweetalert-rails)
 
