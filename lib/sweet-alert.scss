@@ -122,6 +122,10 @@
 		box-shadow: none !important;
 	}
 
+	&[data-has-confirm-button=false][data-has-cancel-button=false] {
+		padding-bottom: 40px;
+	}
+
 	.sa-icon {
 		$red: 		#F27474;
 		$orange: 	#F8BB86;
