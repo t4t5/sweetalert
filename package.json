@@ -1,8 +1,8 @@
 {
   "name": "sweetalert",
-  "version": "0.3.4",
+  "version": "0.4.2",
   "description": "A beautiful replacement for JavaScript's \"Alert\"",
-  "main": "index.js",
+  "main": "lib/sweet-alert.js",
   "directories": {
     "example": "example"
   },

@@ -80,18 +80,6 @@
 		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
 	</li>
 
-	<li class="timer">
-		<div class="ui">
-			<p>A message with auto close timer</p>
-			<button>Try me!</button>
-		</div>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
-&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
-&nbsp;&nbsp;timer: <span class="str">2000</span>
-});</pre>
-	</li>
-
 	<li class="warning confirm">
 		<div class="ui">
 			<p>A warning message, with a function attached to the "Confirm"-button...</p>
@@ -157,6 +145,19 @@
 &nbsp;&nbsp;title: <span class="str">"HTML &lt;small&gt;Title&lt;/small&gt;!"</span>,
 &nbsp;&nbsp;text: <span class="str">"A custom &lt;span style="color:#F8BB86"&gt;html&lt;span&gt; message."</span>,
 &nbsp;&nbsp;html: <span class="str">true</span>
+});</pre>
+	</li>
+
+	<li class="timer">
+		<div class="ui">
+			<p>A message with auto close timer</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
+&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
+&nbsp;&nbsp;timer: <span class="str">2000</span>,
+&nbsp;&nbsp;showConfirmButton: <span class="str">false</span>
 });</pre>
 	</li>
 
@@ -247,6 +248,11 @@
 		<td><b>showCancelButton</b></td>
 		<td><i>false</i></td>
 		<td>If set to <strong>true</strong>, a "Cancel"-button will be shown, which the user can click on to dismiss the modal.</td>
+	</tr>
+	<tr>
+		<td><b>showConfirmButton</b></td>
+		<td><i>true</i></td>
+		<td>If set to <strong>false</strong>, the "OK/Confirm"-button will be hidden. Make sure you set a timer or set allowOutsideClick to true when using this, in order not to annoy the user.</td>
 	</tr>
 	<tr>
 		<td><b>confirmButtonText</b></td>
@@ -360,7 +366,8 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 	swal({
 		title: "Auto close alert!",
 		text: "I will close in 2 seconds.",
-		timer: 2000
+		timer: 2000,
+		showConfirmButton: false
 	});
 };
 
