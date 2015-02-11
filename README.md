@@ -46,7 +46,9 @@ sweetAlert({
   confirmButtonColor: "#DD6B55",
   confirmButtonText: "Yes, delete it!",
   closeOnConfirm: false,
-  html: false
+  html: false,
+  titleCustomClass: 'myCustomSweetClasses sweetTitle',
+  textCustomClass: 'myCustomSweetClasses sweetText'
 }, function(){
   swal("Deleted!",
   "Your imaginary file has been deleted.",
@@ -91,4 +93,3 @@ to install the dependencies and make Gulp automatically minify the SCSS and JS-f
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
 * [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
-
