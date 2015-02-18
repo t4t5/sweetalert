@@ -1,0 +1,23 @@
+/* Internet Explorer 9 has some special quirks that are fixed here */
+/* The icons are not animated. */
+/* This file is automatically merged into sweet-alert.min.js through Gulp */
+
+/* Error icon */
+.sweet-alert .icon.error .line.left {
+  -ms-transform: rotate(45deg)\9;
+}
+.sweet-alert .icon.error .line.right {
+  -ms-transform: rotate(-45deg)\9;
+}
+
+
+/* Success icon */
+.sweet-alert .icon.success {
+  border-color: transparent\9;
+}
+.sweet-alert .icon.success .line.tip {
+  -ms-transform: rotate(45deg)\9;
+}
+.sweet-alert .icon.success .line.long {
+  -ms-transform: rotate(-45deg)\9;
+}

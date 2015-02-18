@@ -21,7 +21,74 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
 
-#SASS
-The css is built with the `--style compressed` and `--sourcemap=none` options:
+#Examples
 
-    sass --style compressed --sourcemap=none sweet-alert.scss sweet-alert.css
+The most basic message:
+
+```javascript
+sweetAlert("Hello world!");
+```
+
+A message signaling an error:
+
+```javascript
+sweetAlert("Oops...", "Something went wrong!", "error");
+```
+
+A warning message, with a function attached to the "Confirm"-button..
+
+```javascript
+sweetAlert({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false,
+  html: false
+}, function(){
+  swal("Deleted!",
+  "Your imaginary file has been deleted.",
+  "success");
+});
+```
+
+[View more examples](http://tristanedwards.me/sweetalert)
+
+
+#Browser compatibility
+
+SweetAlert works in all major browsers (yes, even IE). Some details:
+
+- **IE8**: Works, but icons (checkmark, x-mark...) are hidden.
+- **IE9**: Works, but icons are not animated.
+- **IE10+**: Works!
+- **Safari 4+**: Works!
+- **Firefox 3+**: Works!
+- **Chrome 14+**: Works!
+- **Opera 15+**: Works!
+
+
+#Contributing
+
+If you want to contribute:
+
+- Fork the repo
+
+- Make sure you have [Node](http://nodejs.org/), [NPM](https://www.npmjs.com/) and [Gulp](http://gulpjs.com/) installed. When in the SweetAlert directory, run the command:
+```
+npm install
+```
+to install the dependencies and make Gulp automatically minify the SCSS and JS-files.
+
+- After you're done, make a pull request and wait for approval! :)
+
+
+
+#Related projects
+
+* [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
+* [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
+* [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
+

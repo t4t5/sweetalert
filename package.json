@@ -1,0 +1,37 @@
+{
+  "name": "sweetalert",
+  "version": "0.4.2",
+  "description": "A beautiful replacement for JavaScript's \"Alert\"",
+  "main": "lib/sweet-alert.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/t4t5/sweetalert"
+  },
+  "keywords": [
+    "sweetalert",
+    "alert",
+    "modal",
+    "popup"
+  ],
+  "author": "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t4t5/sweetalert/issues"
+  },
+  "homepage": "http://tristanedwards.me/sweetalert",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-jshint": "^1.9.0",
+    "gulp-minify-css": "^0.3.13",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^1.3.2",
+    "gulp-uglify": "^1.0.2"
+  }
+}
