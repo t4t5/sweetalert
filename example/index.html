@@ -136,6 +136,18 @@
 });</pre>
 	</li>
 
+	<li class="outside-click">
+		<div class="ui">
+			<p>A message that can be dismissed by clicking outside of the message</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Try clicking the grey area around me."</span>,
+&nbsp;&nbsp;allowOutsideClick: <span class="str">true</span>
+});</pre>
+	</li>
+
 	<li class="message-html">
 		<div class="ui">
 			<p>An HTML message</p>
@@ -420,6 +432,14 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 		title: "Sweet!",
 		text: "Here's a custom image.",
 		imageUrl: 'images/thumbs-up.jpg'
+	});
+};
+
+document.querySelector('ul.examples li.outside-click button').onclick = function(){
+	swal({
+		title: "Sweet!",
+		text: "Try clicking the grey area around me.",
+		allowOutsideClick: true
 	});
 };
 
