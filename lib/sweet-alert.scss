@@ -1,5 +1,5 @@
 // SweetAlert
-// 2014 (c) - Tristan Edwards
+// 2014-2015 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
 
 .sweet-overlay {
@@ -73,6 +73,83 @@
 		line-height: normal;
 	}
 
+	fieldset {
+		border: none;
+		position: relative;
+	}
+
+	.sa-error-container {
+		background-color: #f1f1f1;
+	  margin-left: -20px;
+	  margin-right: -20px;
+	  overflow: hidden;
+	  padding: 0;
+	  max-height: 0;
+	  webkit-transition: padding 0.15s, max-height 0.15s;
+	  transition: padding 0.15s, max-height 0.15s;
+	  &.show {
+	  	padding: 10px 0;
+	  	max-height: 100px;
+	  	webkit-transition: padding 0.2s, max-height 0.2s;
+	  	transition: padding 0.25s, max-height 0.25s;
+	  }
+
+	  .icon {
+	  	display: inline-block;
+		  width: 24px;
+		  height: 24px;
+		  border-radius: 50%;
+		  background-color: rgb(234, 125, 125);
+		  color: white;
+		  line-height: 24px;
+		  text-align: center;
+		  margin-right: 3px;
+	  }
+	  p {
+	  	display: inline-block;
+	  }
+	}
+
+	.sa-input-error {
+		position: absolute;
+	  top: 29px;
+	  right: 26px;
+	  width: 20px;
+	  height: 20px;
+	  opacity: 0;
+	  -webkit-transform: scale(0.5);
+	  transform: scale(0.5);
+	  -webkit-transform-origin: 50% 50%;
+	  transform-origin: 50% 50%;
+	  -webkit-transition: all 0.1s;
+	  transition: all 0.1s;
+		&::before, &::after {
+			content: "";
+			width: 20px;
+			height: 6px;
+			background-color: #f06e57;
+			border-radius: 3px;
+			position: absolute;
+			top: 50%;
+  		margin-top: -4px;
+  		left: 50%;
+  		margin-left: -9px;
+		}
+		&::before {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		&::after {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		&.show {
+			opacity: 1;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+	}
+
 	input {
 		width: 100%;
 		box-sizing: border-box;
@@ -80,12 +157,13 @@
 		border: 1px solid rgb(215, 215, 215);
 		height: 43px;
 		margin-top: 10px;
+		margin-bottom: 17px;
 		font-size: 18px;
 		box-shadow: inset 0px 1px 1px rgba(black, 0.06);
 		padding: 0 12px;
 		display: none;
-		transition: all 0.3s;
 		-webkit-transition: all 0.3s;
+		transition: all 0.3s;
 		&:focus {
 			outline: none;
 			box-shadow: 0px 0px 3px rgb(196, 230, 245);
