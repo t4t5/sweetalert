@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
-  <script src="../lib/sweet-alert.js"></script>
+  <script src="../lib/sweet-alert.min.js"></script>
   <link rel="stylesheet" href="../lib/sweet-alert.css">
   <!--.......................-->
 
@@ -176,13 +176,14 @@
 &nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>
 },
 <span class="func"><i>function</i></span>(inputValue){
-&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span>;
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
 &nbsp;&nbsp;
 &nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
 &nbsp;&nbsp;}
 &nbsp;&nbsp;
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote "</span> + inputValue + <span class="str">"!"</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
 &nbsp;&nbsp;}
 });</pre>
 	</li>
@@ -482,13 +483,14 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		animation: "slide-from-top"
 	}, 
 	function(inputValue){
-		if (inputValue === false) return;
+		if (inputValue === false) return false;
 
 		if (inputValue === "") {
-			return swal.showInputError("You need to write something!");
+			swal.showInputError("You need to write something!");
+			return false;
 		}
 		
-		swal("Nice!", 'You wrote "' + inputValue + '"', "success");
+		swal("Nice!", 'You wrote: ' + inputValue, "success");
 		
 	});
 };
