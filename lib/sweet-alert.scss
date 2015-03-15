@@ -86,10 +86,10 @@ body.stop-scrolling {
 
   .sa-error-container {
     background-color: #f1f1f1;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -17px;
+    margin-right: -17px;
     overflow: hidden;
-    padding: 0;
+    padding: 0 10px;
     max-height: 0;
     webkit-transition: padding 0.15s, max-height 0.15s;
     transition: padding 0.15s, max-height 0.15s;
