@@ -8,6 +8,7 @@
   <title>SweetAlert</title>
   
   <link rel="stylesheet" href="./example.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
   <script src="../lib/sweet-alert.js"></script>
@@ -144,29 +145,7 @@
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"HTML &lt;small&gt;Title&lt;/small&gt;!"</span>,
 &nbsp;&nbsp;text: <span class="str">"A custom &lt;span style="color:#F8BB86"&gt;html&lt;span&gt; message."</span>,
-&nbsp;&nbsp;html: <span class="str">true</span>
-});</pre>
-	</li>
-
-	<li class="input">
-		<div class="ui">
-			<p>An input</p>
-			<button>Try me!</button>
-		</div>
-		<pre>swal({
-&nbsp;&nbsp;title: <span class="str">"An input!"</span>,
-&nbsp;&nbsp;text: <span class="str">"Write something interesting:"</span>,
-&nbsp;&nbsp;type: <span class="str">"input"</span>
-},
-<span class="func"><i>function</i></span>(inputValue){
-&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">!==</span> <span class="val">false</span>) <span class="tag">return</span>;
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
-&nbsp;&nbsp;}
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote "</span> + inputValue + <span class="str">"!"</span>, <span class="str">"success"</span>);
-&nbsp;&nbsp;}
+&nbsp;&nbsp;html: <span class="val">true</span>
 });</pre>
 	</li>
 
@@ -178,8 +157,33 @@
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
 &nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
-&nbsp;&nbsp;timer: <span class="str">2000</span>,
-&nbsp;&nbsp;showConfirmButton: <span class="str">false</span>
+&nbsp;&nbsp;timer: <span class="val">2000</span>,
+&nbsp;&nbsp;showConfirmButton: <span class="val">false</span>
+});</pre>
+	</li>
+
+	<li class="input">
+		<div class="ui">
+			<p>A replacement for the "prompt" function</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"An input!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Write something interesting:"</span>,
+&nbsp;&nbsp;type: <span class="str">"input"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>
+},
+<span class="func"><i>function</i></span>(inputValue){
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span>;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote "</span> + inputValue + <span class="str">"!"</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;}
 });</pre>
 	</li>
 
@@ -326,6 +330,11 @@
 		<td><i>true</i></td>
 		<td>If set to <strong>false</strong>, the modal's animation will be disabled.</td>
 	</tr>
+	<tr>
+		<td><b>inputType</b></td>
+		<td><i>"text"</i></td>
+		<td>Change the type of the input field when using <strong>type: "input"</strong> (this can be useful if you want users to type in their password for example).</td>
+	</tr>
 </table>
 
 
@@ -359,7 +368,7 @@
 	<tr>
 		<td>showInputError</td>
 		<td><i>swal.showInputError("Invalid email!");</i></td>
-		<td>Show an error message after validating the input field, in SweetAlert's callback method</td>
+		<td>Show an error message after validating the input field, if the user's data is bad</td>
 	</tr>
 </table>
 
@@ -469,7 +478,8 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		text: 'Write something interesting:',
 		type: 'input',
 		showCancelButton: true,
-		closeOnConfirm: false
+		closeOnConfirm: false,
+		animation: "slide-from-top"
 	}, 
 	function(inputValue){
 		if (inputValue === false) return;
