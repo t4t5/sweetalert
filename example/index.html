@@ -8,6 +8,7 @@
   <title>SweetAlert</title>
   
   <link rel="stylesheet" href="./example.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
   <script src="../lib/sweet-alert.min.js"></script>
@@ -144,7 +145,7 @@
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"HTML &lt;small&gt;Title&lt;/small&gt;!"</span>,
 &nbsp;&nbsp;text: <span class="str">"A custom &lt;span style="color:#F8BB86"&gt;html&lt;span&gt; message."</span>,
-&nbsp;&nbsp;html: <span class="str">true</span>
+&nbsp;&nbsp;html: <span class="val">true</span>
 });</pre>
 	</li>
 
@@ -156,8 +157,34 @@
 		<pre>swal({
 &nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
 &nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
-&nbsp;&nbsp;timer: <span class="str">2000</span>,
-&nbsp;&nbsp;showConfirmButton: <span class="str">false</span>
+&nbsp;&nbsp;timer: <span class="val">2000</span>,
+&nbsp;&nbsp;showConfirmButton: <span class="val">false</span>
+});</pre>
+	</li>
+
+	<li class="input">
+		<div class="ui">
+			<p>A replacement for the "prompt" function</p>
+			<button>Try me!</button>
+		</div>
+		<pre>swal({
+&nbsp;&nbsp;title: <span class="str">"An input!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Write something interesting:"</span>,
+&nbsp;&nbsp;type: <span class="str">"input"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>
+},
+<span class="func"><i>function</i></span>(inputValue){
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
+&nbsp;&nbsp;}
 });</pre>
 	</li>
 
@@ -172,7 +199,12 @@
 	<pre class="center">$ bower install sweetalert</pre>
 </div>
 
-<p class="center"><b>Method 2:</b> Download the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
+<div class="center-container">
+	<p class="center"><b>Method 2:</b> Install through NPM:</p>
+	<pre class="center">$ npm install sweetalert</pre>
+</div>
+
+<p class="center"><b>Method 3:</b> Download the sweetAlert <strong>CSS</strong> and <strong>JavaScript</strong> files.</p>
 
 <a class="button" href="https://github.com/t4t5/sweetalert/archive/master.zip" download>Download files</a>
 
@@ -227,13 +259,13 @@
 	<tr>
 		<td><b>type</b></td>
 		<td><i>null</i></td>
-		<td>The type of the modal. SweetAlert comes with 4 built-in types which will show a corresponding icon animation: "<strong>warning</strong>", "<strong>error</strong>", "<strong>success</strong>" and "<strong>info"</strong>. It can either be put in the array under the key "type" or passed as the third parameter of the function.</td>
+		<td>The type of the modal. SweetAlert comes with 4 built-in types which will show a corresponding icon animation: "<strong>warning</strong>", "<strong>error</strong>", "<strong>success</strong>" and "<strong>info"</strong>. You can also set it as "<strong>input</strong>" to get a prompt modal. It can either be put in the array under the key "type" or passed as the third parameter of the function.</td>
 	</tr>
-        <tr>
-                <td><b>allowEscapeKey</b></td>
-                <td><i>true</i></td>
-                <td>If set to <strong>true</strong>, the user can dismiss the modal by pressing the Escape key.</td>
-        </tr>
+    <tr>
+      <td><b>allowEscapeKey</b></td>
+      <td><i>true</i></td>
+      <td>If set to <strong>true</strong>, the user can dismiss the modal by pressing the Escape key.</td>
+    </tr>
 	<tr>
 		<td><b>customClass</b></td>
 		<td><i>null</i></td>
@@ -299,6 +331,11 @@
 		<td><i>true</i></td>
 		<td>If set to <strong>false</strong>, the modal's animation will be disabled.</td>
 	</tr>
+	<tr>
+		<td><b>inputType</b></td>
+		<td><i>"text"</i></td>
+		<td>Change the type of the input field when using <strong>type: "input"</strong> (this can be useful if you want users to type in their password for example).</td>
+	</tr>
 </table>
 
 
@@ -328,6 +365,11 @@
 		<td>close</td>
 		<td><i>swal.close();</i></td>
 		<td>Close the currently open SweetAlert programatically.</td>
+	</tr>
+	<tr>
+		<td>showInputError</td>
+		<td><i>swal.showInputError("Invalid email!");</i></td>
+		<td>Show an error message after validating the input field, if the user's data is bad</td>
 	</tr>
 </table>
 
@@ -428,6 +470,28 @@ document.querySelector('ul.examples li.message-html button').onclick = function(
 		title: "HTML <small>Title</small>!",
 		text: 'A custom <span style="color:#F8BB86">html<span> message.',
 		html: true
+	});
+};
+
+document.querySelector('ul.examples li.input button').onclick = function(){
+	swal({
+		title: "An input!",
+		text: 'Write something interesting:',
+		type: 'input',
+		showCancelButton: true,
+		closeOnConfirm: false,
+		animation: "slide-from-top"
+	}, 
+	function(inputValue){
+		if (inputValue === false) return false;
+
+		if (inputValue === "") {
+			swal.showInputError("You need to write something!");
+			return false;
+		}
+		
+		swal("Nice!", 'You wrote: ' + inputValue, "success");
+		
 	});
 };
 

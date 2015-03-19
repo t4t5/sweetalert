@@ -16,6 +16,12 @@ You can install SweetAlert through bower:
 bower install sweetalert
 ```
 
+Or through npm:
+
+```bash
+npm install sweetalert
+```
+
 Alternatively, download the package and reference the JavaScript and CSS files manually:
 
 ```html
