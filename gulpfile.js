@@ -24,7 +24,7 @@ gulp.task('sass', function() {
 
   return gulp.src(['lib/sweet-alert.scss', 'lib/ie9.css'])
     .pipe(sass())
-    .pipe(concat('sweet-alert.css'))
+    .pipe(concat('sweet-alert.min.css'))
     .pipe(minifyCSS())
     .pipe(gulp.dest('lib'));
 });

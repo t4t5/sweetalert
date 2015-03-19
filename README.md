@@ -26,7 +26,7 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 
 ```html
 <script src="lib/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+<link rel="stylesheet" type="text/css" href="lib/sweet-alert.min.css">
 ```
 
 #Tutorial
