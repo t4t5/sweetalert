@@ -2,9 +2,11 @@
 
 An awesome replacement for JavaScript's alert.
 
+![A success modal](https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif)
+
 [See it in action!](http://tristanedwards.me/sweetalert)
 
-![A success modal](https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif)
+[Learn how to use it!](https://www.ludu.co/lesson/how-to-use-sweetalert)
 
 #Usage
 
@@ -21,6 +23,10 @@ Alternatively, download the package and reference the JavaScript and CSS files m
 <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 ```
 
+#Tutorial
+
+The easiest way to get started is follow the [SweetAlert tutorial on Ludu](https://www.ludu.co/lesson/how-to-use-sweetalert)!
+
 #Examples
 
 The most basic message:
@@ -35,7 +41,26 @@ A message signaling an error:
 sweetAlert("Oops...", "Something went wrong!", "error");
 ```
 
-A warning message, with a function attached to the "Confirm"-button..
+A warning message, with a function attached to the "Confirm"-button:
+
+```javascript
+sweetAlert({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false,
+  html: false
+}, function(){
+  swal("Deleted!",
+  "Your imaginary file has been deleted.",
+  "success");
+});
+```
+
+A prompt modal where the user's input is logged:
 
 ```javascript
 sweetAlert({
