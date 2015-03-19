@@ -29,6 +29,13 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('lib'));
 });
 
+// Compile theme CSS
+gulp.task('themes', function() {
+  return gulp.src('lib/themes/facebook/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('lib/themes/facebook'));
+});
+
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
   return gulp.src('lib/sweet-alert.js')
@@ -42,6 +49,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
   gulp.watch('lib/*.js', ['lint', 'scripts']);
   gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
+  gulp.watch('lib/themes/*/*.scss', ['themes']);
 });
 
 // Default Task
