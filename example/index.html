@@ -13,7 +13,7 @@
   <!-- This is what you need -->
   <script src="../lib/sweet-alert.min.js"></script>
   <link rel="stylesheet" href="../lib/sweet-alert.css">
-  <link rel="stylesheet" href="../lib/themes/twitter/twitter.css">
+  <!--<link rel="stylesheet" href="../lib/themes/twitter/twitter.css">-->
   <!--.......................-->
 
 </head>
@@ -33,7 +33,7 @@
 	<button>Show error message</button>
 
 	<h5>Code:</h5>
-	<pre><span class="func">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
+	<pre><span class="attr">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
 
 	</pre>
 
@@ -45,7 +45,7 @@
 	<button>Show error message</button>
 
 	<h5>Code:</h5>
-	<pre>sweetAlert(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
+	<pre><span class="attr">sweetAlert</span>(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
 </div>
 
 <p>Pretty cool huh? SweetAlert automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable, as you can see below!</p>
@@ -63,7 +63,7 @@
 			<p>A basic message</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Here's a message!"</span>)</pre>
+		<pre><span class="attr">swal</span>(<span class="str">"Here's a message!"</span>)</pre>
 	</li>
 
 	<li class="title-text">
@@ -71,7 +71,7 @@
 			<p>A title with a text under</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Here's a message!"</span>, <span class="str">"It's pretty, isn't it?"</span>)</pre>
+		<pre><span class="attr">swal</span>(<span class="str">"Here's a message!"</span>, <span class="str">"It's pretty, isn't it?"</span>)</pre>
 	</li>
 
 	<li class="success">
@@ -79,7 +79,7 @@
 			<p>A success message!</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
+		<pre><span class="attr">swal</span>(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
 	</li>
 
 	<li class="warning confirm">
@@ -87,7 +87,7 @@
 			<p>A warning message, with a function attached to the "Confirm"-button...</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
 &nbsp;&nbsp;text: <span class="str">"You will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
@@ -97,7 +97,7 @@
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
 },
 <span class="func"><i>function</i></span>(){
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
 });</pre>
 	</li>
 
@@ -106,7 +106,7 @@
 			<p>... and by passing a parameter, you can execute something else for "Cancel".</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
 &nbsp;&nbsp;text: <span class="str">"You will not be able to recover this imaginary file!"</span>,
 &nbsp;&nbsp;type: <span class="str">"warning"</span>,
@@ -119,9 +119,9 @@
 },
 <span class="func"><i>function</i></span>(isConfirm){
 &nbsp;&nbsp;<span class="tag">if</span> (isConfirm) {
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
 &nbsp;&nbsp;} <span class="tag">else</span> {
-	&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Cancelled"</span>, <span class="str">"Your imaginary file is safe :)"</span>, <span class="str">"error"</span>);
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Cancelled"</span>, <span class="str">"Your imaginary file is safe :)"</span>, <span class="str">"error"</span>);
 &nbsp;&nbsp;}
 });</pre>
 	</li>
@@ -131,7 +131,7 @@
 			<p>A message with a custom icon</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
 &nbsp;&nbsp;text: <span class="str">"Here's a custom image."</span>,
 &nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
@@ -143,7 +143,7 @@
 			<p>An HTML message</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"HTML &lt;small&gt;Title&lt;/small&gt;!"</span>,
 &nbsp;&nbsp;text: <span class="str">"A custom &lt;span style="color:#F8BB86"&gt;html&lt;span&gt; message."</span>,
 &nbsp;&nbsp;html: <span class="val">true</span>
@@ -155,7 +155,7 @@
 			<p>A message with auto close timer</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
 &nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
 &nbsp;&nbsp;timer: <span class="val">2000</span>,
@@ -168,25 +168,34 @@
 			<p>A replacement for the "prompt" function</p>
 			<button>Try me!</button>
 		</div>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"An input!"</span>,
 &nbsp;&nbsp;text: <span class="str">"Write something interesting:"</span>,
 &nbsp;&nbsp;type: <span class="str">"input"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
-&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>
+&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>,
+&nbsp;&nbsp;inputPlaceholder: <span class="str">"Write something"</span>
 },
-<span class="func"><i>function</i></span>(inputValue){
+<span class="func"><i>function</i></span>(<span class="arg">inputValue</span>){
 &nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
 &nbsp;&nbsp;
 &nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;swal.showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span></span>(<span class="str">"You need to write something!"</span>);
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
 &nbsp;&nbsp;}
 &nbsp;&nbsp;
-&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
-&nbsp;&nbsp;}
+&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
 });</pre>
+	</li>
+
+	<li class="theme">
+		<div class="ui">
+			<p>You can also change the theme of SweetAlert!</p>
+			<button>Try me!</button>
+		</div>
+		<pre>&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/sweet-alert.css"</span>&gt;
+			&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/themes/twitter.css"</span>&gt;</pre>
 	</li>
 
 </ul>
@@ -218,7 +227,7 @@
 
 	<li>
 		<p>Call the sweetAlert-function after the page has loaded</p>
-		<pre>swal({
+		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Error!"</span>,
 &nbsp;&nbsp;text: <span class="str">"Here's my error message!"</span>,
 &nbsp;&nbsp;type: <span class="str">"error"</span>,
@@ -336,6 +345,11 @@
 		<td><b>inputType</b></td>
 		<td><i>"text"</i></td>
 		<td>Change the type of the input field when using <strong>type: "input"</strong> (this can be useful if you want users to type in their password for example).</td>
+	</tr>
+	<tr>
+		<td><b>inputPlaceholder</b></td>
+		<td><i>null</i></td>
+		<td>When using the input-type, you can specify a placeholder to help the user.</td>
 	</tr>
 </table>
 
@@ -481,7 +495,8 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		type: 'input',
 		showCancelButton: true,
 		closeOnConfirm: false,
-		animation: "slide-from-top"
+		animation: "slide-from-top",
+		inputPlaceholder: "Write something"
 	}, 
 	function(inputValue){
 		if (inputValue === false) return false;
@@ -493,6 +508,15 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
 		
+	});
+};
+
+document.querySelector('ul.examples li.theme button').onclick = function() {
+	swal({
+		title: "Themes!",
+		text: "Here's the Twitter theme for SweetAlert!",
+		confirmButtonText: "Cool!",
+		customClass: 'twitter'
 	});
 };
 
