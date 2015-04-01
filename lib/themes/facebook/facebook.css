@@ -29,6 +29,10 @@
     margin-top: 7px; }
   .sweet-alert .sa-button-container {
     border-top: 1px solid #dcdee3; }
+  .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] {
+    padding-bottom: 10px; }
+    .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] .sa-button-container {
+      display: none; }
   .sweet-alert button {
     font-size: 12px;
     padding: 5px 10px;
@@ -67,53 +71,41 @@
     margin: 10px 0; }
     .sweet-alert input:focus {
       box-shadow: 0 0 1px 2px rgba(88, 144, 255, 0.75), 0 1px 1px rgba(0, 0, 0, 0.15) !important; }
+  .sweet-alert fieldset .sa-input-error {
+    display: none; }
   .sweet-alert .sa-error-container {
-    text-align: center; }
+    text-align: center;
+    background-color: #fdebe8;
+    margin: 0;
+    border: none; }
+    .sweet-alert .sa-error-container.show {
+      margin: 14px;
+      margin-top: 0;
+      border: 1px solid #d5512d; }
+    .sweet-alert .sa-error-container .icon {
+      display: none; }
+    .sweet-alert .sa-error-container p {
+      color: #303b44;
+      margin-top: 3px; }
 
-@-webkit-keyframes animateXMark {
+@-webkit-keyframes animateErrorIcon {
   0% {
-    transform: scale(0.2);
-    -webkit-transform: scale(0.2);
-    margin-top: 26px;
+    transform: rotateX(100deg), scale(0.5);
+    -webkit-transform: rotateX(100deg), scale(0.5);
     opacity: 0; }
-
-  50% {
-    transform: scale(0.2);
-    -webkit-transform: scale(0.2);
-    margin-top: 26px;
-    opacity: 0; }
-
-  80% {
-    transform: scale(0.575);
-    -webkit-transform: scale(0.575);
-    margin-top: -6px; }
 
   100% {
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    margin-top: 0;
+    transform: rotateX(0deg), scale(0.5);
+    -webkit-transform: rotateX(0deg), scale(0.5);
     opacity: 1; } }
 
-@keyframes animateXMark {
+@keyframes animateErrorIcon {
   0% {
-    transform: scale(0.2);
-    -webkit-transform: scale(0.2);
-    margin-top: 26px;
+    transform: rotateX(100deg), scale(0.5);
+    -webkit-transform: rotateX(100deg), scale(0.5);
     opacity: 0; }
-
-  50% {
-    transform: scale(0.2);
-    -webkit-transform: scale(0.2);
-    margin-top: 26px;
-    opacity: 0; }
-
-  80% {
-    transform: scale(0.575);
-    -webkit-transform: scale(0.575);
-    margin-top: -6px; }
 
   100% {
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    margin-top: 0;
+    transform: rotateX(0deg), scale(0.5);
+    -webkit-transform: rotateX(0deg), scale(0.5);
     opacity: 1; } }

@@ -1,5 +1,7 @@
 var gulp = require('gulp'); 
 
+var glob      = require('glob');
+var path      = require('path');
 var jshint    = require('gulp-jshint');
 var sass      = require('gulp-sass');
 var concat    = require('gulp-concat');
@@ -30,11 +32,22 @@ gulp.task('sass', function() {
 });
 
 // Compile theme CSS
-gulp.task('themes', function() {
-  return gulp.src('lib/themes/facebook/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('lib/themes/facebook'));
+var themes = glob.sync('lib/themes/*').map(function(themeDir) {
+  console.log(themeDir);
+  return path.basename(themeDir);
 });
+
+themes.forEach(function(name) {
+  gulp.task(name + '-theme', function() {
+    return gulp.src('lib/themes/' + name + '/' + name + '.scss')
+      .pipe(sass()) // etc
+      .pipe(rename(name + '.css'))
+      .pipe(gulp.dest('lib/themes/' + name))
+  });
+});
+
+gulp.task('themes', themes.map(function(name){ return name + '-theme'; }));
+
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {

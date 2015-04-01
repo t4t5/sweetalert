@@ -46,6 +46,12 @@
   .sa-button-container {
     border-top: 1px solid #dcdee3;
   }
+  &[data-has-confirm-button=false][data-has-cancel-button=false] {
+    padding-bottom: 10px;
+    .sa-button-container {
+      display: none;
+    }
+  }
 
   button {
     font-size: 12px;
@@ -97,9 +103,28 @@
     }
   }
 
+  fieldset .sa-input-error {
+    display: none;
+  }
+
   .sa-error-container {
     text-align: center;
-    //margin-bottom: 20px;
+    background-color: #fdebe8;
+    margin: 0;
+    border: none;
+    &.show {
+      margin: 14px;
+      margin-top: 0;
+      border: 1px solid #d5512d;
+    }
+
+    .icon {
+      display: none;
+    }
+    p {
+      color: #303b44;
+      margin-top: 3px;
+    }
   }
 }
 
@@ -115,9 +140,7 @@
   }
 }
 
-@include keyframes(animateXMark) {
-  0%    { transform: scale(0.2);  -webkit-transform: scale(0.2);  margin-top: 26px; opacity: 0; }
-  50%   { transform: scale(0.2);  -webkit-transform: scale(0.2);  margin-top: 26px; opacity: 0; }
-  80%   { transform: scale(0.575); -webkit-transform: scale(0.575); margin-top: -6px;             }
-  100%  { transform: scale(0.5);   -webkit-transform: scale(0.5);    margin-top: 0;    opacity: 1; }
+@include keyframes(animateErrorIcon) {
+  0%    { transform: rotateX(100deg), scale(0.5); -webkit-transform: rotateX(100deg), scale(0.5); opacity: 0; }
+  100%  { transform: rotateX(0deg),   scale(0.5); -webkit-transform: rotateX(0deg),   scale(0.5); opacity: 1; }
 }
