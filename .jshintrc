@@ -7,5 +7,7 @@
   ],
   "browser": true,
   "strict": true,
-  "validthis": true
+  "esnext": true,
+  "validthis": true,
+  "node": true
 }

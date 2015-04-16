@@ -9,6 +9,10 @@ var uglify    = require('gulp-uglify');
 var rename    = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 var babel     = require('gulp-babel');
+var babelify  = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var wrap = require("gulp-wrap");
 
 // Lint Task
 gulp.task('lint', function() {
@@ -51,11 +55,22 @@ gulp.task('themes', themes.map(function(name){ return name + '-theme'; }));
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-  return gulp.src('lib/sweet-alert.js')
-    .pipe(babel())
-    .pipe(gulp.dest('lib'))
-    .pipe(rename('sweet-alert.min.js'))
-    .pipe(uglify())
+  // return gulp.src('lib/sweet-alert.js')
+  //   .pipe(babel())
+  //   .pipe(gulp.dest('dist'))
+  //   .pipe(rename('sweet-alert.min.js'))
+  //   .pipe(uglify())
+  //   .pipe(gulp.dest('dist'));
+
+  return browserify({
+      entries: './lib/sweet-alert.js',
+      debug: true
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('output.js'))
+    //.pipe(streamify(uglify()))
+    .pipe(wrap(';(function(window, document, undefined) {\n"use strict";\n<%= contents %>\n})(window, document);'))
     .pipe(gulp.dest('dist'));
 });
 
