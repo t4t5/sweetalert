@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert</title>
   
-  <link rel="stylesheet" href="./example.css">
+  <link rel="stylesheet" href="example/example.css">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
-  <script src="../dist/output.js"></script>
-  <link rel="stylesheet" href="../dist/sweet-alert.css">
-  <!--<link rel="stylesheet" href="../lib/themes/twitter/twitter.css">-->
+  <script src="dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="dist/sweetalert.css">
   <!--.......................-->
 
 </head>
@@ -181,7 +180,7 @@
 &nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
 &nbsp;&nbsp;
 &nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span></span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span>(<span class="str">"You need to write something!"</span>);
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
 &nbsp;&nbsp;}
 &nbsp;&nbsp;
@@ -194,8 +193,8 @@
 			<p>You can also change the theme of SweetAlert!</p>
 			<button>Try me!</button>
 		</div>
-		<pre>&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/sweet-alert.css"</span>&gt;
-			&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/themes/twitter.css"</span>&gt;</pre>
+		<pre>&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"dist/sweetalert.css"</span>&gt;
+			&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"themes/twitter.css"</span>&gt;</pre>
 	</li>
 
 </ul>
@@ -221,8 +220,8 @@
 <ol>
 	<li>
 		<p>Initialize the plugin by referencing the necessary files:</p>
-		<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"lib/sweet-alert.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
-&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"lib/sweet-alert.css"</span>&gt;</pre>
+		<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"dist/sweetalert.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"dist/sweetalert.css"</span>&gt;</pre>
 	</li>
 
 	<li>
@@ -317,6 +316,11 @@
 		<td>Set to <i>false</i> if you want the modal to stay open even if the user presses the "Confirm"-button. This is especially useful if the function attached to the "Confirm"-button is another SweetAlert.</td>
 	</tr>
 	<tr>
+		<td><b>closeOnCancel</b></td>
+		<td><i>true</i></td>
+		<td>Same as closeOnConfirm, but for the cancel button.</td>
+	</tr>
+	<tr>
 		<td><b>imageUrl</b></td>
 		<td><i>null</i></td>
 		<td>Add a customized icon for the modal. Should contain a string with the path to the image.</td>
@@ -393,7 +397,7 @@
 <!-- Contribute -->
 <h3>Contribute</h3>
 <p>SweetAlert was created by <a href="http://tristanedwards.me" target="_blank">Tristan Edwards</a>, you can follow him on <a href="https://twitter.com/t4t5" target="_blank" class="twitter">Twitter</a> or <a href="https://dribbble.com/tristanedwards" target="_blank" class="dribbble">Dribbble</a> for updates and other cool projects!</p>
-<p>Feel free to fork sweetAlert on <a href="https://github.com/t4t5/sweetalert" class="github">GitHub</a> if you have any features that you want to add!</p>
+<p>Feel free to fork SweetAlert on <a href="https://github.com/t4t5/sweetalert" class="github">GitHub</a> if you have any features that you want to add!</p>
 
 
 <footer>
@@ -476,7 +480,7 @@ document.querySelector('ul.examples li.custom-icon button').onclick = function()
 	swal({
 		title: "Sweet!",
 		text: "Here's a custom image.",
-		imageUrl: 'images/thumbs-up.jpg'
+		imageUrl: 'example/images/thumbs-up.jpg'
 	});
 };
 

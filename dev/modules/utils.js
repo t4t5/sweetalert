@@ -68,4 +68,4 @@ export {
   isIE8,
   logStr,
   colorLuminance
-}
+};

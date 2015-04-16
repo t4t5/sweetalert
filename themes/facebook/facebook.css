@@ -57,8 +57,8 @@
       font-weight: 600; }
       .sweet-alert button.cancel:hover {
         background-color: #fafbfb; }
-  .sweet-alert .sa-icon {
-    transform: scale(0.5);
+  .sweet-alert .sa-icon:not(.sa-custom) {
+    transform: scale(0.7);
     margin-bottom: -10px;
     margin-top: -10px; }
   .sweet-alert input {

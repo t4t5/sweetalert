@@ -1,22 +1,26 @@
 var gulp = require('gulp'); 
 
-var glob      = require('glob');
-var path      = require('path');
-var jshint    = require('gulp-jshint');
-var sass      = require('gulp-sass');
-var concat    = require('gulp-concat');
-var uglify    = require('gulp-uglify');
-var rename    = require('gulp-rename');
-var minifyCSS = require('gulp-minify-css');
-var babel     = require('gulp-babel');
-var babelify  = require('babelify');
+var glob       = require('glob');
+var path       = require('path');
+var jshint     = require('gulp-jshint');
+var sass       = require('gulp-sass');
+var concat     = require('gulp-concat');
+var uglify     = require('gulp-uglify');
+var rename     = require('gulp-rename');
+var minifyCSS  = require('gulp-minify-css');
+var babelify   = require('babelify');
 var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var wrap = require("gulp-wrap");
+var source     = require('vinyl-source-stream');
+var buffer     = require('vinyl-buffer');
+var wrap       = require('gulp-wrap');
 
 // Lint Task
 gulp.task('lint', function() {
-  return gulp.src('lib/sweet-alert.js')
+  gulp.src('dev/sweetalert.es6.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+
+  return gulp.src('dev/*/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
@@ -29,24 +33,25 @@ gulp.task('sass', function() {
     .pipe(rename('example.css'))
     .pipe(gulp.dest('example'));
 
-  return gulp.src(['lib/sweet-alert.scss', 'lib/ie9.css'])
+  // (We don't use minifyCSS since it breaks the ie9 file for some reason)
+  gulp.src(['dev/sweetalert.scss', 'dev/ie9.css'])
     .pipe(sass())
-    .pipe(concat('sweet-alert.css'))
-    .pipe(minifyCSS())
+    .pipe(concat('sweetalert.css'))
     .pipe(gulp.dest('dist'));
 });
 
+
 // Compile theme CSS
-var themes = glob.sync('lib/themes/*').map(function(themeDir) {
+var themes = glob.sync('themes/*').map(function(themeDir) {
   return path.basename(themeDir);
 });
 
 themes.forEach(function(name) {
   gulp.task(name + '-theme', function() {
-    return gulp.src('lib/themes/' + name + '/' + name + '.scss')
+    return gulp.src('themes/' + name + '/' + name + '.scss')
       .pipe(sass()) // etc
       .pipe(rename(name + '.css'))
-      .pipe(gulp.dest('dist/themes/' + name))
+      .pipe(gulp.dest('themes/' + name))
   });
 });
 
@@ -55,30 +60,27 @@ gulp.task('themes', themes.map(function(name){ return name + '-theme'; }));
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-  // return gulp.src('lib/sweet-alert.js')
-  //   .pipe(babel())
-  //   .pipe(gulp.dest('dist'))
-  //   .pipe(rename('sweet-alert.min.js'))
-  //   .pipe(uglify())
-  //   .pipe(gulp.dest('dist'));
-
   return browserify({
-      entries: './lib/sweet-alert.js',
+      entries: './dev/sweetalert.es6.js',
       debug: true
     })
     .transform(babelify)
     .bundle()
-    .pipe(source('output.js'))
-    //.pipe(streamify(uglify()))
+    .pipe(source('sweetalert-dev.js'))
     .pipe(wrap(';(function(window, document, undefined) {\n"use strict";\n<%= contents %>\n})(window, document);'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist')) // Developer version
+
+    .pipe(rename('sweetalert.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('dist')); // User version
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('lib/*.js', ['lint', 'scripts']);
-  gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
-  gulp.watch('lib/themes/*/*.scss', ['themes']);
+  gulp.watch(['dev/*.js', 'dev/*/*.js'], ['lint', 'scripts']);
+  gulp.watch(['dev/*.scss', 'dev/*.css'], ['sass']);
+  gulp.watch('themes/*/*.scss', ['themes']);
 });
 
 // Default Task

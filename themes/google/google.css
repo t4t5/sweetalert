@@ -48,7 +48,7 @@
       color: #757575; }
       .sweet-alert button.cancel:focus {
         box-shadow: none !important; }
-  .sweet-alert .sa-icon {
+  .sweet-alert .sa-icon:not(.sa-custom) {
     transform: scale(0.8);
     margin-bottom: -10px;
     margin-top: -10px; }

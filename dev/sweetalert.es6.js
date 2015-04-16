@@ -2,8 +2,6 @@
 // 2014-2015 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
 
-"use strict";
-
 /*
  * jQuery-like functions for manipulating the DOM
  */
@@ -16,7 +14,7 @@ import {
   fadeIn, fadeOut,
   fireClick,
   stopEventPropagation
-} from './handle-dom';
+} from './modules/handle-dom';
 
 /*
  * Handy utilities
@@ -27,7 +25,7 @@ import {
   isIE8,
   logStr,
   colorLuminance
-} from './utils';
+} from './modules/utils';
 
 /*
  *  Handle sweetAlert's DOM elements
@@ -41,17 +39,17 @@ import {
   openModal,
   resetInput,
   fixVerticalPosition
-} from './handle-swal-dom';
+} from './modules/handle-swal-dom';
 
 
 // Handle button events and keyboard events
-import { handleButton, handleConfirm, handleCancel } from './handle-click';
-import handleKeyDown from './handle-key';
+import { handleButton, handleConfirm, handleCancel } from './modules/handle-click';
+import handleKeyDown from './modules/handle-key';
 
 
 // Default values
-import defaultParams from './default-params';
-import setParameters from './set-params';
+import defaultParams from './modules/default-params';
+import setParameters from './modules/set-params';
 
 /*
  * Remember state in cases where opening and handling a modal will fiddle with it.

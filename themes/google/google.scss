@@ -71,7 +71,7 @@
     }
   }
 
-  .sa-icon {
+  .sa-icon:not(.sa-custom) {
     transform: scale(0.8);
     margin-bottom: -10px;
     margin-top: -10px;

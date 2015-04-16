@@ -6,8 +6,6 @@
     "define"
   ],
   "browser": true,
-  "strict": true,
   "esnext": true,
-  "validthis": true,
-  "node": true
+  "validthis": true
 }

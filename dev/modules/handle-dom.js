@@ -158,4 +158,4 @@ export {
   fadeIn, fadeOut,
   fireClick,
   stopEventPropagation
-}
+};

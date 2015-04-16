@@ -138,4 +138,4 @@ export {
   resetInput,
   resetInputError,
   fixVerticalPosition
-}
+};

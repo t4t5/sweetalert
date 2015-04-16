@@ -3,21 +3,21 @@
 /* This file is automatically merged into sweet-alert.min.js through Gulp */
 
 /* Error icon */
-.sweet-alert .icon.error .line.left {
+.sweet-alert .sa-icon.sa-error .sa-line.sa-left {
   -ms-transform: rotate(45deg)\9;
 }
-.sweet-alert .icon.error .line.right {
+.sweet-alert .sa-icon.sa-error .sa-line.sa-right {
   -ms-transform: rotate(-45deg)\9;
 }
 
 
 /* Success icon */
-.sweet-alert .icon.success {
+.sweet-alert .sa-icon.sa-success {
   border-color: transparent\9;
 }
-.sweet-alert .icon.success .line.tip {
+.sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
   -ms-transform: rotate(45deg)\9;
 }
-.sweet-alert .icon.success .line.long {
+.sweet-alert .sa-icon.sa-success .sa-line.sa-long {
   -ms-transform: rotate(-45deg)\9;
 }

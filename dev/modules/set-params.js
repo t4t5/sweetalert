@@ -211,6 +211,6 @@ var setParameters = function(params) {
    * Timer
    */
   modal.setAttribute('data-timer', params.timer);
-}
+};
 
 export default setParameters;
