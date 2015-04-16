@@ -8,6 +8,7 @@ var concat    = require('gulp-concat');
 var uglify    = require('gulp-uglify');
 var rename    = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
+var babel     = require('gulp-babel');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -28,12 +29,11 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(concat('sweet-alert.css'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('dist'));
 });
 
 // Compile theme CSS
 var themes = glob.sync('lib/themes/*').map(function(themeDir) {
-  console.log(themeDir);
   return path.basename(themeDir);
 });
 
@@ -42,7 +42,7 @@ themes.forEach(function(name) {
     return gulp.src('lib/themes/' + name + '/' + name + '.scss')
       .pipe(sass()) // etc
       .pipe(rename(name + '.css'))
-      .pipe(gulp.dest('lib/themes/' + name))
+      .pipe(gulp.dest('dist/themes/' + name))
   });
 });
 
@@ -52,10 +52,11 @@ gulp.task('themes', themes.map(function(name){ return name + '-theme'; }));
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
   return gulp.src('lib/sweet-alert.js')
+    .pipe(babel())
     .pipe(gulp.dest('lib'))
     .pipe(rename('sweet-alert.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('dist'));
 });
 
 // Watch Files For Changes

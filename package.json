@@ -28,6 +28,7 @@
   "devDependencies": {
     "glob": "^5.0.3",
     "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.4.3",
     "gulp-jshint": "^1.9.0",
     "gulp-minify-css": "^0.3.13",

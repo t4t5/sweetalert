@@ -1,0 +1,11 @@
+{
+  "predef": [
+    "document",
+    "window",
+    "module",
+    "define"
+  ],
+  "browser": true,
+  "strict": true,
+  "validthis": true
+}
