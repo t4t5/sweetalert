@@ -215,6 +215,12 @@ sweetAlert.close = swal.close = function() {
   removeClass($warningIcon.querySelector('.sa-body'), 'pulseWarningIns');
   removeClass($warningIcon.querySelector('.sa-dot'), 'pulseWarningIns');
 
+  // Reset custom class (delay so that UI changes aren't visible)
+  setTimeout(function() {
+    var customClass = modal.getAttribute('data-custom-class');
+    removeClass(modal, customClass);
+  }, 300);
+
   // Make page scrollable again
   removeClass(document.body, 'stop-scrolling');
 
