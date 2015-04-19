@@ -18,7 +18,8 @@ var defaultParams = {
   animation: true,
   allowEscapeKey: true,
   inputType: 'text',
-  inputPlaceholder: ''
+  inputPlaceholder: '',
+  inputDefault: ''
 };
 
 export default defaultParams;

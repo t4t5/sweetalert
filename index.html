@@ -188,6 +188,33 @@
 });</pre>
 	</li>
 
+
+	<li class="input-with-default">
+		<div class="ui">
+			<p>A replacement for the "prompt" function with a default value</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"An input!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Write something interesting:"</span>,
+&nbsp;&nbsp;type: <span class="str">"input"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>,
+&nbsp;&nbsp;inputPlaceholder: <span class="str">"Write something"</span>,
+&nbsp;&nbsp;inputDefault: <span class="str">"My Default"</span>
+},
+<span class="func"><i>function</i></span>(<span class="arg">inputValue</span>){
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
+});</pre>
+	</li>
 	<li class="theme">
 		<div class="ui">
 			<p>You can also change the theme of SweetAlert!</p>
@@ -501,6 +528,31 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		closeOnConfirm: false,
 		animation: "slide-from-top",
 		inputPlaceholder: "Write something"
+	}, 
+	function(inputValue){
+		if (inputValue === false) return false;
+
+		if (inputValue === "") {
+			swal.showInputError("You need to write something!");
+			return false;
+		}
+		
+		swal("Nice!", 'You wrote: ' + inputValue, "success");
+		
+	});
+};
+
+
+document.querySelector('ul.examples li.input-with-default button').onclick = function(){
+	swal({
+		title: "An input!",
+		text: 'Write something interesting:',
+		type: 'input',
+		showCancelButton: true,
+		closeOnConfirm: false,
+		animation: "slide-from-top",
+		inputPlaceholder: "Write something",
+		inputDefault: 'My Default'
 	}, 
 	function(inputValue){
 		if (inputValue === false) return false;

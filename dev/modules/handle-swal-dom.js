@@ -91,11 +91,12 @@ var openModal = function() {
  * (for example if errors have been shown)
  */
 var resetInput = function() {
+  console.log('defaultParams', defaultParams);
   var $modal = getModal();
   var $input = getInput();
 
   removeClass($modal, 'show-input');
-  $input.value = '';
+  $input.value = defaultParams.inputDefault;
   $input.setAttribute('type', defaultParams.inputType);
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
 
