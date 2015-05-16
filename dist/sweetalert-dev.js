@@ -120,7 +120,7 @@ sweetAlert = swal = function () {
 
   _setParameters2['default'](params);
   _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition.fixVerticalPosition();
-  _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition.openModal();
+  _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition.openModal(arguments[1]);
 
   // Modal interactions
   var modal = _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition.getModal();
@@ -800,7 +800,7 @@ var setFocusStyle = function setFocusStyle($button, bgColor) {
 /*
  * Animation when opening modal
  */
-var openModal = function openModal() {
+var openModal = function openModal(callback) {
   var $modal = getModal();
   _removeClass$getTopMargin$fadeIn$show$addClass.fadeIn(getOverlay(), 10);
   _removeClass$getTopMargin$fadeIn$show$addClass.show($modal);
@@ -817,9 +817,17 @@ var openModal = function openModal() {
 
   var timer = $modal.getAttribute('data-timer');
 
-  if (timer !== 'null' && timer !== '') {
-    $modal.timeout = setTimeout(function () {
-      swal.close();
+  if (timer !== "null" && timer !== "") {
+    var timerCallback = callback;
+    $modal.timeout = setTimeout(function() {
+      doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
+      if (doneFunctionExists) { 
+        timerCallback(null);
+      }
+      else
+      {
+        sweetAlert.close();
+      }
     }, timer);
   }
 };

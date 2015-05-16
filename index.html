@@ -162,7 +162,7 @@
 },
 <span class="func"><i>function</i></span>(<span class="arg">timeoutValue</span>){
 &nbsp;&nbsp;<span class="tag">if</span> (null <span class="tag">===</span> <span class="str">timeoutValue</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Time Out!"</span>, <span class="str">"Timeout returns: "</span> + timeoutValue, <span class="str">"success"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>.close();
 &nbsp;&nbsp;}
 });</pre>
 	</li>
@@ -438,7 +438,7 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 	},
 	function(timeoutValue){
 		if(null === timeoutValue)
-			swal("Time Out!", 'Timeout returns: ' + timeoutValue, "success");
+			swal.close();
 	});
 };
 
