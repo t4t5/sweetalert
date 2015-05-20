@@ -75,7 +75,7 @@ var openModal = function( params ) {
 
   var openCallback = $modal.getAttribute('data-on-open-function');
 
-  if ( openCallback ) {
+  if ( openCallback !== 'false' ) {
     params.onOpen();
   }
 
