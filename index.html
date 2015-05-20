@@ -125,6 +125,21 @@
 });</pre>
 	</li>
 
+	<li class="onOpen">
+		<div class="ui">
+			<p>You can also add a callback function when SweetAlert is opened!</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"Opened Callback"</span>,
+&nbsp;&nbsp;text: <span class="str">"Please open your console."</span>,
+&nbsp;&nbsp;type: <span class="str">success</span>,
+&nbsp;&nbsp;onOpen: <span class="func"><i>function</i></span>() {
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">console</span>.<span class="func"><i>log</i></span>(<span class="str">'SweetAlert opened!'</span>);
+&nbsp;&nbsp;}
+});</pre>
+	</li>
+
 	<li class="custom-icon">
 		<div class="ui">
 			<p>A message with a custom icon</p>
@@ -521,6 +536,17 @@ document.querySelector('ul.examples li.theme button').onclick = function() {
 		text: "Here's the Twitter theme for SweetAlert!",
 		confirmButtonText: "Cool!",
 		customClass: 'twitter'
+	});
+};
+
+document.querySelector('ul.examples li.onOpen button').onclick = function() {
+	swal({
+		title: "Opened Callback", 
+		text: "Please open your console.", 
+		type: "success",
+		onOpen: function() {
+			console.log('SweetAlert opened!');
+		}
 	});
 };
 

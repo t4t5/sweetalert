@@ -197,6 +197,12 @@ var setParameters = function(params) {
   modal.setAttribute('data-has-done-function', hasDoneFunction);
 
   /*
+   * onOpen Callback function
+   */
+  var hasOnOpen = params.onOpen ? true : false;
+  modal.setAttribute('data-on-open-function', hasOnOpen);
+
+  /*
    * Animation
    */
   if (!params.animation) {
