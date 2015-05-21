@@ -127,7 +127,7 @@ sweetAlert = swal = function() {
 
   setParameters(params);
   fixVerticalPosition();
-  openModal();
+  openModal(arguments[1]);
 
   // Modal interactions
   var modal = getModal();
