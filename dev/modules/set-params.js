@@ -106,6 +106,7 @@ var setParameters = function(params) {
       case 'input':
       case 'prompt':
         $input.setAttribute('type', params.inputType);
+        $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
         addClass(modal, 'show-input');
         setTimeout(function () {

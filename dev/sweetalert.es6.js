@@ -127,7 +127,7 @@ sweetAlert = swal = function() {
 
   setParameters(params);
   fixVerticalPosition();
-  openModal();
+  openModal(arguments[1]);
 
   // Modal interactions
   var modal = getModal();
@@ -215,6 +215,12 @@ sweetAlert.close = swal.close = function() {
   removeClass($warningIcon.querySelector('.sa-body'), 'pulseWarningIns');
   removeClass($warningIcon.querySelector('.sa-dot'), 'pulseWarningIns');
 
+  // Reset custom class (delay so that UI changes aren't visible)
+  setTimeout(function() {
+    var customClass = modal.getAttribute('data-custom-class');
+    removeClass(modal, customClass);
+  }, 300);
+
   // Make page scrollable again
   removeClass(document.body, 'stop-scrolling');
 
@@ -267,17 +273,10 @@ sweetAlert.resetInputError = swal.resetInputError = function(event) {
   removeClass($errorContainer, 'show');
 };
 
-
-
-/*
- * Use SweetAlert with RequireJS
- */
-if (typeof define === 'function' && define.amd) {
-  define(function () {
-    return sweetAlert;
-  });
-} else if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined') {
+  // The 'handle-click' module requires
+  // that 'sweetAlert' was set as global.
   window.sweetAlert = window.swal = sweetAlert;
-} else if (typeof module !== 'undefined' && module.exports) {
-  module.exports = sweetAlert;
+} else {
+  logStr('SweetAlert is a frontend module!');
 }

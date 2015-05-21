@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
-  <script src="dist/sweetalert.min.js"></script>
+  <script src="dist/sweetalert-dev.js"></script>
   <link rel="stylesheet" href="dist/sweetalert.css">
   <!--.......................-->
 
@@ -162,6 +162,7 @@
 });</pre>
 	</li>
 
+
 	<li class="input">
 		<div class="ui">
 			<p>A replacement for the "prompt" function</p>
@@ -268,7 +269,7 @@
 	<tr>
 		<td><b>type</b></td>
 		<td><i>null</i></td>
-		<td>The type of the modal. SweetAlert comes with 4 built-in types which will show a corresponding icon animation: "<strong>warning</strong>", "<strong>error</strong>", "<strong>success</strong>" and "<strong>info"</strong>. You can also set it as "<strong>input</strong>" to get a prompt modal. It can either be put in the array under the key "type" or passed as the third parameter of the function.</td>
+		<td>The type of the modal. SweetAlert comes with 4 built-in types which will show a corresponding icon animation: "<strong>warning</strong>", "<strong>error</strong>", "<strong>success</strong>" and "<strong>info"</strong>. You can also set it as "<strong>input</strong>" to get a prompt modal. It can either be put in the object under the key "type" or passed as the third parameter of the function.</td>
 	</tr>
     <tr>
       <td><b>allowEscapeKey</b></td>
@@ -354,6 +355,11 @@
 		<td><b>inputPlaceholder</b></td>
 		<td><i>null</i></td>
 		<td>When using the input-type, you can specify a placeholder to help the user.</td>
+	</tr>
+	<tr>
+		<td><b>inputValue</b></td>
+		<td><i>null</i></td>
+		<td>Specify a default text value that you want your input to show when using <strong>type: "input"</strong></td>
 	</tr>
 </table>
 

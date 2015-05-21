@@ -62,7 +62,7 @@ var setFocusStyle = function($button, bgColor) {
 /*
  * Animation when opening modal
  */
-var openModal = function() {
+var openModal = function(callback) {
   var $modal = getModal();
   fadeIn(getOverlay(), 10);
   show($modal);
@@ -80,8 +80,15 @@ var openModal = function() {
   var timer = $modal.getAttribute('data-timer');
 
   if (timer !== 'null' && timer !== '') {
-    $modal.timeout = setTimeout(function () {
-      swal.close();
+    var timerCallback = callback;
+    $modal.timeout = setTimeout(function() {
+      var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
+      if (doneFunctionExists) { 
+        timerCallback(null);
+      }
+      else {
+        sweetAlert.close();
+      }
     }, timer);
   }
 };
@@ -95,7 +102,7 @@ var resetInput = function() {
   var $input = getInput();
 
   removeClass($modal, 'show-input');
-  $input.value = '';
+  $input.value = defaultParams.inputValue;
   $input.setAttribute('type', defaultParams.inputType);
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
 

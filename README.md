@@ -136,4 +136,5 @@ Related projects
 * [SweetAlert for Android](https://github.com/pedant/sweet-alert-dialog)
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
 * [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
+* [SweetAlert for RubyOnRails](https://github.com/sharshenov/sweetalert-rails)
 
