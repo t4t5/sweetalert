@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <!-- This is what you need -->
-  <script src="dist/sweetalert.min.js"></script>
+  <script src="dist/sweetalert-dev.js"></script>
   <link rel="stylesheet" href="dist/sweetalert.css">
   <!--.......................-->
 
@@ -159,11 +159,6 @@
 &nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
 &nbsp;&nbsp;timer: <span class="val">2000</span>,
 &nbsp;&nbsp;showConfirmButton: <span class="val">false</span>
-},
-<span class="func"><i>function</i></span>(<span class="arg">timeoutValue</span>){
-&nbsp;&nbsp;<span class="tag">if</span> (null <span class="tag">===</span> <span class="str">timeoutValue</span>) {
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>.close();
-&nbsp;&nbsp;}
 });</pre>
 	</li>
 
@@ -435,10 +430,6 @@ document.querySelector('ul.examples li.timer button').onclick = function(){
 		text: "I will close in 2 seconds.",
 		timer: 2000,
 		showConfirmButton: false
-	},
-	function(timeoutValue){
-		if(null === timeoutValue)
-			swal.close();
 	});
 };
 

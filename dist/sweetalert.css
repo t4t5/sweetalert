@@ -352,15 +352,12 @@ body.stop-scrolling {
   0% {
     transform: scale(0.7);
     -webkit-transform: scale(0.7); }
-
   45% {
     transform: scale(1.05);
     -webkit-transform: scale(1.05); }
-
   80% {
     transform: scale(0.95);
     -webkit-transform: scale(0.95); }
-
   100% {
     transform: scale(1);
     -webkit-transform: scale(1); } }
@@ -369,15 +366,12 @@ body.stop-scrolling {
   0% {
     transform: scale(0.7);
     -webkit-transform: scale(0.7); }
-
   45% {
     transform: scale(1.05);
     -webkit-transform: scale(1.05); }
-
   80% {
     transform: scale(0.95);
     -webkit-transform: scale(0.95); }
-
   100% {
     transform: scale(1);
     -webkit-transform: scale(1); } }
@@ -386,7 +380,6 @@ body.stop-scrolling {
   0% {
     transform: scale(1);
     -webkit-transform: scale(1); }
-
   100% {
     transform: scale(0.5);
     -webkit-transform: scale(0.5); } }
@@ -395,7 +388,6 @@ body.stop-scrolling {
   0% {
     transform: scale(1);
     -webkit-transform: scale(1); }
-
   100% {
     transform: scale(0.5);
     -webkit-transform: scale(0.5); } }
@@ -403,68 +395,63 @@ body.stop-scrolling {
 @-webkit-keyframes slideFromTop {
   0% {
     top: 0%; }
-
   100% {
     top: 50%; } }
 
 @keyframes slideFromTop {
   0% {
     top: 0%; }
-
   100% {
     top: 50%; } }
 
 @-webkit-keyframes slideToTop {
   0% {
     top: 50%; }
-
   100% {
     top: 0%; } }
 
 @keyframes slideToTop {
   0% {
     top: 50%; }
-
   100% {
     top: 0%; } }
 
 @-webkit-keyframes slideFromBottom {
   0% {
     top: 70%; }
-
   100% {
     top: 50%; } }
 
 @keyframes slideFromBottom {
   0% {
     top: 70%; }
-
   100% {
     top: 50%; } }
 
 @-webkit-keyframes slideToBottom {
   0% {
     top: 50%; }
-
   100% {
     top: 70%; } }
 
 @keyframes slideToBottom {
   0% {
     top: 50%; }
-
   100% {
     top: 70%; } }
 
 .showSweetAlert[data-animation=pop] {
   -webkit-animation: showSweetAlert 0.3s;
   animation: showSweetAlert 0.3s; }
+
 .showSweetAlert[data-animation=none] {
   -webkit-animation: none;
   animation: none; }
+
 .showSweetAlert[data-animation=slide-from-top] {
   -webkit-animation: slideFromTop 0.3s;
   animation: slideFromTop 0.3s; }
+
 .showSweetAlert[data-animation=slide-from-bottom] {
   -webkit-animation: slideFromBottom 0.3s;
   animation: slideFromBottom 0.3s; }
@@ -472,12 +459,15 @@ body.stop-scrolling {
 .hideSweetAlert[data-animation=pop] {
   -webkit-animation: hideSweetAlert 0.2s;
   animation: hideSweetAlert 0.2s; }
+
 .hideSweetAlert[data-animation=none] {
   -webkit-animation: none;
   animation: none; }
+
 .hideSweetAlert[data-animation=slide-from-top] {
   -webkit-animation: slideToTop 0.4s;
   animation: slideToTop 0.4s; }
+
 .hideSweetAlert[data-animation=slide-from-bottom] {
   -webkit-animation: slideToBottom 0.3s;
   animation: slideToBottom 0.3s; }
@@ -487,22 +477,18 @@ body.stop-scrolling {
     width: 0;
     left: 1px;
     top: 19px; }
-
   54% {
     width: 0;
     left: 1px;
     top: 19px; }
-
   70% {
     width: 50px;
     left: -8px;
     top: 37px; }
-
   84% {
     width: 17px;
     left: 21px;
     top: 48px; }
-
   100% {
     width: 25px;
     left: 14px;
@@ -513,22 +499,18 @@ body.stop-scrolling {
     width: 0;
     left: 1px;
     top: 19px; }
-
   54% {
     width: 0;
     left: 1px;
     top: 19px; }
-
   70% {
     width: 50px;
     left: -8px;
     top: 37px; }
-
   84% {
     width: 17px;
     left: 21px;
     top: 48px; }
-
   100% {
     width: 25px;
     left: 14px;
@@ -539,17 +521,14 @@ body.stop-scrolling {
     width: 0;
     right: 46px;
     top: 54px; }
-
   65% {
     width: 0;
     right: 46px;
     top: 54px; }
-
   84% {
     width: 55px;
     right: 0px;
     top: 35px; }
-
   100% {
     width: 47px;
     right: 8px;
@@ -560,17 +539,14 @@ body.stop-scrolling {
     width: 0;
     right: 46px;
     top: 54px; }
-
   65% {
     width: 0;
     right: 46px;
     top: 54px; }
-
   84% {
     width: 55px;
     right: 0px;
     top: 35px; }
-
   100% {
     width: 47px;
     right: 8px;
@@ -580,15 +556,12 @@ body.stop-scrolling {
   0% {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
-
   5% {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
-
   12% {
     transform: rotate(-405deg);
     -webkit-transform: rotate(-405deg); }
-
   100% {
     transform: rotate(-405deg);
     -webkit-transform: rotate(-405deg); } }
@@ -597,15 +570,12 @@ body.stop-scrolling {
   0% {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
-
   5% {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
-
   12% {
     transform: rotate(-405deg);
     -webkit-transform: rotate(-405deg); }
-
   100% {
     transform: rotate(-405deg);
     -webkit-transform: rotate(-405deg); } }
@@ -627,7 +597,6 @@ body.stop-scrolling {
     transform: rotateX(100deg);
     -webkit-transform: rotateX(100deg);
     opacity: 0; }
-
   100% {
     transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
@@ -638,7 +607,6 @@ body.stop-scrolling {
     transform: rotateX(100deg);
     -webkit-transform: rotateX(100deg);
     opacity: 0; }
-
   100% {
     transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
@@ -654,18 +622,15 @@ body.stop-scrolling {
     -webkit-transform: scale(0.4);
     margin-top: 26px;
     opacity: 0; }
-
   50% {
     transform: scale(0.4);
     -webkit-transform: scale(0.4);
     margin-top: 26px;
     opacity: 0; }
-
   80% {
     transform: scale(1.15);
     -webkit-transform: scale(1.15);
     margin-top: -6px; }
-
   100% {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -678,18 +643,15 @@ body.stop-scrolling {
     -webkit-transform: scale(0.4);
     margin-top: 26px;
     opacity: 0; }
-
   50% {
     transform: scale(0.4);
     -webkit-transform: scale(0.4);
     margin-top: 26px;
     opacity: 0; }
-
   80% {
     transform: scale(1.15);
     -webkit-transform: scale(1.15);
     margin-top: -6px; }
-
   100% {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -703,14 +665,12 @@ body.stop-scrolling {
 @-webkit-keyframes pulseWarning {
   0% {
     border-color: #F8D486; }
-
   100% {
     border-color: #F8BB86; } }
 
 @keyframes pulseWarning {
   0% {
     border-color: #F8D486; }
-
   100% {
     border-color: #F8BB86; } }
 
@@ -721,14 +681,12 @@ body.stop-scrolling {
 @-webkit-keyframes pulseWarningIns {
   0% {
     background-color: #F8D486; }
-
   100% {
     background-color: #F8BB86; } }
 
 @keyframes pulseWarningIns {
   0% {
     background-color: #F8D486; }
-
   100% {
     background-color: #F8BB86; } }
 

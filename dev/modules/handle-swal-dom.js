@@ -82,12 +82,11 @@ var openModal = function(callback) {
   if (timer !== 'null' && timer !== '') {
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
-      doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
+      var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
       if (doneFunctionExists) { 
         timerCallback(null);
       }
-      else
-      {
+      else {
         sweetAlert.close();
       }
     }, timer);
