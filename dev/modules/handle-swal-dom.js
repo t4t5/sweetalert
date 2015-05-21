@@ -102,7 +102,7 @@ var resetInput = function() {
   var $input = getInput();
 
   removeClass($modal, 'show-input');
-  $input.value = '';
+  $input.value = defaultParams.inputValue;
   $input.setAttribute('type', defaultParams.inputType);
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
 
