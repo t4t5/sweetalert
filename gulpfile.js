@@ -67,7 +67,9 @@ gulp.task('scripts', function() {
     .transform(babelify)
     .bundle()
     .pipe(source('sweetalert-dev.js'))
-    .pipe(wrap(';(function(window, document, undefined) {\n"use strict";\n<%= contents %>\n})(window, document);'))
+    .pipe(wrap({
+      src: './dev/gulpfile-wrap-template.js'
+    }))
     .pipe(gulp.dest('dist')) // Developer version
 
     .pipe(rename('sweetalert.min.js'))

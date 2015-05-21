@@ -273,17 +273,10 @@ sweetAlert.resetInputError = swal.resetInputError = function(event) {
   removeClass($errorContainer, 'show');
 };
 
-
-
-/*
- * Use SweetAlert with RequireJS
- */
-if (typeof define === 'function' && define.amd) {
-  define(function () {
-    return sweetAlert;
-  });
-} else if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined') {
+  // The 'handle-click' module requires
+  // that 'sweetAlert' was set as global.
   window.sweetAlert = window.swal = sweetAlert;
-} else if (typeof module !== 'undefined' && module.exports) {
-  module.exports = sweetAlert;
+} else {
+  logStr('SweetAlert is a frontend module!');
 }
