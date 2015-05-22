@@ -5,7 +5,7 @@
     "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
-  "main": ["lib/sweet-alert.js", "lib/sweet-alert.css"],
+  "main": ["dist/sweetalert.min.js", "dist/sweetalert.css"],
   "keywords": [
     "alert",
     "modal"

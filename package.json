@@ -1,6 +1,6 @@
 {
   "name": "sweetalert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A beautiful replacement for JavaScript's \"alert\"",
   "main": "dist/sweetalert.min.js",
   "directories": {
