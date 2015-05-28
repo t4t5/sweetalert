@@ -165,9 +165,9 @@ sweetAlert = swal = function() {
   previousWindowKeyDown = window.onkeydown;
 
   var onKeyEvent = (e) => handleKeyDown(e, params, modal);
-  window.onkeydown = onKeyEvent;
+  document.onkeydown = onKeyEvent;
 
-  window.onfocus = function () {
+  document.onfocus = function () {
     // When the user has focused away and focused back from the whole window.
     setTimeout(function () {
       // Put in a timeout to jump out of the event sequence.

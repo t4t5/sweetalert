@@ -174,8 +174,9 @@ var stopEventPropagation = function(e) {
   if (typeof e.stopPropagation === 'function') {
     e.stopPropagation();
     e.preventDefault();
-  } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
-    window.event.cancelBubble = true;
+  } else if (window.event && Object.prototype.hasOwnProperty.call(window.event, 'cancelBubble')) {
+    e.cancelBubble = true;
+    e.returnValue = false;
   }
 };
 
