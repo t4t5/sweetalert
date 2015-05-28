@@ -52,6 +52,36 @@ var hide = function(elems) {
   }
 };
 
+var replaceInputType = function(oldObject, oType) {
+  var newObject = document.createElement('input');
+  
+  newObject.type = oType;
+  
+  if (oldObject.size) {
+    newObject.size = oldObject.size;
+  }
+
+  if (oldObject.value) {
+    newObject.value = oldObject.value;
+  }
+
+  if (oldObject.name) {
+    newObject.name = oldObject.name;
+  }
+
+  if (oldObject.id) {
+    newObject.id = oldObject.id;
+  }
+
+  if (oldObject.className) {
+    newObject.className = oldObject.className;
+  }
+
+  oldObject.parentNode.replaceChild(newObject, oldObject);
+
+  return newObject;
+};
+
 var isDescendant = function(parent, child) {
   var node = child.parentNode;
   while (node !== null) {
@@ -144,8 +174,9 @@ var stopEventPropagation = function(e) {
   if (typeof e.stopPropagation === 'function') {
     e.stopPropagation();
     e.preventDefault();
-  } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
-    window.event.cancelBubble = true;
+  } else if (window.event && Object.prototype.hasOwnProperty.call(window.event, 'cancelBubble')) {
+    e.cancelBubble = true;
+    e.returnValue = false;
   }
 };
 
@@ -153,6 +184,7 @@ export {
   hasClass, addClass, removeClass, 
   escapeHtml, 
   _show, show, _hide, hide, 
+  replaceInputType,
   isDescendant, 
   getTopMargin,
   fadeIn, fadeOut,

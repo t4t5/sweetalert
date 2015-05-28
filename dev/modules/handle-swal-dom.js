@@ -1,5 +1,5 @@
-import { hexToRgb } from './utils';
-import { removeClass, getTopMargin, fadeIn, show, addClass } from './handle-dom';
+import { hexToRgb, isIE8 } from './utils';
+import { removeClass, getTopMargin, fadeIn, show, addClass, replaceInputType } from './handle-dom';
 import defaultParams from './default-params';
 
 var modalClass   = '.sweet-alert';
@@ -71,7 +71,11 @@ var openModal = function(callback) {
 
   window.previousActiveElement = document.activeElement;
   var $okButton = $modal.querySelector('button.confirm');
-  $okButton.focus();
+  
+  // Make sure button was displayed
+  if ($okButton.offsetHeight) {
+    $okButton.focus();
+  }
 
   setTimeout(function () {
     addClass($modal, 'visible');
@@ -103,7 +107,13 @@ var resetInput = function() {
 
   removeClass($modal, 'show-input');
   $input.value = defaultParams.inputValue;
-  $input.setAttribute('type', defaultParams.inputType);
+
+  if (isIE8()) {
+    $input = replaceInputType($input, defaultParams.inputType);
+  } else {
+    $input.setAttribute('type', defaultParams.inputType);
+  }
+
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
 
   resetInputError();

@@ -392,6 +392,7 @@ body.stop-scrolling {
       .sa-placeholder { // Ring
         width: 80px;
         height: 80px;
+        border: 4px solid $green;
         border: 4px solid rgba($green, 0.2);
         -webkit-border-radius: 40px;
         border-radius: 40px;

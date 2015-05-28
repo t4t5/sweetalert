@@ -65,6 +65,18 @@ var lastFocusedButton;
  */
 var sweetAlert, swal;
 
+if (isIE8() && !Array.prototype.indexOf) {
+  Array.prototype.indexOf = function(obj, start) {
+    for (var i = (start || 0), j = this.length; i < j; i++) {
+      if (this[i] === obj) {
+        return i;
+      }
+    }
+    
+    return -1;
+  };
+}
+
 sweetAlert = swal = function() {
   var customizations = arguments[0];
 
@@ -153,9 +165,9 @@ sweetAlert = swal = function() {
   previousWindowKeyDown = window.onkeydown;
 
   var onKeyEvent = (e) => handleKeyDown(e, params, modal);
-  window.onkeydown = onKeyEvent;
+  document.onkeydown = onKeyEvent;
 
-  window.onfocus = function () {
+  document.onfocus = function () {
     // When the user has focused away and focused back from the whole window.
     setTimeout(function () {
       // Put in a timeout to jump out of the event sequence.
