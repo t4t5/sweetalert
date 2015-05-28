@@ -65,7 +65,7 @@ gulp.task('scripts', function() {
       debug: true
     })
     .transform(babelify.configure({
-      loose: ["es6.modules"]
+      loose: ['es6.modules']
     }))
     .bundle()
     .pipe(source('sweetalert-dev.js'))
