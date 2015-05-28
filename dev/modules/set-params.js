@@ -13,7 +13,8 @@ import {
 import {
   hasClass, addClass, removeClass, 
   escapeHtml, 
-  _show, show, _hide, hide
+  _show, show, _hide, hide,
+  replaceInputType
 } from './handle-dom';
 
 
@@ -57,7 +58,7 @@ var setParameters = function(params) {
    */
   hide(modal.querySelectorAll('.sa-icon'));
 
-  if (params.type && !isIE8()) {
+  if (params.type) {
 
     let validType = false;
 
@@ -105,13 +106,22 @@ var setParameters = function(params) {
 
       case 'input':
       case 'prompt':
-        $input.setAttribute('type', params.inputType);
+        if (isIE8()) {
+          $input = replaceInputType($input, params.inputType);
+        } else {
+          $input.setAttribute('type', params.inputType);
+        }
+        
         $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
         addClass(modal, 'show-input');
         setTimeout(function () {
           $input.focus();
-          $input.addEventListener('keyup', swal.resetInputError);
+          if (isIE8()) {
+            $input.attachEvent('onkeyup', swal.resetInputError);
+          } else {
+            $input.addEventListener('keyup', swal.resetInputError);
+          }
         }, 400);
         break;
     }
