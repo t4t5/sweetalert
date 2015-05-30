@@ -25,6 +25,9 @@ Or through npm:
 npm install sweetalert
 ```
 
+For .NET Developers Sweetalert is available through NuGet:<br>
+https://www.nuget.org/packages/SweetAlert.Base/
+
 Alternatively, download the package and reference the JavaScript and CSS files manually:
 
 ```html
