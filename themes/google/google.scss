@@ -17,7 +17,6 @@
   padding: $padding;
   padding-top: $header-height + $padding;
   padding-bottom: 13px;
-  text-align: right; // Align buttons
   border-radius: 0;
   box-shadow: 0 0 14px rgba(black, 0.24),0 14px 28px rgba(black, 0.48);
 
@@ -76,7 +75,9 @@
     margin-bottom: -10px;
     margin-top: -10px;
   }
-
+  .sa-button-container{
+  text-align: right; // Align buttons
+  }
   input {
     border: none;
     border-radius: 0;

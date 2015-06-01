@@ -6,7 +6,6 @@
   padding: 24px;
   padding-top: 64px;
   padding-bottom: 13px;
-  text-align: right;
   border-radius: 0;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48); }
   .sweet-alert h2 {
@@ -52,6 +51,8 @@
     transform: scale(0.8);
     margin-bottom: -10px;
     margin-top: -10px; }
+  .sweet-alert .sa-button-container{
+    text-align: right; }
   .sweet-alert input {
     border: none;
     border-radius: 0;
