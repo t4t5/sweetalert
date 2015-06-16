@@ -43,6 +43,10 @@ var setParameters = function(params) {
    * Custom class
    */
   if (params.customClass) {
+    /*
+     * if exist data-custom class remove
+     */
+    removeClass(modal, modal.getAttribute('data-custom-class'));
     addClass(modal, params.customClass);
     modal.setAttribute('data-custom-class', params.customClass);
   } else {

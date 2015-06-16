@@ -197,6 +197,10 @@ sweetAlert.close = swal.close = function() {
   removeClass(modal, 'showSweetAlert');
   addClass(modal, 'hideSweetAlert');
   removeClass(modal, 'visible');
+  /*
+   * remove custom class for escape adding again class
+   */
+  removeClass(modal, modal.getAttribute('data-custom-class'));
 
   /*
    * Reset icon animations
