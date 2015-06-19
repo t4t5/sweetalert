@@ -123,12 +123,11 @@ body.stop-scrolling {
       opacity: 1;
       -webkit-transform: scale(1);
       transform: scale(1); }
-  .sweet-alert input {
+  .sweet-alert input, .sweet-alert textarea {
     width: 100%;
     box-sizing: border-box;
     border-radius: 3px;
     border: 1px solid #d7d7d7;
-    height: 43px;
     margin-top: 10px;
     margin-bottom: 17px;
     font-size: 18px;
@@ -137,26 +136,28 @@ body.stop-scrolling {
     display: none;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
-    .sweet-alert input:focus {
+    .sweet-alert input:focus, .sweet-alert textarea:focus {
       outline: none;
       box-shadow: 0px 0px 3px #c4e6f5;
       border: 1px solid #b4dbed; }
-      .sweet-alert input:focus::-moz-placeholder {
+      .sweet-alert input:focus::-moz-placeholder, .sweet-alert textarea:focus::-moz-placeholder {
         transition: opacity 0.3s 0.03s ease;
         opacity: 0.5; }
-      .sweet-alert input:focus:-ms-input-placeholder {
+      .sweet-alert input:focus:-ms-input-placeholder, .sweet-alert textarea:focus:-ms-input-placeholder {
         transition: opacity 0.3s 0.03s ease;
         opacity: 0.5; }
-      .sweet-alert input:focus::-webkit-input-placeholder {
+      .sweet-alert input:focus::-webkit-input-placeholder, .sweet-alert textarea:focus::-webkit-input-placeholder {
         transition: opacity 0.3s 0.03s ease;
         opacity: 0.5; }
-    .sweet-alert input::-moz-placeholder {
+    .sweet-alert input::-moz-placeholder, .sweet-alert textarea::-moz-placeholder {
       color: #bdbdbd; }
-    .sweet-alert input:-ms-input-placeholder {
+    .sweet-alert input:-ms-input-placeholder, .sweet-alert textarea:-ms-input-placeholder {
       color: #bdbdbd; }
-    .sweet-alert input::-webkit-input-placeholder {
+    .sweet-alert input::-webkit-input-placeholder, .sweet-alert textarea::-webkit-input-placeholder {
       color: #bdbdbd; }
-  .sweet-alert.show-input input {
+  .sweet-alert input {
+    height: 43px; }
+  .sweet-alert.show-input input, .sweet-alert.show-textarea textarea {
     display: block; }
   .sweet-alert button {
     background-color: #AEDEF4;

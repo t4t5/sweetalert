@@ -24,7 +24,8 @@ import {
   hexToRgb,
   isIE8,
   logStr,
-  colorLuminance
+  colorLuminance,
+  inputTagNameSetting
 } from './modules/utils';
 
 /*
@@ -69,8 +70,7 @@ sweetAlert = swal = function() {
   var customizations = arguments[0];
 
   addClass(document.body, 'stop-scrolling');
-  resetInput();
-
+  
   /*
    * Use argument if defined or default value from params object otherwise.
    * Supports the case where a default value is boolean true and should be
@@ -125,6 +125,9 @@ sweetAlert = swal = function() {
 
   }
 
+  inputTagNameSetting.setInputTagName(params);
+
+  resetInput();
   setParameters(params);
   fixVerticalPosition();
   openModal(arguments[1]);
@@ -251,7 +254,7 @@ sweetAlert.showInputError = swal.showInputError = function(errorMessage) {
 
   $errorContainer.querySelector('p').innerHTML = errorMessage;
 
-  modal.querySelector('input').focus();
+  modal.querySelector(inputTagNameSetting.inputTagName()).focus();
 };
 
 

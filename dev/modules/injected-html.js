@@ -39,6 +39,7 @@ var injectedHTML =
     <p>Text</p>
     <fieldset>
       <input type="text" tabIndex="3" />
+      <textarea tabIndex="3"></textarea>
       <div class="sa-input-error"></div>
     </fieldset>` +
 

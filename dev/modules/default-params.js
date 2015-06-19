@@ -19,7 +19,9 @@ var defaultParams = {
   allowEscapeKey: true,
   inputType: 'text',
   inputPlaceholder: '',
-  inputValue: ''
+  inputValue: '',
+  textareaRows: '4',
+  textareaCols: '50'
 };
 
 export default defaultParams;

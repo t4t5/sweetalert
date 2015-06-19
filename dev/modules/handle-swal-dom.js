@@ -1,4 +1,4 @@
-import { hexToRgb } from './utils';
+import { hexToRgb, inputTagNameSetting } from './utils';
 import { removeClass, getTopMargin, fadeIn, show, addClass } from './handle-dom';
 import defaultParams from './default-params';
 
@@ -35,12 +35,12 @@ var getModal = function() {
 };
 
 /*
- * Get DOM element of input (in modal)
+ * Get DOM element of input or textarea (in modal)
  */
 var getInput = function() {
   var $modal = getModal();
   if ($modal) {
-    return $modal.querySelector('input');
+    return $modal.querySelector(inputTagNameSetting.inputTagName());
   }
 };
 
@@ -102,8 +102,17 @@ var resetInput = function() {
   var $input = getInput();
 
   removeClass($modal, 'show-input');
+  removeClass($modal, 'show-textarea');
+
+  if (inputTagNameSetting.isInput()) {
+    // Attributes specific to input tag
+    $input.setAttribute('type', defaultParams.inputType);
+  } else if (inputTagNameSetting.isTextarea()) {
+    // Attributes specific to textarea tag
+    $input.setAttribute('rows', defaultParams.textareaRows);
+    $input.setAttribute('cols', defaultParams.textareaCols);
+  }
   $input.value = defaultParams.inputValue;
-  $input.setAttribute('type', defaultParams.inputType);
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
 
   resetInputError();

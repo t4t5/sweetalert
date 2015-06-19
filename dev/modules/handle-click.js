@@ -1,4 +1,4 @@
-import { colorLuminance } from './utils';
+import { colorLuminance, inputTagNameSetting } from './utils';
 import { getModal } from './handle-swal-dom';
 import { hasClass, isDescendant } from './handle-dom';
 
@@ -84,8 +84,8 @@ var handleButton = function(event, params, modal) {
 var handleConfirm = function(modal, params) {
   var callbackValue = true;
 
-  if (hasClass(modal, 'show-input')) {
-    callbackValue = modal.querySelector('input').value;
+  if (hasClass(modal, 'show-input') || hasClass(modal, 'show-textarea')) {
+    callbackValue = modal.querySelector(inputTagNameSetting.inputTagName()).value;
 
     if (!callbackValue) {
       callbackValue = '';

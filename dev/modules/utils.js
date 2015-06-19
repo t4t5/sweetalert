@@ -61,11 +61,29 @@ var colorLuminance = function(hex, lum) {
   return rgb;
 };
 
+var inputTagNameSetting = function () {
+  var tagName = '';
+  return {
+    setInputTagName: function (params) {
+      tagName = params.inputType === 'textarea' ? 'textarea' : 'input';
+    },
+    inputTagName: function () {
+      return tagName;
+    },
+    isInput: function () {
+      return tagName === 'input';
+    },
+    isTextarea: function () {
+      return tagName === 'textarea';
+    }
+  };
+}();
 
 export {
   extend,
   hexToRgb,
   isIE8,
   logStr,
-  colorLuminance
+  colorLuminance,
+  inputTagNameSetting
 };

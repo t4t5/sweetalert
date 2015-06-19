@@ -1,7 +1,8 @@
 var alertTypes = ['error', 'warning', 'info', 'success', 'input', 'prompt'];
 
 import {
-  isIE8
+  isIE8,
+  inputTagNameSetting
 } from './utils';
 
 import {
@@ -105,10 +106,18 @@ var setParameters = function(params) {
 
       case 'input':
       case 'prompt':
-        $input.setAttribute('type', params.inputType);
+        if (inputTagNameSetting.isInput()) {
+          $input.setAttribute('type', params.inputType);
+          addClass(modal, 'show-input');
+        } else if (inputTagNameSetting.isTextarea()) {
+          $input.setAttribute('rows', params.textareaRows);
+          $input.setAttribute('cols', params.textareaCols);
+          addClass(modal, 'show-textarea');
+        }
+        
         $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
-        addClass(modal, 'show-input');
+        
         setTimeout(function () {
           $input.focus();
           $input.addEventListener('keyup', swal.resetInputError);

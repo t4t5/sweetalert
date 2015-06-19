@@ -156,12 +156,11 @@ body.stop-scrolling {
     }
   }
 
-  input {
+  %inputCommon {
     width: 100%;
     box-sizing: border-box;
     border-radius: 3px;
     border: 1px solid rgb(215, 215, 215);
-    height: 43px;
     margin-top: 10px;
     margin-bottom: 17px;
     font-size: 18px;
@@ -197,7 +196,14 @@ body.stop-scrolling {
       color: lighten(#575757, 40);
     }
   }
-  &.show-input input {
+  input {
+    @extend %inputCommon;
+    height: 43px;
+  }
+  textarea {
+    @extend %inputCommon;
+  }
+  &.show-input input, &.show-textarea textarea {
     display: block;
   }
 
