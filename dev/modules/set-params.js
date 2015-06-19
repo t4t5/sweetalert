@@ -111,7 +111,6 @@ var setParameters = function(params) {
           addClass(modal, 'show-input');
         } else if (inputTagNameSetting.isTextarea()) {
           $input.setAttribute('rows', params.textareaRows);
-          $input.setAttribute('cols', params.textareaCols);
           addClass(modal, 'show-textarea');
         }
         

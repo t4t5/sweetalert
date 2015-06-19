@@ -20,8 +20,7 @@ var defaultParams = {
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',
-  textareaRows: '4',
-  textareaCols: '50'
+  textareaRows: '4'
 };
 
 export default defaultParams;

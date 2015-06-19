@@ -110,7 +110,6 @@ var resetInput = function() {
   } else if (inputTagNameSetting.isTextarea()) {
     // Attributes specific to textarea tag
     $input.setAttribute('rows', defaultParams.textareaRows);
-    $input.setAttribute('cols', defaultParams.textareaCols);
   }
   $input.value = defaultParams.inputValue;
   $input.setAttribute('placeholder', defaultParams.inputPlaceholder);
