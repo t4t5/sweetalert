@@ -198,6 +198,34 @@
 			&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">type</span>=<span class="str">"text/css"</span> <span class="tag">href</span>=<span class="str">"themes/twitter.css"</span>&gt;</pre>
 	</li>
 
+	<li class="textarea">
+		<div class="ui">
+			<p>You can also use textarea as input in SweetAlert!</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"A textarea!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Here's the textarea as input for SweetAlert!"</span>,
+&nbsp;&nbsp;type: <span class="str">"input"</span>,
+&nbsp;&nbsp;inputType: <span class="str">"textarea"</span>,
+&nbsp;&nbsp;textareaRows: <span class="str">"5"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;animation: <span class="str">"slide-from-top"</span>,
+&nbsp;&nbsp;inputPlaceholder: <span class="str">"Write something in textarea"</span>
+},
+<span class="func"><i>function</i></span>(<span class="arg">inputValue</span>){
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="val">false</span>) <span class="tag">return</span> <span class="val">false</span>;
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="tag">if</span> (inputValue <span class="tag">===</span> <span class="str">""</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span>(<span class="str">"You need to write something!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
+&nbsp;&nbsp;}
+&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
+});</pre>
+	</li>
+
 </ul>
 
 
@@ -349,7 +377,7 @@
 	<tr>
 		<td><b>inputType</b></td>
 		<td><i>"text"</i></td>
-		<td>Change the type of the input field when using <strong>type: "input"</strong> (this can be useful if you want users to type in their password for example).</td>
+		<td>Change the type of the input field when using <strong>type: "input"</strong> (this can be useful if you want users to type in their password for example). It can also be set to <strong>"textarea"</strong> in order to use <i>textarea</i> element instead of <i>input</i> element.</td>
 	</tr>
 	<tr>
 		<td><b>inputPlaceholder</b></td>
@@ -360,6 +388,11 @@
 		<td><b>inputValue</b></td>
 		<td><i>null</i></td>
 		<td>Specify a default text value that you want your input to show when using <strong>type: "input"</strong></td>
+	</tr>
+	<tr>
+		<td><b>textareaRows</b></td>
+		<td><i>"4"</i></td>
+		<td>Specify the visible number of lines in a textarea when using <strong>inputType: "textarea"</strong>.</td>
 	</tr>
 </table>
 
@@ -527,6 +560,31 @@ document.querySelector('ul.examples li.theme button').onclick = function() {
 		text: "Here's the Twitter theme for SweetAlert!",
 		confirmButtonText: "Cool!",
 		customClass: 'twitter'
+	});
+};
+
+document.querySelector('ul.examples li.textarea button').onclick = function() {
+	swal({
+		title: "A textarea!",
+		text: "Here's the textarea as input for SweetAlert!",
+		type: 'input',
+		inputType: 'textarea',
+		textareaRows: '5',
+		showCancelButton: true,
+		closeOnConfirm: false,
+		animation: "slide-from-top",
+		inputPlaceholder: "Write something in textarea"
+	}, 
+	function(inputValue){
+		if (inputValue === false) return false;
+
+		if (inputValue === "") {
+			swal.showInputError("You need to write something!");
+			return false;
+		}
+		
+		swal("Nice!", 'You wrote: ' + inputValue, "success");
+		
 	});
 };
 
