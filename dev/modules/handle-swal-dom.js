@@ -83,7 +83,7 @@ var openModal = function(callback) {
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
       var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
-      if (doneFunctionExists) { 
+      if (doneFunctionExists) {
         timerCallback(null);
       }
       else {
@@ -135,7 +135,7 @@ var fixVerticalPosition = function() {
 };
 
 
-export { 
+export {
   sweetAlertInitialize,
   getModal,
   getOverlay,

@@ -11,8 +11,8 @@ import {
 } from './handle-swal-dom';
 
 import {
-  hasClass, addClass, removeClass, 
-  escapeHtml, 
+  hasClass, addClass, removeClass,
+  escapeHtml,
   _show, show, _hide, hide
 } from './handle-dom';
 
@@ -110,7 +110,9 @@ var setParameters = function(params) {
         $input.setAttribute('placeholder', params.inputPlaceholder);
         addClass(modal, 'show-input');
         setTimeout(function () {
-          $input.focus();
+          if (params.inputFocus) {
+            $input.focus();
+          }
           $input.addEventListener('keyup', swal.resetInputError);
         }, 400);
         break;
@@ -212,6 +214,11 @@ var setParameters = function(params) {
    * Timer
    */
   modal.setAttribute('data-timer', params.timer);
+
+  /*
+   * Input Focus
+   */
+  modal.setAttribute('data-input-focus', params.inputFocus);
 };
 
 export default setParameters;

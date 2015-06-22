@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert</title>
-  
+
   <link rel="stylesheet" href="example/example.css">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
@@ -505,9 +505,10 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		type: 'input',
 		showCancelButton: true,
 		closeOnConfirm: false,
+		inputFocus: ! (('ontouchstart' in window) || (window.Modernizr && window.Modernizr.touch) || (navigator.msMaxTouchPoints || navigator.maxTouchPoints) > 2),
 		animation: "slide-from-top",
 		inputPlaceholder: "Write something"
-	}, 
+	},
 	function(inputValue){
 		if (inputValue === false) return false;
 
@@ -515,9 +516,9 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 			swal.showInputError("You need to write something!");
 			return false;
 		}
-		
+
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
-		
+
 	});
 };
 
