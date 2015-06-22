@@ -19,7 +19,8 @@ var defaultParams = {
   allowEscapeKey: true,
   inputType: 'text',
   inputPlaceholder: '',
-  inputValue: ''
+  inputValue: '',
+  inputFocus: true
 };
 
 export default defaultParams;
