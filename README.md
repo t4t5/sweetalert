@@ -77,7 +77,7 @@ sweetAlert({
 A prompt modal where the user's input is logged:
 
 ```javascript
-sweerAlert({
+sweetAlert({
   title: "An input!",
   text: 'Write something interesting:',
   type: 'input',
