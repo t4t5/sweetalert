@@ -46,19 +46,19 @@ Examples
 The most basic message:
 
 ```javascript
-sweetAlert("Hello world!");
+swal("Hello world!");
 ```
 
 A message signaling an error:
 
 ```javascript
-sweetAlert("Oops...", "Something went wrong!", "error");
+swal("Oops...", "Something went wrong!", "error");
 ```
 
 A warning message, with a function attached to the "Confirm"-button:
 
 ```javascript
-sweetAlert({
+swal({
   title: "Are you sure?",
   text: "You will not be able to recover this imaginary file!",
   type: "warning",
@@ -77,7 +77,7 @@ sweetAlert({
 A prompt modal where the user's input is logged:
 
 ```javascript
-sweerAlert({
+swal({
   title: "An input!",
   text: 'Write something interesting:',
   type: 'input',
@@ -92,7 +92,7 @@ sweerAlert({
 Ajax request example:
 
 ```javascript
-sweerAlert({
+swal({
   title: 'Ajax request example',
   text: 'Submit to run ajax request',
   type: 'info',
