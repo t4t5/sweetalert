@@ -185,7 +185,7 @@ body.stop-scrolling {
       &::-webkit-input-placeholder {
         transition: opacity 0.3s 0.03s ease;
         opacity: 0.5;
-      }      
+      }
     }
     &::-moz-placeholder {
       color: lighten(#575757, 40);
@@ -239,6 +239,26 @@ body.stop-scrolling {
         box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important;
       }
     }
+
+    &.cancel[disabled] {
+      opacity: .4;
+    }
+
+    &.confirm[disabled] {
+      border: 4px solid transparent;
+      border-color: transparent;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 0 30px;
+      vertical-align: middle;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      border-radius: 100%;
+      animation: rotate-loading 1.5s linear 0s infinite normal;
+    }
+
     // Removes selection outline in Firefox
     &::-moz-focus-inner {
       border: 0;
@@ -605,4 +625,14 @@ body.stop-scrolling {
 }
 .pulseWarningIns {
   @include animation('pulseWarningIns 0.75s infinite alternate');
+}
+
+@include keyframes(rotate-loading) {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

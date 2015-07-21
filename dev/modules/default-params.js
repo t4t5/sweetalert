@@ -19,7 +19,9 @@ var defaultParams = {
   allowEscapeKey: true,
   inputType: 'text',
   inputPlaceholder: '',
-  inputValue: ''
+  inputValue: '',
+  disableButtonsOnConfirm: false,
+  confirmLoadingButtonColor: '#AEDEF4'
 };
 
 export default defaultParams;

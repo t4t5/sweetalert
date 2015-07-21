@@ -85,7 +85,25 @@ sweerAlert({
   closeOnConfirm: false,
   animation: "slide-from-top"
 }, function(inputValue){
-  console.log("You wrote", inputValue);   
+  console.log("You wrote", inputValue);
+});
+```
+
+Ajax request example:
+
+```javascript
+sweerAlert({
+  title: 'Ajax request example',
+  text: 'Submit to run ajax request',
+  type: 'info',
+  showCancelButton: true,
+  closeOnConfirm: false,
+  disableButtonsOnConfirm: true,
+  confirmLoadingButtonColor: '#DD6B55'
+}, function(inputValue){
+  setTimeout(function() {
+    swal('Ajax request finished!');
+  }, 2000);
 });
 ```
 
@@ -137,4 +155,3 @@ Related projects
 * [SweetAlert for Bootstrap](https://github.com/lipis/bootstrap-sweetalert)
 * [SweetAlert for AngularJS](https://github.com/oitozero/ngSweetAlert)
 * [SweetAlert for RubyOnRails](https://github.com/sharshenov/sweetalert-rails)
-

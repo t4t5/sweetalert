@@ -11,8 +11,8 @@ import {
 } from './handle-swal-dom';
 
 import {
-  hasClass, addClass, removeClass, 
-  escapeHtml, 
+  hasClass, addClass, removeClass,
+  escapeHtml,
   _show, show, _hide, hide
 } from './handle-dom';
 
@@ -181,6 +181,10 @@ var setParameters = function(params) {
   if (params.confirmButtonColor) {
     // Set confirm button to selected background color
     $confirmBtn.style.backgroundColor = params.confirmButtonColor;
+
+    // Set the confirm button color to the loading ring
+    $confirmBtn.style.borderLeftColor = params.confirmLoadingButtonColor;
+    $confirmBtn.style.borderRightColor = params.confirmLoadingButtonColor;
 
     // Set box-shadow to default focused button
     setFocusStyle($confirmBtn, params.confirmButtonColor);
