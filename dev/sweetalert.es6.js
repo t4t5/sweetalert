@@ -6,10 +6,10 @@
  * jQuery-like functions for manipulating the DOM
  */
 import {
-  hasClass, addClass, removeClass, 
-  escapeHtml, 
-  _show, show, _hide, hide, 
-  isDescendant, 
+  hasClass, addClass, removeClass,
+  escapeHtml,
+  _show, show, _hide, hide,
+  isDescendant,
   getTopMargin,
   fadeIn, fadeOut,
   fireClick,
@@ -133,7 +133,7 @@ sweetAlert = swal = function() {
   var modal = getModal();
 
 
-  /* 
+  /*
    * Make sure all modal buttons respond to all events
    */
   var $buttons = modal.querySelectorAll('button');
@@ -166,6 +166,9 @@ sweetAlert = swal = function() {
       }
     }, 0);
   };
+  
+  // Show alert with enabled buttons always
+  swal.enableButtons();
 };
 
 
@@ -271,6 +274,28 @@ sweetAlert.resetInputError = swal.resetInputError = function(event) {
 
   var $errorContainer = $modal.querySelector('.sa-error-container');
   removeClass($errorContainer, 'show');
+};
+
+/*
+ * Disable confirm and cancel buttons
+ */
+sweetAlert.disableButtons = swal.disableButtons = function(event) {
+  var modal = getModal();
+  var $confirmButton = modal.querySelector('button.confirm');
+  var $cancelButton = modal.querySelector('button.cancel');
+  $confirmButton.disabled = true;
+  $cancelButton.disabled = true;
+};
+
+/*
+ * Enable confirm and cancel buttons
+ */
+sweetAlert.enableButtons = swal.enableButtons = function(event) {
+  var modal = getModal();
+  var $confirmButton = modal.querySelector('button.confirm');
+  var $cancelButton = modal.querySelector('button.cancel');
+  $confirmButton.disabled = false;
+  $cancelButton.disabled = false;
 };
 
 if (typeof window !== 'undefined') {

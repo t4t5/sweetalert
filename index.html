@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>SweetAlert</title>
-  
+
   <link rel="stylesheet" href="example/example.css">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
@@ -186,6 +186,27 @@
 &nbsp;&nbsp;}
 &nbsp;&nbsp;
 &nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Nice!"</span>, <span class="str">"You wrote: "</span> + inputValue, <span class="str">"success"</span>);
+});</pre>
+	</li>
+
+  <li class="ajax">
+    <div class="ui">
+			<p>Ajax request example</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"Ajax request example"</span>,
+&nbsp;&nbsp;text: <span class="str">"Submit to run ajax request"</span>,
+&nbsp;&nbsp;type: <span class="str">"info"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;disableButtonsOnConfirm: <span class="str">true</span>,
+&nbsp;&nbsp;confirmLoadingButtonColor: <span class="str">"#DD6B55"</span>
+},
+<span class="func"><i>function</i></span>(<span class="arg">inputValue</span>){
+&nbsp;&nbsp;<span class="func"><i>setTimeout</i></span>(<span class="func"><i>function</i>()</span>){
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">(<span class="str">"Ajax request finished!"</span>);
+&nbsp;&nbsp;}, <span class="arg">2000</span>);
 });</pre>
 	</li>
 
@@ -507,7 +528,7 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		closeOnConfirm: false,
 		animation: "slide-from-top",
 		inputPlaceholder: "Write something"
-	}, 
+	},
 	function(inputValue){
 		if (inputValue === false) return false;
 
@@ -515,9 +536,9 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 			swal.showInputError("You need to write something!");
 			return false;
 		}
-		
+
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
-		
+
 	});
 };
 
@@ -528,6 +549,22 @@ document.querySelector('ul.examples li.theme button').onclick = function() {
 		confirmButtonText: "Cool!",
 		customClass: 'twitter'
 	});
+};
+
+document.querySelector('ul.examples li.ajax button').onclick = function() {
+  swal({
+    title: 'Ajax request example',
+    text: 'Submit to run ajax request',
+    type: 'info',
+    showCancelButton: true,
+    closeOnConfirm: false,
+    disableButtonsOnConfirm: true,
+    confirmLoadingButtonColor: '#DD6B55'
+  }, function(inputValue){
+    setTimeout(function() {
+      swal('Ajax request finished!');
+    }, 2000);
+  });
 };
 
 </script>
