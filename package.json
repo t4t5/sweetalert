@@ -39,6 +39,7 @@
     "gulp-wrap": "^0.11.0",
     "path": "^0.11.14",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "gulp-qunit": "latest"
   }
 }

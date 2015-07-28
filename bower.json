@@ -5,7 +5,10 @@
     "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)"
   ],
   "description": "A beautiful replacement for JavaScript's alert.",
-  "main": ["dist/sweetalert.min.js", "dist/sweetalert.css"],
+  "main": [
+    "dist/sweetalert.min.js",
+    "dist/sweetalert.css"
+  ],
   "keywords": [
     "alert",
     "modal"
@@ -14,5 +17,9 @@
     "type": "git",
     "url": "git@github.com:t4t5/sweetalert.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "qunit": "~1.18.0",
+    "jquery": "~2.1.4"
+  }
 }
