@@ -35,7 +35,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('example'));
 
   // (We don't use minifyCSS since it breaks the ie9 file for some reason)
-  gulp.src(['dev/sweetalert.scss', 'dev/ie9.css'])
+  gulp.src(['dev/sweetalert.scss', 'dev/ie9.css', 'dev/loader-animation.css'])
     .pipe(sass())
     .pipe(concat('sweetalert.css'))
     .pipe(gulp.dest('dist'));

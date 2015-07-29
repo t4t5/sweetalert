@@ -51,7 +51,16 @@ var injectedHTML =
     // Cancel and confirm buttons
     `<div class="sa-button-container">
       <button class="cancel" tabIndex="2">Cancel</button>
-      <button class="confirm" tabIndex="1">OK</button>
+      <div class="sa-confirm-button-container">
+        <button class="confirm" tabIndex="1">OK</button>` + 
+
+        // Loading animation
+        `<div class="la-ball-fall">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>` +
 
   // End of modal

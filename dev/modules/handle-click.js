@@ -98,7 +98,7 @@ var handleConfirm = function(modal, params) {
     sweetAlert.close();
   }
   // Disable cancel and confirm button if the parameter is true
-  if (params.disableButtonsOnConfirm) {
+  if (params.showLoaderOnConfirm) {
     sweetAlert.disableButtons();
   }
 };

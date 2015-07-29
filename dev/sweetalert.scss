@@ -201,9 +201,24 @@ body.stop-scrolling {
     display: block;
   }
 
+  .sa-confirm-button-container {
+    display: inline-block;
+    position: relative;
+  }
+
+  .la-ball-fall {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -27px;
+    margin-top: 4px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
   button {
-    $btnBlue: #AEDEF4;
-    $btnGray: #D0D0D0;
+    $btnBlue: #8CD4F5;
+    $btnGray: #C1C1C1;
 
     background-color: $btnBlue;
     color: white;
@@ -240,23 +255,18 @@ body.stop-scrolling {
       }
     }
 
-    &.cancel[disabled] {
-      opacity: .4;
+    &[disabled] {
+      opacity: .6;
+      cursor: default;
     }
 
     &.confirm[disabled] {
-      border: 4px solid transparent;
-      border-color: transparent;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      margin: 0 30px;
-      vertical-align: middle;
-      background-color: transparent !important;
       color: transparent;
-      cursor: default;
-      border-radius: 100%;
-      animation: rotate-loading 1.5s linear 0s infinite normal;
+      ~ .la-ball-fall {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+      }
     }
 
     // Removes selection outline in Firefox

@@ -254,6 +254,10 @@ sweetAlert.showInputError = swal.showInputError = function(errorMessage) {
 
   $errorContainer.querySelector('p').innerHTML = errorMessage;
 
+  setTimeout(function() {
+    sweetAlert.enableButtons();
+  }, 1);
+
   modal.querySelector('input').focus();
 };
 

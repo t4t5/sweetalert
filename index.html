@@ -191,7 +191,7 @@
 
   <li class="ajax">
     <div class="ui">
-			<p>Ajax request example</p>
+			<p>With a loader (for AJAX request for example)</p>
 			<button>Try me!</button>
 		</div>
 		<pre><span class="attr">swal</span>({
@@ -200,13 +200,12 @@
 &nbsp;&nbsp;type: <span class="str">"info"</span>,
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
-&nbsp;&nbsp;disableButtonsOnConfirm: <span class="str">true</span>,
-&nbsp;&nbsp;confirmLoadingButtonColor: <span class="str">"#DD6B55"</span>
+&nbsp;&nbsp;showLoaderOnConfirm: <span class="val">true</span>,
 },
-<span class="func"><i>function</i></span>(<span class="arg">inputValue</span>){
-&nbsp;&nbsp;<span class="func"><i>setTimeout</i></span>(<span class="func"><i>function</i>()</span>){
-&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">(<span class="str">"Ajax request finished!"</span>);
-&nbsp;&nbsp;}, <span class="arg">2000</span>);
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="attr">setTimeout</span>(<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Ajax request finished!"</span>);
+&nbsp;&nbsp;}, <span class="val">2000</span>);
 });</pre>
 	</li>
 
@@ -382,6 +381,11 @@
 		<td><i>null</i></td>
 		<td>Specify a default text value that you want your input to show when using <strong>type: "input"</strong></td>
 	</tr>
+	<tr>
+		<td><b>showLoaderOnConfirm</b></td>
+		<td><i>false</i></td>
+    <td>Set to <strong>true</strong> to disable the buttons and show that something is loading.</td>
+	</tr>
 </table>
 
 
@@ -416,6 +420,11 @@
 		<td>showInputError</td>
 		<td><i>swal.showInputError("Invalid email!");</i></td>
 		<td>Show an error message after validating the input field, if the user's data is bad</td>
+	</tr>
+	<tr>
+		<td>enableButtons, disableButtons</td>
+		<td><i>swal.disableButtons();</i></td>
+		<td>Disable or enable the user to click on the cancel and confirm buttons.</td>
 	</tr>
 </table>
 
@@ -527,7 +536,7 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		showCancelButton: true,
 		closeOnConfirm: false,
 		animation: "slide-from-top",
-		inputPlaceholder: "Write something"
+		inputPlaceholder: "Write something",
 	},
 	function(inputValue){
 		if (inputValue === false) return false;
@@ -536,7 +545,7 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 			swal.showInputError("You need to write something!");
 			return false;
 		}
-
+    
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
 
 	});
@@ -558,9 +567,8 @@ document.querySelector('ul.examples li.ajax button').onclick = function() {
     type: 'info',
     showCancelButton: true,
     closeOnConfirm: false,
-    disableButtonsOnConfirm: true,
-    confirmLoadingButtonColor: '#DD6B55'
-  }, function(inputValue){
+    showLoaderOnConfirm: true,
+  }, function(){
     setTimeout(function() {
       swal('Ajax request finished!');
     }, 2000);
