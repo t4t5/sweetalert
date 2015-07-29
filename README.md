@@ -143,7 +143,7 @@ If you want to contribute:
 
 - Make sure you have [Node](http://nodejs.org/), [NPM](https://www.npmjs.com/) and [Gulp](http://gulpjs.com/) installed. When in the SweetAlert directory, run `npm install` to install the dependencies. Then run `gulp` while working to automatically minify the SCSS and JS-files.
 
-- Keep in min that SweetAlert uses Browserify in order to compile ES6-files. For easy debugging, make sure you reference the file `dist/sweetalert-dev.js` instead of `sweetalert.js`.
+- Keep in mind that SweetAlert uses Browserify in order to compile ES6-files. For easy debugging, make sure you reference the file `dist/sweetalert-dev.js` instead of `sweetalert.js`.
 
 - After you're done, make a pull request and wait for approval! :)
 
