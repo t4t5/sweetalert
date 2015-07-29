@@ -1,4 +1,4 @@
-SweetAlert
+SweetAlert [![Build Status](https://travis-ci.org/t4t5/sweetalert.svg?branch=master)](https://travis-ci.org/t4t5/sweetalert)
 ==========
 
 An awesome replacement for JavaScript's alert.
