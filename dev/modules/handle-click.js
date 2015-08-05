@@ -112,11 +112,12 @@ var handleConfirm = function(modal, params) {
  *  User clicked on "Cancel"
  */
 var handleCancel = function(modal, params) {
-  // Check if callback function expects a parameter (to track cancel actions)
-  var functionAsStr = String(params.doneFunction).replace(/\s/g, '');
-  var functionHandlesCancel = functionAsStr.substring(0, 9) === 'function(' && functionAsStr.substring(9, 10) !== ')';
+  var paramCount = params.doneFunction ? params.doneFunction.length : 0;
 
-  if (functionHandlesCancel) {
+  if (params.cancelFunction) {
+    params.cancelFunction();
+  } else if (paramCount > 0) {
+    // Old cancel case
     params.doneFunction(false);
   }
 
