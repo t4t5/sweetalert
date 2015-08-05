@@ -189,6 +189,29 @@
 });</pre>
 	</li>
 
+	<li class="input-checkbox">
+		<div class="ui">
+			<p>With a confirmation checkbox</p>
+			<button>Try me!</button>
+		</div>
+		<pre><span class="attr">swal</span>({
+&nbsp;&nbsp;title: <span class="str">"Terms and conditions!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Do you agree?"</span>,
+&nbsp;&nbsp;type: <span class="str">"input"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;inputType: <span class="str">"checkbox"</span>,
+&nbsp;&nbsp;inputLabel: <span class="str">"I definitely agree"</span>
+},
+<span class="func"><i>function</i></span>(<span class="arg">checked</span>){
+&nbsp;&nbsp;<span class="tag">if</span> (!checked) {
+&nbsp;&nbsp;&nbsp;&nbsp;swal<span class="tag">.</span><span class="attr">showInputError</span>(<span class="str">"You must agree!"</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">return</span> <span class="val">false</span>
+&nbsp;&nbsp;} <span class="tag">else</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Sweet!"</span>, <span class="str">"You agreed!"</span>);
+&nbsp;&nbsp;}
+});</pre>
+	</li>
+
   <li class="ajax">
     <div class="ui">
 			<p>With a loader (for AJAX request for example)</p>
@@ -547,7 +570,26 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 		}
     
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
+	});
+};
 
+document.querySelector('ul.examples li.input-checkbox button').onclick = function(){
+	swal({
+		title: "Terms and conditions!",
+		text: 'Do you agree?',
+		type: 'input',
+		inputType: 'checkbox',
+		inputLabel: 'I definitely agree',
+		showCancelButton: true,
+		closeOnConfirm: false
+	},
+	function(checked){
+		if (!checked) {
+			swal.showInputError("You must agree!");
+			return false
+		} else {
+			swal("Sweet!", 'You agreed!');
+		}
 	});
 };
 
@@ -567,7 +609,7 @@ document.querySelector('ul.examples li.ajax button').onclick = function() {
     type: 'info',
     showCancelButton: true,
     closeOnConfirm: false,
-    showLoaderOnConfirm: true,
+    showLoaderOnConfirm: true
   }, function(){
     setTimeout(function() {
       swal('Ajax request finished!');

@@ -57,6 +57,20 @@ var setParameters = function(params) {
    */
   hide(modal.querySelectorAll('.sa-icon'));
 
+  function handleCheckboxInput(input) {
+    var label = input.parentNode.querySelector('label');
+
+    if (!label) {
+      label = document.createElement('label');
+      input.parentNode.insertBefore(label, input.parentNode.childNodes[2]);
+    }
+
+    label.innerHTML = params.inputLabel;
+    label.style.color = params.inputLabelColor;
+
+    addClass(modal, 'show-label');
+  }
+
   if (params.type && !isIE8()) {
 
     let validType = false;
@@ -109,6 +123,11 @@ var setParameters = function(params) {
         $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
         addClass(modal, 'show-input');
+
+        if (params.inputType == 'checkbox') {
+          handleCheckboxInput($input);
+        }
+
         setTimeout(function () {
           $input.focus();
           $input.addEventListener('keyup', swal.resetInputError);

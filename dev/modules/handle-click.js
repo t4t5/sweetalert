@@ -85,10 +85,15 @@ var handleConfirm = function(modal, params) {
   var callbackValue = true;
 
   if (hasClass(modal, 'show-input')) {
-    callbackValue = modal.querySelector('input').value;
+    let input = modal.querySelector('input');
 
-    if (!callbackValue) {
-      callbackValue = '';
+    if (input.type == 'checkbox') {
+      callbackValue = input.checked;
+    } else {
+      callbackValue = input.value;
+      if (!callbackValue) {
+        callbackValue = '';
+      }
     }
   }
 
