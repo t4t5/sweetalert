@@ -25,7 +25,7 @@ body.stop-scrolling {
 
 .sweet-alert {
   $width: 478px;
-  $padding: 17px;
+  $padding: 14px;
 
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -36,7 +36,7 @@ body.stop-scrolling {
 
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 35%;
   margin-left: -($width/2 + $padding);
   margin-top: -200px;
 
@@ -55,20 +55,20 @@ body.stop-scrolling {
 
   h2 {
     color: #575757;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
     font-weight: 600;
     text-transform: none;
     position: relative;
-    margin: 25px 0;
+    margin: 15px 0;
     padding: 0;
-    line-height: 40px;
+    line-height: 24px;
     display: block;
   }
 
   p {
     color: #797979;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     font-weight: 300;
     position: relative;
