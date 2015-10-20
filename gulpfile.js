@@ -1,4 +1,4 @@
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 
 var glob       = require('glob');
 var path       = require('path');
@@ -14,6 +14,7 @@ var source     = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
 var wrap       = require('gulp-wrap');
 var qunit      = require('gulp-qunit');
+var babel      = require('gulp-babel');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -58,6 +59,16 @@ themes.forEach(function(name) {
 
 gulp.task('themes', themes.map(function(name){ return name + '-theme'; }));
 
+// Compile ES5 CommonJS entry point
+gulp.task('commonjs', function() {
+  gulp.src('./dev/sweetalert.es6.js')
+    .pipe(babel())
+    .pipe(rename('sweetalert.js'))
+    .pipe(gulp.dest('lib'));
+  gulp.src('./dev/modules/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('lib/modules'));
+});
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
@@ -94,4 +105,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'test']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'commonjs', 'watch', 'test']);
