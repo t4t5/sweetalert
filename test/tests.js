@@ -139,3 +139,21 @@ test("prompt functionality works", function() {
   ok($modal.find('fieldset input').is(':visible'));
   equal($modal.find('fieldset input').attr('placeholder'), "Placeholder text");
 });
+
+test("checkbox functionality works", function() {
+
+  swal({
+    title: "Prompt test",
+    type: "input",
+    inputType: "checkbox",
+    inputLabel: "I agree with this modal"
+  }, function(arg) {
+
+  }, function() {
+
+  });
+
+  var $modal = $('.sweet-alert');
+  equal($modal.find('input[type=checkbox]').siblings('label').text(), "I agree with this modal");
+
+});

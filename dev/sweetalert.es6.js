@@ -114,8 +114,11 @@ sweetAlert = swal = function() {
       params.confirmButtonText = params.showCancelButton ? 'Confirm' : defaultParams.confirmButtonText;
       params.confirmButtonText = argumentOrDefault('confirmButtonText');
 
-      // Callback function when clicking on "OK"/"Cancel"
+      // Callback function when clicking on "OK" (and Cancel if third argument not given to maintain compatibility)
       params.doneFunction = arguments[1] || null;
+
+      // Callback function when clicking on "Cancel"
+      params.cancelFunction = arguments[2] || null;
 
       break;
 

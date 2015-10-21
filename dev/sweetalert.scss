@@ -155,18 +155,10 @@ body.stop-scrolling {
       transform: scale(1);
     }
   }
-
   input {
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 3px;
-    border: 1px solid rgb(215, 215, 215);
-    height: 43px;
     margin-top: 10px;
     margin-bottom: 17px;
     font-size: 18px;
-    box-shadow: inset 0px 1px 1px rgba(black, 0.06);
-    padding: 0 12px;
     display: none;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -197,10 +189,29 @@ body.stop-scrolling {
       color: lighten(#575757, 40);
     }
   }
+  label {
+    margin-left: 5px;
+    font-weight: normal;
+    display: none;
+  }
+  input:not([type=checkbox]) {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid rgb(215, 215, 215);
+    height: 43px;
+    box-shadow: inset 0px 1px 1px rgba(black, 0.06);
+    padding: 0 12px;
+  }
+  input[type=checkbox] {
+    margin-top: 20px;
+  }
+  &.show-input input[type=checkbox], &.show-label label {
+    display: inline-block;
+  }
   &.show-input input {
     display: block;
   }
-
   .sa-confirm-button-container {
     display: inline-block;
     position: relative;

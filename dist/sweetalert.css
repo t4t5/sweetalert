@@ -124,16 +124,9 @@ body.stop-scrolling {
       -webkit-transform: scale(1);
       transform: scale(1); }
   .sweet-alert input {
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 3px;
-    border: 1px solid #d7d7d7;
-    height: 43px;
     margin-top: 10px;
     margin-bottom: 17px;
     font-size: 18px;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.06);
-    padding: 0 12px;
     display: none;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
@@ -156,6 +149,22 @@ body.stop-scrolling {
       color: #bdbdbd; }
     .sweet-alert input::-webkit-input-placeholder {
       color: #bdbdbd; }
+  .sweet-alert label {
+    margin-left: 5px;
+    font-weight: normal;
+    display: none; }
+  .sweet-alert input:not([type=checkbox]) {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    height: 43px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.06);
+    padding: 0 12px; }
+  .sweet-alert input[type=checkbox] {
+    margin-top: 20px; }
+  .sweet-alert.show-input input[type=checkbox], .sweet-alert.show-label label {
+    display: inline-block; }
   .sweet-alert.show-input input {
     display: block; }
   .sweet-alert .sa-confirm-button-container {

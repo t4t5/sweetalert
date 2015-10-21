@@ -20,7 +20,9 @@ var defaultParams = {
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',
-  showLoaderOnConfirm: false
+  showLoaderOnConfirm: false,
+  inputLabel: '',
+  inputLabelColor: '#797979'
 };
 
 export default defaultParams;
