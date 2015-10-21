@@ -80,40 +80,42 @@ var getTopMargin = function(elem) {
   return ('-' + parseInt((height + padding) / 2) + 'px');
 };
 
-var fadeIn = function(elem, interval) {
-  if (+elem.style.opacity < 1) {
-    interval = interval || 16;
-    elem.style.opacity = 0;
-    elem.style.display = 'block';
-    var last = +new Date();
-    var tick = function() {
-      elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
-      last = +new Date();
-
-      if (+elem.style.opacity < 1) {
-        setTimeout(tick, interval);
-      }
-    };
-    tick();
+var getPrefixed = function getPrefixed(prop){
+  var i, s = document.body.style, v = ['ms','O','Moz','Webkit'];
+  if( s[prop] === '' ) return prop;
+  prop = prop[0].toUpperCase() + prop.slice(1);
+  for( i = v.length; i--; ) {
+    if( s[v[i] + prop] === '' ) {
+      return (v[i] + prop);
+    }
   }
-  elem.style.display = 'block'; //fallback IE8
 };
 
-var fadeOut = function(elem, interval) {
-  interval = interval || 16;
-  elem.style.opacity = 1;
-  var last = +new Date();
-  var tick = function() {
-    elem.style.opacity = +elem.style.opacity - (new Date() - last) / 100;
-    last = +new Date();
+var fadeIn = function(elem) {
+  var transitionPrefixed = getPrefixed('transition');
 
-    if (+elem.style.opacity > 0) {
-      setTimeout(tick, interval);
-    } else {
-      elem.style.display = 'none';
-    }
-  };
-  tick();
+  elem.style[transitionPrefixed] = "";
+  elem.style.opacity = 0;
+  elem.style.display = "block";
+  setTimeout(function() {
+    elem.style[transitionPrefixed] = "opacity 0.2s";
+    elem.style.opacity = 1;
+  }, 1);
+};
+
+var fadeOut = function(elem) {
+  var transitionPrefixed = getPrefixed('transition');
+
+  elem.style[transitionPrefixed] = "";
+  elem.style.opacity = 1;
+  elem.style.display = "block";
+  setTimeout(function() {
+    elem.style[transitionPrefixed] = "opacity 0.2s";
+    elem.style.opacity = 0;
+    setTimeout(function() {
+      elem.style.display = "none";
+    }, 200);
+  }, 1);
 };
 
 var fireClick = function(node) {
@@ -149,11 +151,11 @@ var stopEventPropagation = function(e) {
   }
 };
 
-export { 
-  hasClass, addClass, removeClass, 
-  escapeHtml, 
-  _show, show, _hide, hide, 
-  isDescendant, 
+export {
+  hasClass, addClass, removeClass,
+  escapeHtml,
+  _show, show, _hide, hide,
+  isDescendant,
   getTopMargin,
   fadeIn, fadeOut,
   fireClick,
