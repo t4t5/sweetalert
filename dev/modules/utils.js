@@ -36,7 +36,7 @@ var logStr = function(string) {
 };
 
 /*
- * Set hover, active and focus-states for buttons 
+ * Set hover, active and focus-states for buttons
  * (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
  */
 var colorLuminance = function(hex, lum) {
@@ -61,11 +61,56 @@ var colorLuminance = function(hex, lum) {
   return rgb;
 };
 
+var body = document.getElementsByTagName('body')[0];
+
+var frozenAtPx = null;
+var bodyHeight = null;
+var bodyOverflow = null;
+
+var freezeScrolling = function() {
+  frozenAtPx = Math.round(window.scrollY * 100) / 100;
+
+  bodyHeight = body.style.height;
+  body.style.height = '100%';
+
+  bodyOverflow = body.style.overflow;
+  body.style.overflow = 'hidden';
+
+  for (var i = 0; i < body.childElementCount; i++) {
+    var childEl = body.children[i];
+    if (childEl.classList.contains('sweet-alert') || childEl.classList.contains('sweet-overlay'))
+      continue;
+    if (!childEl.style.transform) {
+      childEl.style.transform = 'translateY(-' + frozenAtPx + 'px)';
+    }
+  }
+};
+
+var thawScrolling = function() {
+  body.style.height = bodyHeight;
+  body.style.overflow = bodyOverflow;
+  window.scrollTo(0, frozenAtPx);
+
+  for (var i = 0; i < body.childElementCount; i++) {
+    var childEl = body.children[i];
+    if (childEl.classList.contains('sweet-alert') || childEl.classList.contains('sweet-overlay'))
+      continue;
+    if (childEl.style.transform !== 'translateY(-' + frozenAtPx + 'px)')
+      continue;
+    childEl.style.transform = '';
+  }
+
+  frozenAtPx = null;
+  bodyHeight = null;
+  bodyOverflow = null;
+};
 
 export {
   extend,
   hexToRgb,
   isIE8,
   logStr,
-  colorLuminance
+  colorLuminance,
+  freezeScrolling,
+  thawScrolling
 };
