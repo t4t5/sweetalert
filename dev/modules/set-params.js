@@ -21,7 +21,7 @@ import {
  * Set type, text and actions on modal
  */
 var setParameters = function(params) {
-  var modal = getModal(params.appendElement);
+  var modal = getModal(params.parentElement);
 
   var $title = modal.querySelector('h2');
   var $text = modal.querySelector('p');
