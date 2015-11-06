@@ -20,7 +20,8 @@ var defaultParams = {
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',
-  showLoaderOnConfirm: false
+  showLoaderOnConfirm: false,
+  appendElement: document.body
 };
 
 export default defaultParams;

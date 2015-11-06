@@ -68,9 +68,6 @@ var sweetAlert, swal;
 export default sweetAlert = swal = function() {
   var customizations = arguments[0];
 
-  addClass(document.body, 'stop-scrolling');
-  resetInput();
-
   /*
    * Use argument if defined or default value from params object otherwise.
    * Supports the case where a default value is boolean true and should be
@@ -125,6 +122,8 @@ export default sweetAlert = swal = function() {
 
   }
 
+  addClass(document.body, 'stop-scrolling');
+  resetInput(params);
   setParameters(params);
   fixVerticalPosition();
   openModal(arguments[1]);
@@ -166,7 +165,7 @@ export default sweetAlert = swal = function() {
       }
     }, 0);
   };
-  
+
   // Show alert with enabled buttons always
   swal.enableButtons();
 };
