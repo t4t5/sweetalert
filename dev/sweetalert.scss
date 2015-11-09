@@ -190,6 +190,9 @@ body.stop-scrolling {
     &::-moz-placeholder {
       color: lighten(#575757, 40);
     }
+    &::-ms-clear {
+      display: none;
+    }
     &:-ms-input-placeholder {
       color: lighten(#575757, 40);
     }
