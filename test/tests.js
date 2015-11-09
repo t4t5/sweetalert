@@ -146,7 +146,7 @@ test("appends to custom element", function() {
 
   swal({
     title: "Appended element test",
-    parentElement: customElement
+    rootElement: customElement
   });
 
   var $parent = $('.sweet-alert').parent();

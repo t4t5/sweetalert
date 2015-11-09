@@ -21,7 +21,7 @@ var defaultParams = {
   inputPlaceholder: '',
   inputValue: '',
   showLoaderOnConfirm: false,
-  parentElement: document.body
+  rootElement: document.body
 };
 
 export default defaultParams;
