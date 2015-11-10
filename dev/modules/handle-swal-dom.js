@@ -11,7 +11,7 @@ var overlayClass = '.sweet-overlay';
 import injectedHTML from './injected-html';
 
 var sweetAlertInitialize = function(rootElement) {
-  if (rootElement === undefined || !document.contains(rootElement)) {
+  if (rootElement === undefined || !document.body.contains(rootElement)) {
     rootElement = document.body;
   }
 
@@ -21,7 +21,7 @@ var sweetAlertInitialize = function(rootElement) {
     appendAlertToElement(rootElement);
   }
   else if ($modal.parentElement !== rootElement) {
-    $modal.remove();
+    $modal.parentNode.removeChild($modal);
     appendAlertToElement(rootElement);
   }
 };
