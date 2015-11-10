@@ -10,16 +10,31 @@ var overlayClass = '.sweet-overlay';
  */
 import injectedHTML from './injected-html';
 
-var sweetAlertInitialize = function() {
+var sweetAlertInitialize = function(rootElement) {
+  if (rootElement === undefined || !document.body.contains(rootElement)) {
+    rootElement = document.body;
+  }
+
+  var $modal = document.querySelector(modalClass);
+
+  if (!$modal) {
+    appendAlertToElement(rootElement);
+  }
+  else if ($modal.parentElement !== rootElement) {
+    $modal.parentNode.removeChild($modal);
+    appendAlertToElement(rootElement);
+  }
+};
+
+var appendAlertToElement = function(rootElement) {
   var sweetWrap = document.createElement('div');
   sweetWrap.innerHTML = injectedHTML;
 
   // Append elements to body
   while (sweetWrap.firstChild) {
-    document.body.appendChild(sweetWrap.firstChild);
+    rootElement.appendChild(sweetWrap.firstChild);
   }
 };
-
 /*
  * Get DOM element of modal
  */
@@ -27,8 +42,8 @@ var getModal = function() {
   var $modal = document.querySelector(modalClass);
 
   if (!$modal) {
-    sweetAlertInitialize();
-    $modal = getModal();
+    sweetAlertInitialize(document.body);
+    return getModal();
   }
 
   return $modal;
@@ -83,7 +98,7 @@ var openModal = function(callback) {
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
       var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
-      if (doneFunctionExists) { 
+      if (doneFunctionExists) {
         timerCallback(null);
       }
       else {
@@ -135,7 +150,7 @@ var fixVerticalPosition = function() {
 };
 
 
-export { 
+export {
   sweetAlertInitialize,
   getModal,
   getOverlay,
