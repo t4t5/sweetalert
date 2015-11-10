@@ -11,32 +11,39 @@ var overlayClass = '.sweet-overlay';
 import injectedHTML from './injected-html';
 
 var sweetAlertInitialize = function(rootElement) {
-  var sweetWrap = document.createElement('div');
-  sweetWrap.innerHTML = injectedHTML;
-
-  if (!document.contains(rootElement)){
-    rootElement = document.body;
-  }
-
-  // Append elements to body
-  while (sweetWrap.firstChild) {
-    rootElement.appendChild(sweetWrap.firstChild);
-  }
-};
-
-/*
- * Get DOM element of modal
- */
-var getModal = function(rootElement) {
-  if (rootElement === undefined) {
+  if (rootElement === undefined || !document.contains(rootElement)) {
     rootElement = document.body;
   }
 
   var $modal = document.querySelector(modalClass);
 
   if (!$modal) {
-    sweetAlertInitialize(rootElement);
-    $modal = getModal();
+    appendAlertToElement(rootElement);
+  }
+  else if ($modal.parentElement !== rootElement) {
+    $modal.remove();
+    appendAlertToElement(rootElement);
+  }
+};
+
+var appendAlertToElement = function(rootElement) {
+  var sweetWrap = document.createElement('div');
+  sweetWrap.innerHTML = injectedHTML;
+
+  // Append elements to body
+  while (sweetWrap.firstChild) {
+    rootElement.appendChild(sweetWrap.firstChild);
+  }
+};
+/*
+ * Get DOM element of modal
+ */
+var getModal = function() {
+  var $modal = document.querySelector(modalClass);
+
+  if (!$modal) {
+    sweetAlertInitialize(document.body);
+    return getModal();
   }
 
   return $modal;
@@ -105,8 +112,8 @@ var openModal = function(callback) {
  * Reset the styling of the input
  * (for example if errors have been shown)
  */
-var resetInput = function(params) {
-  var $modal = getModal(params.rootElement);
+var resetInput = function() {
+  var $modal = getModal();
   var $input = getInput();
 
   removeClass($modal, 'show-input');

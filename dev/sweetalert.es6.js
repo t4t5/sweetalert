@@ -123,7 +123,8 @@ export default sweetAlert = swal = function() {
   }
 
   addClass(document.body, 'stop-scrolling');
-  resetInput(params);
+  sweetAlertInitialize(params.rootElement);
+  resetInput();
   setParameters(params);
   fixVerticalPosition();
   openModal(arguments[1]);

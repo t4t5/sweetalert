@@ -141,12 +141,11 @@ test("prompt functionality works", function() {
 });
 
 test("appends to custom element", function() {
-  var customElement = document.createElement('div');
-  document.body.appendChild(customElement);
+  $('<div id="customElement"></div>').appendTo("body");
 
   swal({
     title: "Appended element test",
-    rootElement: customElement
+    rootElement: $('#customElement')[0]
   });
 
   var $parent = $('.sweet-alert').parent();
