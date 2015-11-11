@@ -37,7 +37,7 @@ body.stop-scrolling {
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -($width/2 + $padding);
+  margin-left: -($width/2);
   margin-top: -200px;
 
   overflow: hidden;
