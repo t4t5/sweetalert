@@ -58,6 +58,9 @@ import setParameters from './modules/set-params';
 var previousWindowKeyDown;
 var lastFocusedButton;
 
+var previousKeyDownListener;
+var isModalOpened = false;
+
 
 /*
  * Global sweetAlert function
@@ -150,10 +153,18 @@ export default sweetAlert = swal = function() {
   // Clicking outside the modal dismisses it (if allowed by user)
   getOverlay().onclick = onButtonEvent;
 
-  previousWindowKeyDown = window.onkeydown;
-
-  var onKeyEvent = (e) => handleKeyDown(e, params, modal);
-  window.onkeydown = onKeyEvent;
+  // bind keydown only when there's modal opening
+  if (!isModalOpened) {
+    isModalOpened = true;
+    // keep in in memery, recovery it after modal closed
+    previousWindowKeyDown = window.onkeydown;
+    // remove listener on window
+    window.onkeydown = null;
+    var onKeyEvent = (e) => handleKeyDown(e, params, modal);
+    // for remove it when closing
+    previousKeyDownListener = onKeyEvent;
+    window.addEventListener('keydown', previousKeyDownListener);
+  }
 
   window.onfocus = function () {
     // When the user has focused away and focused back from the whole window.
@@ -229,6 +240,9 @@ sweetAlert.close = swal.close = function() {
 
   // Reset the page to its previous state
   window.onkeydown = previousWindowKeyDown;
+  window.removeEventListener('keydown', previousKeyDownListener);
+  isModalOpened = false;
+  
   if (window.previousActiveElement) {
     window.previousActiveElement.focus();
   }

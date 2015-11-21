@@ -111,7 +111,7 @@ button, .button {
     button.cancel:hover, .button.cancel:hover {
       background-color: #c8c8c8; }
     button.cancel:active, .button.cancel:active {
-      background-color: #b6b6b6; }
+      background-color: #b7b7b7; }
   button.download, .button.download {
     position: fixed;
     right: 30px;
