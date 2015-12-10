@@ -1,4 +1,4 @@
-var alertTypes = ['error', 'warning', 'info', 'success', 'input', 'prompt'];
+var alertTypes = ['error', 'warning', 'info', 'success', 'input', 'prompt', 'password'];
 
 import {
   isIE8
@@ -105,7 +105,13 @@ var setParameters = function(params) {
 
       case 'input':
       case 'prompt':
-        $input.setAttribute('type', params.inputType);
+      case 'password':
+	if (params.type === 'password') {
+	    $input.setAttribute('type', 'password');
+	} else {
+            $input.setAttribute('type', params.inputType);
+	}
+
         $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
         addClass(modal, 'show-input');
