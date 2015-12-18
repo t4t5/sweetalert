@@ -372,8 +372,6 @@ var handleButton = function handleButton(event, params, modal) {
   // we must calculate what the color should be on hover/active
   var normalColor, hoverColor, activeColor;
 
-  console.log(params);
-
   var baseColor = null;
   if (targetedConfirm) baseColor = params.confirmButtonColor;
   if (targetedCancel) baseColor = params.cancelButtonColor;
