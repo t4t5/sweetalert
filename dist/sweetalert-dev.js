@@ -388,8 +388,6 @@ if (targetedCancel && baseColor) {
     activeColor = _colorLuminance.colorLuminance(normalColor, -0.14);
   }
 
-  console.log('handleButton',{'confirm':targetedConfirm,'cancel':targetedCancel},baseColor,normalColor,hoverColor,activeColor);
-
   function shouldSetButtonColor(color) {
     if (baseColor) target.style.backgroundColor = color;
   }
