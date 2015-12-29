@@ -80,9 +80,22 @@ var freezeScrolling = function() {
     var childEl = body.children[i];
     if (childEl.classList.contains('sweet-alert') || childEl.classList.contains('sweet-overlay'))
       continue;
-    if (!childEl.style.transform) {
-      childEl.style.transform = 'translateY(-' + frozenAtPx + 'px)';
+
+    var translateYRegexp = /translateY\(([^\)]*)px\)/;
+    var currentTransform = childEl.style.transform || '';
+    var offsetPx = frozenAtPx;
+    var matches = currentTransform.match(translateYRegexp);
+
+    if (currentTransform !== '') {
+      childEl.setAttribute('data-transform-orig', currentTransform);
     }
+
+    if (matches) {
+      offsetPx += parseInt(matches[1]);
+      currentTransform = currentTransform.replace(translateYRegexp, '');
+    }
+
+    childEl.style.transform = currentTransform + ' translateY(-' + frozenAtPx + 'px)';
   }
 };
 
@@ -95,9 +108,9 @@ var thawScrolling = function() {
     var childEl = body.children[i];
     if (childEl.classList.contains('sweet-alert') || childEl.classList.contains('sweet-overlay'))
       continue;
-    if (childEl.style.transform !== 'translateY(-' + frozenAtPx + 'px)')
-      continue;
-    childEl.style.transform = '';
+
+    childEl.style.transform = childEl.getAttribute('data-transform-orig');
+    childEl.removeAttribute('data-transform-orig');
   }
 
   frozenAtPx = null;
