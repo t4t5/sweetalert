@@ -13,6 +13,13 @@
     "alert",
     "modal"
   ],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "site/",
+    "test",
+    "tests"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:t4t5/sweetalert.git"
