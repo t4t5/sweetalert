@@ -17,6 +17,7 @@ var defaultParams = {
   html: false,
   animation: true,
   allowEscapeKey: true,
+  allowReturnKey: true,
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',

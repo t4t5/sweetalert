@@ -53,7 +53,7 @@ var handleKeyDown = function(event, params, modal) {
         $okButton.focus();
       }
 
-      if (btnIndex === -1) {
+      if (btnIndex === -1 && params.allowReturnKey === true) {
         // ENTER/SPACE clicked outside of a button.
         $targetElement = $okButton;
       } else {
