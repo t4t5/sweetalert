@@ -16,6 +16,7 @@ var defaultParams = {
   customClass: '',
   html: false,
   animation: true,
+  disableKeys: false,
   allowEscapeKey: true,
   allowReturnKey: true,
   inputType: 'text',

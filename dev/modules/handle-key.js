@@ -16,6 +16,11 @@ var handleKeyDown = function(event, params, modal) {
     return;
   }
 
+  if (params.disableKeys === true) {
+    stopEventPropagation(e);
+    return;
+  }
+
   var $targetElement = e.target || e.srcElement;
 
   var btnIndex = -1; // Find the button - note, this is a nodelist, not an array.
