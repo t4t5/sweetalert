@@ -66,6 +66,10 @@ var lastFocusedButton;
 var sweetAlert, swal;
 
 export default sweetAlert = swal = function() {
+	
+  if(previousWindowKeyDown !== undefined && window.onkeydown !== previousWindowKeyDown)
+        window.onkeydown = previousWindowKeyDown;
+
   var customizations = arguments[0];
 
   addClass(document.body, 'stop-scrolling');
