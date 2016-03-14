@@ -12,7 +12,7 @@
       return sweetAlert;
     });
   } else if (typeof module !== 'undefined' && module.exports) {
-    module.exports = sweetAlert;
+    module.exports = window.sweetAlert;
   }
 
 })(window, document);
