@@ -29,7 +29,7 @@ var isIE8 = function() {
  * IE compatible logging for developers
  */
 var logStr = function(string) {
-  if (typeof(window) !== 'undefined' & window.console) {
+  if (typeof(window) !== 'undefined' && window.console) {
     // IE...
     window.console.log('SweetAlert: ' + string);
   }
