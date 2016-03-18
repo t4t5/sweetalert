@@ -61,14 +61,14 @@ var colorLuminance = function(hex, lum) {
   return rgb;
 };
 
-var body = document.getElementsByTagName('body')[0];
-
 var frozenAtPx = null;
 var bodyHeight = null;
 var bodyOverflow = null;
 
 var freezeScrolling = function() {
   frozenAtPx = Math.round(window.scrollY * 100) / 100;
+
+  var body = document.getElementsByTagName('body')[0];
 
   bodyHeight = body.style.height;
   body.style.height = '100%';
@@ -100,6 +100,8 @@ var freezeScrolling = function() {
 };
 
 var thawScrolling = function() {
+  var body = document.getElementsByTagName('body')[0];
+
   body.style.height = bodyHeight;
   body.style.overflow = bodyOverflow;
   window.scrollTo(0, frozenAtPx);
