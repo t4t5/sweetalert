@@ -24,7 +24,9 @@ import {
   hexToRgb,
   isIE8,
   logStr,
-  colorLuminance
+  colorLuminance,
+  freezeScrolling,
+  thawScrolling
 } from './modules/utils';
 
 /*
@@ -68,7 +70,7 @@ var sweetAlert, swal;
 export default sweetAlert = swal = function() {
   var customizations = arguments[0];
 
-  addClass(document.body, 'stop-scrolling');
+  freezeScrolling();
   resetInput();
 
   /*
@@ -166,7 +168,7 @@ export default sweetAlert = swal = function() {
       }
     }, 0);
   };
-  
+
   // Show alert with enabled buttons always
   swal.enableButtons();
 };
@@ -225,7 +227,7 @@ sweetAlert.close = swal.close = function() {
   }, 300);
 
   // Make page scrollable again
-  removeClass(document.body, 'stop-scrolling');
+  thawScrolling();
 
   // Reset the page to its previous state
   window.onkeydown = previousWindowKeyDown;
