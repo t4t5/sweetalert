@@ -67,6 +67,11 @@ var handleButton = function(event, params, modal) {
         break;
       }
 
+      if(!clickedOnModal && !clickedOnModalChild && params.allowOutsideClick && !params.fireCancelOnOutsideClick){
+        sweetAlert.close();
+        break;
+      }
+
       if (targetedConfirm && doneFunctionExists && modalIsVisible) {
         handleConfirm(modal, params);
       } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {

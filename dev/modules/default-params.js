@@ -3,6 +3,7 @@ var defaultParams = {
   text: '',
   type: null,
   allowOutsideClick: false,
+  fireCancelOnOutsideClick: true,
   showConfirmButton: true,
   showCancelButton: false,
   closeOnConfirm: true,
