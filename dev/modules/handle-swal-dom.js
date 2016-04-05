@@ -78,8 +78,21 @@ var openModal = function(callback) {
   }, 500);
 
   var timer = $modal.getAttribute('data-timer');
+  var countdown = $modal.querySelector('.sa-timer-countdown');
 
   if (timer !== 'null' && timer !== '') {
+
+    if (countdown) {
+      var second = parseInt(timer) / 1000; // milliseconds to seconds
+      countdown.innerHTML = second;
+      var countdownFunction = setInterval(function() {
+        // console.log(second--);
+        second--;
+        countdown.innerHTML = second;
+        if (second == 0) clearInterval(countdownFunction);
+      }, 1000);
+    }
+
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
       var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
