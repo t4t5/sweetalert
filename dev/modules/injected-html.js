@@ -37,7 +37,6 @@ var injectedHTML =
     // Title, text and input
     `<h2>Title</h2>
     <p>Text</p>
-    <p class="sa-timer-countdown"><strong></strong></p>
     <fieldset>
       <input type="text" tabIndex="3" />
       <div class="sa-input-error"></div>
