@@ -78,17 +78,20 @@ var openModal = function(callback) {
   }, 500);
 
   var timer = $modal.getAttribute('data-timer');
+  var countdown = $modal.querySelector('.sa-timer-countdown');
 
   if (timer !== 'null' && timer !== '') {
 
-    var second = parseInt(timer) / 1000; // milliseconds to seconds
-    $modal.querySelector('.sa-timer-countdown').innerHTML = second;
-    var countdown = setInterval(function() {
-      // console.log(second--);
-      second--;
-      $modal.querySelector('.sa-timer-countdown').innerHTML = second;
-      if (second == 0) clearInterval(countdown);
-    }, 1000);
+    if (countdown) {
+      var second = parseInt(timer) / 1000; // milliseconds to seconds
+      countdown.innerHTML = second;
+      var countdownFunction = setInterval(function() {
+        // console.log(second--);
+        second--;
+        countdown.innerHTML = second;
+        if (second == 0) clearInterval(countdownFunction);
+      }, 1000);
+    }
 
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
