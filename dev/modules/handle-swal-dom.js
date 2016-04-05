@@ -82,11 +82,11 @@ var openModal = function(callback) {
   if (timer !== 'null' && timer !== '') {
 
     var second = parseInt(timer) / 1000; // milliseconds to seconds
-    $modal.querySelector('span.sa-timer-countdown').innerHTML = second;
+    $modal.querySelector('.sa-timer-countdown').innerHTML = second;
     var countdown = setInterval(function() {
       // console.log(second--);
       second--;
-      $modal.querySelector('span.sa-timer-countdown').innerHTML = second;
+      $modal.querySelector('.sa-timer-countdown').innerHTML = second;
       if (second == 0) clearInterval(countdown);
     }, 1000);
 
@@ -100,8 +100,6 @@ var openModal = function(callback) {
         sweetAlert.close();
       }
     }, timer);
-  } else {
-    $modal.querySelector('span.sa-timer-countdown').style.display = 'none';
   }
 };
 

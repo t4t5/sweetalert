@@ -156,8 +156,9 @@
 		</div>
 		<pre><span class="attr">swal</span>({
 &nbsp;&nbsp;title: <span class="str">"Auto close alert!"</span>,
-&nbsp;&nbsp;text: <span class="str">"I will close in 2 seconds."</span>,
-&nbsp;&nbsp;timer: <span class="val">2000</span>,
+&nbsp;&nbsp;text: <span class="str">"I will close in <strong class="sa-timer-countdown">4</strong> seconds."</span>,
+&nbsp;&nbsp;html: <span class="val">true</span>,
+&nbsp;&nbsp;timer: <span class="val">4000</span>,
 &nbsp;&nbsp;showConfirmButton: <span class="val">false</span>
 });</pre>
 	</li>
@@ -462,8 +463,9 @@ document.querySelector('ul.examples li.message button').onclick = function(){
 document.querySelector('ul.examples li.timer button').onclick = function(){
 	swal({
 		title: "Auto close alert!",
-		text: "I will close in 2 seconds.",
-		timer: 2000,
+		text: "I will close in <strong class=\"sa-timer-countdown\">4</strong> seconds.",
+		timer: 4000,
+		html: true,
 		showConfirmButton: false
 	});
 };
