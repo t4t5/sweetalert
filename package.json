@@ -29,7 +29,7 @@
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "glob": "^5.0.3",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-babel": "^5.2.1",
     "gulp-concat": "^2.4.3",
     "gulp-jshint": "^1.9.0",

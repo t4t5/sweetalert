@@ -3,7 +3,7 @@ test("modal shows up", function() {
   equal($('.sweet-alert').length, 0);
 
   swal("Hello world!");
-  
+
   ok($('.sweet-alert').is(':visible'));
 });
 
@@ -14,7 +14,7 @@ test("dismiss modal with confirm-button", function(assert) {
 
   var $modal = $('.sweet-alert');
   $modal.find('button.confirm').click();
-  
+
   setTimeout(function() {
     assert.ok($modal.is(':hidden'));
     done();
@@ -27,7 +27,7 @@ test("dismiss modal with esc-key", function(assert) {
 
   var $modal = $('.sweet-alert');
   $(document).trigger($.Event('keydown', {
-    keyCode: 27 
+    keyCode: 27
   }));
 
   setTimeout(function() {
@@ -45,7 +45,7 @@ test("modals stays on with esc-key if allowEscapeKey is false", function(assert)
 
   var $modal = $('.sweet-alert');
   $(document).trigger($.Event('keydown', {
-    keyCode: 27 
+    keyCode: 27
   }));
 
   setTimeout(function() {
@@ -65,7 +65,7 @@ test("cancel-button works", function(assert) {
     title: "Test",
     showCancelButton: true
   });
-  
+
   var $modal = $('.sweet-alert');
   var $cancelBtn = $modal.find('button.cancel');
   ok($cancelBtn.is(':visible'));
@@ -98,7 +98,7 @@ test("clicking the overlay (with allowOutsideClick option) dismisses modal", fun
   var done = assert.async();
   swal({
     title: "Test",
-    allowOutsideClick: true 
+    allowOutsideClick: true
   });
 
   var $modal = $('.sweet-alert');
