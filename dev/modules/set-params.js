@@ -108,6 +108,7 @@ var setParameters = function(params) {
         $input.setAttribute('type', params.inputType);
         $input.value = params.inputValue;
         $input.setAttribute('placeholder', params.inputPlaceholder);
+        $input.setAttribute('autocomplete', params.inputAutoComplete);
         addClass(modal, 'show-input');
         setTimeout(function () {
           $input.focus();

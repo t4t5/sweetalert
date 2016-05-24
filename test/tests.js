@@ -131,11 +131,13 @@ test("prompt functionality works", function() {
   swal({
     title: "Prompt test",
     type: "input",
-    inputPlaceholder: "Placeholder text"
+    inputPlaceholder: "Placeholder text",
+    inputAutoComplete: "email"
   });
 
   var $modal = $('.sweet-alert');
 
   ok($modal.find('fieldset input').is(':visible'));
   equal($modal.find('fieldset input').attr('placeholder'), "Placeholder text");
+  equal($modal.find('fieldset input').attr('autocomplete'), "email");
 });
