@@ -146,6 +146,10 @@ var setParameters = function(params) {
   }
 
   /*
+   * Default focus on cancel
+   */
+   modal.setAttribute('data-has-default-cancel-focus',params.focusOnCancel);
+  /*
    * Show cancel button?
    */
   modal.setAttribute('data-has-cancel-button', params.showCancelButton);

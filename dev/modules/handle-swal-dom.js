@@ -71,7 +71,15 @@ var openModal = function(callback) {
 
   window.previousActiveElement = document.activeElement;
   var $okButton = $modal.querySelector('button.confirm');
+  var $cancelButton = $modal.querySelector('button.cancel');
+
+  var hasDefaultCancelFocus = $modal.getAttribute('data-has-default-cancel-focus');
   $okButton.focus();
+  
+  if(hasDefaultCancelFocus === 'true') {
+    $modal.removeAttribute('data-has-default-cancel-focus');
+    $cancelButton.focus()
+  }
 
   setTimeout(function () {
     addClass($modal, 'visible');
@@ -83,7 +91,7 @@ var openModal = function(callback) {
     var timerCallback = callback;
     $modal.timeout = setTimeout(function() {
       var doneFunctionExists = ((timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true');
-      if (doneFunctionExists) { 
+      if (doneFunctionExists) {
         timerCallback(null);
       }
       else {
@@ -135,7 +143,7 @@ var fixVerticalPosition = function() {
 };
 
 
-export { 
+export {
   sweetAlertInitialize,
   getModal,
   getOverlay,
