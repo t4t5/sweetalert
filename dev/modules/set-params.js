@@ -194,6 +194,14 @@ var setParameters = function(params) {
     setFocusStyle($confirmBtn, params.confirmButtonColor);
   }
 
+/*
+ * Custom color on cancel button
+ */
+ if(params.cancelButtonColor) {
+   $cancelBtn.style.backgroundColor = params.cancelButtonColor;
+ }
+
+
   /*
    * Allow outside click
    */
