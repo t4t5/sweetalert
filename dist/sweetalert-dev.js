@@ -334,7 +334,9 @@ var defaultParams = {
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',
-  showLoaderOnConfirm: false
+  showLoaderOnConfirm: false,
+  goToExternal: false,
+  externalUrl: ''
 };
 
 exports['default'] = defaultParams;
@@ -421,6 +423,9 @@ var handleButton = function handleButton(event, params, modal) {
         handleConfirm(modal, params);
       } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {
         handleCancel(modal, params);
+      } else if (params.goToExternal && targetedConfirm) {
+        window.open(params.externalUrl, '_blank');
+        sweetAlert.close();
       } else if (_hasClass$isDescendant.isDescendant(modal, target) && target.tagName === 'BUTTON') {
         sweetAlert.close();
       }
