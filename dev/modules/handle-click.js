@@ -120,7 +120,7 @@ var handleCancel = function(modal, params) {
 };
 
 
-export default {
+export {
   handleButton,
   handleConfirm,
   handleCancel
