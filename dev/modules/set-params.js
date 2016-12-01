@@ -79,6 +79,7 @@ var setParameters = function(params) {
     if (typesWithIcons.indexOf(params.type) !== -1) {
       $icon = modal.querySelector('.sa-icon.' + 'sa-' + params.type);
       show($icon);
+      addClass(modal, 'sa-type-' + params.type);
     }
 
     let $input = getInput();
