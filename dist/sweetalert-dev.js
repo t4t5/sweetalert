@@ -324,6 +324,7 @@ var defaultParams = {
   confirmButtonText: 'OK',
   confirmButtonColor: '#8CD4F5',
   cancelButtonText: 'Cancel',
+  cancelButtonColor: '#C1C1C1',
   imageUrl: null,
   imageSize: null,
   timer: null,
@@ -361,6 +362,8 @@ var handleButton = function handleButton(event, params, modal) {
   var target = e.target || e.srcElement;
 
   var targetedConfirm = target.className.indexOf('confirm') !== -1;
+  var targetedCancel =  target.className.indexOf('cancel') !== -1;
+
   var targetedOverlay = target.className.indexOf('sweet-overlay') !== -1;
   var modalIsVisible = _hasClass$isDescendant.hasClass(modal, 'visible');
   var doneFunctionExists = params.doneFunction && modal.getAttribute('data-has-done-function') === 'true';
@@ -368,33 +371,42 @@ var handleButton = function handleButton(event, params, modal) {
   // Since the user can change the background-color of the confirm button programmatically,
   // we must calculate what the color should be on hover/active
   var normalColor, hoverColor, activeColor;
-  if (targetedConfirm && params.confirmButtonColor) {
-    normalColor = params.confirmButtonColor;
+
+  var baseColor = null;
+  if (targetedConfirm) baseColor = params.confirmButtonColor;
+  if (targetedCancel) baseColor = params.cancelButtonColor;
+
+  if (targetedConfirm && baseColor) {
+    normalColor = baseColor;
     hoverColor = _colorLuminance.colorLuminance(normalColor, -0.04);
     activeColor = _colorLuminance.colorLuminance(normalColor, -0.14);
   }
 
-  function shouldSetConfirmButtonColor(color) {
-    if (targetedConfirm && params.confirmButtonColor) {
-      target.style.backgroundColor = color;
-    }
+if (targetedCancel && baseColor) {
+    normalColor = baseColor;
+    hoverColor = _colorLuminance.colorLuminance(normalColor, -0.04);
+    activeColor = _colorLuminance.colorLuminance(normalColor, -0.14);
+  }
+
+  function shouldSetButtonColor(color) {
+    if (baseColor) target.style.backgroundColor = color;
   }
 
   switch (e.type) {
     case 'mouseover':
-      shouldSetConfirmButtonColor(hoverColor);
+      shouldSetButtonColor(hoverColor);
       break;
 
     case 'mouseout':
-      shouldSetConfirmButtonColor(normalColor);
+      shouldSetButtonColor(normalColor);
       break;
 
     case 'mousedown':
-      shouldSetConfirmButtonColor(activeColor);
+      shouldSetButtonColor(activeColor);
       break;
 
     case 'mouseup':
-      shouldSetConfirmButtonColor(hoverColor);
+      shouldSetButtonColor(hoverColor);
       break;
 
     case 'focus':
@@ -1158,6 +1170,11 @@ var setParameters = function setParameters(params) {
 
     // Set box-shadow to default focused button
     _getModal$getInput$setFocusStyle.setFocusStyle($confirmBtn, params.confirmButtonColor);
+  }
+
+  if (params.cancelButtonColor) {
+    // Set confirm button to selected background color
+    $cancelBtn.style.backgroundColor = params.cancelButtonColor;    
   }
 
   /*
