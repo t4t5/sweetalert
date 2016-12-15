@@ -334,7 +334,8 @@ var defaultParams = {
   inputType: 'text',
   inputPlaceholder: '',
   inputValue: '',
-  showLoaderOnConfirm: false
+  showLoaderOnConfirm: false,
+  showLoaderOnCancel: false
 };
 
 exports['default'] = defaultParams;
@@ -467,6 +468,11 @@ var handleCancel = function handleCancel(modal, params) {
 
   if (params.closeOnCancel) {
     sweetAlert.close();
+  }
+  
+  // Disable cancel and confirm button if the parameter is true
+  if (params.showLoaderOnCancel){
+	  sweetAlert.disableButtons();
   }
 };
 
