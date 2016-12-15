@@ -30,7 +30,12 @@ body.stop-scrolling {
   margin-top: -200px;
   overflow: hidden;
   display: none;
-  z-index: 99999; }
+  z-index: 99999;
+  /* Added this to make Sweet Alert Compatible with Bootstrap, because bootstrap
+  automatically adds box sizing to every element making the sweet-alert not centered*/
+  box-sizing: initial !important;
+  -webkit-box-sizing: initial !important;
+ }
   @media all and (max-width: 540px) {
     .sweet-alert {
       width: auto;
