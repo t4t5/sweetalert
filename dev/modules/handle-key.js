@@ -1,20 +1,29 @@
 import { stopEventPropagation, fireClick } from './handle-dom';
 import { setFocusStyle } from './handle-swal-dom';
 
+var vk_tab = 9;
+var vk_esc = 27;
+var vk_enter = 13;
+var vk_space = 32;
+var key_codes = [vk_tab, vk_esc, vk_enter, vk_space];
 
 var handleKeyDown = function(event, params, modal) {
   var e = event || window.event;
   var keyCode = e.keyCode || e.which;
 
-  var $okButton     = modal.querySelector('button.confirm');
-  var $cancelButton = modal.querySelector('button.cancel');
-  var $modalButtons = modal.querySelectorAll('button[tabindex]');
-
-
-  if ([9, 13, 32, 27].indexOf(keyCode) === -1) {
+  if (key_codes.indexOf(keyCode) < 0) {
     // Don't do work on keys we don't care about.
     return;
   }
+
+  if (params.disableKeys === true) {
+    stopEventPropagation(e);
+    return;
+  }
+
+  var $okButton     = modal.querySelector('button.confirm');
+  var $cancelButton = modal.querySelector('button.cancel');
+  var $modalButtons = modal.querySelectorAll('button[tabindex]');
 
   var $targetElement = e.target || e.srcElement;
 
@@ -26,8 +35,7 @@ var handleKeyDown = function(event, params, modal) {
     }
   }
 
-  if (keyCode === 9) {
-    // TAB
+  if (keyCode === vk_tab) {
     if (btnIndex === -1) {
       // No button focused. Jump to the confirm button.
       $targetElement = $okButton;
@@ -47,7 +55,7 @@ var handleKeyDown = function(event, params, modal) {
       setFocusStyle($targetElement, params.confirmButtonColor);
     }
   } else {
-    if (keyCode === 13) {
+    if (keyCode === vk_enter && params.allowReturnKey === true) {
       if ($targetElement.tagName === 'INPUT') {
         $targetElement = $okButton;
         $okButton.focus();
@@ -60,7 +68,7 @@ var handleKeyDown = function(event, params, modal) {
         // Do nothing - let the browser handle it.
         $targetElement = undefined;
       }
-    } else if (keyCode === 27 && params.allowEscapeKey === true) {
+    } else if (keyCode === vk_esc && params.allowEscapeKey === true) {
       $targetElement = $cancelButton;
       fireClick($targetElement, e);
     } else {
