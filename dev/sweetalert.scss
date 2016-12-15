@@ -77,6 +77,10 @@ body.stop-scrolling {
     margin: 0;
     padding: 0;
     line-height: normal;
+
+    b, strong {
+      font-weight: auto;
+    }
   }
 
   fieldset {
