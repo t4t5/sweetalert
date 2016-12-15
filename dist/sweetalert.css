@@ -152,6 +152,8 @@ body.stop-scrolling {
         opacity: 0.5; }
     .sweet-alert input::-moz-placeholder {
       color: #bdbdbd; }
+    .sweet-alert input::-ms-clear {
+      display: none; }
     .sweet-alert input:-ms-input-placeholder {
       color: #bdbdbd; }
     .sweet-alert input::-webkit-input-placeholder {
