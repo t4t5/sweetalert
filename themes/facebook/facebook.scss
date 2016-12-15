@@ -32,6 +32,7 @@
     padding-left: 12px;
     color: $text-color;
     border-bottom: 1px solid #e5e5e5;
+    font-weight: lighter;
   }
 
   p {
@@ -39,13 +40,16 @@
     text-align: center;
     color: #131722;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 23px;
     margin-top: 7px;
+    font-weight: lighter;
   }
 
   .sa-button-container {
     border-top: 1px solid #dcdee3;
+    margin-top: 25px;
   }
+
   &[data-has-confirm-button=false][data-has-cancel-button=false] {
     padding-bottom: 10px;
     .sa-button-container {
