@@ -1,5 +1,5 @@
-import { stopEventPropagation, fireClick } from './handle-dom';
-import { setFocusStyle } from './handle-swal-dom';
+import { stopEventPropagation, fireClick, hasClass } from './handle-dom';
+import { setFocusStyle, getModal } from './handle-swal-dom';
 
 
 var handleKeyDown = function(event, params, modal) {
@@ -9,6 +9,12 @@ var handleKeyDown = function(event, params, modal) {
   var $okButton     = modal.querySelector('button.confirm');
   var $cancelButton = modal.querySelector('button.cancel');
   var $modalButtons = modal.querySelectorAll('button[tabindex]');
+
+  var $modal = getModal();
+
+  if (hasClass($modal, 'hideSweetAlert')) {
+    return;
+  }
 
 
   if ([9, 13, 32, 27].indexOf(keyCode) === -1) {
