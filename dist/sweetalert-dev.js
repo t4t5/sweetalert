@@ -714,6 +714,7 @@ var handleKeyDown = function handleKeyDown(event, params, modal) {
       if (btnIndex === -1) {
         // ENTER/SPACE clicked outside of a button.
         $targetElement = $okButton;
+        _stopEventPropagation$fireClick.fireClick($targetElement, e);
       } else {
         // Do nothing - let the browser handle it.
         $targetElement = undefined;
