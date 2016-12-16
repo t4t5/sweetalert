@@ -26,7 +26,7 @@ body.stop-scrolling {
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -256px;
+  margin-left: -239px;
   margin-top: -200px;
   overflow: hidden;
   display: none;
