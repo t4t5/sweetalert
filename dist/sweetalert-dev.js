@@ -417,13 +417,35 @@ var handleButton = function handleButton(event, params, modal) {
         break;
       }
 
+      // Issue #281
+      // BUG : the callback function is not called, when do a quick click on the buttons immediately after opening of the popup
+      
+      /************************************** old version start ***********************************/
+      /* 
+         if (targetedConfirm && doneFunctionExists && modalIsVisible) {
+         handleConfirm(modal, params);
+         } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {
+         handleCancel(modal, params);
+         } else if ((0, _handleDom.isDescendant)(modal, target) && target.tagName === 'BUTTON') {
+         sweetAlert.close();
+         }
+       */
+      /************************************** old version end *************************************/
+
+      /************************************** thinklang modify start ******************************/
       if (targetedConfirm && doneFunctionExists && modalIsVisible) {
         handleConfirm(modal, params);
-      } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {
-        handleCancel(modal, params);
+      } else if (doneFunctionExists  || targetedOverlay) {
+        // Modal should be visiable before cancle
+        if(modalIsVisible){
+          handleCancel(modal, params);
+        }else{
+          // Up to you
+        }
       } else if ((0, _handleDom.isDescendant)(modal, target) && target.tagName === 'BUTTON') {
         sweetAlert.close();
       }
+      /************************************** thinklang modify end ******************************/
       break;
   }
 };
