@@ -30,7 +30,7 @@ var handleKeyDown = function(event, params, modal) {
     // TAB
     if (btnIndex === -1) {
       // No button focused. Jump to the confirm button.
-      $targetElement = $okButton;
+      $targetElement = params.cancelButtonFocus ? $cancelButton : $okButton;
     } else {
       // Cycle to the next button
       if (btnIndex === $modalButtons.length - 1) {
@@ -49,17 +49,18 @@ var handleKeyDown = function(event, params, modal) {
   } else {
     if (keyCode === 13) {
       if ($targetElement.tagName === 'INPUT') {
-        $targetElement = $okButton;
-        $okButton.focus();
+        $targetElement = params.cancelButtonFocus ? $cancelButton : $okButton;
+        $targetElement.focus();
       }
 
       if (btnIndex === -1) {
         // ENTER/SPACE clicked outside of a button.
-        $targetElement = $okButton;
+        $targetElement = params.cancelButtonFocus ? $cancelButton : $okButton;
       } else {
         // Do nothing - let the browser handle it.
-        $targetElement = undefined;
+        $targetElement = params.cancelButtonFocus ? $cancelButton : undefined;
       }
+
     } else if (keyCode === 27 && params.allowEscapeKey === true) {
       $targetElement = $cancelButton;
       fireClick($targetElement, e);

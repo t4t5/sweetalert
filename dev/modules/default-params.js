@@ -10,6 +10,7 @@ var defaultParams = {
   confirmButtonText: 'OK',
   confirmButtonColor: '#8CD4F5',
   cancelButtonText: 'Cancel',
+  cancelButtonFocus: false,
   imageUrl: null,
   imageSize: null,
   timer: null,

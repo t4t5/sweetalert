@@ -127,7 +127,7 @@ export default sweetAlert = swal = function() {
 
   setParameters(params);
   fixVerticalPosition();
-  openModal(arguments[1]);
+  openModal(arguments[1], params.cancelButtonFocus);
 
   // Modal interactions
   var modal = getModal();
