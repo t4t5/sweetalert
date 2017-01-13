@@ -93,7 +93,8 @@
 &nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
 &nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
 &nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
-&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>,
+&nbsp;&nbsp;cancelButtonFocus: <span class="val">true</span>
 },
 <span class="func"><i>function</i></span>(){
 &nbsp;&nbsp;<span class="attr">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success"</span>);
@@ -331,6 +332,11 @@
 		<td><i>"Cancel"</i></td>
 		<td>Use this to change the text on the "Cancel"-button.</td>
 	</tr>
+  <tr>
+		<td><b>cancelButtonFocus</b></td>
+		<td><i>false</i></td>
+		<td>If set to <strong>true</strong>, the "Cancel"-button will have focus when the modal opens.</td>
+	</tr>
 	<tr>
 		<td><b>closeOnConfirm</b></td>
 		<td><i>true</i></td>
@@ -484,7 +490,8 @@ document.querySelector('ul.examples li.warning.confirm button').onclick = functi
 		showCancelButton: true,
 		confirmButtonColor: '#DD6B55',
 		confirmButtonText: 'Yes, delete it!',
-		closeOnConfirm: false
+		closeOnConfirm: false,
+		cancelButtonFocus: true
 	},
 	function(){
 		swal("Deleted!", "Your imaginary file has been deleted!", "success");
@@ -545,7 +552,7 @@ document.querySelector('ul.examples li.input button').onclick = function(){
 			swal.showInputError("You need to write something!");
 			return false;
 		}
-    
+
 		swal("Nice!", 'You wrote: ' + inputValue, "success");
 
 	});

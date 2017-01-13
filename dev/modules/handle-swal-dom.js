@@ -62,7 +62,7 @@ var setFocusStyle = function($button, bgColor) {
 /*
  * Animation when opening modal
  */
-var openModal = function(callback) {
+var openModal = function(callback, cancelButtonFocus) {
   var $modal = getModal();
   fadeIn(getOverlay(), 10);
   show($modal);
@@ -71,7 +71,13 @@ var openModal = function(callback) {
 
   window.previousActiveElement = document.activeElement;
   var $okButton = $modal.querySelector('button.confirm');
-  $okButton.focus();
+  var $cancelButton = $modal.querySelector('button.cancel');
+  if(cancelButtonFocus) {
+    $cancelButton.focus();
+  } else {
+    $okButton.focus();
+  }
+
 
   setTimeout(function () {
     addClass($modal, 'visible');
