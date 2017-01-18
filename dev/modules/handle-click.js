@@ -69,9 +69,9 @@ var handleButton = function(event, params, modal) {
 
       if (targetedConfirm && doneFunctionExists && modalIsVisible) {
         handleConfirm(modal, params);
-      } else if (doneFunctionExists && modalIsVisible || targetedOverlay) {
+      } else if (doneFunctionExists && modalIsVisible) {
         handleCancel(modal, params);
-      } else if (isDescendant(modal, target) && target.tagName === 'BUTTON') {
+      } else if ((modalIsVisible && targetedOverlay) || (isDescendant(modal, target) && target.tagName === 'BUTTON')) {
         sweetAlert.close();
       }
       break;
