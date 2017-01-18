@@ -73,9 +73,7 @@ var openModal = function(callback) {
   var $okButton = $modal.querySelector('button.confirm');
   $okButton.focus();
 
-  setTimeout(function () {
-    addClass($modal, 'visible');
-  }, 500);
+  addClass($modal, 'visible');
 
   var timer = $modal.getAttribute('data-timer');
 
