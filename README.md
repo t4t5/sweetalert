@@ -3,7 +3,7 @@ SweetAlert [![Build Status](https://travis-ci.org/t4t5/sweetalert.svg?branch=mas
 
 An awesome replacement for JavaScript's alert.
 
-![A success modal](https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif)
+![A success modal](https://cloud.githubusercontent.com/assets/11269635/22947909/e482e6fc-f2fc-11e6-9e08-85026805692b.gif)
 
 [See it in action!](http://t4t5.github.io/sweetalert)
 
