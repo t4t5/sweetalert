@@ -47,6 +47,8 @@ body.stop-scrolling {
     position: relative;
     margin: 25px 0;
     padding: 0;
+    width:100%;
+    float:none;
     line-height: 40px;
     display: block; }
   .sweet-alert p {
