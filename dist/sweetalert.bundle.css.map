@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./sweetalert.css"],"names":[],"mappings":"AAAA,KACE,oBAAsB,CAKvB,SAFG,UAAY","file":"sweetalert.bundle.css","sourcesContent":["body {\n  background-color: red;\n\n  & div {\n    color: blue;\n  }\n}\n\n\n\n// WEBPACK FOOTER //\n// ./sweetalert.css"],"sourceRoot":""}
