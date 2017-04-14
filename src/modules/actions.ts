@@ -7,27 +7,27 @@ const {
 
 import state from './state';
 
-export const openModal = () => {
+export const openModal = (): void => {
   let modal = getNode(MODAL);
   modal.classList.add(SHOW_MODAL); 
 
   state.isOpen = true;
 };
 
-export const closeModal = () => {
+export const closeModal = (): void => {
   let modal = getNode(MODAL);
   modal.classList.remove(SHOW_MODAL); 
 
   state.isOpen = false;
 };
 
-export const onConfirm = () => {
+export const onConfirm = (): void => {
   closeModal();
 
   state.promise.resolve(true);
 };
 
-export const onCancel = () => {
+export const onCancel = (): void => {
   closeModal();
 
   state.promise.resolve(false);

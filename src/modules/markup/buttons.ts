@@ -4,7 +4,7 @@ const {
   BUTTON,
 } = CLASS_NAMES;
 
-export const cancelButton = `
+export const cancelButton: string = `
   <button 
     class="
       ${BUTTON} 
@@ -16,7 +16,7 @@ export const cancelButton = `
   </button>
 `;
 
-export const confirmButton = `
+export const confirmButton: string = `
   <div 
     class="swal-confirm-button-container"
   >

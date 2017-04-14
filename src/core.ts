@@ -17,7 +17,7 @@ interface SweetAlert {
   close?: Function,
 };
 
-const swal:SweetAlert = (param: string|object, text: string, type: string) => {
+const swal:SweetAlert = (param, text, type) => {
 
   return new Promise((resolve, reject) => {
 

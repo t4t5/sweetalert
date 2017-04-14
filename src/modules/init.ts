@@ -20,23 +20,23 @@ import addEventListeners from './event-listeners';
  * Append both .sweet-overlay
  * and .sweet-alert to body:
  */
-const initMarkup = () => {
-  let wrapper = document.createElement('div');
+const injectMarkup = (): void => {
+  const wrapper: Element = document.createElement('div');
   wrapper.innerHTML = markup;
 
   while (wrapper.firstChild) {
-    let el = wrapper.firstChild;
+    let el: Node = wrapper.firstChild;
     document.body.appendChild(el);
   }
 };
 
-const setIcon = () => {
-  const icon = getNode(ICON);
+const setIcon = (): void => {
+  const icon: Element = getNode(ICON);
 
-  const iconTypeClass = `${ICON}--error`;
+  const iconTypeClass: string = `${ICON}--error`;
   icon.classList.add(iconTypeClass);
 
-  const iconContent = errorIcon();
+  const iconContent: string = errorIcon();
   icon.innerHTML = iconContent;
 };
 
@@ -47,11 +47,11 @@ interface InitParams {
   },
 };
 
-export const init = (params:InitParams):void => {
-  const modal = getNode(MODAL);
+export const init = (params: InitParams): void => {
+  const modal: Element = getNode(MODAL);
 
   if (!modal) {
-    initMarkup();
+    injectMarkup();
   }
 
   state.promise = params.promise;

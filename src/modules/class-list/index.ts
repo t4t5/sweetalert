@@ -28,7 +28,7 @@ export const CLASS_NAMES: ClassNameList = {
 /*
  * Get a DOM element from a class name:
  */
-export const getNode = (className: string) => {
+export const getNode = (className: string): Element => {
   const selector = `.${className}`;
 
   return document.querySelector(selector);

@@ -27,7 +27,7 @@ import {
 
 import overlay from './overlay';
 
-const markup = `
+const markup: string = `
   <div class="${MODAL}">
     
     <div class="${ICON}"></div>

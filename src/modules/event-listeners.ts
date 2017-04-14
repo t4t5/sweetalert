@@ -13,11 +13,9 @@ import {
   onCancel,
 } from './actions';
 
-const addEventListeners = () => {
+const addEventListeners = (): void => {
   const overlay = getNode(OVERLAY);
   overlay.addEventListener('click', onCancel);
-
-  console.log(CLASS_NAMES);
 
   const confirmBtn = getNode(CONFIRM_BUTTON);
   const cancelBtn = getNode(CANCEL_BUTTON);

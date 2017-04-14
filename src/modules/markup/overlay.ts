@@ -4,7 +4,7 @@ const {
   OVERLAY,
 } = CLASS_NAMES;
 
-const overlay = `
+const overlay: string = `
   <div 
     class="${OVERLAY}"
     tabIndex="-1">
