@@ -4,11 +4,11 @@ const {
   OVERLAY,
 } = CLASS_NAMES;
 
-const overlay: string = `
-  <div 
+const overlay: string =
+  `<div 
     class="${OVERLAY}"
     tabIndex="-1">
-  </div>
-`;
+  </div>`
+;
 
 export default overlay;

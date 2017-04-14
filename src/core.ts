@@ -4,28 +4,38 @@
  * https://github.com/t4t5/sweetalert
  */
 
-import { init } from './modules/init';
+import init from './modules/init';
 
 import {
   openModal,
   closeModal,
 } from './modules/actions';
 
+import state from './modules/state';
+
+import {
+  SwalOptions,
+  getOpts,
+} from './modules/options';
+
+export type SwalParams = (string|object)[];
+
 interface SweetAlert {
-  (param: string|object, text: string, type: string): object,
+  (...params: SwalParams): object,
   open?: Function,
   close?: Function,
 };
 
-const swal:SweetAlert = (param, text, type) => {
+const swal:SweetAlert = (...args) => {
+
+  const opts: SwalOptions = getOpts(...args);
+
+  // TODO! Check the user's defaults (use state)
 
   return new Promise((resolve, reject) => {
+    state.promise = { resolve, reject };
 
-    let promise = { resolve, reject };
-
-    init({
-      promise,
-    });
+    init(opts);
 
     // For fade animation to work:
     setTimeout(() => {

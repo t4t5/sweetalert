@@ -1,54 +1,20 @@
 import CLASS_NAMES from '../class-list';
 
-const {
-  MODAL,
-  MODAL_TITLE,
-  MODAL_TEXT,
-  ICON,
-} = CLASS_NAMES;
+export const stringToNode = (html: string): Node => {
+  let wrapper: Element = document.createElement('div');
+  wrapper.innerHTML = html.trim();
 
-import {
-  errorIcon,
-  warningIcon,
-  infoIcon,
-  successIcon,
-  customIcon,
-} from './icons';
+  return wrapper.firstChild;
+};
 
-import {
-  cancelButton,
-  confirmButton,
-} from './buttons';
+export const insertAfter = (newNode: Node, referenceNode: Node) => {
+  let nextNode = referenceNode.nextSibling;
+  let parentNode = referenceNode.parentNode;
 
-import {
-  input,
-  inputError,
-} from './input';
+  parentNode.insertBefore(newNode, nextNode);
+};
 
-import overlay from './overlay';
+export const removeNode = (node: Node) => {
+  node.parentElement.removeChild(node);
+};
 
-const markup: string = `
-  <div class="${MODAL}">
-    
-    <div class="${ICON}"></div>
-
-    <div class="${MODAL_TITLE}">
-      Title
-    </div>
-
-    <div class="${MODAL_TEXT}">
-      Text
-    </div>
-
-    <div class="sa-button-container">
-      ${cancelButton}
-      ${confirmButton}
-    </div>
-
-  </div>
-
-  ${overlay}
-`
-;
-
-export default markup;
