@@ -1,0 +1,38 @@
+:root {
+  --swal-btn-confirm: #8CD4F5;
+  --swal-btn-cancel: #C1C1C1;
+}
+
+.swal-confirm-button-container {
+  display: inline-block;
+}
+
+.swal-button {
+  background-color: var(--swal-btn-confirm);
+  color: white;
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 10px 32px;
+  margin: 26px 5px 0 5px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+  /*
+  &:hover {
+    background-color: darken($btnBlue, 3%);
+  }
+  &:active {
+    background-color: darken($btnBlue, 10%);
+  }
+  */
+
+  &--cancel {
+    background-color: var(--swal-btn-cancel);
+  }
+
+}

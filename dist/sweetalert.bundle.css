@@ -1,2 +1,200 @@
-body{background-color:red}body div{color:blue}
+.sa-icon {
+  width: 80px;
+  height: 80px;
+  border: 4px solid gray;
+  border-radius: 50%;
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  box-sizing: content-box
+}
+
+.sa-icon--error {
+  border-color: #F27474
+}
+
+.sa-icon--error__x-mark {
+  position: relative;
+  display: block
+}
+
+.sa-icon--error__line {
+  position: absolute;
+  height: 5px;
+  width: 47px;
+  background-color: #F27474;
+  display: block;
+  top: 37px;
+  border-radius: 2px
+}
+
+.sa-icon--error__line--left {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 17px
+}
+
+.sa-icon--error__line--right {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 16px
+}
+
+.swal-confirm-button-container {
+  display: inline-block;
+}
+
+.swal-button {
+  background-color: #8CD4F5;
+  color: white;
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 10px 32px;
+  margin: 26px 5px 0 5px;
+  cursor: pointer
+  /*
+  &:hover {
+    background-color: darken($btnBlue, 3%);
+  }
+  &:active {
+    background-color: darken($btnBlue, 10%);
+  }
+  */
+
+}
+
+.swal-button:focus {
+  outline: none;
+  box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05)
+}
+
+.swal-button--cancel {
+  background-color: #C1C1C1
+}
+
+.sweet-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.sweet-alert {
+  width: 478px;
+  padding: 17px;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  text-align: center;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(0.5) translateX(-50%) translateY(-50%);
+          transform: scale(0.5) translateX(-50%) translateY(-50%);
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  z-index: 10001;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s, -webkit-transform 0.3s
+}
+
+.sweet-alert--show {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: scale(1) translateX(-50%) translateY(-50%);
+          transform: scale(1) translateX(-50%) translateY(-50%);
+  -webkit-animation: showSweetAlert 0.3s;
+          animation: showSweetAlert 0.3s
+}
+
+.sweet-alert--show ~ .sweet-overlay {
+  opacity: 1;
+  pointer-events: auto
+}
+
+.sweet-alert__title {
+  color: #575757;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: none;
+  position: relative;
+  margin: 25px 0;
+  padding: 0;
+  line-height: 40px;
+  display: block
+}
+
+.sweet-alert__text {
+  color: #797979;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 300;
+  position: relative;
+  text-align: inherit;
+  float: none;
+  margin: 0;
+  padding: 0;
+  line-height: normal
+}
+
+@-webkit-keyframes showSweetAlert {
+  0% {
+    -webkit-transform: scale(0.7) translateX(-50%) translateY(-50%);
+            transform: scale(0.7) translateX(-50%) translateY(-50%);
+  }
+
+  45% {
+    -webkit-transform: scale(1.05) translateX(-50%) translateY(-50%);
+            transform: scale(1.05) translateX(-50%) translateY(-50%);
+  }
+
+  80% {
+    -webkit-transform: scale(0.95) translateX(-50%) translateY(-50%);
+            transform: scale(0.95) translateX(-50%) translateY(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%) translateY(-50%);
+            transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes showSweetAlert {
+  0% {
+    -webkit-transform: scale(0.7) translateX(-50%) translateY(-50%);
+            transform: scale(0.7) translateX(-50%) translateY(-50%);
+  }
+
+  45% {
+    -webkit-transform: scale(1.05) translateX(-50%) translateY(-50%);
+            transform: scale(1.05) translateX(-50%) translateY(-50%);
+  }
+
+  80% {
+    -webkit-transform: scale(0.95) translateX(-50%) translateY(-50%);
+            transform: scale(0.95) translateX(-50%) translateY(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%) translateY(-50%);
+            transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
+
 /*# sourceMappingURL=sweetalert.bundle.css.map*/

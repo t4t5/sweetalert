@@ -3,7 +3,7 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "outDir": "lib2"
   },
   "include": [

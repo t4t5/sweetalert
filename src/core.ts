@@ -9,28 +9,34 @@ import { init } from './modules/init';
 import {
   openModal,
   closeModal,
-} from './modules/swal-dom';
+} from './modules/actions';
 
-class swal {
+interface SweetAlert {
+  (param: string|object, text: string, type: string): object,
+  open?: Function,
+  close?: Function,
+};
 
-  constructor(name: string) {
-    init();
+const swal:SweetAlert = (param: string|object, text: string, type: string) => {
+
+  return new Promise((resolve, reject) => {
+
+    let promise = { resolve, reject };
+
+    init({
+      promise,
+    });
 
     // For fade animation to work:
     setTimeout(() => {
       openModal();
     });
-  }
 
-  static open() {
-    openModal();
-  }
-
-  static close() {
-    closeModal();
-  }
-  
+  });
 };
+
+swal.open = openModal;
+swal.close = closeModal;
 
 export default swal;
 

@@ -452,7 +452,11 @@ document.querySelector('.showcase.normal button').onclick = function(){
 };
 
 document.querySelector('.showcase.sweet button').onclick = function(){
-	swal("Oops...", "Something went wrong!", "error");
+	swal("Oops...", "Something went wrong!", "error")
+  .then(function(result) {
+    console.log("Resolved promise!");
+    console.log(result);
+  });
 };
 
 document.querySelector('ul.examples li.message button').onclick = function(){

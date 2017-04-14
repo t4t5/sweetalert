@@ -1,3 +1,6 @@
+@import './css/icons';
+@import './css/buttons';
+
 :root {
   --swal-modal-width: 478px;
   --swal-centering: translateX(-50%) translateY(-50%);
@@ -43,6 +46,32 @@
       opacity: 1; 
       pointer-events: auto;
     }
+  }
+
+  &__title {
+    color: #575757;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    margin: 25px 0;
+    padding: 0;
+    line-height: 40px;
+    display: block;
+  }
+
+  &__text {
+    color: #797979;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    text-align: inherit;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
   }
 }
 

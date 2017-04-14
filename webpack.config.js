@@ -34,7 +34,7 @@ module.exports = {
         /* Compile TypeScript */
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',   
+        use: 'ts-loader',
       },
       {
         /* Use PostCSS */

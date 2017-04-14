@@ -1,14 +1,20 @@
 import markup from './markup';
 
-import {
+import CLASS_NAMES, { getNode } from './class-list';
+
+const {
   MODAL,
   OVERLAY,
-  getNode,
-} from './class-list';
+  ICON,
+} = CLASS_NAMES;
 
 import {
-  closeModal,
-} from './swal-dom';
+  errorIcon,
+} from './markup/icons';
+
+import state from './state';
+
+import addEventListeners from './event-listeners';
 
 /*
  * Append both .sweet-overlay
@@ -24,18 +30,33 @@ const initMarkup = () => {
   }
 };
 
-const addModalEvents = () => {
-  const overlay = getNode(OVERLAY);
-  overlay.addEventListener('click', closeModal);
+const setIcon = () => {
+  const icon = getNode(ICON);
+
+  const iconTypeClass = `${ICON}--error`;
+  icon.classList.add(iconTypeClass);
+
+  const iconContent = errorIcon();
+  icon.innerHTML = iconContent;
 };
 
-export const init = () => {
+interface InitParams {
+  promise: {
+    resolve: Function,
+    reject: Function,
+  },
+};
+
+export const init = (params:InitParams):void => {
   const modal = getNode(MODAL);
 
   if (!modal) {
     initMarkup();
   }
 
-  addModalEvents();
+  state.promise = params.promise;
+
+  setIcon();
+  addEventListeners();
 };
 
