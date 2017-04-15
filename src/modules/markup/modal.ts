@@ -5,6 +5,7 @@ const {
   MODAL_TITLE,
   MODAL_TEXT,
   ICON,
+  BUTTONS,
 } = CLASS_NAMES;
 
 import {
@@ -15,10 +16,12 @@ import {
   customIcon,
 } from './icons';
 
+/*
 import {
   cancelButton,
   confirmButton,
 } from './buttons';
+ */
 
 import {
   input,
@@ -27,30 +30,35 @@ import {
 
 import overlay from './overlay';
 
-export const modalText: string = `
-  <div class="${MODAL_TEXT}">
-    Text
-  </div>`
+export const iconMarkup: string = `
+  <div class="${ICON}"></div>`
 ;
 
-const modal: string =`
-  <div class="${MODAL}">
+export const titleMarkup: string = `
+  <div class="${MODAL_TITLE}"></div>
+`;
+
+export const textMarkup: string = `
+  <div class="${MODAL_TEXT}"></div>`
+;
+
+export const buttonsMarkup: string = `
+  <div class="${BUTTONS}"></div>
+`;
+
+const modalMarkup: string =`
+  <div class="${MODAL}">` +
     
-    <div class="${ICON}"></div>
+    // Icon
 
-    <div class="${MODAL_TITLE}">
-      Title
-    </div>` +
+    // Title
 
-    // Text goes here
+    // Text
+  
+    // Buttons
 
-    `<div class="sa-button-container">
-      ${cancelButton}
-      ${confirmButton}
-    </div>
-
-  </div>`
+ `</div>`
 ;
 
-export default modal;
+export default modalMarkup;
 

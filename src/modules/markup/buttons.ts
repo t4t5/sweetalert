@@ -1,9 +1,19 @@
 import CLASS_NAMES from '../class-list';
 
 const {
+  BUTTON_CONTAINER,
   BUTTON,
 } = CLASS_NAMES;
 
+export const buttonMarkup: string = `
+  <div class="${BUTTON_CONTAINER}">
+    <button
+      class="${BUTTON}"
+    ></button>
+  </div>
+`;
+
+/*
 export const cancelButton: string = `
   <button 
     class="
@@ -40,4 +50,5 @@ export const confirmButton: string = `
 
   </div>
 `;
+ */
 

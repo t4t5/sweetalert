@@ -11,6 +11,7 @@
   border: 4px solid gray;
   border-radius: 50%;
   margin: 20px auto;
+  margin-top: 0;
   padding: 0;
   position: relative;
   box-sizing: content-box;

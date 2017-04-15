@@ -8,11 +8,14 @@ const {
   CANCEL_BUTTON,
 } = CLASS_NAMES;
 
+/*
 import {
   onConfirm,
   onCancel,
 } from './actions';
+*/
 
+/*
 const addEventListeners = (): void => {
   const overlay = getNode(OVERLAY);
   overlay.addEventListener('click', onCancel);
@@ -25,4 +28,5 @@ const addEventListeners = (): void => {
 };
 
 export default addEventListeners;
+ */
 

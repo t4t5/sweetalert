@@ -20,6 +20,8 @@ export const CLASS_NAMES: ClassNameList = {
   MODAL_TEXT: `${MODAL}__text`,
   ICON: 'sa-icon',
 
+  BUTTONS: 'swal-buttons',
+  BUTTON_CONTAINER: 'swal-button-container',
   BUTTON,
   CONFIRM_BUTTON: `${BUTTON}--confirm`,
   CANCEL_BUTTON: `${BUTTON}--cancel`,

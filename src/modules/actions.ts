@@ -21,6 +21,7 @@ export const closeModal = (): void => {
   state.isOpen = false;
 };
 
+/*
 export const onConfirm = (): void => {
   closeModal();
 
@@ -32,4 +33,5 @@ export const onCancel = (): void => {
 
   state.promise.resolve(false);
 };
+ */
 

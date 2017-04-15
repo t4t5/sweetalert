@@ -2,11 +2,21 @@ import {
   SwalParams,
 } from '../core';
 
+export interface ButtonOptions {
+  visible: Boolean,
+  text: string,
+  value: Boolean|string,
+};
+
+export interface ButtonList {
+  [buttonNamespace: string]: ButtonOptions,
+};
+
 export interface SwalOptions {
   title: string,
   text: string,
   type: string,
-  buttons: object,
+  buttons: ButtonList,
 };
 
 const defaultOpts: SwalOptions = {
@@ -14,8 +24,16 @@ const defaultOpts: SwalOptions = {
   text: "",
   type: null,
   buttons: {
-    cancel: false,
-    confirm: true,
+    cancel: {
+      visible: false,
+      text: "Cancel",
+      value: false,
+    },
+    confirm: {
+      visible: true,
+      text: "OK",
+      value: true,
+    },
   },
 };
 

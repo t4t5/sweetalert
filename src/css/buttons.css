@@ -1,9 +1,20 @@
 :root {
   --swal-btn-confirm: #8CD4F5;
+  --swal-btn-confirm-hover: color(var(--swal-btn-confirm) shade(3%));
+  --swal-btn-confirm-active: color(var(--swal-btn-confirm) shade(10%));
+
   --swal-btn-cancel: #C1C1C1;
+  --swal-btn-cancel-hover: color(var(--swal-btn-cancel) shade(3%));
+  --swal-btn-cancel-active: color(var(--swal-btn-cancel) shade(10%));
 }
 
-.swal-confirm-button-container {
+.swal-buttons {
+  margin-top: 37px;
+  margin-bottom: -18px;
+}
+
+.swal-button-container {
+  margin: 0 7px;
   display: inline-block;
 }
 
@@ -16,23 +27,31 @@
   font-weight: 500;
   border-radius: 5px;
   padding: 10px 32px;
-  margin: 26px 5px 0 5px;
+  margin: 0;
   cursor: pointer;
   &:focus {
     outline: none;
     box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
-  /*
-  &:hover {
-    background-color: darken($btnBlue, 3%);
+
+  &--confirm {
+    background-color: var(--swal-btn-confirm); 
+    &:hover {
+      background-color: var(--swal-btn-confirm-hover);
+    }
+    &:active {
+      background-color: var(--swal-btn-confirm-active);
+    }
   }
-  &:active {
-    background-color: darken($btnBlue, 10%);
-  }
-  */
 
   &--cancel {
     background-color: var(--swal-btn-cancel);
+    &:hover {
+      background-color: var(--swal-btn-cancel-hover);
+    }
+    &:active {
+      background-color: var(--swal-btn-cancel-active);
+    }
   }
 
 }
