@@ -27,13 +27,4 @@ export const CLASS_NAMES: ClassNameList = {
   CANCEL_BUTTON: `${BUTTON}--cancel`,
 };
 
-/*
- * Get a DOM element from a class name:
- */
-export const getNode = (className: string): Element => {
-  const selector = `.${className}`;
-
-  return document.querySelector(selector);
-};
-
 export default CLASS_NAMES;

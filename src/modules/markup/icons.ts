@@ -4,7 +4,7 @@ const {
   ICON,
 } = CLASS_NAMES;
 
-export const errorIcon = (): string => {
+export const errorIconMarkup = (): string => {
   const icon = `${ICON}--error`;
   const line = `${icon}__line`;
 

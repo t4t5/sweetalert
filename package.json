@@ -58,6 +58,8 @@
     "source-map-loader": "0.2.1",
     "style-loader": "0.16.1",
     "ts-loader": "2.0.3",
+    "tslint": "5.1.0",
+    "tslint-loader": "3.5.2",
     "typescript": "2.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",

@@ -31,10 +31,20 @@ module.exports = {
         use: 'expose-loader?sweetAlert'
       },
       {
+        enforce: 'pre',
+        test: /\.ts?$/,
+        loader: 'tslint-loader',
+        options: {
+          configFile: './tslint.json',
+          typeCheck: true,
+        },
+        exclude: /(node_modules)/,
+      },
+      {
         /* Compile TypeScript */
         test: /\.ts$/,
-        exclude: /node_modules/,
         use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         /* Use PostCSS */

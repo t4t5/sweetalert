@@ -1,4 +1,6 @@
-import CLASS_NAMES, { getNode } from './class-list';
+import { getNode } from './utils';
+
+import CLASS_NAMES  from './class-list';
 
 const {
   MODAL,

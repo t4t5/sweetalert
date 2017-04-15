@@ -1,20 +1,36 @@
+export * from './modal';
+
+export {
+  default as overlayMarkup
+} from './overlay';
+
+export * from './icons';
+
+export * from './buttons';
+
 import CLASS_NAMES from '../class-list';
 
-export const stringToNode = (html: string): Node => {
-  let wrapper: Element = document.createElement('div');
-  wrapper.innerHTML = html.trim();
+const {
+  MODAL_TITLE,
+  MODAL_TEXT,
+  ICON,
+  BUTTONS,
+} = CLASS_NAMES;
 
-  return wrapper.firstChild;
-};
+export const iconMarkup: string = `
+  <div class="${ICON}"></div>`
+;
 
-export const insertAfter = (newNode: Node, referenceNode: Node) => {
-  let nextNode = referenceNode.nextSibling;
-  let parentNode = referenceNode.parentNode;
+export const titleMarkup: string = `
+  <div class="${MODAL_TITLE}"></div>
+`;
 
-  parentNode.insertBefore(newNode, nextNode);
-};
+export const textMarkup: string = `
+  <div class="${MODAL_TEXT}"></div>`
+;
 
-export const removeNode = (node: Node) => {
-  node.parentElement.removeChild(node);
-};
+export const buttonListMarkup: string = `
+  <div class="${BUTTONS}"></div>
+`;
+
 
