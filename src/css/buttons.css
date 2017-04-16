@@ -29,19 +29,15 @@
   padding: 10px 32px;
   margin: 0;
   cursor: pointer;
+  &:hover {
+    background-color: var(--swal-btn-confirm-hover);
+  }
+  &:active {
+    background-color: var(--swal-btn-confirm-active);
+  }
   &:focus {
     outline: none;
     box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-  }
-
-  &--confirm {
-    background-color: var(--swal-btn-confirm); 
-    &:hover {
-      background-color: var(--swal-btn-confirm-hover);
-    }
-    &:active {
-      background-color: var(--swal-btn-confirm-active);
-    }
   }
 
   &--cancel {

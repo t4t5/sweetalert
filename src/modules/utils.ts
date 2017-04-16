@@ -25,3 +25,11 @@ export const removeNode = (node: Node) => {
   node.parentElement.removeChild(node);
 };
 
+export const throwErr = (message: string) => {
+  // Remove multiple spaces:
+  message = message.replace(/ +(?= )/g,'');
+  message = message.trim();
+
+  throw `SweetAlert: ${message}`;
+};
+

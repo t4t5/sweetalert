@@ -1,16 +1,9 @@
-import {
-  SwalParams,
-} from '../core';
-
-export interface ButtonOptions {
-  visible: Boolean,
-  text: string,
-  value: Boolean|string,
-};
-
-export interface ButtonList {
-  [buttonNamespace: string]: ButtonOptions,
-};
+import { SwalParams } from '../../core';
+import { 
+  ButtonList,
+  getButtonListOpts,
+  defaultButtonList
+} from './buttons';
 
 export interface SwalOptions {
   title: string,
@@ -23,18 +16,7 @@ const defaultOpts: SwalOptions = {
   title: "Oops!",
   text: "",
   type: null,
-  buttons: {
-    cancel: {
-      visible: false,
-      text: "Cancel",
-      value: false,
-    },
-    confirm: {
-      visible: true,
-      text: "OK",
-      value: true,
-    },
-  },
+  buttons: defaultButtonList,
 };
 
 /*
@@ -56,6 +38,11 @@ export const getOpts = (...args: SwalParams): SwalOptions => {
   } else {
     opts = firstParam;
   }
+
+  // Since Object.assign doesn't deep clone,
+  // we need to do this:
+  let buttonParam = (opts.buttons === undefined) ? opts.button : opts.buttons;
+  opts.buttons = getButtonListOpts(buttonParam);
 
   return Object.assign({}, defaultOpts, opts);
 };

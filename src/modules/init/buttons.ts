@@ -4,7 +4,7 @@ import { injectElIntoModal } from './modal';
 import CLASS_NAMES from '../class-list';
 const { BUTTON } = CLASS_NAMES;
 
-import { ButtonList, ButtonOptions } from '../options';
+import { ButtonList, ButtonOptions } from '../options/buttons';
 import { buttonListMarkup, buttonMarkup } from '../markup';
 
 import { closeModal } from '../actions';
@@ -44,13 +44,19 @@ const getButton = (namespace: string, { text, value }: ButtonOptions): Node => {
 const initButtons = (buttons: ButtonList): void => {
   if (!buttons) return;
 
-  const buttonListEl = injectElIntoModal(buttonListMarkup);
+  console.log("RESULT", buttons);
+
+  const buttonListEl: Node = injectElIntoModal(buttonListMarkup);
 
   for (let key in buttons) {
     const buttonOpts: ButtonOptions = buttons[key];
-    const buttonEl = getButton(key, buttonOpts);
-    buttonListEl.appendChild(buttonEl);
+    const buttonEl: Node = getButton(key, buttonOpts);
+
+    if (buttonOpts.visible) {
+      buttonListEl.appendChild(buttonEl);
+    }
   }
 };
 
 export default initButtons;
+

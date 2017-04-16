@@ -9,11 +9,13 @@ import {
 import CLASS_NAMES from '../class-list';
 const { ICON } = CLASS_NAMES;
 
+/*
 const SUPPORTED_TYPES = [
   'error',
   'warning',
   'info',
 ];
+ */
 
 const initIcon = (type: string): void => {
   if (type) {
