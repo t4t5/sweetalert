@@ -1,47 +1,19 @@
-:root {
-  --swal-red: #F27474;
-  --swal-orange: #F8BB86;
-  --swal-blue: #C9DAE1;
-  --swal-green: #A5DC86;
-}
+@import './icons/error';
+@import './icons/warning';
+@import './icons/success';
+@import './icons/info';
 
 .sa-icon {
   width: 80px;
   height: 80px;
-  border: 4px solid gray;
+  border-width: 4px;
+  border-style: solid;
   border-radius: 50%;
   margin: 20px auto;
   margin-top: 0;
   padding: 0;
   position: relative;
   box-sizing: content-box;
-
-  &--error {
-    border-color: var(--swal-red);
-
-    &__x-mark {
-      position: relative;
-      display: block;
-    }
-
-    &__line {
-      position: absolute;
-      height: 5px;
-      width: 47px;
-      background-color: var(--swal-red);
-      display: block;
-      top: 37px;
-      border-radius: 2px;
-
-      &--left {
-        transform: rotate(45deg);
-        left: 17px;
-      }
-      &--right {
-        transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        right: 16px;
-      }
-    }
-  }
 }
+
+

@@ -1,8 +1,6 @@
 import CLASS_NAMES from '../class-list';
 
-const {
-  ICON,
-} = CLASS_NAMES;
+const { ICON } = CLASS_NAMES;
 
 export const errorIconMarkup = (): string => {
   const icon = `${ICON}--error`;
@@ -18,28 +16,24 @@ export const errorIconMarkup = (): string => {
   return markup;
 }
 
-export const warningIcon: string = `
-  <div class="sa-icon sa-warning">
-    <span class="sa-body"></span>
-    <span class="sa-dot"></span>
-  </div>
-`;
+export const warningIconMarkup = (): string => {
+  const icon = `${ICON}--warning`;
 
-export const infoIcon: string = `
-  <div class="sa-icon sa-info"></div>
-`;
+  return `
+    <span class="${icon}__body">
+      <span class="${icon}__dot"></span>
+    </span>
+  `;
+};
 
-export const successIcon: string = `
-  <div class="sa-icon sa-success">
-    <span class="sa-line sa-tip"></span>
-    <span class="sa-line sa-long"></span>
+export const successIconMarkup = (): string => {
+  const icon = `${ICON}--success`;
 
-    <div class="sa-placeholder"></div>
-    <div class="sa-fix"></div>
-  </div>
-`;
+  return `
+    <span class="${icon}__line ${icon}__line--long"></span>
+    <span class="${icon}__line ${icon}__line--tip"></span>
 
-export const customIcon: string = `
-  <div class="sa-icon sa-custom"></div>
-`;
-
+    <div class="${icon}__ring"></div>
+    <div class="${icon}__hide-corners"></div>
+  `;
+};

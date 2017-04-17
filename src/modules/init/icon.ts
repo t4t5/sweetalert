@@ -1,9 +1,11 @@
-import { stringToNode } from '../utils';
+//import { stringToNode } from '../utils';
 import { injectElIntoModal } from './modal';
 
 import {
   iconMarkup,
   errorIconMarkup,
+  warningIconMarkup,
+  successIconMarkup,
 } from '../markup';
 
 import CLASS_NAMES from '../class-list';
@@ -17,14 +19,23 @@ const SUPPORTED_TYPES = [
 ];
  */
 
+const ICON_CONTENTS: any = {
+  error: errorIconMarkup(),
+  warning: warningIconMarkup(),
+  success: successIconMarkup(),
+}
+
 const initIcon = (type: string): void => {
   if (type) {
     let iconEl: any = injectElIntoModal(iconMarkup);
     const iconTypeClass: string = `${ICON}--${type}`;
     iconEl.classList.add(iconTypeClass);
 
-    const iconContent = stringToNode(errorIconMarkup());
-    iconEl.appendChild(iconContent);
+    const iconContent: string = ICON_CONTENTS[type];
+
+    if (iconContent) {
+      iconEl.innerHTML = iconContent;
+    }
   }
 };
 
