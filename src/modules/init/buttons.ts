@@ -23,7 +23,7 @@ const onButtonClick = (value: string|Boolean): void => {
 const getButton = (namespace: string, { text, value }: ButtonOptions): Node => {
   const buttonContainer: any = stringToNode(buttonMarkup);
 
-  const buttonEl: Element = buttonContainer.querySelector(`.${BUTTON}`);
+  const buttonEl: HTMLElement = buttonContainer.querySelector(`.${BUTTON}`);
 
   const btnNamespaceClass = `${BUTTON}--${namespace}`;
   buttonEl.classList.add(btnNamespaceClass);
@@ -43,8 +43,6 @@ const getButton = (namespace: string, { text, value }: ButtonOptions): Node => {
  */
 const initButtons = (buttons: ButtonList): void => {
   if (!buttons) return;
-
-  console.log("RESULT", buttons);
 
   const buttonListEl: Node = injectElIntoModal(buttonListMarkup);
 

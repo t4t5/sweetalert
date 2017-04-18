@@ -9,11 +9,14 @@
   border-width: 4px;
   border-style: solid;
   border-radius: 50%;
-  margin: 20px auto;
-  margin-top: 0;
   padding: 0;
   position: relative;
   box-sizing: content-box;
+  margin: 20px auto;
+  vertical-align: top;
+  &:first-child {
+    margin-top: 32px;
+  }
 }
 
 

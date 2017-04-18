@@ -8,8 +8,8 @@ interface ClassNameList {
   [key:string]: string,
 };
 
-const MODAL:string = 'sweet-alert';
-const BUTTON:string = 'swal-button';
+const MODAL: string = 'sweet-alert';
+const BUTTON: string = 'swal-button';
 
 export const CLASS_NAMES: ClassNameList = {
   MODAL,

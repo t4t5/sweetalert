@@ -1,10 +1,10 @@
 /*
  * Get a DOM element from a class name:
  */
-export const getNode = (className: string): Element => {
+export const getNode = (className: string): HTMLElement => {
   const selector = `.${className}`;
 
-  return document.querySelector(selector);
+  return <HTMLElement>document.querySelector(selector);
 };
 
 export const stringToNode = (html: string): Node => {

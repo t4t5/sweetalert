@@ -452,14 +452,14 @@ document.querySelector('.showcase.normal button').onclick = function(){
 };
 
 document.querySelector('.showcase.sweet button').onclick = function(){
-	//swal("Oops...", "Something went wrong!", "error")
+	//swal('Oops...', "Something went wrong!", "error")
   swal({
-    title: "Cool",
-    type: "info",
-    buttons: {
-      cancel: true,
-      confirm: true,
-      cool: true,
+    title: "Oops!",
+    text: "Something went wrong!",
+    icon: "error",
+    class: 'my-modal-class',
+    button: {
+      text: "Click it!",
     },
   })
   .then(function(result) {
