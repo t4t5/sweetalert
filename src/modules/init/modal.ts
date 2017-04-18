@@ -19,13 +19,35 @@ export const injectElIntoModal = (markup: string): Node => {
 };
 
 /*
+ * Remove eventual added classes +
+ * reset all content inside:
+ */
+const resetModalElement = (modal: Element): void => {
+  modal.className = MODAL;
+  modal.textContent = '';
+};
+
+/*
+ * Add custom class to modal element
+ */
+const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
+  resetModalElement(modal);
+
+  const customClass = opts.class;
+
+  if (customClass) {
+    modal.classList.add(customClass);
+  }
+};
+
+/*
  * It's important to run the following functions in this particular order,
  * so that the elements get appended one after the other.
  */
 export const initModalContent = (opts: SwalOptions): void => {
   // Start from scratch:
   const modal: Element = getNode(MODAL);
-  modal.textContent = '';
+  customizeModalElement(modal, opts);
 
   initIcon(opts.icon);
   initTitle(opts.title);
@@ -33,11 +55,11 @@ export const initModalContent = (opts: SwalOptions): void => {
   initButtons(opts.buttons);
 };
 
-const initModal = (): void => {
+const initModalOnce = (): void => {
   const modal = stringToNode(modalMarkup);
 
   document.body.appendChild(modal);
 };
 
-export default initModal;
+export default initModalOnce;
 

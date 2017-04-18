@@ -3,7 +3,7 @@
   --swal-green-light: rgba(165, 220, 134, 0.2);
 }
 
-.sa-icon--success {
+.swal-icon--success {
   border-color: var(--swal-green);
 
   /* Moving circular line */

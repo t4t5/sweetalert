@@ -7,7 +7,7 @@ const {
   SHOW_MODAL,
 } = CLASS_NAMES;
 
-import state from './state';
+import state, { SwalState } from './state';
 
 export const openModal = (): void => {
   let modal = getNode(MODAL);
@@ -24,16 +24,13 @@ export const closeModal = (): void => {
 };
 
 /*
-export const onConfirm = (): void => {
-  closeModal();
-
-  state.promise.resolve(true);
-};
-
-export const onCancel = (): void => {
-  closeModal();
-
-  state.promise.resolve(false);
-};
+ * Filter the state object. Remove the stuff
+ * that's only for internal use
  */
+export const getState = (): SwalState => {
+  let publicState = Object.assign({}, state);
+  delete publicState.promise;
+
+  return publicState;
+};
 

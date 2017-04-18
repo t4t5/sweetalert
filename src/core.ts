@@ -9,9 +9,10 @@ import init from './modules/init';
 import {
   openModal,
   closeModal,
+  getState,
 } from './modules/actions';
 
-import state from './modules/state';
+import state, { SwalState } from './modules/state';
 
 import {
   SwalOptions,
@@ -22,8 +23,9 @@ export type SwalParams = (string|object)[];
 
 interface SweetAlert {
   (...params: SwalParams): object,
-  open?: Function,
-  close?: Function,
+  open? (): void,
+  close? (): void,
+  getState? (): SwalState,
 };
 
 const swal:SweetAlert = (...args) => {
@@ -47,6 +49,7 @@ const swal:SweetAlert = (...args) => {
 
 swal.open = openModal;
 swal.close = closeModal;
+swal.getState = getState;
 
 export default swal;
 

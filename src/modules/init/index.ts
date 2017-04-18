@@ -4,8 +4,11 @@ import { SwalOptions } from '../options';
 import CLASS_NAMES from '../class-list';
 const { MODAL } = CLASS_NAMES;
 
-import initModal, { initModalContent } from './modal';
-import initOverlay from './overlay';
+import initModalOnce, {
+  initModalContent,
+} from './modal';
+
+import initOverlayOnce from './overlay';
 import addEventListeners from '../event-listeners';
 
 /*
@@ -16,8 +19,8 @@ export const init = (opts: SwalOptions): void => {
   const modal: Element = getNode(MODAL);
 
   if (!modal) {
-    initModal();
-    initOverlay();
+    initModalOnce();
+    initOverlayOnce();
   }
 
   initModalContent(opts);

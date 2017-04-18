@@ -1,4 +1,4 @@
-interface SwalState {
+export interface SwalState {
   isOpen: Boolean,
   promise: {
     resolve?: Function,

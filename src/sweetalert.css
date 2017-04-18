@@ -1,4 +1,5 @@
 @import './css/icons';
+@import './css/text';
 @import './css/buttons';
 
 :root {
@@ -6,7 +7,7 @@
   --swal-centering: translateX(-50%) translateY(-50%);
 }
 
-.sweet-overlay {
+.swal-overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,7 +21,7 @@
   transition: opacity 0.3s;
 }
 
-.sweet-alert {
+.swal-modal {
   width: var(--swal-modal-width);
   opacity: 0;
   pointer-events: none;
@@ -42,42 +43,10 @@
     transform: scale(1) var(--swal-centering);
     animation: showSweetAlert 0.3s;
 
-    & ~ .sweet-overlay {
+    & ~ .swal-overlay {
       opacity: 1; 
       pointer-events: auto;
     }
-  }
-
-  &__title {
-    color: #575757;
-    font-weight: 600;
-    text-transform: none;
-    position: relative;
-    display: block;
-    padding: 13px 16px;
-    font-size: 27px;
-    line-height: normal;
-    text-align: center;
-    /*border-bottom: 1px solid rgba(0, 0, 0, 0.15);*/
-    margin-bottom: 13px;
-    &:not(:first-child) {
-      padding-bottom: 0;
-      margin-bottom: 0px;
-    }
-  }
-
-  &__text {
-    font-size: 16px;
-    position: relative;
-    float: none;
-    line-height: normal;
-    vertical-align: top;
-    text-align: left;
-    padding: 0;
-    display: inline-block;
-    margin: 20px 28px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.64);
   }
 }
 

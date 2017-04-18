@@ -14,13 +14,15 @@ export interface SwalOptions {
   text: string,
   icon: string,
   buttons: ButtonList,
+  class: string,
 };
 
 const defaultOpts: SwalOptions = {
-  title: "",
-  text: "",
+  title: null,
+  text: null,
   icon: null,
   buttons: defaultButtonList,
+  class: null,
 };
 
 /*

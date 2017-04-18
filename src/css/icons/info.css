@@ -2,7 +2,7 @@
   --swal-blue: #C9DAE1;
 }
 
-.sa-icon--info {
+.swal-icon--info {
   border-color: var(--swal-blue);
 
   /* "i"-letter body */

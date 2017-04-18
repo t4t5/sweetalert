@@ -2,7 +2,7 @@
   --swal-red: #F27474;
 }
 
-.sa-icon--error {
+.swal-icon--error {
   border-color: var(--swal-red);
   animation: animateErrorIcon 0.5s;
 

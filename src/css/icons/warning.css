@@ -2,7 +2,7 @@
   --swal-orange: #F8BB86;
 }
 
-.sa-icon--warning {
+.swal-icon--warning {
   border-color: var(--swal-orange);
   animation: pulseWarning 0.75s infinite alternate;
 

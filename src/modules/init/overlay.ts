@@ -10,7 +10,7 @@ const onOverlayClick = (): void => {
   state.promise.resolve(null);
 };
 
-const initOverlay = (): void => {
+const initOverlayOnce = (): void => {
   const overlay = stringToNode(overlayMarkup);
 
   overlay.addEventListener('click', () => {
@@ -20,4 +20,4 @@ const initOverlay = (): void => {
   document.body.appendChild(overlay);
 };
 
-export default initOverlay;
+export default initOverlayOnce;
