@@ -8,10 +8,12 @@ import { ButtonList, ButtonOptions } from '../options/buttons';
 import { buttonListMarkup, buttonMarkup } from '../markup';
 
 import { closeModal } from '../actions';
-import state from '../state';
+import state, { setValueFor } from '../state';
 
-const onButtonClick = (value: string|Boolean): void => {
+const onButtonClick = (namespace: string): void => {
   closeModal();
+
+  const value = state.values[namespace];
 
   state.promise.resolve(value);
 };
@@ -38,8 +40,10 @@ const getButton = (namespace: string, {
 
   buttonEl.textContent = text;
 
+  setValueFor(namespace, value);
+
   buttonEl.addEventListener('click', () => {
-    return onButtonClick(value);
+    return onButtonClick(namespace);
   });
 
   return buttonContainer;

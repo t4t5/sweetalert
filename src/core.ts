@@ -12,7 +12,7 @@ import {
   getState,
 } from './modules/actions';
 
-import state, { SwalState } from './modules/state';
+import state, { setValueFor, SwalState } from './modules/state';
 
 import {
   SwalOptions,
@@ -26,6 +26,7 @@ interface SweetAlert {
   open? (): void,
   close? (): void,
   getState? (): SwalState,
+  setValueFor? (buttonKey: string, value: any): void,
 };
 
 const swal:SweetAlert = (...args) => {
@@ -50,6 +51,7 @@ const swal:SweetAlert = (...args) => {
 swal.open = openModal;
 swal.close = closeModal;
 swal.getState = getState;
+swal.setValueFor = setValueFor;
 
 export default swal;
 

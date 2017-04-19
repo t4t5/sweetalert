@@ -17,6 +17,8 @@ class App extends Component {
     this.setState({
       text,
     });
+
+    swal.setValueFor('confirm', text);
   }
 
   render() {
