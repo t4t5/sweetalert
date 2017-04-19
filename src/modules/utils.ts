@@ -33,3 +33,38 @@ export const throwErr = (message: string) => {
   throw `SweetAlert: ${message}`;
 };
 
+/*
+ * Match plain objects ({}) but NOT null
+ */
+export const isPlainObject = (value: any): Boolean => {
+  if (Object.prototype.toString.call(value) !== '[object Object]') {
+    return false;
+  } else {
+    var prototype = Object.getPrototypeOf(value);
+    return prototype === null || prototype === Object.prototype;
+  }
+};
+
+/*
+ * Take a number and return a version with ordinal suffix
+ * Example: 1 => 1st
+ */
+export const ordinalSuffixOf = (num: number): string => {
+  let j = num % 10;
+  let k = num % 100;
+
+  if (j === 1 && k !== 11) {
+    return `${num}st`;
+  }
+
+  if (j === 2 && k !== 12) {
+    return `${num}nd`;
+  }
+
+  if (j === 3 && k !== 13) {
+    return `${num}rd`;
+  }
+
+  return `${num}th`;
+};
+

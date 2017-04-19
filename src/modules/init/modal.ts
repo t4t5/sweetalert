@@ -40,6 +40,14 @@ const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
   }
 };
 
+const initContent = (el: HTMLElement): void => {
+  const modal: Element = getNode(MODAL);
+
+  if (el) {
+    modal.appendChild(el);
+  }
+};
+
 /*
  * It's important to run the following functions in this particular order,
  * so that the elements get appended one after the other.
@@ -52,6 +60,7 @@ export const initModalContent = (opts: SwalOptions): void => {
   initIcon(opts.icon);
   initTitle(opts.title);
   initText(opts.text);
+  initContent(opts.content);
   initButtons(opts.buttons);
 };
 

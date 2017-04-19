@@ -55,8 +55,10 @@ const setButtonFocus = (): void => {
 
   const button:HTMLElement = <HTMLElement>modal.querySelector('.swal-button');
 
-  button.tabIndex = 0;
-  button.focus();
+  if (button) {
+    button.tabIndex = 0;
+    button.focus();
+  }
 };
 
 const setLastButtonFocus = (): void => {

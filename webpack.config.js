@@ -1,7 +1,48 @@
 const path = require('path');
+const webpack = require('webpack');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
+module.exports = [
+{
+  context: path.resolve(__dirname, 'docs'),
+  entry: './src/index.js',
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'docs.js',
+    /* For dev-server: */
+    publicPath: '/dist',
+  },
+
+  /*
+   * To make "React" available:
+   */
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: 'react',
+    })
+  ],
+
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react'],
+        },
+      }
+    ],
+  },
+
+  devServer: {
+    contentBase: path.resolve(__dirname, 'docs'),
+    compress: true,
+    port: 9000,
+  },
+},
+{
   context: path.resolve(__dirname, 'src'),
   entry: './sweetalert.js',
 
@@ -10,8 +51,6 @@ module.exports = {
     filename: 'sweetalert.bundle.js',
     library: 'swal',
     libraryTarget: 'umd',
-    /* For dev-server: */
-    publicPath: '/dist',
   },
 
   resolve: {
@@ -61,16 +100,18 @@ module.exports = {
     new ExtractTextPlugin('sweetalert.bundle.css'),
   ],
 
+  /*
   devServer: {
     contentBase: __dirname,
     compress: true,
     port: 9000
   },
+  */
 
   stats: {
     colors: true,
   },
 
   devtool: 'source-map',
-};
+}];
 

@@ -20,13 +20,22 @@ const onButtonClick = (value: string|Boolean): void => {
  * Generate a button, with a container element,
  * the right class names, the text, and an event listener.
  */
-const getButton = (namespace: string, { text, value }: ButtonOptions): Node => {
+const getButton = (namespace: string, { 
+  text, 
+  value, 
+  class: customClass,
+}: ButtonOptions): Node => {
   const buttonContainer: any = stringToNode(buttonMarkup);
 
   const buttonEl: HTMLElement = buttonContainer.querySelector(`.${BUTTON}`);
 
   const btnNamespaceClass = `${BUTTON}--${namespace}`;
   buttonEl.classList.add(btnNamespaceClass);
+
+  if (customClass) {
+    buttonEl.classList.add(customClass);
+  }
+
   buttonEl.textContent = text;
 
   buttonEl.addEventListener('click', () => {

@@ -1,39 +1,37 @@
-import { throwErr } from '../utils';
+import { isPlainObject, throwErr } from '../utils';
 
 export interface ButtonOptions {
   visible: Boolean,
   text: string,
   value: any,
+  class: string,
 };
 
 export interface ButtonList {
   [buttonNamespace: string]: ButtonOptions,
 };
 
-/*
- * Match objects but NOT null
- */
-const isObject = (value: any): Boolean => {
-  return (value !== null && typeof value === 'object');
-};
-
-const defaultCancelButton: ButtonOptions = {
-  visible: false,
-  text: "Cancel",
-  value: false,
-};
-
-const defaultConfirmButton: ButtonOptions = {
-  visible: true,
-  text: "OK",
-  value: true,
-};
-
 const defaultButton: ButtonOptions = {
   visible: true,
   text: null,
   value: null,
+  class: '',
 };
+
+const defaultCancelButton: ButtonOptions = Object.assign({}, 
+  defaultButton, {
+    visible: false,
+    text: "Cancel",
+    value: false,
+  }
+);
+
+const defaultConfirmButton: ButtonOptions = Object.assign({}, 
+  defaultButton, {
+    text: "OK",
+    value: true,
+  }
+);
 
 const CONFIRM_KEY = 'confirm';
 const CANCEL_KEY  = 'cancel';
@@ -82,7 +80,7 @@ const normalizeButton = (key: string, param: string|object|Boolean): ButtonOptio
     });
   }
 
-  if (isObject(param)) {
+  if (isPlainObject(param)) {
     return Object.assign({}, button, param);
   }
 
@@ -134,16 +132,17 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
   return buttonListObj;
 };
 
-export const getButtonListOpts = (opts: string|object): ButtonList => {
-  let buttonListObj;
+export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
+  let buttonListObj = <any>{};
 
   if (typeof opts === "string") {
-    buttonListObj = <any>{};
     buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, opts);
   } else if (Array.isArray(opts)) {
     buttonListObj = normalizeButtonArray(opts);
-  } else if (isObject(opts)) {
+  } else if (isPlainObject(opts)) {
     buttonListObj = normalizeButtonListObj(opts);
+  } else if (opts === true) {
+    buttonListObj = normalizeButtonArray([true, true]);
   } else if (opts === undefined){
     buttonListObj = defaultButtonList;
   }

@@ -1,5 +1,11 @@
 import { SwalParams } from '../../core';
-import { throwErr } from '../utils';
+
+import { 
+  throwErr,
+  isPlainObject,
+  ordinalSuffixOf,
+} from '../utils';
+
 import { 
   ButtonList,
   getButtonListOpts,
@@ -15,6 +21,7 @@ export interface SwalOptions {
   icon: string,
   buttons: ButtonList,
   class: string,
+  content: HTMLElement,
 };
 
 const defaultOpts: SwalOptions = {
@@ -23,6 +30,7 @@ const defaultOpts: SwalOptions = {
   icon: null,
   buttons: defaultButtonList,
   class: null,
+  content: null,
 };
 
 /*
@@ -33,16 +41,103 @@ const pickButtonParam = (opts: any): object => {
   const singleButton: string|object = opts && opts.button;
   const buttonList: object = opts && opts.buttons;
 
-  if (singleButton && buttonList) {
+  if (singleButton !== undefined && buttonList !== undefined) {
     throwErr(`Cannot set both 'button' and 'buttons' options!`);
   }
 
-  if (singleButton) {
+  if (singleButton !== undefined) {
     return {
       confirm: singleButton,
     };
   } else {
     return buttonList;
+  }
+};
+
+// Example 0 -> 1st
+const indexToOrdinal = (index: number): string => ordinalSuffixOf(index + 1); 
+
+const invalidParam = (param: any, index: number): void => {
+  throwErr(`${indexToOrdinal(index)} argument ('${param}') is invalid`);
+};
+
+const expectOptionsOrNothingAfter = (index: number, allParams: SwalParams): void => {
+  let nextIndex = (index + 1);
+  let nextParam = allParams[nextIndex];
+
+  if (!isPlainObject(nextParam) && nextParam !== undefined) {
+    throwErr(`Expected ${indexToOrdinal(nextIndex)} argument ('${nextParam}') to be a plain object`);
+  }
+};
+
+const expectNothingAfter = (index: number, allParams: SwalParams): void => {
+  let nextIndex = (index + 1);
+  let nextParam = allParams[nextIndex];
+
+  if (nextParam !== undefined) {
+    throwErr(`Unexpected ${indexToOrdinal(nextIndex)} argument (${nextParam})`);
+  }
+};
+
+/*
+ * Based on the number of arguments, their position and their type,
+ * we return an object that's merged into the final SwalOptions
+ */
+const paramToOption = (opts: any, param: any, index: number, allParams: SwalParams): object => {
+  console.log(param);
+
+  const paramType = (typeof param);
+  const isString = (paramType === "string");
+  const isDOMNode = (param instanceof Element);
+
+  if (isString) {
+    if (index === 0) {
+      // Example: swal("Hi there!");
+      return {
+        text: param,
+      };
+    }
+
+    else if (index === 1) {
+      // Example: swal("Wait!", "Are you sure you want to do this?");
+      // (The text is now the second argument)
+      return {
+        text: param,
+        title: allParams[0],
+      };
+    }
+
+    else if (index === 2) {
+      // Example: swal("Wait!", "Are you sure?", "warning");
+      expectOptionsOrNothingAfter(index, allParams);
+
+      return {
+        icon: param,
+      };
+    }
+
+    else {
+      invalidParam(param, index);
+    }
+  }
+
+  else if (isDOMNode && index === 0) {
+    // Example: swal(<DOMNode />);
+    expectOptionsOrNothingAfter(index, allParams);
+
+    return {
+      content: param,
+    };
+  }
+
+  else if (isPlainObject(param)) {
+    expectNothingAfter(index, allParams);
+
+    return param;
+  }
+
+  else {
+    invalidParam(param, index);
   }
 
 };
@@ -53,30 +148,19 @@ const pickButtonParam = (opts: any): object => {
  * - swal({ title: "Oops!", text: "An error occured!", icon: "error" })
  * ... we always want to transform the params into the second version
  */
-export const getOpts = (...args: SwalParams): SwalOptions => {
-  const firstParam = args[0];
-  const isString = (typeof firstParam === "string");
-
+export const getOpts = (...params: SwalParams): SwalOptions => {
   let opts = <any>{};
 
-  if (args.length === 1 && isString) {
-    // swal("An error occured!");
-    opts.text = firstParam;
-  } else if (isString) {
-    // swal("Oops!", "An error occured!", "error");
-    opts.title = firstParam;
-    opts.text  = args[1];
-    opts.icon= args[2];
-  } else {
-    // swal({ text: "An error occured!" });
-    opts = firstParam;
-  }
-
-  let buttonListOpts = pickButtonParam(opts);
+  params.forEach((param, index) => {
+    let changes: object = paramToOption(opts, param, index, params);
+    Object.assign(opts, changes);
+  });
 
   // Since Object.assign doesn't deep clone,
   // we need to do this:
+  let buttonListOpts = pickButtonParam(opts);
   opts.buttons = getButtonListOpts(buttonListOpts);
+  delete opts.button;
 
   return Object.assign({}, defaultOpts, opts);
 };
