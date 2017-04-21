@@ -3,22 +3,22 @@ import { getNode } from './utils';
 import CLASS_NAMES  from './class-list';
 
 const {
-  MODAL,
+  OVERLAY,
   SHOW_MODAL,
 } = CLASS_NAMES;
 
 import state, { SwalState } from './state';
 
 export const openModal = (): void => {
-  let modal = getNode(MODAL);
-  modal.classList.add(SHOW_MODAL); 
+  let overlay = getNode(OVERLAY);
+  overlay.classList.add(SHOW_MODAL); 
 
   state.isOpen = true;
 };
 
 const hideModal = (): void => {
-  let modal = getNode(MODAL);
-  modal.classList.remove(SHOW_MODAL); 
+  let overlay = getNode(OVERLAY);
+  overlay.classList.remove(SHOW_MODAL); 
 
   state.isOpen = false;
 };

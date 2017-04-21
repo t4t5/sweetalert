@@ -40,7 +40,19 @@ let el = wrapper.firstChild;
 //swal("Oops!", "Seems like something went wrong...", "error")
 swal({
   title: "Block",
-  text: "Are you sure that you want to block this person?",
+  text: `
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  Test Test Test Test Test test Test Test Test Test Test Test
+  `,
   buttons: true,
   clickOutside: false,
   dangerMode: true,

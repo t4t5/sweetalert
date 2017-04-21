@@ -24,8 +24,8 @@ export const init = (opts: SwalOptions): void => {
       throwErr("You can only use SweetAlert AFTER the DOM has loaded!");
     }
 
-    initModalOnce();
     initOverlayOnce();
+    initModalOnce();
   }
 
   initModalContent(opts);

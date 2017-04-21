@@ -5,7 +5,6 @@
 
 :root {
   --swal-modal-width: 478px;
-  --swal-centering: translateX(-50%) translateY(-50%);
 }
 
 .swal-overlay {
@@ -14,12 +13,33 @@
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
+  font: 0/0 a; /* Remove gap between inline-block elements */
+  overflow-y: scroll;
 
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10000;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
+  &::before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle; /* vertical alignment of the inline element */
+    height: 100%;
+  }
+
+  &--show-modal {
+    opacity: 1; 
+    pointer-events: auto;
+
+    & .swal-modal {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) var(--swal-centering);
+      animation: showSweetAlert 0.3s;
+    }
+  }
 }
 
 .swal-modal {
@@ -30,41 +50,35 @@
   text-align: center;
   border-radius: 5px;
 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: scale(0.5) var(--swal-centering);
-  transform-origin: 0% 0%;
+  position: static;
+  margin: 20px auto;
+  display: inline-block;
+  vertical-align: middle;
+
+  transform: scale(0.5);
+  transform-origin: 50% 50%;
   z-index: 10001;
   transition: transform 0.3s, opacity 0.2s;
 
-  &--show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1) var(--swal-centering);
-    animation: showSweetAlert 0.3s;
-
-    & ~ .swal-overlay {
-      opacity: 1; 
-      pointer-events: auto;
-    }
+  @media all and (max-width: 500px) {
+    width: calc(100% - 20px);
   }
 }
 
 @keyframes showSweetAlert {
   0% {
-    transform: scale(0.7) var(--swal-centering);
+    transform: scale(0.7);
   }
 
   45% {
-    transform: scale(1.05) var(--swal-centering);
+    transform: scale(1.05);
   }
 
   80% {
-    transform: scale(0.95) var(--swal-centering);
+    transform: scale(0.95);
   }
 
   100% {
-    transform: scale(1) var(--swal-centering);
+    transform: scale(1);
   }
 }

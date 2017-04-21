@@ -3,7 +3,7 @@ import { modalMarkup } from '../markup';
 import { SwalOptions } from '../options';
 
 import CLASS_NAMES from '../class-list';
-const { MODAL } = CLASS_NAMES;
+const { MODAL, OVERLAY } = CLASS_NAMES;
 
 import initIcon from './icon';
 import { initTitle, initText } from './text';
@@ -58,9 +58,10 @@ export const initModalContent = (opts: SwalOptions): void => {
 };
 
 const initModalOnce = (): void => {
+  const overlay: Element = getNode(OVERLAY);
   const modal = stringToNode(modalMarkup);
 
-  document.body.appendChild(modal);
+  overlay.appendChild(modal);
 };
 
 export default initModalOnce;

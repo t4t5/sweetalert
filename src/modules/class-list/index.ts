@@ -8,14 +8,14 @@ interface ClassNameList {
   [key:string]: string,
 };
 
-const MODAL: string = 'swal-modal';
+const OVERLAY: string = 'swal-overlay';
 const BUTTON: string = 'swal-button';
 const ICON: string = 'swal-icon';
 
 export const CLASS_NAMES: ClassNameList = {
-  MODAL,
-  OVERLAY: 'swal-overlay',
-  SHOW_MODAL: `${MODAL}--show`,
+  MODAL: 'swal-modal',
+  OVERLAY,
+  SHOW_MODAL: `${OVERLAY}--show-modal`,
 
   MODAL_TITLE: `swal-title`,
   MODAL_TEXT: `swal-text`,

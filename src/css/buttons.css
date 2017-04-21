@@ -52,6 +52,10 @@
       0px 0px 0px 1px white, 
       0px 0px 0px 3px rgba(43, 114, 165, 0.29);
   }
+  /* Remove ugly dotted lines in FireFox: */
+  &::-moz-focus-inner {
+    border: 0;
+  }
 
   &--cancel {
     color: #555555;
