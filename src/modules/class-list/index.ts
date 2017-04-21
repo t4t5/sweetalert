@@ -10,6 +10,7 @@ interface ClassNameList {
 
 const MODAL: string = 'swal-modal';
 const BUTTON: string = 'swal-button';
+const ICON: string = 'swal-icon';
 
 export const CLASS_NAMES: ClassNameList = {
   MODAL,
@@ -18,9 +19,13 @@ export const CLASS_NAMES: ClassNameList = {
 
   MODAL_TITLE: `swal-title`,
   MODAL_TEXT: `swal-text`,
-  ICON: 'swal-icon',
+  ICON,
+  ICON_CUSTOM: `${ICON}--custom`,
 
-  BUTTONS: 'swal-buttons',
+  CONTENT: 'swal-content',
+  INPUT: 'swal-input',
+
+  FOOTER: 'swal-footer',
   BUTTON_CONTAINER: 'swal-button-container',
   BUTTON,
   CONFIRM_BUTTON: `${BUTTON}--confirm`,

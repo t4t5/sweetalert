@@ -8,11 +8,13 @@
   font-size: 27px;
   line-height: normal;
   text-align: center;
+  margin-bottom: 0px;
   /*border-bottom: 1px solid rgba(0, 0, 0, 0.15);*/
-  margin-bottom: 13px;
   &:not(:first-child) {
     padding-bottom: 0;
-    margin-bottom: 0px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 13px;
   }
 }
 
@@ -25,7 +27,14 @@
   text-align: left;
   padding: 0;
   display: inline-block;
-  margin: 20px 28px;
+  margin: 0;
+  padding: 0 28px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.64);
+  &:first-child {
+    margin-top: 45px;
+  }
+  &:last-child {
+    margin-bottom: 45px;
+  }
 }

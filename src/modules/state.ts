@@ -17,7 +17,7 @@ let state:SwalState = {
  * Change what the promise resolves to when the user clicks the button.
  * This is called internally when using { input: true } for example.
  */
-export const setValueFor = (buttonKey: string, value: object) => {
+export const setValueFor = (buttonKey: string, value: any) => {
   state.values[buttonKey] = value;
 };
 

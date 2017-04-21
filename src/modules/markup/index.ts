@@ -6,6 +6,8 @@ export {
 
 export * from './icons';
 
+export * from './content';
+
 export * from './buttons';
 
 import CLASS_NAMES from '../class-list';
@@ -14,7 +16,7 @@ const {
   MODAL_TITLE,
   MODAL_TEXT,
   ICON,
-  BUTTONS,
+  FOOTER,
 } = CLASS_NAMES;
 
 export const iconMarkup: string = `
@@ -29,8 +31,8 @@ export const textMarkup: string = `
   <div class="${MODAL_TEXT}"></div>`
 ;
 
-export const buttonListMarkup: string = `
-  <div class="${BUTTONS}"></div>
+export const footerMarkup: string = `
+  <div class="${FOOTER}"></div>
 `;
 
 

@@ -13,6 +13,8 @@ export const modalMarkup: string =`
 
     // Text
   
+    // Content
+  
     // Buttons
 
  `</div>`

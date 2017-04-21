@@ -5,22 +5,15 @@ import CLASS_NAMES from '../class-list';
 const { BUTTON } = CLASS_NAMES;
 
 import { ButtonList, ButtonOptions } from '../options/buttons';
-import { buttonListMarkup, buttonMarkup } from '../markup';
+import { footerMarkup, buttonMarkup } from '../markup';
 
-import { closeModal } from '../actions';
-import state, { setValueFor } from '../state';
-
-const onButtonClick = (namespace: string): void => {
-  closeModal();
-
-  const value = state.values[namespace];
-
-  state.promise.resolve(value);
-};
+import { onAction } from '../actions';
+import { setValueFor } from '../state';
 
 /*
  * Generate a button, with a container element,
  * the right class names, the text, and an event listener.
+ * IMPORTANT: This will also add the button's action, which can be triggered even if the button element itself isn't added to the modal.
  */
 const getButton = (namespace: string, { 
   text, 
@@ -43,7 +36,7 @@ const getButton = (namespace: string, {
   setValueFor(namespace, value);
 
   buttonEl.addEventListener('click', () => {
-    return onButtonClick(namespace);
+    return onAction(namespace);
   });
 
   return buttonContainer;
@@ -55,17 +48,24 @@ const getButton = (namespace: string, {
  * and append every button to it.
  */
 const initButtons = (buttons: ButtonList): void => {
-  if (!buttons) return;
 
-  const buttonListEl: Node = injectElIntoModal(buttonListMarkup);
+  const footerEl: Element = injectElIntoModal(footerMarkup);
 
   for (let key in buttons) {
     const buttonOpts: ButtonOptions = buttons[key];
     const buttonEl: Node = getButton(key, buttonOpts);
 
     if (buttonOpts.visible) {
-      buttonListEl.appendChild(buttonEl);
+      footerEl.appendChild(buttonEl);
     }
+  }
+
+  /*
+   * If the footer has no buttons, there's no
+   * point in keeping it:
+   */
+  if (footerEl.children.length === 0) {
+    footerEl.remove(); 
   }
 };
 

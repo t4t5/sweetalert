@@ -6,9 +6,10 @@ import {
 import { injectElIntoModal } from './modal';
 
 export const initTitle = (title: string): void => {
-  const titleEl: Node = injectElIntoModal(titleMarkup);
-
-  titleEl.textContent = title;
+  if (title) {
+    const titleEl: Node = injectElIntoModal(titleMarkup);
+    titleEl.textContent = title;
+  }
 };
 
 export const initText = (text: string): void => {

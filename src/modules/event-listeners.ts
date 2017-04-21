@@ -1,16 +1,9 @@
 import state from './state';
-import { closeModal } from './actions';
-
+import { onAction } from './actions';
 import { getNode } from './utils';
 
 import CLASS_NAMES from './class-list';
 const { MODAL, BUTTON } = CLASS_NAMES;
-
-const onEscape = (e: KeyboardEvent): void => {
-  closeModal(); 
-
-  state.promise.resolve(null);
-};
 
 const onTabAwayLastButton = (e: KeyboardEvent): void => {
   e.preventDefault();
@@ -26,7 +19,7 @@ const onKeyUp = (e: KeyboardEvent):void => {
   if (!state.isOpen) return;
 
   switch (e.key) {
-    case "Escape": return onEscape(e);
+    case "Escape": return onAction('cancel');
   }
 };
 
@@ -51,9 +44,7 @@ const onKeyDownFirstButton = (e: KeyboardEvent): void => {
  * Set default focus on Confirm-button
  */
 const setButtonFocus = (): void => {
-  const modal: HTMLElement = getNode(MODAL);
-
-  const button:HTMLElement = <HTMLElement>modal.querySelector('.swal-button');
+  const button:HTMLElement = getNode(BUTTON);
 
   if (button) {
     button.tabIndex = 0;

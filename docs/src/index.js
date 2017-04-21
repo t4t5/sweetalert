@@ -1,12 +1,14 @@
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+const DEFAULT_TEXT = "Hello!";
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      text: "Hello!",
+      text: DEFAULT_TEXT,
     };
   }
 
@@ -23,7 +25,10 @@ class App extends Component {
 
   render() {
     return (
-      <input value={this.state.text} onChange={this.changeText.bind(this)} />
+      <input 
+        value={this.state.text} 
+        className="swal-input"
+        onChange={this.changeText.bind(this)} />
     )
   }
 }
@@ -32,7 +37,19 @@ let wrapper = document.createElement('div');
 ReactDOM.render(<App />, wrapper);
 let el = wrapper.firstChild;
 
-swal(el)
+//swal("Oops!", "Seems like something went wrong...", "error")
+swal({
+  title: "Block",
+  icon: "https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-128.png",
+  text: "Are you sure that you want to block this person?",
+  buttons: true,
+})
+.then((value) => {
+  console.log("Promise resolved", value);
+  if (value) {
+    return swal("Try again");
+  }
+})
 .then((value) => {
   console.log("Promise resolved", value);
 });

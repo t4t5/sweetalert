@@ -22,7 +22,7 @@ const defaultCancelButton: ButtonOptions = Object.assign({},
   defaultButton, {
     visible: false,
     text: "Cancel",
-    value: false,
+    value: null,
   }
 );
 

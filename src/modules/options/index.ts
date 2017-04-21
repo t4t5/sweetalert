@@ -12,6 +12,11 @@ import {
   defaultButtonList
 } from './buttons';
 
+import {
+  getContentOpts,
+  ContentOptions,
+} from './content';
+
 /*
  * The final object that we transform the given params into
  */
@@ -21,7 +26,7 @@ export interface SwalOptions {
   icon: string,
   buttons: ButtonList,
   class: string,
-  content: HTMLElement,
+  content: ContentOptions,
 };
 
 const defaultOpts: SwalOptions = {
@@ -84,7 +89,6 @@ const expectNothingAfter = (index: number, allParams: SwalParams): void => {
  * we return an object that's merged into the final SwalOptions
  */
 const paramToOption = (opts: any, param: any, index: number, allParams: SwalParams): object => {
-  console.log(param);
 
   const paramType = (typeof param);
   const isString = (paramType === "string");
@@ -161,6 +165,8 @@ export const getOpts = (...params: SwalParams): SwalOptions => {
   let buttonListOpts = pickButtonParam(opts);
   opts.buttons = getButtonListOpts(buttonListOpts);
   delete opts.button;
+
+  opts.content = getContentOpts(opts.content);
 
   return Object.assign({}, defaultOpts, opts);
 };

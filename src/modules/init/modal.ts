@@ -8,10 +8,11 @@ const { MODAL } = CLASS_NAMES;
 import initIcon from './icon';
 import { initTitle, initText } from './text';
 import initButtons from './buttons';
+import initContent from './content';
 
-export const injectElIntoModal = (markup: string): Node => {
+export const injectElIntoModal = (markup: string): Element => {
   const modal: Element = getNode(MODAL);
-  const el: Node = stringToNode(markup);
+  const el: Element = stringToNode(markup);
 
   modal.appendChild(el);
 
@@ -37,14 +38,6 @@ const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
 
   if (customClass) {
     modal.classList.add(customClass);
-  }
-};
-
-const initContent = (el: HTMLElement): void => {
-  const modal: Element = getNode(MODAL);
-
-  if (el) {
-    modal.appendChild(el);
   }
 };
 

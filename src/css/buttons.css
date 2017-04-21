@@ -1,5 +1,5 @@
 :root {
-  --swal-btn-confirm: #8CD4F5;
+  --swal-btn-confirm: #7cd1f9;
   --swal-btn-confirm-hover: color(var(--swal-btn-confirm) shade(3%));
   --swal-btn-confirm-active: color(var(--swal-btn-confirm) shade(10%));
 
@@ -10,7 +10,7 @@
   --swal-focus-color: rgba(43, 114, 165, 0.3);
 }
 
-.swal-buttons {
+.swal-footer {
   text-align: right;
   /*
   border-top: 1px solid rgba(0, 0, 0, 0.15);

@@ -9,13 +9,26 @@
   border-width: 4px;
   border-style: solid;
   border-radius: 50%;
+  border-color: transparent;
   padding: 0;
   position: relative;
   box-sizing: content-box;
   margin: 20px auto;
-  vertical-align: top;
   &:first-child {
     margin-top: 32px;
+  }
+
+  &--custom {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  & img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
