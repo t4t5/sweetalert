@@ -7,6 +7,10 @@
   --swal-btn-cancel-hover: color(var(--swal-btn-cancel) shade(3%));
   --swal-btn-cancel-active: color(var(--swal-btn-cancel) shade(10%));
 
+  --swal-btn-danger: #e64942;
+  --swal-btn-danger-hover: color(var(--swal-btn-danger) shade(3%));
+  --swal-btn-danger-active: color(var(--swal-btn-danger) shade(10%));
+
   --swal-focus-color: rgba(43, 114, 165, 0.3);
 }
 
@@ -65,4 +69,18 @@
     }
   }
 
+  &--danger {
+    background-color: var(--swal-btn-danger);
+    &:hover {
+      background-color: var(--swal-btn-danger-hover);
+    }
+    &:active {
+      background-color: var(--swal-btn-danger-active);
+    }
+    &:focus {
+      box-shadow: 
+        0px 0px 0px 1px white, 
+        0px 0px 0px 3px rgba(165, 43, 43, 0.29);
+    }
+  }
 }

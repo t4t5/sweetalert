@@ -54,7 +54,7 @@ export const initModalContent = (opts: SwalOptions): void => {
   initTitle(opts.title);
   initText(opts.text);
   initContent(opts.content);
-  initButtons(opts.buttons);
+  initButtons(opts.buttons, opts.dangerMode);
 };
 
 const initModalOnce = (): void => {

@@ -1,13 +1,14 @@
 import state from './state';
 import { onAction } from './actions';
 import { getNode } from './utils';
+import { SwalOptions } from './options';
 
 import CLASS_NAMES from './class-list';
-const { MODAL, BUTTON } = CLASS_NAMES;
+const { MODAL, BUTTON, OVERLAY } = CLASS_NAMES;
 
 const onTabAwayLastButton = (e: KeyboardEvent): void => {
   e.preventDefault();
-  setButtonFocus();
+  setFirstButtonFocus();
 };
 
 const onTabBackFirstButton = (e: KeyboardEvent): void => {
@@ -43,7 +44,7 @@ const onKeyDownFirstButton = (e: KeyboardEvent): void => {
 /*
  * Set default focus on Confirm-button
  */
-const setButtonFocus = (): void => {
+const setFirstButtonFocus = (): void => {
   const button:HTMLElement = getNode(BUTTON);
 
   if (button) {
@@ -87,10 +88,30 @@ const setButtonTabbing = (): void => {
   setTabbingForFirstButton(buttons);
 };
 
-const addEventListeners = ():void => {
+const setClickOutside = (allow: Boolean): void => {
+  if (allow) {
+    const overlay: HTMLElement = getNode(OVERLAY);
+
+    overlay.addEventListener('click', () => {
+      return onAction('cancel');
+    });
+  }
+};
+
+const addEventListeners = (opts: SwalOptions):void => {
   document.addEventListener('keyup', onKeyUp);
-  setButtonFocus();
+
+  /* So that you don't accidentally confirm something
+   * dangerous by clicking enter
+   */
+  if (opts.dangerMode) {
+    setFirstButtonFocus();
+  } else {
+    setLastButtonFocus();
+  }
+
   setButtonTabbing();
+  setClickOutside(opts.clickOutside);
 };
 
 export default addEventListeners;

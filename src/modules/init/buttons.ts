@@ -2,7 +2,7 @@ import { stringToNode } from '../utils';
 import { injectElIntoModal } from './modal';
 
 import CLASS_NAMES from '../class-list';
-const { BUTTON } = CLASS_NAMES;
+const { BUTTON, DANGER_BUTTON } = CLASS_NAMES;
 
 import { ButtonList, ButtonOptions } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
@@ -19,7 +19,7 @@ const getButton = (namespace: string, {
   text, 
   value, 
   class: customClass,
-}: ButtonOptions): Node => {
+}: ButtonOptions, dangerMode: Boolean): Node => {
   const buttonContainer: any = stringToNode(buttonMarkup);
 
   const buttonEl: HTMLElement = buttonContainer.querySelector(`.${BUTTON}`);
@@ -29,6 +29,10 @@ const getButton = (namespace: string, {
 
   if (customClass) {
     buttonEl.classList.add(customClass);
+  }
+
+  if (dangerMode && namespace === 'confirm') {
+    buttonEl.classList.add(DANGER_BUTTON);
   }
 
   buttonEl.textContent = text;
@@ -47,13 +51,13 @@ const getButton = (namespace: string, {
  * then loop through the ButtonList object
  * and append every button to it.
  */
-const initButtons = (buttons: ButtonList): void => {
+const initButtons = (buttons: ButtonList, dangerMode: Boolean): void => {
 
   const footerEl: Element = injectElIntoModal(footerMarkup);
 
   for (let key in buttons) {
     const buttonOpts: ButtonOptions = buttons[key];
-    const buttonEl: Node = getButton(key, buttonOpts);
+    const buttonEl: Node = getButton(key, buttonOpts, dangerMode);
 
     if (buttonOpts.visible) {
       footerEl.appendChild(buttonEl);

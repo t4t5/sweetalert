@@ -30,6 +30,7 @@ export const CLASS_NAMES: ClassNameList = {
   BUTTON,
   CONFIRM_BUTTON: `${BUTTON}--confirm`,
   CANCEL_BUTTON: `${BUTTON}--cancel`,
+  DANGER_BUTTON: `${BUTTON}--danger`,
 };
 
 export default CLASS_NAMES;

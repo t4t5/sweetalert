@@ -40,9 +40,10 @@ let el = wrapper.firstChild;
 //swal("Oops!", "Seems like something went wrong...", "error")
 swal({
   title: "Block",
-  icon: "https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-128.png",
   text: "Are you sure that you want to block this person?",
   buttons: true,
+  clickOutside: false,
+  dangerMode: true,
 })
 .then((value) => {
   console.log("Promise resolved", value);

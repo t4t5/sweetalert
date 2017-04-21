@@ -29,7 +29,7 @@ export const init = (opts: SwalOptions): void => {
   }
 
   initModalContent(opts);
-  addEventListeners();
+  addEventListeners(opts);
 };
 
 export default init;
