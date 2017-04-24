@@ -23,7 +23,6 @@ export const CLASS_NAMES: ClassNameList = {
   ICON_CUSTOM: `${ICON}--custom`,
 
   CONTENT: 'swal-content',
-  INPUT: 'swal-input',
 
   FOOTER: 'swal-footer',
   BUTTON_CONTAINER: 'swal-button-container',
@@ -34,3 +33,4 @@ export const CLASS_NAMES: ClassNameList = {
 };
 
 export default CLASS_NAMES;
+

@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'normalize';
+@import 'header';
+
+@import 'index';
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+svg.hidden {
+  display: block;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #728194;
+
+  .love-icon {
+    background-image: url("/assets/images/heart-icon.svg");
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    position: relative;
+    top: -2px;
+  }
+}

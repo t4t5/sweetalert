@@ -4,3 +4,5 @@
 node_modules
 bower_components
 npm-debug.log
+
+docs/assets/sweetalert

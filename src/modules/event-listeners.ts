@@ -61,7 +61,9 @@ const setLastButtonFocus = (): void => {
   const lastIndex: number = buttons.length - 1;
   const lastButton: any = buttons[lastIndex];
 
-  lastButton.focus();
+  if (lastButton) {
+    lastButton.focus();
+  }
 };
 
 const setTabbingForLastButton = (buttons: NodeListOf<Element>): void => {
@@ -92,7 +94,10 @@ const setClickOutside = (allow: Boolean): void => {
   if (allow) {
     const overlay: HTMLElement = getNode(OVERLAY);
 
-    overlay.addEventListener('click', () => {
+    overlay.addEventListener('click', (e) => {
+      // Don't trigger for children:
+      if (overlay !== e.target) return;
+
       return onAction('cancel');
     });
   }

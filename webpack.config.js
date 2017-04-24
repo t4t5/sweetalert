@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = [
+  /*
 {
   context: path.resolve(__dirname, 'docs'),
   entry: './src/index.js',
@@ -11,13 +12,9 @@ module.exports = [
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'docs.js',
-    /* For dev-server: */
     publicPath: '/dist',
   },
 
-  /*
-   * To make "React" available:
-   */
   plugins: [
     new webpack.ProvidePlugin({
       React: 'react',
@@ -42,13 +39,14 @@ module.exports = [
     port: 9000,
   },
 },
+*/
 {
   context: path.resolve(__dirname, 'src'),
   entry: './sweetalert.js',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'sweetalert.bundle.js',
+    path: path.resolve(__dirname, 'docs/assets/sweetalert'),
+    filename: 'sweetalert.dev.js',
     library: 'swal',
     libraryTarget: 'umd',
   },
@@ -97,7 +95,7 @@ module.exports = [
   },
 
   plugins: [
-    new ExtractTextPlugin('sweetalert.bundle.css'),
+    new ExtractTextPlugin('sweetalert.dev.css'),
   ],
 
   /*

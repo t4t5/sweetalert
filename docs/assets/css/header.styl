@@ -1,0 +1,51 @@
+.global-header {
+  background-color: white;
+  box-shadow: 0 1px 15px 0 rgba(192,72,25,0.32);
+  height: 80px;
+  position: relative;
+  z-index: 100;
+
+  .logo {
+    width: 162px;
+    height: 36px;
+    background-image: url("/assets/images/logo.svg");
+    float: left;
+    margin-top: 22px;
+    margin-left: 15px;
+  }
+
+  nav {
+    font-size: 17px;
+    color: $main-color;
+    float: right;
+    margin-top: 29px;
+  }
+
+  ul {
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+  }
+
+  a {
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      background-color: $main-color;
+      height: 3px;
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      display: none;
+    }
+    &:hover::before {
+      display: block;
+    }
+  }
+}

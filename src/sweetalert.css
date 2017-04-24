@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  font: 0/0 a; /* Remove gap between inline-block elements */
+  font-size: 0; /* Remove gap between inline-block elements */
   overflow-y: scroll;
 
   background-color: rgba(0, 0, 0, 0.4);
@@ -36,7 +36,7 @@
     & .swal-modal {
       opacity: 1;
       pointer-events: auto;
-      transform: scale(1) var(--swal-centering);
+      transform: scale(1);
       animation: showSweetAlert 0.3s;
     }
   }

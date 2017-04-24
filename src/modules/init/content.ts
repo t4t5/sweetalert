@@ -1,9 +1,11 @@
-import { stringToNode } from '../utils';
 import { ContentOptions } from '../options/content';
 import { injectElIntoModal } from './modal';
-import { contentMarkup, inputMarkup } from '../markup';
+import { contentMarkup } from '../markup';
 import { setValueFor } from '../state';
 import { onAction } from '../actions';
+
+import CLASS_NAMES from '../class-list';
+const { CONTENT } = CLASS_NAMES;
 
 /*
  * Add an <input> to the content container.
@@ -11,8 +13,7 @@ import { onAction } from '../actions';
  * the user types into the input (+ make it "" by default)
  * Set the default focus on the input.
  */
-const addInputToContent = (content: Node, { placeholder }: ContentOptions): void => {
-  const input: HTMLInputElement = stringToNode(inputMarkup) as HTMLInputElement;
+const addInputEvents = (input: HTMLElement): void => {
 
   input.addEventListener('input', (e) => {
     const target = e.target as HTMLInputElement;
@@ -26,12 +27,6 @@ const addInputToContent = (content: Node, { placeholder }: ContentOptions): void
     }
   });
 
-  if (placeholder) {
-    input.placeholder = placeholder;
-  }
-
-  content.appendChild(input);
-
   /*
    * FIXME (this is a bit hacky)
    * We're overwriting the default value of confirm button,
@@ -44,21 +39,37 @@ const addInputToContent = (content: Node, { placeholder }: ContentOptions): void
 
 };
 
+const initPredefinedContent = (content: Node, elName: string, attrs: any): void => {
+  const el: HTMLElement = document.createElement(elName);
+
+  const elClass = `${CONTENT}__${elName}`;
+  el.classList.add(elClass);
+
+  // Set things like "placeholder":
+  for (let key in attrs) {
+    let value: string = attrs[key];
+
+    (<any>el)[key] = value;
+  }
+
+  if (elName === "input") {
+    addInputEvents(el);
+  }
+
+  content.appendChild(el);
+};
+
 const initContent = (opts: ContentOptions): void => {
   if (!opts) return;
 
   const content: Node = injectElIntoModal(contentMarkup);
 
-  const { type, node } = opts;
+  const { element, attributes } = opts;
 
-  switch (type) {
-    case 'input':
-      addInputToContent(content, opts);
-      break;
-
-    case 'node':
-      content.appendChild(node);
-      break;
+  if (typeof element === "string") {
+    initPredefinedContent(content, element, attributes);
+  } else {
+    content.appendChild(element);
   }
 };
 

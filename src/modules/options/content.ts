@@ -3,15 +3,15 @@ import {
 } from '../utils';
 
 export interface ContentOptions {
-  type: string,
-  node: Element,
-  placeholder: string,
+  element: string|Node,
+  attributes: object,
 };
 
 const defaultInputOptions: ContentOptions = {
-  type: 'input',
-  node: null,
-  placeholder: "",
+  element: 'input',
+  attributes: {
+    placeholder: "",
+  },
 };
 
 export const getContentOpts = (contentParam: string|object): ContentOptions => {

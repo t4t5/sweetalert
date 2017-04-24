@@ -9,7 +9,6 @@
   line-height: normal;
   text-align: center;
   margin-bottom: 0px;
-  /*border-bottom: 1px solid rgba(0, 0, 0, 0.15);*/
   &:not(:first-child) {
     padding-bottom: 0;
   }
