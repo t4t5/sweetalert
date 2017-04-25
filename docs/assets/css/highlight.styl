@@ -1,0 +1,43 @@
+.highlight {
+  background-color: #F8F8F8;
+  padding: 10px 23px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.62);
+
+  pre {
+    font-family: $code-font;
+  }
+
+  .line {
+    margin: 6px 0;
+  }
+
+  &.bash .line::before {
+    content: "$ ";
+    opacity: 0.5;
+  }
+
+  // Colors:
+  $purple = #8858d2;
+  $green = #4ac14a;
+  $pink = #b646c1;
+
+  .string {
+    color: $purple;
+  }
+
+  .html {
+    &.name.tag {
+      color: $green;
+    }
+    &.attribute-name {
+      color: $pink;
+    }
+  }
+
+  .js {
+    &.name.function {
+      color: $main-color;
+    }
+  }
+}

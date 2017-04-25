@@ -1,8 +1,11 @@
 .global-header {
   background-color: white;
   box-shadow: 0 1px 15px 0 rgba(192,72,25,0.32);
-  height: 80px;
-  position: relative;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 
   .logo {
@@ -19,6 +22,25 @@
     color: $main-color;
     float: right;
     margin-top: 29px;
+
+    a {
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: "";
+        background-color: $main-color;
+        height: 3px;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        display: none;
+      }
+      &:hover::before {
+        display: block;
+      }
+    }
   }
 
   ul {
@@ -30,22 +52,4 @@
     }
   }
 
-  a {
-    position: relative;
-    cursor: pointer;
-    &::before {
-      content: "";
-      background-color: $main-color;
-      height: 3px;
-      border-radius: 2px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -5px;
-      display: none;
-    }
-    &:hover::before {
-      display: block;
-    }
-  }
 }

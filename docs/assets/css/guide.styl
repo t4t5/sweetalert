@@ -1,0 +1,85 @@
+.doc-container {
+  overflow: hidden;
+}
+
+$side-menu-width = 225px;
+
+.side-menu {
+  width: $side-menu-width;
+  float: left;
+  padding-left: 20px;
+  position: fixed;
+  top: 88px;
+
+  .title {
+    font-size: 20px;
+    color: rgba(0,0,0,0.63);
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 36px;
+  }
+
+  a {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.42);
+    display: block;
+    margin: 18px 0;
+  }
+
+}
+
+.page-content {
+  float: left;
+  width: s('calc(100% - %s - 20px)', $side-menu-width);
+  margin-left: $side-menu-width;
+  min-height: 220px;
+  margin-top: 16px;
+
+  h1 {
+    padding-top: 90px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    &::before {
+      content: "#";
+      position: absolute;
+      margin-left: -23px;
+      font-size: 24px;
+      margin-top: 7px;
+      color: #f38270;
+      font-weight: 500;
+    }
+  
+    a {
+      font-size: 30px;
+      color: rgba(0,0,0,0.85);
+      font-weight: 600;
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: -70px;
+    padding-top: 100px;
+
+    a {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: rgba(0,0,0,0.59);
+    line-height: 29px;
+  }
+
+  code {
+    font-family: $code-font;
+    padding: 3px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: rgb(248, 248, 248);
+    font-size: 14px;
+    color: $main-color;
+  }
+}
