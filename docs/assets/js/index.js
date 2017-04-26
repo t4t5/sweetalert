@@ -1,54 +1,64 @@
+import './add-preview-buttons';
+
+/*
+ * FOR GUIDES EXAMPLES:
+ */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-const DEFAULT_TEXT = "Hello!";
-
-class App extends Component {
+ 
+const DEFAULT_INPUT_TEXT = "";
+ 
+class MyInput extends Component {
   constructor(props) {
     super(props);
-
+ 
     this.state = {
-      text: DEFAULT_TEXT,
+      text: DEFAULT_INPUT_TEXT,
     };
   }
-
+ 
   changeText(e) {
     let text = e.target.value;
-    console.log("Changed", text);
-
+ 
     this.setState({
       text,
     });
-
+ 
+    /*
+     * This will update the value that the confirm
+     * button resolves to:
+     */
     swal.setValueFor('confirm', text);
   }
-
+ 
   render() {
     return (
       <input 
         value={this.state.text} 
-        className="swal-input"
-        onChange={this.changeText.bind(this)} />
+        onChange={this.changeText.bind(this)}
+      />
     )
   }
 }
-
+ 
+// We want to retrieve MyInput as a pure DOM node: 
 let wrapper = document.createElement('div');
-ReactDOM.render(<App />, wrapper);
+ReactDOM.render(<MyInput />, wrapper);
 let el = wrapper.firstChild;
 
-//swal("You've arrived", "Hoe lovely", "success");
+window.reactExample = () => {
 
-/*
-swal("You've arrived!", "How lovely. Let me take your coat.", "success")
-.then((value) => {
-  console.log("Promise resolved", value);
-  if (value) {
-    return swal("Try again");
-  }
-})
-.then((value) => {
-  console.log("Promise resolved", value);
-});
-*/
-//ReactDOM.render(<App />, document.getElementById('app'));
+  swal({
+    text: "Write something here:",
+    content: el,
+    buttons: {
+      confirm: {
+        value: DEFAULT_INPUT_TEXT,
+      },
+    },
+  })
+  .then((value) => {
+    swal(`You typed: ${value}`);
+  });
+
+};

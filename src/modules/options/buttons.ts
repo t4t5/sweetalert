@@ -80,8 +80,13 @@ const normalizeButton = (key: string, param: string|object|Boolean): ButtonOptio
     });
   }
 
+  /* A specified button should always be visible,
+   * unless "visible" is explicitly set to "false"
+   */
   if (isPlainObject(param)) {
-    return Object.assign({}, button, param);
+    return Object.assign({
+      visible: true,
+    }, button, param);
   }
 
   return Object.assign({}, button, {

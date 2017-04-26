@@ -2,9 +2,10 @@
   background-color: #F8F8F8;
   padding: 10px 23px;
   font-size: 14px;
+  line-height: normal;
   color: rgba(0,0,0,0.62);
 
-  pre {
+  .editor {
     font-family: $code-font;
   }
 
@@ -21,6 +22,9 @@
   $purple = #8858d2;
   $green = #4ac14a;
   $pink = #b646c1;
+  $blue = #00a9ff;
+  $orange = #f7af00;
+  $gray = rgba(0, 0, 0, 0.3);
 
   .string {
     color: $purple;
@@ -38,6 +42,39 @@
   .js {
     &.name.function {
       color: $main-color;
+    }
+    &.boolean,
+    &.numeric {
+      color: $green;
+    }
+    &.control,
+    &.assignment {
+      color: $pink;
+    }
+    &.storage,
+    &.storage,
+    &.variable {
+      color: $blue;
+    }
+    &.comment {
+      color: $gray;
+    }
+
+    &.function {
+      color: inherit;
+    }
+
+    &.variable {
+      &.other,
+      &.parameter {
+        color: inherit;
+      }
+    }
+
+    &.storage.class,
+    // "extends":
+    &.class + * + .storage.modifier {
+      color: $pink;
     }
   }
 }

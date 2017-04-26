@@ -21,6 +21,12 @@ export const getContentOpts = (contentParam: string|object): ContentOptions => {
     return Object.assign(opts, contentParam);
   }
 
+  if (contentParam instanceof Element) {
+    return {
+      element: contentParam,
+    };
+  }
+
   if (contentParam === 'input') {
     return defaultInputOptions;
   }

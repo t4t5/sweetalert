@@ -25,8 +25,8 @@ export interface SwalOptions {
   text: string,
   icon: string,
   buttons: ButtonList,
-  class: string,
   content: ContentOptions,
+  class: string,
   clickOutside: Boolean,
   dangerMode: Boolean,
 };
@@ -36,8 +36,8 @@ const defaultOpts: SwalOptions = {
   text: null,
   icon: null,
   buttons: defaultButtonList,
-  class: null,
   content: null,
+  class: null,
   clickOutside: true,
   dangerMode: false,
 };

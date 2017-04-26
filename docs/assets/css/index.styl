@@ -123,42 +123,25 @@ $modal-width = 409px;
     color: rgba(0,0,0,0.21);
     text-transform: uppercase;
     text-align: left;
-  }
-
-  .code {
-    background: #F8F8F8;
-    border-radius: 4px;
-    font-family: $code-font;
-    text-align: left;
-    padding: 20px;
-    color: rgba(0, 0, 0, 0.75);
-    font-size: 15px;
-  }
-
-  $preview-color = #A3DD82;
-
-  .preview {
-    background-color: $preview-color;
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
-    border-radius: 4px;
-    border: none;
-    color: white;
-    font-size: 15px;
-    color: white;
-    padding: 9px 18px;
-    margin-top: 20px;
-    &::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 10px solid white;
-      display: inline-block;
-      margin-right: 5px;
+    margin-bottom: 15px;
+    &.swal-logo {
+      text-indent: -9999999px;
+      margin-top: 2px;
+      &::after {
+        content: "";
+        background-image: url("/assets/images/logo-small.svg");
+        width: 91px;
+        height: 20px;
+        display: block;
+      }
     }
-    &:hover {
-      background-color: lightness($preview-color, 65%)
+  }
+
+  .highlight {
+    text-align: left;
+    padding: 16px 23px;
+    span {
+      margin: 0 -4px;
     }
   }
 

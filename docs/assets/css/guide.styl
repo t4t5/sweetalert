@@ -24,6 +24,9 @@ $side-menu-width = 225px;
     color: rgba(0, 0, 0, 0.42);
     display: block;
     margin: 18px 0;
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+    }
   }
 
 }
@@ -35,6 +38,10 @@ $side-menu-width = 225px;
   min-height: 220px;
   margin-top: 16px;
 
+  font-size: 16px;
+  color: rgba(0,0,0,0.59);
+  line-height: 29px;
+
   h1 {
     padding-top: 90px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -45,7 +52,7 @@ $side-menu-width = 225px;
       position: absolute;
       margin-left: -23px;
       font-size: 24px;
-      margin-top: 7px;
+      margin-top: 3px;
       color: #f38270;
       font-weight: 500;
     }
@@ -57,7 +64,8 @@ $side-menu-width = 225px;
     }
   }
 
-  h2 {
+  h2,
+  h3 {
     font-size: 20px;
     margin-top: -70px;
     padding-top: 100px;
@@ -67,10 +75,29 @@ $side-menu-width = 225px;
     }
   }
 
-  p {
-    font-size: 16px;
-    color: rgba(0,0,0,0.59);
-    line-height: 29px;
+  ul {
+    list-style-type: disc; 
+    margin-bottom: 20px;
+
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  &.api > ul {
+    list-style-type: none;
+    padding-left: 30px;
+
+    > li h3::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $main-color;
+      margin-left: -27px;
+      margin-top: 12px;
+    }
   }
 
   code {
@@ -81,5 +108,21 @@ $side-menu-width = 225px;
     background: rgb(248, 248, 248);
     font-size: 14px;
     color: $main-color;
+  }
+
+  preview-button {
+    /* Matches the "real" button's height: */
+    display: block;
+    height: 44px;
+  }
+
+  button.preview {
+    margin: 20px auto;
+    width: 110px;
+    display: block;
+  }
+
+  figcaption {
+    font-style: italic;
   }
 }
