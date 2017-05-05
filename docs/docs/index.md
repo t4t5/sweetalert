@@ -190,13 +190,205 @@ layout: docs
 
 
 - ### `content`
-  
+
+  **Type:** `Node|string`
+
+  **Default:** `null`
+
+  **Description:**
+
+  For custom content, beyond just text and icons.
+
+  **Examples:**
+
+  ```js
+  swal({
+    content: "input",
+  });
+  ```
+  <preview-button></preview-button>
+
+  ```js
+  swal({
+    content: {
+      element: "input",
+      attributes: {
+        placeholder: "Type your password",
+        type: "password",
+      },
+    },
+  });
+  ```
+  <preview-button></preview-button>
+
+  ```js
+  var slider = document.createElement("input");
+  slider.type = "range";
+
+  swal({
+    content: slider,
+  });
+  ```
+  <preview-button></preview-button>
+
+
+- ### `class`
+
+  **Type:** `string`
+
+  **Default**: `""` (*empty string*)
+
+  **Description**:
+
+  Add a custom class to the SweetAlert modal. This is handy for changing the appearance.
+
+  **Example**:
+
+  ```js
+    swal("Hello world!", {
+      class: "red-bg",
+    });
+  ```
+  <preview-button></preview-button>
+
+- ### `clickOutside`
+
+  **Type:** `boolean`
+
+  **Default:** `true`
+
+  **Description:**
+
+  Decide whether the user should be able to dismiss the modal by clicking outside of it, or not.
+
+  **Example:**
+
+  ```js
+  swal({
+    clickOutside: false,
+  });
+  ```
+  <preview-button></preview-button>
+
+
+- ### `dangerMode`
+
+  **Type:** `boolean`
+
+  **Default:** `false`
+
+  **Description:**
+
+  If set to `true`, the confirm button turns red and the default focus is set on the cancel button instead. This is handy when showing warning modals where the confirm action is dangerous (e.g. deleting an item).
+
+  **Example:**
+
+  ```js
+  swal("Are you sure?", {
+    dangerMode: true,
+    buttons: true,
+  });
+  ```
+  <preview-button></preview-button>
+
 
 # Methods
 
 | Name | Description | Example |
 | ---- | ----------- | ------- |
-| close | Closes the currently open SweetAlert | `swal.close()` |
+| `close` | Closes the currently open SweetAlert | `swal.close()` |
+| `getState` | Get the state of the current SweetAlert modal. | `swal.getState()` |
+| `setValueFor` | Change the promised value of one of the modal's buttons. | `swal.setValueFor('confirm', 'Text from input')` |
 
 
 # Theming
+
+- ### `swal-overlay`
+
+  **Example:**
+
+  ```css
+  .swal-overlay {
+    background-color: rgba(43, 165, 137, 0.45);
+  }
+  ```
+  <preview-button></preview-button>
+
+- ### `swal-modal`
+
+  **Example:**
+
+  ```css
+  .swal-modal {
+    background-color: rgba(63,255,106,0.69);
+    border: 3px solid white;
+  }
+  ```
+  <preview-button></preview-button>
+
+- ### `swal-title`
+
+  **Example:**
+
+  ```css
+  .swal-title {
+    margin: 0px;
+    font-size: 16px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+    margin-bottom: 28px;
+  }
+  ```
+  <preview-button></preview-button>
+
+- ### `swal-text`
+
+  **Example:**
+
+  ```css
+  .swal-text {
+    background-color: #FEFAE3;
+    padding: 17px;
+    border: 1px solid #F0E1A1;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #61534e;
+  }
+  ```
+  <preview-button></preview-button>
+
+- ### `swal-footer`
+
+  **Example:**
+
+  ```css
+  .swal-footer {
+    background-color: rgb(245, 248, 250);
+    margin-top: 32px;
+    border-top: 1px solid #E9EEF1;
+    overflow: hidden;
+  }
+  ```
+  <preview-button></preview-button>
+
+- ### `swal-button`
+
+  **Description:**
+
+  The modal's button(s). It has an extra class that changes depending on the button's type, in the format `swal-button--{type}`. The extra class for the confirm button for example is `swal-button--confirm`.
+
+  **Example:**
+
+  ```css
+  .swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: #4962B3;
+    font-size: 12px;
+    border: 1px solid #3e549a;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  }
+  ```
+  <preview-button></preview-button>
+
+

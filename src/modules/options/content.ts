@@ -4,7 +4,7 @@ import {
 
 export interface ContentOptions {
   element: string|Node,
-  attributes: object,
+  attributes?: object,
 };
 
 const defaultInputOptions: ContentOptions = {

@@ -1,9 +1,11 @@
 .highlight {
+  $code-color = rgba(0,0,0,0.62);
+
   background-color: #F8F8F8;
   padding: 10px 23px;
   font-size: 14px;
   line-height: normal;
-  color: rgba(0,0,0,0.62);
+  color: $code-color;
 
   .editor {
     font-family: $code-font;
@@ -75,6 +77,22 @@
     // "extends":
     &.class + * + .storage.modifier {
       color: $pink;
+    }
+  }
+
+  .css {
+    &.selector {
+      color: $green;
+    }
+    &.property-name {
+      color: $blue;
+    }
+    &.property-value {
+      color: $purple;
+    }
+    &.separator,
+    &.terminator {
+      color: $code-color;
     }
   }
 }

@@ -17,9 +17,5 @@
     "type": "git",
     "url": "git@github.com:t4t5/sweetalert.git"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "qunit": "~1.18.0",
-    "jquery": "~2.1.4"
-  }
+  "license": "MIT"
 }

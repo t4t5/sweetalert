@@ -1,0 +1,116 @@
+import {
+  $,
+  swal,
+  removeSwal,
+  $$,
+  CLASS_NAMES,
+} from './utils';
+
+const { 
+  BUTTON,
+  CONFIRM_BUTTON,
+  CANCEL_BUTTON,
+} = CLASS_NAMES;
+
+afterEach(() => removeSwal());
+
+describe("buttons", () => {
+
+  test("shows only confirm button by default", () => {
+    swal();
+
+    expect($$(BUTTON).length).toBe(1);
+    expect($$(BUTTON).hasClass(CONFIRM_BUTTON)).toBeTruthy();
+  });
+
+  test("hides all buttons", () => {
+    swal({
+      buttons: false,
+    });
+
+    expect($$(BUTTON).length).toBe(0);
+  });
+
+  test("shows confirm and cancel buttons", () => {
+    swal({
+      buttons: true,
+    });
+
+    expect($$(BUTTON).length).toBe(2);
+    expect($$(CONFIRM_BUTTON).length).toBe(1);
+    expect($$(CANCEL_BUTTON).length).toBe(1);
+  });
+
+  test("sets button text", () => {
+    swal({
+      button: "Test",
+    });
+
+    expect($$(CONFIRM_BUTTON).text()).toBe("Test");
+  });
+
+  test("sets button texts with array", () => {
+    swal({
+      buttons: ["Stop", "Do it"],
+    });
+
+    expect($$(CONFIRM_BUTTON).text()).toBe("Do it");
+    expect($$(CANCEL_BUTTON).text()).toBe("Stop");
+  });
+
+  test("sets default button texts with array", () => {
+    swal({
+      buttons: [true, true],
+    });
+
+    expect($$(CONFIRM_BUTTON).text()).toBe("OK");
+    expect($$(CANCEL_BUTTON).text()).toBe("Cancel");
+  });
+
+  test("uses button object", () => {
+    swal({
+      buttons: {
+        cancel: "Run away!",
+        confirm: true,
+      }
+    });
+
+    expect($$(CANCEL_BUTTON).text()).toBe("Run away!");
+    expect($$(CONFIRM_BUTTON).text()).toBe("OK");
+  });
+
+  test("sets more than 2 buttons", () => {
+    swal({
+      buttons: {
+        cancel: "Run away!",
+        catch: {
+          text: "Throw Pokéball!",
+        },
+        defeat: true,
+      },
+    });
+
+    expect($$(BUTTON).length).toBe(3);
+    expect($$(CANCEL_BUTTON).text()).toBe("Run away!");
+    expect($$(CONFIRM_BUTTON).length).toBe(0);
+
+    expect($$(`${BUTTON}--catch`).length).toBe(1);
+    expect($$(`${BUTTON}--catch`).text()).toBe("Throw Pokéball!");
+
+    expect($$(`${BUTTON}--defeat`).length).toBe(1);
+    expect($$(`${BUTTON}--defeat`).text()).toBe("Defeat");
+  });
+
+  test("confirm buttons resolves to true", async () => {
+    expect.assertions(1);
+
+    setTimeout(() => {
+      $$(CONFIRM_BUTTON).click();
+    }, 500);
+
+    const value = await swal();
+
+    expect(value).toBeTruthy();
+  });
+
+});

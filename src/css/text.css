@@ -1,5 +1,5 @@
 .swal-title {
-  color: #575757;
+  color: rgba(0, 0, 0, 0.65);
   font-weight: 600;
   text-transform: none;
   position: relative;
@@ -9,6 +9,9 @@
   line-height: normal;
   text-align: center;
   margin-bottom: 0px;
+  &:first-child {
+    margin-top: 26px;
+  }
   &:not(:first-child) {
     padding-bottom: 0;
   }

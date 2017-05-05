@@ -1,3 +1,5 @@
+@import 'table';
+
 .doc-container {
   overflow: hidden;
 }
@@ -110,6 +112,7 @@ $side-menu-width = 225px;
     color: $main-color;
   }
 
+  // Special web component:
   preview-button {
     /* Matches the "real" button's height: */
     display: block;
@@ -120,9 +123,15 @@ $side-menu-width = 225px;
     margin: 20px auto;
     width: 110px;
     display: block;
+    position: relative;
+    z-index: 2;
   }
 
   figcaption {
     font-style: italic;
   }
+}
+
+.swal-modal.red-bg {
+  background-color: rgba(255, 0, 0, 0.28);
 }

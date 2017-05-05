@@ -1,0 +1,106 @@
+.page-content {
+
+  $mobile-breakpoint: 880px;
+
+  table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+  }
+
+  th {
+    font-size: 17px;
+    color: rgba(0,0,0,0.34);
+    padding: 20px 15px;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+
+  thead > tr {
+    border-bottom: 2px solid rgba(0,0,0,0.10);
+  }
+
+  tr {
+    text-align: left;
+    box-shadow: 0px -1px 0px rgba(0,0,0,0.15);
+    &:first-child {
+      box-shadow: none;
+    }
+  }
+
+  td {
+    padding: 17px;
+
+    &:first-child > code {
+      color: #2E9FEF;
+      background: none;
+      border: none;
+      font-size: 16px;
+      padding: 0;
+    }
+  }
+
+  tbody tr {
+    @media all and (min-width: mobile-breakpoint) {
+      &:nth-child(1) {
+        box-shadow: none;
+      }
+    }
+  }
+
+  @media all and (max-width: mobile-breakpoint) {
+
+  /* Force table to not be like tables anymore */
+    & table,
+    & thead,
+    & tbody,
+    & th,
+    & td,
+    & tr {
+      display: block; 
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    & thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    & tr {
+      margin-top: -1px;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.27)
+    }
+    
+    & td { 
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee; 
+      position: relative;
+      padding-left: mobile-padding;
+      min-height: 20px;
+    }
+    
+    & td::before { 
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 15px;
+      left: 15px;
+      width: mobile-padding;
+      width: calc(mobile-padding - 35px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 10px; 
+      white-space: nowrap;
+      color: rgba(0, 0, 0, 0.54);
+      font-family: page-font;
+      font-size: 16px;
+      text-transform: capitalize;
+
+      content: attr(data-name);
+    }
+    
+  }
+
+}

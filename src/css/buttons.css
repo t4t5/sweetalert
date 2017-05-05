@@ -16,12 +16,12 @@
 
 .swal-footer {
   text-align: right;
-  /*
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  */
   padding-top: 13px;
   margin-top: 13px;
   padding: 13px 16px;
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .swal-button-container {
