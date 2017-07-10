@@ -26,28 +26,81 @@
 
   <div class="page-container">
 
-    <div class="swal-modal-example">
+    <div class="swal-modal-example" data-type="success">
 
-      <div class="swal-icon swal-icon--success">
-        <div class="swal-icon--success__line swal-icon--success__line--long"></div> 
-        <div class="swal-icon--success__line swal-icon--success__line--tip"></div> 
+      <div class="example-content success show">
+        <div class="swal-icon swal-icon--success">
+          <div class="swal-icon--success__line swal-icon--success__line--long"></div> 
+          <div class="swal-icon--success__line swal-icon--success__line--tip"></div> 
 
-        <div class="swal-icon--success__ring"></div> 
-        <div class="swal-icon--success__hide-corners"></div> 
+          <div class="swal-icon--success__ring"></div> 
+          <div class="swal-icon--success__hide-corners"></div> 
+        </div>
+
+        <h3 class="swal-title">
+          You've arrived!
+        </h3>
+        <p class="swal-text">
+          How lovely. Let me take your coat.
+        </p>
       </div>
 
-      <h3 class="swal-title">
-        You've arrived!
-      </h3>
-      <p class="swal-text">
-        How lovely. Let me take your coat.
-      </p>
+      <div class="example-content error">
+
+        <div class="swal-icon swal-icon--error">
+          <div class="swal-icon--error__x-mark">
+            <span class="swal-icon--error__line swal-icon--error__line--left"></span>
+            <span class="swal-icon--error__line swal-icon--error__line--right"></span>
+          </div>
+        </div>
+
+        <h3 class="swal-title">
+          Oops!
+        </h3>
+        <p class="swal-text">
+          Seems like something went wrong!
+        </p>
+      </div>
+
+      <div class="example-content warning">
+        <div class="swal-icon swal-icon--warning">
+          <span class="swal-icon--warning__body">
+            <span class="swal-icon--warning__dot"></span>
+          </span>
+        </div>
+
+        <h3 class="swal-title">
+          Delete important stuff?
+        </h3>
+        <p class="swal-text">
+          That doesn't seem like a good idea. Are you sure you want to do that?
+        </p>
+
+        <div class="swal-footer">
+          <div class="swal-button-container">
+            <button class="swal-button swal-button--cancel">
+              Cancel
+            </button>
+          </div>
+
+          <div class="swal-button-container">
+            <button class="swal-button swal-button--confirm swal-button--danger">
+              Yes, delete it!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-content-overlay"></div>
 
     </div>
 
     <div class="desc">
       <h2>
-        A beautiful replacement for success messages
+        A beautiful replacement for 
+        <span class="text-rotater">
+          success messages
+        </span>
       </h2>
 
       <div class="install">

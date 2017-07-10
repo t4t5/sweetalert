@@ -14,7 +14,7 @@ const {
 
 afterEach(() => removeSwal());
 
-describe("buttons", () => {
+describe("show buttons", () => {
 
   test("shows only confirm button by default", () => {
     swal();
@@ -101,7 +101,11 @@ describe("buttons", () => {
     expect($$(`${BUTTON}--defeat`).text()).toBe("Defeat");
   });
 
-  test("confirm buttons resolves to true", async () => {
+});
+
+describe("buttons resolve values", () => {
+
+  test("confirm button resolves to true", async () => {
     expect.assertions(1);
 
     setTimeout(() => {
@@ -111,6 +115,52 @@ describe("buttons", () => {
     const value = await swal();
 
     expect(value).toBeTruthy();
+  });
+
+  test("cancel button resolves to null", async () => {
+    expect.assertions(1);
+
+    setTimeout(() => {
+      $$(CANCEL_BUTTON).click();
+    }, 500);
+
+    const value = await swal({
+      buttons: true,
+    });
+
+    expect(value).toBeNull();
+  });
+
+  test("can specify resolve value", async () => {
+    expect.assertions(1);
+
+    setTimeout(() => {
+      $$(CONFIRM_BUTTON).click();
+    }, 500);
+
+    const value = await swal({
+      button: {
+        value: "test",
+      },
+    });
+
+    expect(value).toBe("test");
+  });
+
+  test("extra button resolves to string by default", async () => {
+    expect.assertions(1);
+
+    setTimeout(() => {
+      $(`.${BUTTON}--test`).click();
+    }, 500);
+
+    const value = await swal({
+      buttons: {
+        test: true,
+      },
+    });
+
+    expect(value).toBe("test");
   });
 
 });

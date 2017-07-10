@@ -5,6 +5,7 @@ export interface ButtonOptions {
   text: string,
   value: any,
   class: string,
+  closeModal: Boolean,
 };
 
 export interface ButtonList {
@@ -16,6 +17,7 @@ const defaultButton: ButtonOptions = {
   text: null,
   value: null,
   class: '',
+  closeModal: true,
 };
 
 const defaultCancelButton: ButtonOptions = Object.assign({}, 

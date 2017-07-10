@@ -1,5 +1,7 @@
 import './add-preview-buttons';
 
+import './landing-text-rotater';
+
 /*
  * FOR GUIDES EXAMPLES:
  */

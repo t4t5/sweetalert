@@ -192,38 +192,40 @@ You can check out all the available button options in the [API docs](/api).
 
 ## AJAX requests
 
-Since SweetAlert is promise-based, it makes sense to pair with AJAX functions that are also promise-based. Below is an example of using `fetch` to search for artists on the Spotify API. Note that we're using `content: "input"` in order to both show an input-field *and* retrieve its value when the user clicks the confirm button:
+Since SweetAlert is promise-based, it makes sense to pair it with AJAX functions that are also promise-based. Below is an example of using `fetch` to search for artists on the iTunes API. Note that we're using `content: "input"` in order to both show an input-field *and* retrieve its value when the user clicks the confirm button:
 
 ```js
 swal({
-  text: 'Search for an artist. e.g. "Michael Jackson".',
+  text: 'Search for a movie. e.g. "La La Land".',
   content: "input",
 })
-.then((name) => {
+.then(name => {
   if (!name) throw null;
 
-  return fetch(`https://api.spotify.com/v1/search?q=${name}&type=artist`);
+  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
 })
-.then((results) => {
+.then(results => {
   return results.json();
 })
-.then((json) => {
-  const artist = json.artists.items[0];
+.then(json => {
+  const movie = json.results[0];
 
-  if (!artist) {
-    return swal("No artist was found!");
+  if (!movie) {
+    return swal("No movie was found!");
   }
 
-  const fullName = artist.name;
-  const imageURL = artist.images[0].url;
+  console.log(movie);
+
+  const name = movie.trackName;
+  const imageURL = movie.artworkUrl100;
 
   swal({
     title: "Top result:",
-    text: fullName,
+    text: name,
     icon: imageURL,
   });
 })
-.catch((err) => {
+.catch(err => {
   if (err) {
     swal("Oh noes!", "The AJAX request failed!", "error");
   }

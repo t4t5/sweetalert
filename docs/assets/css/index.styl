@@ -26,11 +26,20 @@ $modal-width = 409px;
     box-shadow: 0 5px 22px 0 rgba(0,0,0,0.20);
     border-radius: 8px;
     margin-top: 59px;
-    position: relative;
+    //position: relative;
+    position: absolute;
     z-index: 10;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
+    overflow: hidden;
+    transition: height 0.3s;
+    &[data-type="success"] {
+      height: 292px;
+    }
+    &[data-type="warning"] {
+      height: 325px;
+    }
 
     .swal-title {
       padding-top: 10px;
@@ -42,6 +51,29 @@ $modal-width = 409px;
     }
   }
 
+  .modal-content-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .example-content {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+
   .desc {
     display: inline-block;
     position: relative;
@@ -49,12 +81,29 @@ $modal-width = 409px;
     margin-left: 50px;
     max-width: s('calc(100% - %s - 112px)', $modal-width);
     vertical-align: middle;
+    margin-top: 61px;
+    padding-left: 473px;
   }
 
   h2 {
     font-size: 30px;
     line-height: 51px;
     font-weight: 300;
+  }
+
+  .text-rotater {
+    display: block;
+    height: 57px;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    &.slide-up span {
+      transform: translateY(-51px);
+    }
   }
 
   .install {

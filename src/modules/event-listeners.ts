@@ -90,16 +90,22 @@ const setButtonTabbing = (): void => {
   setTabbingForFirstButton(buttons);
 };
 
+const onOutsideClick = (e): void => {
+  const overlay: HTMLElement = getNode(OVERLAY);
+
+  // Don't trigger for children:
+  if (overlay !== e.target) return;
+
+  return onAction('cancel');
+};
+
 const setClickOutside = (allow: Boolean): void => {
+  const overlay: HTMLElement = getNode(OVERLAY);
+
   if (allow) {
-    const overlay: HTMLElement = getNode(OVERLAY);
-
-    overlay.addEventListener('click', (e) => {
-      // Don't trigger for children:
-      if (overlay !== e.target) return;
-
-      return onAction('cancel');
-    });
+    overlay.addEventListener('click', onOutsideClick);
+  } else {
+    overlay.removeEventListener('click', onOutsideClick);
   }
 };
 
