@@ -1045,7 +1045,9 @@ var setParameters = function setParameters(params) {
           $input.setAttribute('placeholder', params.inputPlaceholder);
           (0, _handleDom.addClass)(modal, 'show-input');
           setTimeout(function () {
+            var valueLength = $input.value.length;
             $input.focus();
+            $input.setSelectionRange(valueLength, valueLength);
             $input.addEventListener('keyup', swal.resetInputError);
           }, 400);
           break;
