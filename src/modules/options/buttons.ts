@@ -1,11 +1,11 @@
 import { isPlainObject, throwErr } from '../utils';
 
 export interface ButtonOptions {
-  visible: Boolean,
+  visible: boolean,
   text: string,
   value: any,
   class: string,
-  closeModal: Boolean,
+  closeModal: boolean,
 };
 
 export interface ButtonList {
@@ -62,7 +62,7 @@ const getDefaultButton = (key: string): ButtonOptions => {
   }
 };
 
-const normalizeButton = (key: string, param: string|object|Boolean): ButtonOptions => {
+const normalizeButton = (key: string, param: string|object|boolean): ButtonOptions => {
   const button: ButtonOptions = getDefaultButton(key);
 
   /*
@@ -103,6 +103,14 @@ const normalizeButtonListObj = (obj: any): ButtonList => {
     const opts: any = obj[key];
     const button: ButtonOptions = normalizeButton(key, opts);
     buttons[key] = button;
+  }
+
+  /*
+   * We always need a cancel action, 
+   * even if the button isn't visible
+   */
+  if (!buttons.cancel) {
+    buttons.cancel = defaultCancelButton;
   }
 
   return buttons;

@@ -5,6 +5,8 @@ import CLASS_NAMES  from './class-list';
 const {
   OVERLAY,
   SHOW_MODAL,
+  BUTTON,
+  BUTTON_LOADING,
 } = CLASS_NAMES;
 
 import state, { SwalState } from './state';
@@ -27,10 +29,16 @@ const hideModal = (): void => {
  * Triggers when the user presses any button, or
  * hits Enter inside the input:
  */
-export const onAction = (namespace: string): void => {
-  hideModal();
+export const onAction = (namespace: string = 'cancel'): void => {
+  const { value, closeModal } = state.actions[namespace];
 
-  const value = state.values[namespace];
+  if (closeModal === false) {
+    const buttonClass = `${BUTTON}--${namespace}`;
+    const button = getNode(buttonClass);
+    button.classList.add(BUTTON_LOADING);
+  } else {
+    hideModal();
+  }
 
   state.promise.resolve(value);
 };
@@ -40,9 +48,23 @@ export const onAction = (namespace: string): void => {
  * that's only for internal use
  */
 export const getState = (): SwalState => {
-  let publicState = Object.assign({}, state);
+  const publicState = Object.assign({}, state);
   delete publicState.promise;
 
   return publicState;
 };
+
+/*
+ * Stop showing loading animation on button
+ * (to display error message in input for example)
+ */
+export const stopLoading = (): void => {
+  const buttons: NodeListOf<Element> = document.querySelectorAll(`.${BUTTON}`);
+
+  for (let i = 0; i < buttons.length; i++) {
+    const button: Element = buttons[i];
+    button.classList.remove(BUTTON_LOADING);
+  }
+};
+
 

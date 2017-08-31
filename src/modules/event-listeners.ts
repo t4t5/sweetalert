@@ -90,7 +90,7 @@ const setButtonTabbing = (): void => {
   setTabbingForFirstButton(buttons);
 };
 
-const onOutsideClick = (e): void => {
+const onOutsideClick = (e: MouseEvent): void => {
   const overlay: HTMLElement = getNode(OVERLAY);
 
   // Don't trigger for children:
@@ -99,7 +99,7 @@ const onOutsideClick = (e): void => {
   return onAction('cancel');
 };
 
-const setClickOutside = (allow: Boolean): void => {
+const setClickOutside = (allow: boolean): void => {
   const overlay: HTMLElement = getNode(OVERLAY);
 
   if (allow) {

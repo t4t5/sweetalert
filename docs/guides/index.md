@@ -198,6 +198,10 @@ Since SweetAlert is promise-based, it makes sense to pair it with AJAX functions
 swal({
   text: 'Search for a movie. e.g. "La La Land".',
   content: "input",
+  button: {
+    text: "Search!",
+    closeModal: false,
+  },
 })
 .then(name => {
   if (!name) throw null;
@@ -214,8 +218,6 @@ swal({
     return swal("No movie was found!");
   }
 
-  console.log(movie);
-
   const name = movie.trackName;
   const imageURL = movie.artworkUrl100;
 
@@ -228,6 +230,9 @@ swal({
 .catch(err => {
   if (err) {
     swal("Oh noes!", "The AJAX request failed!", "error");
+  } else {
+    swal.stopLoading();
+    swal.close();
   }
 });
 ```

@@ -3,13 +3,16 @@ import {
   swal,
   removeSwal,
   $$,
+  onAction,
   CLASS_NAMES,
+  delay,
 } from './utils';
 
 const { 
   BUTTON,
   CONFIRM_BUTTON,
   CANCEL_BUTTON,
+  MODAL,
 } = CLASS_NAMES;
 
 afterEach(() => removeSwal());
@@ -161,6 +164,27 @@ describe("buttons resolve values", () => {
     });
 
     expect(value).toBe("test");
+  });
+
+});
+
+describe("loading", () => {
+
+  test("shows loading state", async () => {
+    swal({
+      button: {
+        text: "HEPP",
+        closeModal: false,
+      },
+    });
+
+    const $button = $(`.${BUTTON}--confirm`);
+
+    expect($button.hasClass('swal-button--loading')).toBeFalsy();
+
+    $button.click();
+
+    expect($button.hasClass('swal-button--loading')).toBeTruthy();
   });
 
 });

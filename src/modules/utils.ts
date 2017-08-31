@@ -36,7 +36,7 @@ export const throwErr = (message: string) => {
 /*
  * Match plain objects ({}) but NOT null
  */
-export const isPlainObject = (value: any): Boolean => {
+export const isPlainObject = (value: any): boolean => {
   if (Object.prototype.toString.call(value) !== '[object Object]') {
     return false;
   } else {

@@ -27,6 +27,7 @@
 .swal-button-container {
   margin: 0 5px;
   display: inline-block;
+  position: relative;
 }
 
 .swal-button {
@@ -88,3 +89,6 @@
     }
   }
 }
+
+
+

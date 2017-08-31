@@ -10,6 +10,7 @@ import {
   openModal,
   onAction,
   getState,
+  stopLoading,
 } from './modules/actions';
 
 import state, { setValueFor, SwalState } from './modules/state';
@@ -26,9 +27,13 @@ interface SweetAlert {
   close? (namespace: string): void,
   getState? (): SwalState,
   setValueFor? (buttonKey: string, value: any): void,
+  stopLoading? (): void,
 };
 
 const swal:SweetAlert = (...args) => {
+
+  // Prevent library to be run in Node env:
+  if (typeof window === 'undefined') return;
 
   const opts: SwalOptions = getOpts(...args);
 
@@ -50,6 +55,7 @@ const swal:SweetAlert = (...args) => {
 swal.close = onAction;
 swal.getState = getState;
 swal.setValueFor = setValueFor;
+swal.stopLoading = stopLoading;
 
 export default swal;
 

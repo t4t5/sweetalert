@@ -1,0 +1,52 @@
+.swal-button--loading {
+  color: transparent;
+
+  & ~ .swal-button__loader {
+    opacity: 1;
+  }
+}
+
+.swal-button__loader {
+  position: absolute;
+  height: auto;
+  width: 43px;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+
+  & div {
+    display: inline-block;
+    float: none;
+    vertical-align: baseline;
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    margin: 2px;
+    opacity: 0.4;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: background 0.2s;
+    animation: swal-loading-anim 1s infinite;
+
+    &:nth-child(3n+2) {
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3n+3) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+@keyframes swal-loading-anim {
+  0%   { opacity: 0.4; }
+  20%  { opacity: 0.4; }
+  50% { opacity: 1.0; }
+  100% { opacity: 0.4; }
+}
+

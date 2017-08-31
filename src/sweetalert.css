@@ -2,6 +2,7 @@
 @import './css/text';
 @import './css/buttons';
 @import './css/content';
+@import './css/button-loader';
 
 :root {
   --swal-modal-width: 478px;

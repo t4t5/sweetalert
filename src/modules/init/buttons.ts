@@ -8,7 +8,7 @@ import { ButtonList, ButtonOptions } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
 
 import { onAction } from '../actions';
-import { setValueFor } from '../state';
+import { setValueFor, setActionOptionsFor } from '../state';
 
 /*
  * Generate a button, with a container element,
@@ -19,7 +19,8 @@ const getButton = (namespace: string, {
   text, 
   value, 
   class: customClass,
-}: ButtonOptions, dangerMode: Boolean): Node => {
+  closeModal,
+}: ButtonOptions, dangerMode: boolean): Node => {
   const buttonContainer: any = stringToNode(buttonMarkup);
 
   const buttonEl: HTMLElement = buttonContainer.querySelector(`.${BUTTON}`);
@@ -38,6 +39,9 @@ const getButton = (namespace: string, {
   buttonEl.textContent = text;
 
   setValueFor(namespace, value);
+  setActionOptionsFor(namespace, {
+    closeModal,
+  });
 
   buttonEl.addEventListener('click', () => {
     return onAction(namespace);
@@ -51,7 +55,7 @@ const getButton = (namespace: string, {
  * then loop through the ButtonList object
  * and append every button to it.
  */
-const initButtons = (buttons: ButtonList, dangerMode: Boolean): void => {
+const initButtons = (buttons: ButtonList, dangerMode: boolean): void => {
 
   const footerEl: Element = injectElIntoModal(footerMarkup);
 

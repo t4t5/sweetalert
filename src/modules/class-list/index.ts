@@ -5,7 +5,7 @@
  */
 
 interface ClassNameList {
-  [key:string]: string,
+  [key: string]: string,
 };
 
 const OVERLAY: string = 'swal-overlay';
@@ -30,6 +30,8 @@ export const CLASS_NAMES: ClassNameList = {
   CONFIRM_BUTTON: `${BUTTON}--confirm`,
   CANCEL_BUTTON: `${BUTTON}--cancel`,
   DANGER_BUTTON: `${BUTTON}--danger`,
+  BUTTON_LOADING: `${BUTTON}--loading`,
+  BUTTON_LOADER: `${BUTTON}__loader`,
 };
 
 export default CLASS_NAMES;

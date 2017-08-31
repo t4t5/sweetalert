@@ -1,52 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = (_env, args) => {
 
-  const IS_PRODUCTION = args.p;
+  const IS_PROD = args.p;
 
-  const BUILD_PATH = IS_PRODUCTION ? 'dist' : 'docs/assets/sweetalert';
-  const JS_FILE_NAME = IS_PRODUCTION ? 'sweetalert.min.js' : 'sweetalert.dev.js';
-  const CSS_FILE_NAME = IS_PRODUCTION ? 'sweetalert.min.css' : 'sweetalert.css.dev';
+  const BUILD_PATH = 'dist';
+  const JS_FILE_NAME = 'sweetalert.min.js';
+  const devtool = IS_PROD ? false : 'source-map';
 
-  /*
-{
-  context: path.resolve(__dirname, 'docs'),
-  entry: './src/index.js',
-
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'docs.js',
-    publicPath: '/dist',
-  },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-      React: 'react',
-    })
-  ],
-
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-        },
-      }
-    ],
-  },
-
-  devServer: {
-    contentBase: path.resolve(__dirname, 'docs'),
-    compress: true,
-    port: 9000,
-  },
-},
-*/
   return {
     context: path.resolve(__dirname, 'src'),
     entry: './sweetalert.js',
@@ -68,11 +30,15 @@ module.exports = (_env, args) => {
     module: {
       rules: [
         {
-          /* Expose global sweetAlert() function
-           * (in addition to swal())
-           */
+          // Expose global swal() function
           test: require.resolve("./src/sweetalert"),
-          use: 'expose-loader?sweetAlert'
+          use: [{
+            loader: 'expose-loader',
+            options: 'sweetAlert'
+          }, {
+            loader: 'expose-loader',
+            options: 'swal'
+          }],
         },
         {
           enforce: 'pre',
@@ -93,31 +59,24 @@ module.exports = (_env, args) => {
         {
           /* Use PostCSS */
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: "css-loader?sourceMap!postcss-loader",
-          })
+          use: [
+            'style-loader',
+            { 
+              loader: 'css-loader', options: { 
+                importLoaders: 1 
+              } 
+            },
+            'postcss-loader',
+          ]
         }
       ],
     },
-
-    plugins: [
-      new ExtractTextPlugin(CSS_FILE_NAME),
-    ],
-
-    /*
-    devServer: {
-      contentBase: __dirname,
-      compress: true,
-      port: 9000
-    },
-    */
 
     stats: {
       colors: true,
     },
 
-    devtool: 'source-map',
+    devtool,
   }
 };
 

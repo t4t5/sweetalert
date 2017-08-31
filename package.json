@@ -1,16 +1,16 @@
 {
   "name": "sweetalert",
-  "version": "1.1.3",
+  "version": "2.0.0",
   "description": "A beautiful replacement for JavaScript's \"alert\"",
-  "main": "lib/sweetalert.js",
+  "main": "dist/sweetalert.min.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
     "buildtest": "node_modules/.bin/webpack -p && jest",
-    "test": "jest",
+    "test": "node_modules/.bin/jest",
     "build": "node_modules/.bin/webpack -p",
-    "dev": "webpack --watch | node_modules/jus/cli.js serve docs"
+    "docs": "node_modules/.bin/webpack -p && node_modules/jus/cli.js serve docs"
   },
   "repository": {
     "type": "git",
@@ -43,7 +43,6 @@
     "css-loader": "0.28.0",
     "exports-loader": "0.6.4",
     "expose-loader": "0.7.3",
-    "extract-text-webpack-plugin": "2.1.0",
     "glob": "^5.0.3",
     "jest": "19.0.2",
     "jquery": "3.2.1",
@@ -81,5 +80,11 @@
       "js",
       "json"
     ]
-  }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE.md",
+    "README.md"
+  ]
 }

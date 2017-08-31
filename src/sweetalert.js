@@ -4,7 +4,9 @@
  * See: https://github.com/webpack/webpack/issues/3929
  */
 
-require('./sweetalert.css');
+if (typeof window !== 'undefined') {
+  require('./sweetalert.css');
+}
 
 const swal = require('./core').default;
 
