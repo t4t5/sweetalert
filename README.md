@@ -4,12 +4,14 @@
   </a>
 </p>
 
-<blockquote align="center">
+<p align="center">
   A beautiful replacement for JavaScript's "alert"
-</blockquote>
+</p>
 
-<a href="https://badge.fury.io/js/sweetalert"><img src="https://badge.fury.io/js/sweetalert.svg" alt="npm version" height="18"></a>
-[![Build Status](https://travis-ci.org/t4t5/sweetalert.svg?branch=master)](https://travis-ci.org/t4t5/sweetalert)
+<p align="center">
+  <a href="https://badge.fury.io/js/sweetalert"><img src="https://badge.fury.io/js/sweetalert.svg" alt="npm version" height="18"></a>
+  <a href="https://travis-ci.org/t4t5/sweetalert"><img src="https://travis-ci.org/t4t5/sweetalert.svg" alt="Build status" /><a>
+</p>
 
 <p align="center">
   <img alt="A success modal" src="https://raw.githubusercontent.com/t4t5/sweetalert-beta/master/assets/swal.gif?token=ACenBFK2hjtHa_v6hb_sZqLtcbqzmOtLks5ZsUa8wA%3D%3D">
