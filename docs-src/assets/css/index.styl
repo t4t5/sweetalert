@@ -17,6 +17,16 @@ $modal-width = 409px;
     bottom: 0;
     -webkit-clip-path: url("#top-transition-clip-shape");
     clip-path: url("#top-transition-clip-shape");
+
+    /*
+     * For some reason, clip path makes the whole page
+     * flicker in Mobile Safari. 
+     * So we disable it for mobile.
+     */
+    @media all and (max-width: $phablet-width) {
+      -webkit-clip-path: none;
+      clip-path: none;
+    }
   }
 
   .swal-modal-example {
@@ -262,6 +272,10 @@ retina-bg(namespace, extension = 'png') {
   padding: 40px 0;
   -webkit-clip-path: url("#customization-transition-clip-shape");
   clip-path: url("#customization-transition-clip-shape");
+  @media all and (max-width: $phablet-width) {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
 
   h3 {
     font-weight: 400;
