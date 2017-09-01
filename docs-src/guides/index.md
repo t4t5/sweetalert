@@ -12,19 +12,18 @@ NPM combined with a tool like [Browserify](http://browserify.org) or [Webpack](h
 npm install sweetalert --save
 ```
 
-## Bower
+Then, simply import it into your application:
 
-```bash
-bower install sweetalert
+```javascript
+import swal from 'sweetalert';
 ```
 
 ## CDN
 
-You can also find SweetAlert on [unpkg](unpkg.com/sweetalert) and [cdnjs](https://cdnjs.com/libraries/sweetalert).
+You can also find SweetAlert on [unpkg](unpkg.com/sweetalert) and [cdnjs](https://cdnjs.com/libraries/sweetalert) and use the global `swal` variable.
 
 ```html
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/sweetalert/dist/sweetalert.css" />
 ```
 
 # Getting started

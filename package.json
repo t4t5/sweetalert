@@ -11,7 +11,7 @@
     "test": "node_modules/.bin/jest",
     "build": "node_modules/.bin/webpack -p",
     "docs": "node_modules/.bin/webpack -p && node_modules/jus/cli.js serve docs-src",
-    "docsbuild": "node_modules/jus/cli.js build docs-src docs"
+    "builddocs": "node_modules/jus/cli.js build docs-src docs"
   },
   "repository": {
     "type": "git",

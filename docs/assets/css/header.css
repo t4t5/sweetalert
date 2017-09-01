@@ -12,15 +12,35 @@
   width: 162px;
   height: 36px;
   background-image: url("/assets/images/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   float: left;
   margin-top: 22px;
   margin-left: 15px;
+}
+@media all and (max-width: $phablet-width) {
+  .global-header .logo {
+    float: none;
+    height: 29px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 }
 .global-header nav {
   font-size: 17px;
   color: $main-color;
   float: right;
   margin-top: 29px;
+}
+@media all and (max-width: $phablet-width) {
+  .global-header nav {
+    float: none;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 }
 .global-header nav a {
   position: relative;
@@ -51,6 +71,7 @@
 }
 .global-header ul {
   white-space: nowrap;
+  padding: 0;
 }
 .global-header ul li {
   display: inline-block;

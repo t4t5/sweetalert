@@ -3,6 +3,11 @@
   position: relative;
   padding-top: $header-height;
 }
+@media all and (max-width: $tablet-width) {
+  .landing-top {
+    height: 600px;
+  }
+}
 .landing-top .bg {
   background-image: linear-gradient(-132deg, #ff7d79 0%, #f28b74 92%);
   position: absolute;
@@ -23,13 +28,27 @@
   box-shadow: 0 5px 22px 0 rgba(0,0,0,0.2);
   border-radius: 8px;
   margin-top: 59px;
-  position: absolute;
-  z-index: 10;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
   transition: height 0.3s;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top .swal-modal-example {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
+@media all and (max-width: $mobile-width) {
+  .landing-top .swal-modal-example {
+    width: 100%;
+  }
 }
 .landing-top .swal-modal-example[data-type="success"] {
   height: 292px;
@@ -75,10 +94,25 @@
   margin-top: 61px;
   padding-left: 473px;
 }
+@media all and (max-width: $tablet-width) {
+  .landing-top .desc {
+    display: block;
+    max-width: none;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+}
 .landing-top h2 {
   font-size: 30px;
   line-height: 51px;
   font-weight: 300;
+}
+@media all and (max-width: $small-width) {
+  .landing-top h2 {
+    font-size: 25px;
+    margin-top: -20px;
+  }
 }
 .landing-top .text-rotater {
   display: block;
@@ -97,6 +131,12 @@
   border-radius: 7px;
   max-width: 357px;
   padding: 12px;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top .install {
+    margin: 0 auto;
+    text-align: left;
+  }
 }
 .landing-top .install .button {
   background: rgba(255,255,255,0.39);
@@ -138,6 +178,11 @@
   display: inline-block;
   vertical-align: middle;
 }
+@media all and (max-width: $phablet-width) {
+  .comparison-container .code-container {
+    width: 100%;
+  }
+}
 .comparison-container .versus {
   width: 35px;
   height: 33px;
@@ -145,6 +190,12 @@
   display: inline-block;
   vertical-align: middle;
   margin: 0 30px;
+}
+@media all and (max-width: $phablet-width) {
+  .comparison-container .versus {
+    margin: 30px;
+    margin-bottom: -10px;
+  }
 }
 .comparison-container h5 {
   font-size: 13px;

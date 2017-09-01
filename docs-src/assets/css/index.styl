@@ -4,6 +4,9 @@ $modal-width = 409px;
   height: 370px;
   position: relative;
   padding-top: $header-height;
+  @media all and (max-width: $tablet-width) {
+    height: 600px;
+  }
 
   .bg {
     background-image: linear-gradient(-132deg, #FF7D79 0%, #F28B74 92%);
@@ -26,14 +29,24 @@ $modal-width = 409px;
     box-shadow: 0 5px 22px 0 rgba(0,0,0,0.20);
     border-radius: 8px;
     margin-top: 59px;
-    //position: relative;
-    position: absolute;
-    z-index: 10;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
     overflow: hidden;
     transition: height 0.3s;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    @media all and (max-width: $tablet-width) {
+      position: relative;
+      display: block;
+      margin: 20px auto;
+    }
+    @media all and (max-width: $mobile-width) {
+      width: 100%;
+    }
+
     &[data-type="success"] {
       height: 292px;
     }
@@ -83,12 +96,23 @@ $modal-width = 409px;
     vertical-align: middle;
     margin-top: 61px;
     padding-left: 473px;
+    @media all and (max-width: $tablet-width) {
+      display: block;
+      max-width: none;
+      padding-left: 0;
+      margin-left: 0;
+      text-align: center;
+    }
   }
 
   h2 {
     font-size: 30px;
     line-height: 51px;
     font-weight: 300;
+    @media all and (max-width: $small-width) {
+      font-size: 25px;
+      margin-top: -20px;
+    }
   }
 
   .text-rotater {
@@ -111,6 +135,10 @@ $modal-width = 409px;
     border-radius: 7px;
     max-width: 357px;
     padding: 12px;
+    @media all and (max-width: $tablet-width) {
+      margin: 0 auto;
+      text-align: left;
+    }
 
     .button {
       background: rgba(255,255,255,0.39);
@@ -156,6 +184,9 @@ $modal-width = 409px;
     width: calc(50% - 60px);
     display: inline-block;
     vertical-align: middle;
+    @media all and (max-width: $phablet-width) {
+      width: 100%;
+    }
   }
 
   .versus {
@@ -165,6 +196,10 @@ $modal-width = 409px;
     display: inline-block;
     vertical-align: middle;
     margin: 0 30px;
+    @media all and (max-width: $phablet-width) {
+      margin: 30px;
+      margin-bottom: -10px;
+    }
   }
 
   h5 {

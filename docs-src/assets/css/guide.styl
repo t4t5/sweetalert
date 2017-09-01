@@ -12,6 +12,15 @@ $side-menu-width = 225px;
   padding-left: 20px;
   position: fixed;
   top: 88px;
+  @media all and (max-width: $phablet-width) {
+    float: none;
+    position: static;
+    margin-top: 120px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -60px;
+    padding-left: 0;
+  }
 
   .title {
     font-size: 20px;
@@ -43,6 +52,11 @@ $side-menu-width = 225px;
   font-size: 16px;
   color: rgba(0,0,0,0.59);
   line-height: 29px;
+  @media all and (max-width: $phablet-width) {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+  }
 
   h1 {
     padding-top: 90px;

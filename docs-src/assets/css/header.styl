@@ -12,9 +12,19 @@
     width: 162px;
     height: 36px;
     background-image: url("/assets/images/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
     float: left;
     margin-top: 22px;
     margin-left: 15px;
+    @media all and (max-width: $phablet-width) {
+      float: none;
+      height: 29px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
   }
 
   nav {
@@ -22,6 +32,12 @@
     color: $main-color;
     float: right;
     margin-top: 29px;
+    @media all and (max-width: $phablet-width) {
+      float: none;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 10px;
+    }
 
     a {
       position: relative;
@@ -55,6 +71,7 @@
 
   ul {
     white-space: nowrap;
+    padding: 0;
 
     li {
       display: inline-block;
