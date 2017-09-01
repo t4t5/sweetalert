@@ -1,39 +1,42 @@
-const useCases = [
-  {
-    text: "success messages",
-    className: 'success',
-  },
-  {
-    text: "error messages",
-    className: 'error',
-  },
-  {
-    text: "warning modals",
-    className: 'warning',
-  },
-];
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
 
-let currentIndex = 0;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var useCases = [{
+  text: "success messages",
+  className: 'success'
+}, {
+  text: "error messages",
+  className: 'error'
+}, {
+  text: "warning modals",
+  className: 'warning'
+}];
 
-const initRotater = () => {
+var currentIndex = 0;
+
+var initRotater = function initRotater() {
   updateUseCase(true);
-  setInterval(updateUseCase, 4000); 
-}
+  setInterval(updateUseCase, 4000);
+};
 
-const updateUseCase = (isInitial) => {
-  const useCase = useCases[currentIndex];
-  const nextUseCase = useCases[getNextIndex()];
+var updateUseCase = function updateUseCase(isInitial) {
+  var useCase = useCases[currentIndex];
+  var nextUseCase = useCases[getNextIndex()];
 
   updateText(useCase, nextUseCase);
   updateModal(useCase, nextUseCase, isInitial);
 
   currentIndex = getNextIndex();
-}
+};
 
-const updateModal = (useCase, nextUseCase, isInitial) => {
-  const { className } = useCase;
+var updateModal = function updateModal(useCase, nextUseCase, isInitial) {
+  var className = useCase.className;
 
-  const contentOverlayEl = document.querySelector('.modal-content-overlay');
+
+  var contentOverlayEl = document.querySelector('.modal-content-overlay');
 
   if (!contentOverlayEl) return;
 
@@ -41,14 +44,14 @@ const updateModal = (useCase, nextUseCase, isInitial) => {
     contentOverlayEl.classList.add('show');
   }
 
-  const modalEl = document.querySelector('.swal-modal-example');
+  var modalEl = document.querySelector('.swal-modal-example');
 
   modalEl.dataset.type = className;
 
-  const contentEls = document.querySelectorAll('.example-content');
+  var contentEls = document.querySelectorAll('.example-content');
 
-  setTimeout(() => {
-    contentEls.forEach(contentEl => {
+  setTimeout(function () {
+    contentEls.forEach(function (contentEl) {
       if (contentEl.classList.contains(className)) {
         contentEl.classList.add('show');
       } else {
@@ -58,35 +61,33 @@ const updateModal = (useCase, nextUseCase, isInitial) => {
 
     contentOverlayEl.classList.remove('show');
   }, 500);
-}
+};
 
-const updateText = (useCase, nextUseCase) => {
-  const { text } = useCase;
-  const { text: nextText } = nextUseCase;
+var updateText = function updateText(useCase, nextUseCase) {
+  var text = useCase.text;
+  var nextText = nextUseCase.text;
 
-  const rotatorEl = document.querySelector('.text-rotater');
+
+  var rotatorEl = document.querySelector('.text-rotater');
 
   if (!rotatorEl) return;
 
   rotatorEl.classList.add('slide-up');
 
-  setTimeout(() => {
-    rotatorEl.innerHTML = `
-      <span>${text}</span>
-      <span>${nextText}</span>
-    `;
+  setTimeout(function () {
+    rotatorEl.innerHTML = "\n      <span>" + text + "</span>\n      <span>" + nextText + "</span>\n    ";
     rotatorEl.classList.remove('slide-up');
   }, 2000);
+};
 
-}
-
-const getNextIndex = () => {
+var getNextIndex = function getNextIndex() {
   if (useCases[currentIndex + 1]) {
     return currentIndex + 1;
   } else {
     return 0;
   }
-}
+};
 
-export default initRotater();
+exports.default = initRotater();
 
+},{}]},{},[1]);

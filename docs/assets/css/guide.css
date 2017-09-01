@@ -1,0 +1,199 @@
+.page-content {
+  $mobile-breakpoint: 880px;
+}
+.page-content table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+}
+.page-content th {
+  font-size: 17px;
+  color: rgba(0,0,0,0.34);
+  padding: 20px 15px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.page-content thead > tr {
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+.page-content tr {
+  text-align: left;
+  box-shadow: 0px -1px 0px rgba(0,0,0,0.15);
+}
+.page-content tr:first-child {
+  box-shadow: none;
+}
+.page-content td {
+  padding: 17px;
+}
+.page-content td:first-child > code {
+  color: #2e9fef;
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 0;
+}
+@media all and (min-width: mobile-breakpoint) {
+  .page-content tbody tr:nth-child(1) {
+    box-shadow: none;
+  }
+}
+@media all and (max-width: mobile-breakpoint) {
+  .page-content table,
+  .page-content thead,
+  .page-content tbody,
+  .page-content th,
+  .page-content td,
+  .page-content tr {
+    display: block;
+  }
+  .page-content thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .page-content tr {
+    margin-top: -1px;
+    box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.27);
+  }
+  .page-content td {
+/* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: mobile-padding;
+    min-height: 20px;
+  }
+  .page-content td::before {
+/* Now like a table header */
+    position: absolute;
+/* Top/left values mimic padding */
+    top: 15px;
+    left: 15px;
+    width: mobile-padding;
+    width: calc((mobile-padding - 35px));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    white-space: nowrap;
+    color: rgba(0,0,0,0.54);
+    font-family: page-font;
+    font-size: 16px;
+    text-transform: capitalize;
+    content: attr(data-name);
+  }
+}
+.doc-container {
+  overflow: hidden;
+}
+.side-menu {
+  width: 225px;
+  float: left;
+  padding-left: 20px;
+  position: fixed;
+  top: 88px;
+}
+.side-menu .title {
+  font-size: 20px;
+  color: rgba(0,0,0,0.63);
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 36px;
+}
+.side-menu a {
+  font-size: 17px;
+  color: rgba(0,0,0,0.42);
+  display: block;
+  margin: 18px 0;
+}
+.side-menu a:hover {
+  color: rgba(0,0,0,0.6);
+}
+.page-content {
+  float: left;
+  width: calc(100% - 225px - 20px);
+  margin-left: 225px;
+  min-height: 220px;
+  margin-top: 16px;
+  font-size: 16px;
+  color: rgba(0,0,0,0.59);
+  line-height: 29px;
+}
+.page-content h1 {
+  padding-top: 90px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+.page-content h1::before {
+  content: "#";
+  position: absolute;
+  margin-left: -23px;
+  font-size: 24px;
+  margin-top: 3px;
+  color: #f38270;
+  font-weight: 500;
+}
+.page-content h1 a {
+  font-size: 30px;
+  color: rgba(0,0,0,0.85);
+  font-weight: 600;
+}
+.page-content h2,
+.page-content h3 {
+  font-size: 20px;
+  margin-top: -70px;
+  padding-top: 100px;
+}
+.page-content h2 a,
+.page-content h3 a {
+  color: rgba(0,0,0,0.7);
+}
+.page-content ul {
+  list-style-type: disc;
+  margin-bottom: 20px;
+}
+.page-content ul li {
+  margin: 5px 0;
+}
+.page-content.api > ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+.page-content.api > ul > li h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: $main-color;
+  margin-left: -27px;
+  margin-top: 12px;
+}
+.page-content code {
+  font-family: $code-font;
+  padding: 3px 6px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #f8f8f8;
+  font-size: 14px;
+  color: $main-color;
+}
+.page-content preview-button {
+/* Matches the "real" button's height: */
+  display: block;
+  height: 44px;
+}
+.page-content button.preview {
+  margin: 20px auto;
+  width: 110px;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.page-content figcaption {
+  font-style: italic;
+}
+.swal-modal.red-bg {
+  background-color: rgba(255,0,0,0.28);
+}
