@@ -34,10 +34,10 @@ const resetModalElement = (modal: Element): void => {
 const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
   resetModalElement(modal);
 
-  const customClass = opts.class;
+  const { className } = opts;
 
-  if (customClass) {
-    modal.classList.add(customClass);
+  if (className) {
+    modal.classList.add(className);
   }
 };
 
@@ -65,4 +65,3 @@ const initModalOnce = (): void => {
 };
 
 export default initModalOnce;
-

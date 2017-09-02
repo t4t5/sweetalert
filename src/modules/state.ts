@@ -4,8 +4,11 @@ export interface SwalState {
     resolve?: Function,
     reject?: Function,
   },
-  //values: any,
   actions: any,
+};
+
+export interface ActionOptions {
+  [buttonNamespace: string]: any,
 };
 
 const defaultState: SwalState = {
@@ -24,12 +27,23 @@ export const resetState = (): void => {
  * Change what the promise resolves to when the user clicks the button.
  * This is called internally when using { input: true } for example.
  */
-export const setValueFor = (buttonKey: string, value: any) => {
-  if (!state.actions[buttonKey]) {
-    state.actions[buttonKey] = {};
+export const setActionValue = (opts: string|ActionOptions) => {
+
+  if (typeof opts === "string") {
+    return setActionValueForButton("confirm", opts);
   }
 
-  Object.assign(state.actions[buttonKey], {
+  for (let namespace in opts) {
+    setActionValueForButton(namespace, opts[namespace]);
+  }
+};
+
+const setActionValueForButton = (namespace: string, value: any) => {
+  if (!state.actions[namespace]) {
+    state.actions[namespace] = {};
+  }
+
+  Object.assign(state.actions[namespace], {
     value,
   });
 };

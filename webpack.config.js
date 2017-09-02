@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (_env, args) => {
 
@@ -12,6 +13,7 @@ module.exports = (_env, args) => {
   return {
     context: path.resolve(__dirname, 'src'),
     entry: './sweetalert.js',
+    plugins: [new BundleAnalyzerPlugin()],
 
     output: {
       path: path.resolve(__dirname, BUILD_PATH),

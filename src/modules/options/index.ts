@@ -1,12 +1,12 @@
 import { SwalParams } from '../../core';
 
-import { 
+import {
   throwErr,
   isPlainObject,
   ordinalSuffixOf,
 } from '../utils';
 
-import { 
+import {
   ButtonList,
   getButtonListOpts,
   defaultButtonList
@@ -26,7 +26,7 @@ export interface SwalOptions {
   icon: string,
   buttons: ButtonList,
   content: ContentOptions,
-  class: string,
+  className: string,
   clickOutside: boolean,
   dangerMode: boolean,
 };
@@ -37,7 +37,7 @@ const defaultOpts: SwalOptions = {
   icon: null,
   buttons: defaultButtonList,
   content: null,
-  class: null,
+  className: null,
   clickOutside: true,
   dangerMode: false,
 };
@@ -64,7 +64,7 @@ const pickButtonParam = (opts: any): object => {
 };
 
 // Example 0 -> 1st
-const indexToOrdinal = (index: number): string => ordinalSuffixOf(index + 1); 
+const indexToOrdinal = (index: number): string => ordinalSuffixOf(index + 1);
 
 const invalidParam = (param: any, index: number): void => {
   throwErr(`${indexToOrdinal(index)} argument ('${param}') is invalid`);
@@ -174,4 +174,3 @@ export const getOpts = (...params: SwalParams): SwalOptions => {
 
   return Object.assign({}, defaultOpts, opts);
 };
-

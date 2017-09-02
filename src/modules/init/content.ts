@@ -1,7 +1,7 @@
 import { ContentOptions } from '../options/content';
 import { injectElIntoModal } from './modal';
 import { contentMarkup } from '../markup';
-import { setValueFor } from '../state';
+import { setActionValue } from '../state';
 import { onAction } from '../actions';
 
 import CLASS_NAMES from '../class-list';
@@ -18,7 +18,7 @@ const addInputEvents = (input: HTMLElement): void => {
   input.addEventListener('input', (e) => {
     const target = e.target as HTMLInputElement;
     const text = target.value;
-    setValueFor('confirm', text);
+    setActionValue(text);
   });
 
   input.addEventListener('keyup', (e) => {
@@ -34,7 +34,7 @@ const addInputEvents = (input: HTMLElement): void => {
    */
   setTimeout(() => {
     input.focus();
-    setValueFor('confirm', '');
+    setActionValue('');
   }, 0);
 
 };

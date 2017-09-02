@@ -8,17 +8,21 @@ import { ButtonList, ButtonOptions } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
 
 import { onAction } from '../actions';
-import { setValueFor, setActionOptionsFor } from '../state';
+import { 
+  setActionValue, 
+  setActionOptionsFor, 
+  ActionOptions,
+} from '../state';
 
 /*
  * Generate a button, with a container element,
  * the right class names, the text, and an event listener.
  * IMPORTANT: This will also add the button's action, which can be triggered even if the button element itself isn't added to the modal.
  */
-const getButton = (namespace: string, { 
-  text, 
-  value, 
-  class: customClass,
+const getButton = (namespace: string, {
+  text,
+  value,
+  className,
   closeModal,
 }: ButtonOptions, dangerMode: boolean): Node => {
   const buttonContainer: any = stringToNode(buttonMarkup);
@@ -28,8 +32,8 @@ const getButton = (namespace: string, {
   const btnNamespaceClass = `${BUTTON}--${namespace}`;
   buttonEl.classList.add(btnNamespaceClass);
 
-  if (customClass) {
-    buttonEl.classList.add(customClass);
+  if (className) {
+    buttonEl.classList.add(className);
   }
 
   if (dangerMode && namespace === 'confirm') {
@@ -38,7 +42,10 @@ const getButton = (namespace: string, {
 
   buttonEl.textContent = text;
 
-  setValueFor(namespace, value);
+  let actionValues: ActionOptions = {};
+  actionValues[namespace] = value;
+  setActionValue(actionValues);
+
   setActionOptionsFor(namespace, {
     closeModal,
   });
@@ -73,9 +80,8 @@ const initButtons = (buttons: ButtonList, dangerMode: boolean): void => {
    * point in keeping it:
    */
   if (footerEl.children.length === 0) {
-    footerEl.remove(); 
+    footerEl.remove();
   }
 };
 
 export default initButtons;
-

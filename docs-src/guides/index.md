@@ -286,7 +286,7 @@ class MyInput extends Component {
      * This will update the value that the confirm
      * button resolves to:
      */
-    swal.setValueFor('confirm', text);
+    swal.setActionValue('confirm', text);
   }
 
   render() {
@@ -325,7 +325,7 @@ swal({
 
 This might look very complex at first, but it's actually pretty simple. All we're doing is creating an input tag as a React component. We then extract its DOM node and pass it into under the `swal` function's `content` option to render it as an unstyled element.
 
-The only code that's specific to SweetAlert is the `swal.setValueFor()` and the `swal()` call at the end. The rest is just basic React and JavaScript.
+The only code that's specific to SweetAlert is the `swal.setActionValue()` and the `swal()` call at the end. The rest is just basic React and JavaScript.
 
 <figure align="center">
   <img src="/assets/images/modal-fb-example@2x.png" alt="Facebook modal" width="400" />
@@ -339,16 +339,16 @@ The only code that's specific to SweetAlert is the `swal.setValueFor()` and the 
 
 SweetAlert 2.0 introduces some important breaking changes in order to make the library easier to use and more flexible.
 
-The most important change is that callback functions have been deprecated in favour of [promises](#using-promises).
+The most important change is that callback functions have been deprecated in favour of [promises](#using-promises), and that you no longer have to import any external CSS file.
 
 Below are some additional deprecated options along with their replacements:
 
 - `type` and `imageUrl` have been replaced with a single `icon` option. If you're using the shorthand version (`swal("Hi", "Hello world", "warning")`) you don't have to change anything.
 - When using a single string parameter (e.g. `swal("Hello world!")`), that parameter will be the modal's `text` instead of its `title`.
-- `customClass` is now just `class`.
+- `customClass` is now `className`.
 - `imageSize` is no longer used. Instead, you should specify dimension restrictions in CSS if necessary. If you have a special use case, you can give your modal a custom class.
 - `showCancelButton` and `showConfirmButton` are no longer needed. Instead, you can set `buttons: true` to show both buttons, or `buttons: false` to hide all buttons. By default, only the confirm button is shown.
 - `confirmButtonText` and `cancelButtonText` are no longer needed. Instead, you can set `button: "foo"` to set the text on the confirm button to "foo", or `buttons: ["foo", "bar"]` to set the text on the cancel button to "foo" and the text on the confirm button to "bar".
-- `confirmButtonColor` is no longer used. Instead, you should specify all stylistic changes through CSS. As a useful shorthand, you can set `dangerMode: true` to make the confirm button red. Otherwise, you can specify a class in the [button object](/api).
-- `type: "input"`, `inputType`, `inputValue` and `inputPlaceholder` have all been replaced with the `content` option. You can either specify `content: "input"` to get the default options, or you can customize it further using the [content object](/api).
+- `confirmButtonColor` is no longer used. Instead, you should specify all stylistic changes through CSS. As a useful shorthand, you can set `dangerMode: true` to make the confirm button red. Otherwise, you can specify a class in the [button object](/docs#buttons).
+- `type: "input"`, `inputType`, `inputValue` and `inputPlaceholder` have all been replaced with the `content` option. You can either specify `content: "input"` to get the default options, or you can customize it further using the [content object](/docs#content).
 

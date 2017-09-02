@@ -26,7 +26,7 @@ layout: docs
 - ### `title`
 
   **Type:** `string`
-  
+
   **Default:** `""` (*empty string*)
 
   **Description:**
@@ -78,7 +78,8 @@ layout: docs
     text: "OK",
     value: true,
     visible: true,
-    class: ""
+    className: "",
+    closeModal: true,
   }
   ```
 
@@ -101,14 +102,14 @@ layout: docs
     },
   });
   ```
-  <preview-button></preview-button> 
+  <preview-button></preview-button>
 
   ```js
   swal("Hello world!", {
     button: false,
   });
   ```
-  <preview-button></preview-button> 
+  <preview-button></preview-button>
 
 
 - ### `buttons`
@@ -122,23 +123,25 @@ layout: docs
       text: "Cancel",
       value: null,
       visible: false,
-      class: "",
+      className: "",
+      closeModal: true,
     },
     confirm: {
       text: "OK",
       value: true,
       visible: true,
-      class: "",
+      className: "",
+      closeModal: true
     }
   }
   ```
-  
+
   **Description:**
-  
+
   Specify the exact amount of buttons and their behaviour. If you use an array, you can set the elements as strings (to set only the text), a list of `ButtonOptions`, or a combination of both. You can also set one of the elements to `true` to simply get the default options.
 
   If you want more than just the predefined cancel and confirm buttons, you need to specify a `ButtonList` object, with keys (the button's namespace) pointing to `ButtonOptions`.
-  
+
   You can also specify `false` to hide all buttons (same behaviour as the `button` option).
 
   **Examples:**
@@ -232,7 +235,7 @@ layout: docs
   <preview-button></preview-button>
 
 
-- ### `class`
+- ### `className`
 
   **Type:** `string`
 
@@ -246,7 +249,7 @@ layout: docs
 
   ```js
     swal("Hello world!", {
-      class: "red-bg",
+      className: "red-bg",
     });
   ```
   <preview-button></preview-button>
@@ -298,7 +301,8 @@ layout: docs
 | ---- | ----------- | ------- |
 | `close` | Closes the currently open SweetAlert | `swal.close()` |
 | `getState` | Get the state of the current SweetAlert modal. | `swal.getState()` |
-| `setValueFor` | Change the promised value of one of the modal's buttons. | `swal.setValueFor('confirm', 'Text from input')` |
+| `setActionValue` | Change the promised value of one of the modal's buttons. | `swal.setActionValue('confirm', 'Text from input')` |
+| `stopLoading` | Removes all loading states on the modal's buttons. Use it in combination with the button option `closeModal: false`.
 
 
 # Theming
@@ -390,5 +394,3 @@ layout: docs
   }
   ```
   <preview-button></preview-button>
-
-

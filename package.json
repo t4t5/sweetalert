@@ -3,9 +3,6 @@
   "version": "2.0.0",
   "description": "A beautiful replacement for JavaScript's \"alert\"",
   "main": "dist/sweetalert.min.js",
-  "directories": {
-    "example": "example"
-  },
   "scripts": {
     "buildtest": "node_modules/.bin/webpack -p && jest",
     "test": "node_modules/.bin/jest",
@@ -66,6 +63,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "2.3.3",
+    "webpack-bundle-analyzer": "2.9.0",
     "webpack-dev-server": "2.4.2",
     "webpack-merge": "4.1.0"
   },

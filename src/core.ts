@@ -13,7 +13,7 @@ import {
   stopLoading,
 } from './modules/actions';
 
-import state, { setValueFor, SwalState } from './modules/state';
+import state, { setActionValue, SwalState } from './modules/state';
 
 import {
   SwalOptions,
@@ -26,7 +26,7 @@ interface SweetAlert {
   (...params: SwalParams): object,
   close? (namespace: string): void,
   getState? (): SwalState,
-  setValueFor? (buttonKey: string, value: any): void,
+  setActionValue? (buttonKey: string, value: any): void,
   stopLoading? (): void,
 };
 
@@ -54,7 +54,7 @@ const swal:SweetAlert = (...args) => {
 
 swal.close = onAction;
 swal.getState = getState;
-swal.setValueFor = setValueFor;
+swal.setActionValue = setActionValue;
 swal.stopLoading = stopLoading;
 
 export default swal;

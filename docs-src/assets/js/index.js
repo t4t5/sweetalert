@@ -30,7 +30,7 @@ class MyInput extends Component {
      * This will update the value that the confirm
      * button resolves to:
      */
-    swal.setValueFor('confirm', text);
+    swal.setActionValue('confirm', text);
   }
  
   render() {

@@ -4,7 +4,7 @@ export interface ButtonOptions {
   visible: boolean,
   text: string,
   value: any,
-  class: string,
+  className: string,
   closeModal: boolean,
 };
 
@@ -16,11 +16,11 @@ const defaultButton: ButtonOptions = {
   visible: true,
   text: null,
   value: null,
-  class: '',
+  className: '',
   closeModal: true,
 };
 
-const defaultCancelButton: ButtonOptions = Object.assign({}, 
+const defaultCancelButton: ButtonOptions = Object.assign({},
   defaultButton, {
     visible: false,
     text: "Cancel",
@@ -28,7 +28,7 @@ const defaultCancelButton: ButtonOptions = Object.assign({},
   }
 );
 
-const defaultConfirmButton: ButtonOptions = Object.assign({}, 
+const defaultConfirmButton: ButtonOptions = Object.assign({},
   defaultButton, {
     text: "OK",
     value: true,
@@ -106,7 +106,7 @@ const normalizeButtonListObj = (obj: any): ButtonList => {
   }
 
   /*
-   * We always need a cancel action, 
+   * We always need a cancel action,
    * even if the button isn't visible
    */
   if (!buttons.cancel) {
@@ -124,19 +124,30 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
      * result: only set the confirm button text to "Accept"
      */
     case 1:
+      /*
       buttonListObj[CANCEL_KEY] = Object.assign({}, defaultCancelButton, {
         visible: false,
       });
+       */
 
-      buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[0]);
+      if (arr[0]) {
+        buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[0]);
+      }
+
       break;
 
     /* input: ["No", "Ok!"]
      * result: Set cancel button to "No", and confirm to "Ok!"
      */
     case 2:
-      buttonListObj[CANCEL_KEY] = normalizeButton(CANCEL_KEY, arr[0]);
-      buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[1]);
+      if (arr[0]) {
+        buttonListObj[CANCEL_KEY] = normalizeButton(CANCEL_KEY, arr[0]);
+      }
+
+      if (arr[1]) {
+        buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[1]);
+      }
+
       break;
 
     default:
@@ -164,4 +175,3 @@ export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
 
   return buttonListObj;
 };
-
