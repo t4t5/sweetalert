@@ -4,11 +4,11 @@
   "description": "A beautiful replacement for JavaScript's \"alert\"",
   "main": "dist/sweetalert.min.js",
   "scripts": {
-    "buildtest": "node_modules/.bin/webpack -p && jest",
-    "test": "node_modules/.bin/jest",
     "build": "node_modules/.bin/webpack -p",
-    "docs": "node_modules/.bin/webpack -p && node_modules/jus/cli.js serve docs-src",
-    "builddocs": "node_modules/jus/cli.js build docs-src docs"
+    "buildtest": "npm run build && jest",
+    "test": "node_modules/.bin/jest",
+    "builddocs": "node_modules/jus/cli.js build docs-src docs",
+    "docs": "npm run build && node_modules/jus/cli.js serve docs-src"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
     "babel-preset-react": "6.24.1",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
-    "css-loader": "0.28.0",
+    "css-loader": "0.28.7",
     "exports-loader": "0.6.4",
     "expose-loader": "0.7.3",
     "glob": "^5.0.3",
@@ -54,7 +54,7 @@
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "source-map-loader": "0.2.1",
-    "style-loader": "0.16.1",
+    "style-loader": "0.18.2",
     "ts-jest": "19.0.14",
     "ts-loader": "2.0.3",
     "tslint": "5.1.0",
@@ -62,7 +62,7 @@
     "typescript": "2.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "2.3.3",
+    "webpack": "3.5.5",
     "webpack-bundle-analyzer": "2.9.0",
     "webpack-dev-server": "2.4.2",
     "webpack-merge": "4.1.0"

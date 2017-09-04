@@ -13,7 +13,10 @@ module.exports = (_env, args) => {
   return {
     context: path.resolve(__dirname, 'src'),
     entry: './sweetalert.js',
-    plugins: [new BundleAnalyzerPlugin()],
+    plugins: [
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new BundleAnalyzerPlugin(),
+    ],
 
     output: {
       path: path.resolve(__dirname, BUILD_PATH),
