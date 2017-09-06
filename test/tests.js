@@ -139,3 +139,88 @@ test("prompt functionality works", function() {
   ok($modal.find('fieldset input').is(':visible'));
   equal($modal.find('fieldset input').attr('placeholder'), "Placeholder text");
 });
+
+// Clicking the OK-button should trigger the callback function
+test("dismiss modal with confirm-button and callback", function(assert) {
+  var done = assert.async();
+  var _callbackWasCalled = false;
+
+  swal({
+    title: "Alert",
+    text: "Dismiss me"
+  },
+  function _callback() {
+    _callbackWasCalled = true;
+  });
+
+  var $modal = $('.sweet-alert');
+  $modal.find('button.confirm').click();
+
+  setTimeout(function() {
+    assert.ok($modal.is(':hidden'));
+    assert.ok(_callbackWasCalled);
+    done();
+  }, 1000);
+});
+
+// Clicking the confirm-button should trigger a new sweetAlert
+test("show new sweetAlert after clicking confirm", function(assert) {
+  var done = assert.async();
+
+  var testString = "Hubba hubba test string";
+
+  swal({
+    title: "Alert",
+    text: "Dismiss me",
+    showCancelButton: true,
+    closeOnConfirm: false
+  },
+  function _callback() {
+    swal(testString)
+  });
+
+  var $modal = $('.sweet-alert');
+  $modal.find('button.confirm').click();
+
+  setTimeout(function() {
+    assert.ok($modal.is(':visible'));
+    equal($modal.find('h2').text(), testString);
+    done();
+  }, 1000);
+});
+
+// Clicking the confirm-button should trigger the callback function with the argument `true`
+test("trigger callback with `true`-argument when clicking confirm", function(assert) {
+  var done = assert.async();
+
+  swal({
+    title: "Alert",
+    text: "Dismiss me",
+    showCancelButton: true
+  },
+  function _callback(wasConfirmed) {
+    equal(wasConfirmed, true);
+    done();
+  });
+
+  var $modal = $('.sweet-alert');
+  $modal.find('button.confirm').click();
+});
+
+// Clicking the cancel-button should trigger the callback function with the argument `false`
+test("trigger callback with `false`-argument when clicking cancel", function(assert) {
+  var done = assert.async();
+
+  swal({
+    title: "Alert",
+    text: "Dismiss me",
+    showCancelButton: true
+  },
+  function _callback(wasConfirmed) {
+    equal(wasConfirmed, false);
+    done();
+  });
+
+  var $modal = $('.sweet-alert');
+  $modal.find('button.cancel').click();
+});
