@@ -61,8 +61,13 @@ var handleKeyDown = function(event, params, modal) {
         $targetElement = undefined;
       }
     } else if (keyCode === 27 && params.allowEscapeKey === true) {
-      $targetElement = $cancelButton;
-      fireClick($targetElement, e);
+      if(params.fireCancelOnEscapeKey){
+        $targetElement = $cancelButton;
+        fireClick($targetElement, e);
+      } else {
+        sweetAlert.close();
+      }
+      
     } else {
       // Fallback - let the browser handle it.
       $targetElement = undefined;
