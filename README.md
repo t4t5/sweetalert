@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://sweetalert.js.org">
-    <img alt="SweetAlert" src="https://github.com/t4t5/sweetalert-beta/blob/9917edaca3468edbd8df4935c04461a3da466987/assets/logotype.png" width="300">
+    <img alt="SweetAlert" src="https://github.com/t4t5/sweetalert/blob/e3c2085473a0eb5a6b022e43eb22e746380bb955/assets/logotype.png" width="300">
   </a>
 </p>
 
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img alt="A success modal" src="https://github.com/t4t5/sweetalert-beta/blob/9917edaca3468edbd8df4935c04461a3da466987/assets/swal.gif">
+  <img alt="A success modal" src="https://github.com/t4t5/sweetalert/blob/e3c2085473a0eb5a6b022e43eb22e746380bb955/assets/swal.gif">
 </p>
 
 
