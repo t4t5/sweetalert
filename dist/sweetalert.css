@@ -152,6 +152,8 @@ body.stop-scrolling {
         opacity: 0.5; }
     .sweet-alert input::-moz-placeholder {
       color: #bdbdbd; }
+    .sweet-alert input::-ms-clear {
+      display: none; }
     .sweet-alert input:-ms-input-placeholder {
       color: #bdbdbd; }
     .sweet-alert input::-webkit-input-placeholder {
@@ -285,7 +287,8 @@ body.stop-scrolling {
         border-radius: 50%;
         margin-left: -3px;
         top: 19px;
-        background-color: #C9DAE1; }
+        background-color: #C9DAE1;
+        left: 50%; }
     .sweet-alert .sa-icon.sa-success {
       border-color: #A5DC86; }
       .sweet-alert .sa-icon.sa-success::before, .sweet-alert .sa-icon.sa-success::after {
