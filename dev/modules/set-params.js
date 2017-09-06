@@ -36,7 +36,16 @@ var setParameters = function(params) {
   /*
    * Text
    */
-  $text.innerHTML = params.html ? params.text : escapeHtml(params.text || '').split('\n').join('<br>');
+  if (params.html) {
+    if (params.text instanceof HTMLElement) {
+      $text.innerHTML = '';
+      $text.appendChild(params.text);
+    } else {
+      $text.innerHTML = params.text;
+    }
+  } else {
+    $text.innerHTML = escapeHtml(params.text || '').split('\n').join('<br>');
+  }
   if (params.text) show($text);
 
   /*
