@@ -4,10 +4,17 @@ import {
 
 describe("return buttons options", () => {
 
-  test("returns empty obj on false", () => {
+  test("returns invisible buttons on false", () => {
     const opts = getButtonListOpts(false);
 
-    expect(opts).toMatchObject({});
+    expect(opts).toMatchObject({
+      cancel: {
+        visible: false,
+      },
+      confirm: {
+        visible: false,
+      },
+    });
   });
 
   test("returns default obj on true", () => {
@@ -34,9 +41,10 @@ describe("return buttons options", () => {
   test("returns single button on string", () => {
     const opts = getButtonListOpts("Test");
 
-    expect(opts.cancel).toBeFalsy();
-
     expect(opts).toMatchObject({
+      cancel: {
+        visible: false,
+      },
       confirm: {
         closeModal: true,
         text: "Test",
@@ -68,14 +76,15 @@ describe("return buttons options", () => {
   test("returns only cancel button when using boolean in array", () => {
     const opts = getButtonListOpts([true, false]);
 
-    expect(opts.confirm).toBeFalsy();
-
     expect(opts).toMatchObject({
       cancel: {
         closeModal: true,
         text: "Cancel",
         value: null,
         visible: true,
+      },
+      confirm: {
+        visible: false,
       },
     });
   });

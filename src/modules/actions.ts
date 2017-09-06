@@ -1,4 +1,5 @@
 import { getNode } from './utils';
+import { CANCEL_KEY } from './options/buttons';
 
 import CLASS_NAMES  from './class-list';
 
@@ -29,7 +30,7 @@ const hideModal = (): void => {
  * Triggers when the user presses any button, or
  * hits Enter inside the input:
  */
-export const onAction = (namespace: string = 'cancel'): void => {
+export const onAction = (namespace: string = CANCEL_KEY): void => {
   const { value, closeModal } = state.actions[namespace];
 
   if (closeModal === false) {
@@ -50,6 +51,7 @@ export const onAction = (namespace: string = 'cancel'): void => {
 export const getState = (): SwalState => {
   const publicState = Object.assign({}, state);
   delete publicState.promise;
+  delete publicState.timer;
 
   return publicState;
 };

@@ -339,16 +339,22 @@ The only code that's specific to SweetAlert is the `swal.setActionValue()` and t
 
 SweetAlert 2.0 introduces some important breaking changes in order to make the library easier to use and more flexible.
 
-The most important change is that callback functions have been deprecated in favour of [promises](#using-promises), and that you no longer have to import any external CSS file.
+The most important change is that callback functions have been deprecated in favour of [promises](#using-promises), and that you no longer have to import any external CSS file (since the styles are now bundled in the .js-file).
 
 Below are some additional deprecated options along with their replacements:
 
-- `type` and `imageUrl` have been replaced with a single `icon` option. If you're using the shorthand version (`swal("Hi", "Hello world", "warning")`) you don't have to change anything.
 - When using a single string parameter (e.g. `swal("Hello world!")`), that parameter will be the modal's `text` instead of its `title`.
+- `type` and `imageUrl` have been replaced with a single `icon` option. If you're using the shorthand version (`swal("Hi", "Hello world", "warning")`) you don't have to change anything.
 - `customClass` is now `className`.
 - `imageSize` is no longer used. Instead, you should specify dimension restrictions in CSS if necessary. If you have a special use case, you can give your modal a custom class.
 - `showCancelButton` and `showConfirmButton` are no longer needed. Instead, you can set `buttons: true` to show both buttons, or `buttons: false` to hide all buttons. By default, only the confirm button is shown.
 - `confirmButtonText` and `cancelButtonText` are no longer needed. Instead, you can set `button: "foo"` to set the text on the confirm button to "foo", or `buttons: ["foo", "bar"]` to set the text on the cancel button to "foo" and the text on the confirm button to "bar".
 - `confirmButtonColor` is no longer used. Instead, you should specify all stylistic changes through CSS. As a useful shorthand, you can set `dangerMode: true` to make the confirm button red. Otherwise, you can specify a class in the [button object](/docs#buttons).
+- `closeOnConfirm` and `closeOnCancel` are no longer used. Instead, you can set the `closeModal` parameter in the [button options](/docs#buttons).
+- `showLoaderOnConfirm` is no longer necessary. Your button will automatically show a loding animation when its `closeModal` parameter is set to `false`.
+- `animation` has been deprecated. All stylistic changes can instead be applied through CSS and a custom modal class.
 - `type: "input"`, `inputType`, `inputValue` and `inputPlaceholder` have all been replaced with the `content` option. You can either specify `content: "input"` to get the default options, or you can customize it further using the [content object](/docs#content).
+- `html` is no longer used. Instead use the [content object](/docs#content).
+- `allowEscapeKey` is now `closeOnEsc` for clarity.
+- `allowClickOutside` is now `closeOnClickOutside` for clarity.
 

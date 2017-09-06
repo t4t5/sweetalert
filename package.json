@@ -8,7 +8,8 @@
     "buildtest": "npm run build && jest",
     "test": "node_modules/.bin/jest",
     "builddocs": "node_modules/jus/cli.js build docs-src docs",
-    "docs": "npm run build && node_modules/jus/cli.js serve docs-src"
+    "docs": "npm run build && node_modules/jus/cli.js serve docs-src",
+    "prepare": "npm run build && npm run builddocs"
   },
   "repository": {
     "type": "git",

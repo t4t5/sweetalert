@@ -15,7 +15,7 @@ module.exports = (_env, args) => {
     entry: './sweetalert.js',
     plugins: [
       new webpack.optimize.ModuleConcatenationPlugin(),
-      new BundleAnalyzerPlugin(),
+      //new BundleAnalyzerPlugin(),
     ],
 
     output: {

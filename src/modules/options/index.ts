@@ -17,6 +17,7 @@ import {
   ContentOptions,
 } from './content';
 
+
 /*
  * The final object that we transform the given params into
  */
@@ -27,8 +28,10 @@ export interface SwalOptions {
   buttons: ButtonList,
   content: ContentOptions,
   className: string,
-  clickOutside: boolean,
+  closeOnClickOutside: boolean,
+  closeOnEsc: boolean,
   dangerMode: boolean,
+  timer: number,
 };
 
 const defaultOpts: SwalOptions = {
@@ -38,9 +41,21 @@ const defaultOpts: SwalOptions = {
   buttons: defaultButtonList,
   content: null,
   className: null,
-  clickOutside: true,
+  closeOnClickOutside: true,
+  closeOnEsc: true,
   dangerMode: false,
+  timer: null,
 };
+
+/*
+ * Default options customizeable through "setDefaults":
+ */
+let userDefaults: SwalOptions = Object.assign({}, defaultOpts);
+
+export const setDefaults = (opts: object): void => {
+  userDefaults = Object.assign({}, defaultOpts, opts);
+};
+
 
 /*
  * Since the user can set both "button" and "buttons",
@@ -172,5 +187,5 @@ export const getOpts = (...params: SwalParams): SwalOptions => {
 
   opts.content = getContentOpts(opts.content);
 
-  return Object.assign({}, defaultOpts, opts);
+  return Object.assign({}, defaultOpts, userDefaults, opts);
 };

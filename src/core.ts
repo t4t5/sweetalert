@@ -13,11 +13,16 @@ import {
   stopLoading,
 } from './modules/actions';
 
-import state, { setActionValue, SwalState } from './modules/state';
+import state, { 
+  setActionValue, 
+  ActionOptions,
+  SwalState,
+} from './modules/state';
 
 import {
   SwalOptions,
   getOpts,
+  setDefaults,
 } from './modules/options';
 
 export type SwalParams = (string|object)[];
@@ -26,8 +31,9 @@ interface SweetAlert {
   (...params: SwalParams): object,
   close? (namespace: string): void,
   getState? (): SwalState,
-  setActionValue? (buttonKey: string, value: any): void,
+  setActionValue? (opts: string|ActionOptions): void,
   stopLoading? (): void,
+  setDefaults? (opts: object): void,
 };
 
 const swal:SweetAlert = (...args) => {
@@ -36,8 +42,6 @@ const swal:SweetAlert = (...args) => {
   if (typeof window === 'undefined') return;
 
   const opts: SwalOptions = getOpts(...args);
-
-  // TODO! Check the user's defaults (use state)
 
   return new Promise((resolve, reject) => {
     state.promise = { resolve, reject };
@@ -56,6 +60,7 @@ swal.close = onAction;
 swal.getState = getState;
 swal.setActionValue = setActionValue;
 swal.stopLoading = stopLoading;
+swal.setDefaults = setDefaults;
 
 export default swal;
 

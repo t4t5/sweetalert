@@ -1,3 +1,5 @@
+import { CONFIRM_KEY } from './options/buttons';
+
 export interface SwalState {
   isOpen: boolean,
   promise: {
@@ -5,6 +7,7 @@ export interface SwalState {
     reject?: Function,
   },
   actions: any,
+  timer: number,
 };
 
 export interface ActionOptions {
@@ -15,6 +18,7 @@ const defaultState: SwalState = {
   isOpen: false,
   promise: null,
   actions: {},
+  timer: null,
 };
 
 let state: SwalState = Object.assign({}, defaultState);
@@ -30,7 +34,7 @@ export const resetState = (): void => {
 export const setActionValue = (opts: string|ActionOptions) => {
 
   if (typeof opts === "string") {
-    return setActionValueForButton("confirm", opts);
+    return setActionValueForButton(CONFIRM_KEY, opts);
   }
 
   for (let namespace in opts) {

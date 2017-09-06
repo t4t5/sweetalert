@@ -254,7 +254,7 @@ layout: docs
   ```
   <preview-button></preview-button>
 
-- ### `clickOutside`
+- ### `closeOnClickOutside`
 
   **Type:** `boolean`
 
@@ -268,7 +268,26 @@ layout: docs
 
   ```js
   swal({
-    clickOutside: false,
+    closeOnClickOutside: false,
+  });
+  ```
+  <preview-button></preview-button>
+
+- ### `closeOnEsc`
+
+  **Type:** `boolean`
+
+  **Default:** `true`
+
+  **Description:**
+
+  Decide whether the user should be able to dismiss the modal by hitting the <kbd>ESC</kbd> key, or not.
+
+  **Example:**
+
+  ```js
+  swal({
+    closeOnEsc: false,
   });
   ```
   <preview-button></preview-button>
@@ -295,14 +314,33 @@ layout: docs
   <preview-button></preview-button>
 
 
+- ### `timer`
+
+  **Type:** `number`
+
+  **Default:** `null`
+
+  **Description:**
+
+  **Example:**
+
+  ```js
+  swal("This modal will disappear soon!", {
+    buttons: false,
+    timer: 3000,
+  });
+  ```
+  <preview-button></preview-button>
+
+
 # Methods
 
 | Name | Description | Example |
 | ---- | ----------- | ------- |
-| `close` | Closes the currently open SweetAlert | `swal.close()` |
+| `close` | Closes the currently open SweetAlert, as if you pressed the cancel button. | `swal.close()` |
 | `getState` | Get the state of the current SweetAlert modal. | `swal.getState()` |
-| `setActionValue` | Change the promised value of one of the modal's buttons. | `swal.setActionValue('confirm', 'Text from input')` |
-| `stopLoading` | Removes all loading states on the modal's buttons. Use it in combination with the button option `closeModal: false`.
+| `setActionValue` | Change the promised value of one of the modal's buttons. You can either pass in just a string (by default it changes the value of the confirm button), or an object. | `swal.setActionValue({ confirm: 'Text from input' })` |
+| `stopLoading` | Removes all loading states on the modal's buttons. Use it in combination with the button option `closeModal: false`. | `swal.stopLoading()`
 
 
 # Theming

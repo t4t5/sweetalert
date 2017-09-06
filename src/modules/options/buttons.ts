@@ -12,6 +12,9 @@ export interface ButtonList {
   [buttonNamespace: string]: ButtonOptions,
 };
 
+export const CONFIRM_KEY = 'confirm';
+export const CANCEL_KEY  = 'cancel';
+
 const defaultButton: ButtonOptions = {
   visible: true,
   text: null,
@@ -34,9 +37,6 @@ const defaultConfirmButton: ButtonOptions = Object.assign({},
     value: true,
   }
 );
-
-const CONFIRM_KEY = 'confirm';
-const CANCEL_KEY  = 'cancel';
 
 export const defaultButtonList: ButtonList = {
   cancel: defaultCancelButton,
@@ -124,15 +124,9 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
      * result: only set the confirm button text to "Accept"
      */
     case 1:
-      /*
       buttonListObj[CANCEL_KEY] = Object.assign({}, defaultCancelButton, {
         visible: false,
       });
-       */
-
-      if (arr[0]) {
-        buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[0]);
-      }
 
       break;
 
@@ -140,13 +134,8 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
      * result: Set cancel button to "No", and confirm to "Ok!"
      */
     case 2:
-      if (arr[0]) {
-        buttonListObj[CANCEL_KEY] = normalizeButton(CANCEL_KEY, arr[0]);
-      }
-
-      if (arr[1]) {
-        buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[1]);
-      }
+      buttonListObj[CANCEL_KEY] = normalizeButton(CANCEL_KEY, arr[0]);
+      buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, arr[1]);
 
       break;
 
@@ -159,7 +148,7 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
 };
 
 export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
-  let buttonListObj = <any>{};
+  let buttonListObj: ButtonList = defaultButtonList;
 
   if (typeof opts === "string") {
     buttonListObj[CONFIRM_KEY] = normalizeButton(CONFIRM_KEY, opts);
@@ -169,6 +158,8 @@ export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
     buttonListObj = normalizeButtonListObj(opts);
   } else if (opts === true) {
     buttonListObj = normalizeButtonArray([true, true]);
+  } else if (opts === false) {
+    buttonListObj = normalizeButtonArray([false, false]);
   } else if (opts === undefined){
     buttonListObj = defaultButtonList;
   }

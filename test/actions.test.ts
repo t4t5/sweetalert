@@ -8,6 +8,7 @@ import {
 const { 
   OVERLAY,
   CONFIRM_BUTTON,
+  TITLE,
 } = CLASS_NAMES;
 
 afterEach(() => removeSwal());
@@ -61,3 +62,4 @@ describe("promise value", () => {
    */
 
 });
+

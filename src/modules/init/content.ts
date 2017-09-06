@@ -1,4 +1,5 @@
 import { ContentOptions } from '../options/content';
+import { CONFIRM_KEY } from '../options/buttons';
 import { injectElIntoModal } from './modal';
 import { contentMarkup } from '../markup';
 import { setActionValue } from '../state';
@@ -23,7 +24,7 @@ const addInputEvents = (input: HTMLElement): void => {
 
   input.addEventListener('keyup', (e) => {
     if (e.key === "Enter") {
-      return onAction('confirm');
+      return onAction(CONFIRM_KEY);
     }
   });
 

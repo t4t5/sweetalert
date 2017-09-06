@@ -4,7 +4,7 @@ import { injectElIntoModal } from './modal';
 import CLASS_NAMES from '../class-list';
 const { BUTTON, DANGER_BUTTON } = CLASS_NAMES;
 
-import { ButtonList, ButtonOptions } from '../options/buttons';
+import { ButtonList, ButtonOptions, CONFIRM_KEY } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
 
 import { onAction } from '../actions';
@@ -36,7 +36,7 @@ const getButton = (namespace: string, {
     buttonEl.classList.add(className);
   }
 
-  if (dangerMode && namespace === 'confirm') {
+  if (dangerMode && namespace === CONFIRM_KEY) {
     buttonEl.classList.add(DANGER_BUTTON);
   }
 

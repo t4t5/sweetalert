@@ -2,6 +2,7 @@ import state from './state';
 import { onAction } from './actions';
 import { getNode } from './utils';
 import { SwalOptions } from './options';
+import { CANCEL_KEY } from './options/buttons';
 
 import CLASS_NAMES from './class-list';
 const { MODAL, BUTTON, OVERLAY } = CLASS_NAMES;
@@ -20,7 +21,7 @@ const onKeyUp = (e: KeyboardEvent):void => {
   if (!state.isOpen) return;
 
   switch (e.key) {
-    case "Escape": return onAction('cancel');
+    case "Escape": return onAction(CANCEL_KEY);
   }
 };
 
@@ -96,21 +97,37 @@ const onOutsideClick = (e: MouseEvent): void => {
   // Don't trigger for children:
   if (overlay !== e.target) return;
 
-  return onAction('cancel');
+  return onAction(CANCEL_KEY);
 };
 
 const setClickOutside = (allow: boolean): void => {
   const overlay: HTMLElement = getNode(OVERLAY);
 
+  overlay.removeEventListener('click', onOutsideClick);
+
   if (allow) {
     overlay.addEventListener('click', onOutsideClick);
-  } else {
-    overlay.removeEventListener('click', onOutsideClick);
+  }
+};
+
+const setTimer = (ms: number): void => {
+  if (state.timer) {
+    clearTimeout(state.timer);
+  }
+
+  if (ms) {
+    state.timer = setTimeout(() => {
+      return onAction(CANCEL_KEY);
+    }, ms);
   }
 };
 
 const addEventListeners = (opts: SwalOptions):void => {
-  document.addEventListener('keyup', onKeyUp);
+  if (opts.closeOnEsc) {
+    document.addEventListener('keyup', onKeyUp);
+  } else {
+    document.removeEventListener('keyup', onKeyUp);
+  }
 
   /* So that you don't accidentally confirm something
    * dangerous by clicking enter
@@ -122,8 +139,8 @@ const addEventListeners = (opts: SwalOptions):void => {
   }
 
   setButtonTabbing();
-  setClickOutside(opts.clickOutside);
+  setClickOutside(opts.closeOnClickOutside);
+  setTimer(opts.timer);
 };
 
 export default addEventListeners;
-
