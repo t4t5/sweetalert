@@ -57,6 +57,7 @@ import setParameters from './modules/set-params';
  */
 var previousWindowKeyDown;
 var lastFocusedButton;
+var resetPage;
 
 
 /*
@@ -113,6 +114,9 @@ export default sweetAlert = swal = function() {
       // Show "Confirm" instead of "OK" if cancel button is visible
       params.confirmButtonText = params.showCancelButton ? 'Confirm' : defaultParams.confirmButtonText;
       params.confirmButtonText = argumentOrDefault('confirmButtonText');
+
+      // Reset focus (and thus page scroll)
+      resetPage = argumentOrDefault('resetPage');
 
       // Callback function when clicking on "OK"/"Cancel"
       params.doneFunction = arguments[1] || null;
@@ -229,8 +233,10 @@ sweetAlert.close = swal.close = function() {
 
   // Reset the page to its previous state
   window.onkeydown = previousWindowKeyDown;
-  if (window.previousActiveElement) {
-    window.previousActiveElement.focus();
+  if (resetPage) {
+    if (window.previousActiveElement) {
+      window.previousActiveElement.focus();
+    }
   }
   lastFocusedButton = undefined;
   clearTimeout(modal.timeout);
