@@ -322,6 +322,8 @@ layout: docs
 
   **Description:**
 
+  Closes the modal after a certain amount of time (specified in ms). Useful to combine with `buttons: false`.
+
   **Example:**
 
   ```js

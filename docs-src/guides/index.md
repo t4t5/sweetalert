@@ -20,7 +20,7 @@ import swal from 'sweetalert';
 
 ## CDN
 
-You can also find SweetAlert on [unpkg](unpkg.com/sweetalert) and [cdnjs](https://cdnjs.com/libraries/sweetalert) and use the global `swal` variable.
+You can also find SweetAlert on [unpkg](https://unpkg.com/sweetalert) and [cdnjs](https://cdnjs.com/libraries/sweetalert) and use the global `swal` variable.
 
 ```html
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -83,7 +83,7 @@ swal("Good job!", "You clicked the button!", "success", {
 });
 ```
 
-For a full list of all the available options, check out the [API docs](/api)!
+For a full list of all the available options, check out the [API docs](/docs)!
 
 ## Using promises
 
@@ -187,7 +187,7 @@ swal("A wild Pikachu appeared! What do you want to do?", {
 ```
 <preview-button></preview-button>
 
-You can check out all the available button options in the [API docs](/api).
+You can check out all the available button options in the [docs](/docs#buttons).
 
 ## AJAX requests
 
@@ -258,7 +258,7 @@ swal("Write something here:", {
 
 ...using a custom DOM node!
 
-We're going to use [React](https://facebook.github.io/react) here, since it's a well-known UI library that can help us understand how to create more complex SweetAlert interfaces in the future. If you're using something other than React, you can check out the [Library integration section](#library-integration)!
+We're going to use [React](https://facebook.github.io/react) here, since it's a well-known UI library that can help us understand how to create more complex SweetAlert interfaces, but you can use any library you want, as long as you can extract a DOM node from it!
 
 ```js
 import React, { Component } from 'react';
