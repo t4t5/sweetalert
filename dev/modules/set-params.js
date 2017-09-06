@@ -169,10 +169,10 @@ var setParameters = function(params) {
    * Custom text on cancel/confirm buttons
    */
   if (params.cancelButtonText) {
-    $cancelBtn.innerHTML = escapeHtml(params.cancelButtonText);
+    $cancelBtn.innerHTML = params.html ? params.cancelButtonText : escapeHtml(params.cancelButtonText);
   }
   if (params.confirmButtonText) {
-    $confirmBtn.innerHTML = escapeHtml(params.confirmButtonText);
+    $confirmBtn.innerHTML = params.html ? params.confirmButtonText : escapeHtml(params.confirmButtonText);
   }
 
   /*
