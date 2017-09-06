@@ -25,6 +25,22 @@ Or through npm:
 npm install sweetalert
 ```
 
+Or through Ruby Gem:
+```ruby
+gem 'sweet_alerts'
+```
+And then execute:
+
+$ bundle
+
+add below line to application.js
+```ruby
+  //= require sweetalert.min
+```
+add below line to application.css
+```ruby
+  *= require sweetalert
+```
 Alternatively, download the package and reference the JavaScript and CSS files manually:
 
 ```html
