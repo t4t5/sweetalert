@@ -186,6 +186,17 @@ ul {
   bottom: 0;
   -webkit-clip-path: url("#top-transition-clip-shape");
   clip-path: url("#top-transition-clip-shape");
+/*
+     * For some reason, clip path makes the whole page
+     * flicker in Mobile Safari. 
+     * So we disable it for mobile.
+     */
+}
+@media all and (max-width: 600px) {
+  .landing-top .bg {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
 }
 .landing-top .swal-modal-example {
   transform: none;
@@ -415,6 +426,12 @@ ul {
   padding: 40px 0;
   -webkit-clip-path: url("#customization-transition-clip-shape");
   clip-path: url("#customization-transition-clip-shape");
+}
+@media all and (max-width: 600px) {
+  .customize-container {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
 }
 .customize-container h3 {
   font-weight: 400;
@@ -669,6 +686,20 @@ ul {
   font-size: 14px;
   color: #f27474;
 }
+.page-content kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  font-family: sans-serif;
+}
 .page-content preview-button {
 /* Matches the "real" button's height: */
   display: block;
@@ -696,8 +727,8 @@ svg.hidden {
 .page-container {
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
   padding: 0 10px;
+  position: relative;
 }
 .preview {
   background-color: #a3dd82;

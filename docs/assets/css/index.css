@@ -17,6 +17,17 @@
   bottom: 0;
   -webkit-clip-path: url("#top-transition-clip-shape");
   clip-path: url("#top-transition-clip-shape");
+/*
+     * For some reason, clip path makes the whole page
+     * flicker in Mobile Safari. 
+     * So we disable it for mobile.
+     */
+}
+@media all and (max-width: $phablet-width) {
+  .landing-top .bg {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
 }
 .landing-top .swal-modal-example {
   transform: none;
@@ -246,6 +257,12 @@
   padding: 40px 0;
   -webkit-clip-path: url("#customization-transition-clip-shape");
   clip-path: url("#customization-transition-clip-shape");
+}
+@media all and (max-width: $phablet-width) {
+  .customize-container {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
 }
 .customize-container h3 {
   font-weight: 400;
