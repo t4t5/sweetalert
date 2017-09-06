@@ -146,6 +146,10 @@ var setParameters = function(params) {
   }
 
   /*
+   * Default focus on cancel
+   */
+   modal.setAttribute('data-has-default-cancel-focus',params.focusOnCancel);
+  /*
    * Show cancel button?
    */
   modal.setAttribute('data-has-cancel-button', params.showCancelButton);
@@ -189,6 +193,14 @@ var setParameters = function(params) {
     // Set box-shadow to default focused button
     setFocusStyle($confirmBtn, params.confirmButtonColor);
   }
+
+/*
+ * Custom color on cancel button
+ */
+ if(params.cancelButtonColor) {
+   $cancelBtn.style.backgroundColor = params.cancelButtonColor;
+ }
+
 
   /*
    * Allow outside click
