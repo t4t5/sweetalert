@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "tmp",
+    "lib": ["es2015", "es2016", "DOM"]
+  },
+  "include": [
+    "./src/*.ts"
+  ]
+}

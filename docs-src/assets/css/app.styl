@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'normalize';
+
+@import 'header';
+@import 'highlight';
+
+@import 'index';
+@import 'guide';
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+svg.hidden {
+  display: block;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+$preview-color = #A3DD82;
+
+.preview {
+  background-color: $preview-color;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  color: white;
+  padding: 9px 18px;
+  margin-top: 20px;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid white;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: lightness($preview-color, 65%)
+  }
+}
+
+
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #728194;
+
+  .love-icon {
+    background-image: url("/assets/images/heart-icon.svg");
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    position: relative;
+    top: -2px;
+  }
+}

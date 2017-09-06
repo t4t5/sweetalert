@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: $main-color;
+}
+p a:hover {
+  text-decoration: underline;
+}
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+}

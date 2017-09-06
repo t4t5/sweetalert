@@ -1,0 +1,166 @@
+@import 'table';
+
+.doc-container {
+  overflow: hidden;
+}
+
+$side-menu-width = 225px;
+
+.side-menu {
+  width: $side-menu-width;
+  float: left;
+  padding-left: 20px;
+  position: fixed;
+  top: 88px;
+  @media all and (max-width: $phablet-width) {
+    float: none;
+    position: static;
+    margin-top: 120px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -60px;
+    padding-left: 0;
+  }
+
+  .title {
+    font-size: 20px;
+    color: rgba(0,0,0,0.63);
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 36px;
+  }
+
+  a {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.42);
+    display: block;
+    margin: 18px 0;
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+}
+
+.page-content {
+  float: left;
+  width: s('calc(100% - %s - 20px)', $side-menu-width);
+  margin-left: $side-menu-width;
+  min-height: 220px;
+  margin-top: 16px;
+
+  font-size: 16px;
+  color: rgba(0,0,0,0.59);
+  line-height: 29px;
+  @media all and (max-width: $phablet-width) {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  h1 {
+    padding-top: 90px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    &::before {
+      content: "#";
+      position: absolute;
+      margin-left: -23px;
+      font-size: 24px;
+      margin-top: 3px;
+      color: #f38270;
+      font-weight: 500;
+    }
+  
+    a {
+      font-size: 30px;
+      color: rgba(0,0,0,0.85);
+      font-weight: 600;
+    }
+  }
+
+  h2,
+  h3 {
+    font-size: 20px;
+    margin-top: -70px;
+    padding-top: 100px;
+
+    a {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  ul {
+    list-style-type: disc; 
+    margin-bottom: 20px;
+
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  &.api > ul {
+    list-style-type: none;
+    padding-left: 30px;
+
+    > li h3::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $main-color;
+      margin-left: -27px;
+      margin-top: 12px;
+    }
+  }
+
+  code {
+    font-family: $code-font;
+    padding: 3px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: rgb(248, 248, 248);
+    font-size: 14px;
+    color: $main-color;
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: #fafbfc;
+    border: solid 1px #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    font-family: sans-serif;
+  }
+
+  // Special web component:
+  preview-button {
+    /* Matches the "real" button's height: */
+    display: block;
+    height: 44px;
+  }
+
+  button.preview {
+    margin: 20px auto;
+    width: 110px;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  figcaption {
+    font-style: italic;
+  }
+}
+
+.swal-modal.red-bg {
+  background-color: rgba(255, 0, 0, 0.28);
+}

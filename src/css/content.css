@@ -1,0 +1,31 @@
+.swal-content {
+  padding: 0 20px;
+  margin-top: 20px;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+
+  &__input,
+  &__textarea {
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 10px 13px;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    &:focus {
+      outline: none;
+      border-color: #6DB8FF;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+  }
+}
+

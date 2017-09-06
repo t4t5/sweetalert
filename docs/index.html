@@ -1,0 +1,265 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>SweetAlert</title>
+    <meta name="description" content="A beautiful replacement for JavaScript&apos;s &apos;alert&apos;">
+
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <script src="/assets/sweetalert/sweetalert.min.js"></script>
+  </head>
+
+  <body>
+
+    <header class="global-header">
+      <div class="page-container">
+
+        <a href="/" class="logo">
+        </a>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="/guides">Guides</a>
+            </li>
+
+            <li>
+              <a href="/docs">Docs</a>
+            </li>
+
+            <li>
+              <a href="https://www.paypal.me/edwards" target="_blank">Donate</a>
+            </li>
+
+            <li>
+              <a href="https://github.com/t4t5/sweetalert" class="github-icon"></a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <svg width="0" height="0" class="hidden">
+  <defs>
+    <clippath id="top-transition-clip-shape" clippathunits="objectBoundingBox">
+      <polygon points="0 0, 1 0, 1 1, 0 0.8"/>
+    </clippath>
+
+    <clippath id="customization-transition-clip-shape" clippathunits="objectBoundingBox">
+      <polygon points="0 0.05, 1 0, 1 1, 0 1"/>
+    </clippath>
+  </defs>
+</svg>
+
+<div class="landing-top">
+
+  <div class="bg"></div>
+
+  <div class="page-container">
+
+    <div class="desc">
+      <h2>
+        A beautiful replacement for 
+        <span class="text-rotater">
+          success messages
+        </span>
+      </h2>
+
+      <div class="install">
+        <div class="buttons">
+          <span class="button"></span>
+          <span class="button"></span>
+          <span class="button"></span>
+        </div>
+
+        <div class="command">
+          npm install sweetalert
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="swal-modal-example" data-type="success">
+
+      <div class="example-content success show">
+        <div class="swal-icon swal-icon--success">
+          <div class="swal-icon--success__line swal-icon--success__line--long"></div> 
+          <div class="swal-icon--success__line swal-icon--success__line--tip"></div> 
+
+          <div class="swal-icon--success__ring"></div> 
+          <div class="swal-icon--success__hide-corners"></div> 
+        </div>
+
+        <h3 class="swal-title">
+          You&apos;ve arrived!
+        </h3>
+        <p class="swal-text">
+          How lovely. Let me take your coat.
+        </p>
+      </div>
+
+      <div class="example-content error">
+
+        <div class="swal-icon swal-icon--error">
+          <div class="swal-icon--error__x-mark">
+            <span class="swal-icon--error__line swal-icon--error__line--left"></span>
+            <span class="swal-icon--error__line swal-icon--error__line--right"></span>
+          </div>
+        </div>
+
+        <h3 class="swal-title">
+          Oops!
+        </h3>
+        <p class="swal-text">
+          Seems like something went wrong!
+        </p>
+      </div>
+
+      <div class="example-content warning">
+        <div class="swal-icon swal-icon--warning">
+          <span class="swal-icon--warning__body">
+            <span class="swal-icon--warning__dot"></span>
+          </span>
+        </div>
+
+        <h3 class="swal-title">
+          Delete important stuff?
+        </h3>
+        <p class="swal-text">
+          That doesn&apos;t seem like a good idea. Are you sure you want to do that?
+        </p>
+
+        <div class="swal-footer">
+          <div class="swal-button-container">
+            <button class="swal-button swal-button--cancel">
+              Cancel
+            </button>
+          </div>
+
+          <div class="swal-button-container">
+            <button class="swal-button swal-button--confirm swal-button--danger">
+              Yes, delete it!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-content-overlay"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="comparison-container">
+
+  <h3>
+    SweetAlert makes popup messages easy and pretty.
+  </h3>
+
+  <div class="page-container">
+
+    <div class="code-container">
+      <h5>
+        Normal alert
+      </h5>
+
+      <div class="highlight js">
+        <div class="editor">
+          <div class="line">
+            <span class="name function js">alert</span>
+            <span class="bracket js">(</span>
+            <span class="string">&quot;Oops, something went wrong!&quot;</span>
+            <span class="bracket js">)</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="preview" onclick="alert(&apos;Oops, something went wrong!&apos;)">
+        Preview
+      </button>
+    </div>
+
+    <div class="versus"></div>
+
+    <div class="code-container">
+      <h5 class="swal-logo">
+        SweetAlert
+      </h5>
+
+      <div class="highlight js">
+        <div class="editor">
+          <div class="line">
+            <span class="name function js">swal</span>
+            <span class="bracket js">(</span>
+            <span class="string">&quot;Oops&quot;</span>
+            <span class="comma">,</span>
+            <span class="string">&#xA0;&quot;Something went wrong!&quot;</span>
+            <span class="comma">,</span>
+            <span class="string">&#xA0;&quot;error&quot;</span>
+            <span class="bracket js">)</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="preview" onclick="swal(&apos;Oops&apos;, &apos;Something went wrong!&apos;, &apos;error&apos;)">
+        Preview
+      </button>
+    </div>
+
+  </div>
+
+  <p class="remark">
+    Pretty cool, huh?
+  </p>
+
+  <a class="get-started-button" href="/guides">
+    Get started!
+  </a>
+
+</div>
+
+<div class="customize-container">
+
+  <h3>
+    You can customize SweetAlert to fit your needs
+  </h3>
+
+  <div class="example-modals"></div>
+
+  <a class="view-api-button" href="/docs">
+    View docs
+  </a>
+
+</div>
+
+
+
+    <div id="app"></div>
+
+    <footer>
+      <p>
+        Hand-crafted with <span class="love-icon"></span> by
+        <a href="http://tristanedwards.me">
+          Tristan Edwards
+        </a>
+        + 
+        <a href="https://github.com/t4t5/sweetalert/graphs/contributors">
+          contributors
+        </a>
+      </p>
+    </footer>
+
+    <script src="/assets/js/index.js"></script>
+  </body>
+
+</html>

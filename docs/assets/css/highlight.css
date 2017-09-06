@@ -1,0 +1,69 @@
+.highlight {
+  background-color: #f8f8f8;
+  padding: 10px 23px;
+  font-size: 14px;
+  line-height: normal;
+  color: rgba(0,0,0,0.62);
+  overflow-x: scroll;
+}
+.highlight .editor {
+  font-family: $code-font;
+}
+.highlight .line {
+  margin: 6px 0;
+}
+.highlight.bash .line::before {
+  content: "$ ";
+  opacity: 0.5;
+}
+.highlight .string {
+  color: #8858d2;
+}
+.highlight .html.name.tag {
+  color: #4ac14a;
+}
+.highlight .html.attribute-name {
+  color: #b646c1;
+}
+.highlight .js.name.function {
+  color: $main-color;
+}
+.highlight .js.boolean,
+.highlight .js.numeric {
+  color: #4ac14a;
+}
+.highlight .js.control,
+.highlight .js.assignment {
+  color: #b646c1;
+}
+.highlight .js.storage,
+.highlight .js.variable {
+  color: #00a9ff;
+}
+.highlight .js.comment {
+  color: rgba(0,0,0,0.3);
+}
+.highlight .js.function {
+  color: inherit;
+}
+.highlight .js.variable.other,
+.highlight .js.variable.parameter {
+  color: inherit;
+}
+.highlight .js.storage.class,
+.highlight .js.class + * + .storage.modifier {
+  color: #b646c1;
+}
+.highlight .css.selector {
+  color: #4ac14a;
+}
+.highlight .css.property-name {
+  color: #00a9ff;
+}
+.highlight .css.property-value {
+  color: #8858d2;
+}
+.highlight .css.separator,
+.highlight .css.terminator {
+  color: rgba(0,0,0,0.62);
+}

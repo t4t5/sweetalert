@@ -1,0 +1,82 @@
+.global-header {
+  background-color: white;
+  box-shadow: 0 1px 15px 0 rgba(192,72,25,0.32);
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  .logo {
+    width: 162px;
+    height: 36px;
+    background-image: url("/assets/images/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: left;
+    margin-top: 22px;
+    margin-left: 15px;
+    @media all and (max-width: $phablet-width) {
+      float: none;
+      height: 29px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+  }
+
+  nav {
+    font-size: 17px;
+    color: $main-color;
+    float: right;
+    margin-top: 29px;
+    @media all and (max-width: $phablet-width) {
+      float: none;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    a {
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: "";
+        background-color: $main-color;
+        height: 3px;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        display: none;
+      }
+      &:hover::before {
+        display: block;
+      }
+    }
+
+    .github-icon {
+      width: 26px;
+      height: 25px;
+      background-image: url("/assets/images/github.svg");
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  ul {
+    white-space: nowrap;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+  }
+
+}

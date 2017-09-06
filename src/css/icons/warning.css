@@ -1,0 +1,41 @@
+:root {
+  --swal-orange: #F8BB86;
+}
+
+.swal-icon--warning {
+  border-color: var(--swal-orange);
+  animation: pulseWarning 0.75s infinite alternate;
+
+  /* Exclamation mark */
+  &__body {
+    position: absolute;
+    width: 5px;
+    height: 47px;
+    left: 50%;
+    top: 10px;
+    border-radius: 2px;
+    margin-left: -2px;
+    background-color: var(--swal-orange);
+  }
+
+  &__dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-left: -4px;
+    left: 50%;
+    bottom: -11px;
+    background-color: var(--swal-orange);
+  }
+}
+
+@keyframes pulseWarning {
+  from {
+    border-color: #F8D486;
+  }
+  to {
+    border-color: var(--swal-orange);
+  }
+}
+

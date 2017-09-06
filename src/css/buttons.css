@@ -1,0 +1,94 @@
+:root {
+  --swal-btn-confirm: #7cd1f9;
+  --swal-btn-confirm-hover: color(var(--swal-btn-confirm) shade(3%));
+  --swal-btn-confirm-active: color(var(--swal-btn-confirm) shade(10%));
+
+  --swal-btn-cancel: #EFEFEF;
+  --swal-btn-cancel-hover: color(var(--swal-btn-cancel) shade(3%));
+  --swal-btn-cancel-active: color(var(--swal-btn-cancel) shade(10%));
+
+  --swal-btn-danger: #e64942;
+  --swal-btn-danger-hover: color(var(--swal-btn-danger) shade(3%));
+  --swal-btn-danger-active: color(var(--swal-btn-danger) shade(10%));
+
+  --swal-focus-color: rgba(43, 114, 165, 0.3);
+}
+
+.swal-footer {
+  text-align: right;
+  padding-top: 13px;
+  margin-top: 13px;
+  padding: 13px 16px;
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.swal-button-container {
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.swal-button {
+  background-color: var(--swal-btn-confirm);
+  color: white;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 24px;
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--swal-btn-confirm-hover);
+  }
+  &:active {
+    background-color: var(--swal-btn-confirm-active);
+  }
+  &:focus {
+    outline: none;
+    box-shadow:
+      0px 0px 0px 1px white, 
+      0px 0px 0px 3px rgba(43, 114, 165, 0.29);
+  }
+  /* Remove ugly dotted lines in FireFox: */
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &--cancel {
+    color: #555555;
+    background-color: var(--swal-btn-cancel);
+    &:hover {
+      background-color: var(--swal-btn-cancel-hover);
+    }
+    &:active {
+      background-color: var(--swal-btn-cancel-active);
+    }
+    &:focus {
+      box-shadow: 
+        0px 0px 0px 1px white, 
+        0px 0px 0px 3px rgba(116, 136, 150, 0.29);
+    }
+  }
+
+  &--danger {
+    background-color: var(--swal-btn-danger);
+    &:hover {
+      background-color: var(--swal-btn-danger-hover);
+    }
+    &:active {
+      background-color: var(--swal-btn-danger-active);
+    }
+    &:focus {
+      box-shadow: 
+        0px 0px 0px 1px white, 
+        0px 0px 0px 3px rgba(165, 43, 43, 0.29);
+    }
+  }
+}
+
+
+

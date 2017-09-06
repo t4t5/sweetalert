@@ -1,0 +1,320 @@
+.landing-top {
+  height: 370px;
+  position: relative;
+  padding-top: $header-height;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top {
+    height: 600px;
+  }
+}
+.landing-top .bg {
+  background-image: linear-gradient(-132deg, #ff7d79 0%, #f28b74 92%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-clip-path: url("#top-transition-clip-shape");
+  clip-path: url("#top-transition-clip-shape");
+/*
+     * For some reason, clip path makes the whole page
+     * flicker in Mobile Safari. 
+     * So we disable it for mobile.
+     */
+}
+@media all and (max-width: $phablet-width) {
+  .landing-top .bg {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+.landing-top .swal-modal-example {
+  transform: none;
+  opacity: 1;
+  height: 292px;
+  width: 409px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 22px 0 rgba(0,0,0,0.2);
+  border-radius: 8px;
+  margin-top: 59px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: height 0.3s;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top .swal-modal-example {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+}
+@media all and (max-width: $mobile-width) {
+  .landing-top .swal-modal-example {
+    width: 100%;
+  }
+}
+.landing-top .swal-modal-example[data-type="success"] {
+  height: 292px;
+}
+.landing-top .swal-modal-example[data-type="warning"] {
+  height: 325px;
+}
+.landing-top .swal-modal-example .swal-title {
+  padding-top: 10px;
+}
+.landing-top .swal-modal-example .swal-text {
+  color: rgba(0,0,0,0.48);
+  margin-top: 6px;
+}
+.landing-top .modal-content-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.landing-top .modal-content-overlay.show {
+  opacity: 1;
+}
+.landing-top .example-content {
+  display: none;
+}
+.landing-top .example-content.show {
+  display: block;
+}
+.landing-top .desc {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  margin-left: 50px;
+  max-width: calc(100% - 409px - 112px);
+  vertical-align: middle;
+  margin-top: 61px;
+  padding-left: 473px;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top .desc {
+    display: block;
+    max-width: none;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+.landing-top h2 {
+  font-size: 30px;
+  line-height: 51px;
+  font-weight: 300;
+}
+@media all and (max-width: $small-width) {
+  .landing-top h2 {
+    font-size: 25px;
+    margin-top: -20px;
+  }
+}
+.landing-top .text-rotater {
+  display: block;
+  height: 57px;
+  overflow: hidden;
+}
+.landing-top .text-rotater span {
+  display: block;
+  transition: transform 0.4s;
+}
+.landing-top .text-rotater.slide-up span {
+  transform: translateY(-51px);
+}
+.landing-top .install {
+  background: rgba(120,40,40,0.32);
+  border-radius: 7px;
+  max-width: 357px;
+  padding: 12px;
+}
+@media all and (max-width: $tablet-width) {
+  .landing-top .install {
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+.landing-top .install .button {
+  background: rgba(255,255,255,0.39);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.landing-top .install .command {
+  font-family: $code-font;
+  padding: 12px;
+  padding-left: 30px;
+}
+.landing-top .install .command::before {
+  content: "$";
+  opacity: 0.5;
+  transform: rotate(8deg);
+  font-size: 20px;
+  position: absolute;
+  margin-left: -27px;
+  margin-top: -2px;
+}
+.comparison-container {
+  padding-bottom: 70px;
+  text-align: center;
+}
+.comparison-container h3 {
+  font-size: 22px;
+  color: #b49993;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  margin-top: 93px;
+  margin-bottom: 80px;
+}
+.comparison-container .code-container {
+  text-align: center;
+  width: calc(50% - 60px);
+  display: inline-block;
+  vertical-align: middle;
+}
+@media all and (max-width: $phablet-width) {
+  .comparison-container .code-container {
+    width: 100%;
+  }
+}
+.comparison-container .versus {
+  width: 35px;
+  height: 33px;
+  background-image: url("/assets/images/vs.svg");
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 30px;
+}
+@media all and (max-width: $phablet-width) {
+  .comparison-container .versus {
+    margin: 30px;
+    margin-bottom: -10px;
+  }
+}
+.comparison-container h5 {
+  font-size: 13px;
+  color: rgba(0,0,0,0.21);
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.comparison-container h5.swal-logo {
+  text-indent: -9999999px;
+  margin-top: 2px;
+}
+.comparison-container h5.swal-logo::after {
+  content: "";
+  background-image: url("/assets/images/logo-small.svg");
+  width: 91px;
+  height: 20px;
+  display: block;
+}
+.comparison-container .highlight {
+  text-align: left;
+  padding: 16px 23px;
+}
+.comparison-container .highlight span {
+  margin: 0 -4px;
+}
+.comparison-container .remark {
+  font-size: 20px;
+  color: $main-color;
+  margin-top: 80px;
+}
+.comparison-container .get-started-button {
+  background-color: $main-color;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 22px;
+  padding: 14px 55px;
+  margin: 20px 0;
+  display: inline-block;
+}
+.customize-container {
+  background-color: #999eaf;
+  text-align: center;
+  color: #fff;
+  text-align: center;
+  background-image: url("/assets/images/pattern.png");
+  background-image: -webkit-image-set(url("/assets/images/pattern.png") 1x, url("/assets/images/pattern@2x.png") 2x);
+  padding: 40px 0;
+  -webkit-clip-path: url("#customization-transition-clip-shape");
+  clip-path: url("#customization-transition-clip-shape");
+}
+@media all and (max-width: $phablet-width) {
+  .customize-container {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+.customize-container h3 {
+  font-weight: 400;
+  font-size: 20px;
+  padding: 50px 0;
+}
+.customize-container .example-modals {
+  background-image: url("/assets/images/modal-examples.png");
+  background-image: -webkit-image-set(url("/assets/images/modal-examples.png") 1x, url("/assets/images/modal-examples@2x.png") 2x);
+  height: 284px;
+  background-size: auto 100%;
+  background-position: 0 0;
+  animation: scrollExamples 80s infinite linear;
+}
+.customize-container .view-api-button {
+  border: 3px solid #fff;
+  border-radius: 6px;
+  color: #fff;
+  padding: 12px 52px;
+  font-size: 18px;
+  margin-top: 60px;
+  display: inline-block;
+}
+@-moz-keyframes scrollExamples {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2146px 0;
+  }
+}
+@-webkit-keyframes scrollExamples {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2146px 0;
+  }
+}
+@-o-keyframes scrollExamples {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2146px 0;
+  }
+}
+@keyframes scrollExamples {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2146px 0;
+  }
+}

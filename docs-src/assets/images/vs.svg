@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="33px" viewBox="0 0 35 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>vs</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-page" transform="translate(-503.000000, -738.000000)" fill="#FFA572">
+            <g id="comparison" transform="translate(143.000000, 556.000000)">
+                <g id="code-versus" transform="translate(0.000000, 138.000000)">
+                    <path d="M365.25,67.625 L365.25,65 L362.625,65 L362.625,62.375 L360,62.375 L360,44 L365.25,44 L365.25,62.375 L370.5,62.375 L370.5,44 L375.75,44 L375.75,62.375 L373.125,62.375 L373.125,65 L370.5,65 L370.5,67.625 L365.25,67.625 Z M381.625,76.625 L381.625,74 L379,74 L379,68.75 L384.25,68.75 L384.25,74 L389.5,74 L389.5,68.75 L386.875,68.75 L386.875,66.125 L384.25,66.125 L384.25,63.5 L381.625,63.5 L381.625,60.875 L379,60.875 L379,55.625 L381.625,55.625 L381.625,53 L392.125,53 L392.125,55.625 L394.75,55.625 L394.75,60.875 L389.5,60.875 L389.5,55.625 L384.25,55.625 L384.25,60.875 L386.875,60.875 L386.875,63.5 L389.5,63.5 L389.5,66.125 L392.125,66.125 L392.125,68.75 L394.75,68.75 L394.75,74 L392.125,74 L392.125,76.625 L381.625,76.625 Z" id="vs"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

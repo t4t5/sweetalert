@@ -1,0 +1,42 @@
+.swal-title {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 600;
+  text-transform: none;
+  position: relative;
+  display: block;
+  padding: 13px 16px;
+  font-size: 27px;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 0px;
+  &:first-child {
+    margin-top: 26px;
+  }
+  &:not(:first-child) {
+    padding-bottom: 0;
+  }
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+}
+
+.swal-text {
+  font-size: 16px;
+  position: relative;
+  float: none;
+  line-height: normal;
+  vertical-align: top;
+  text-align: left;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0 28px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.64);
+  &:first-child {
+    margin-top: 45px;
+  }
+  &:last-child {
+    margin-bottom: 45px;
+  }
+}

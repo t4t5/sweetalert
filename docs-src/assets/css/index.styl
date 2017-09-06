@@ -1,0 +1,313 @@
+$modal-width = 409px;
+
+.landing-top {
+  height: 370px;
+  position: relative;
+  padding-top: $header-height;
+  @media all and (max-width: $tablet-width) {
+    height: 600px;
+  }
+
+  .bg {
+    background-image: linear-gradient(-132deg, #FF7D79 0%, #F28B74 92%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-clip-path: url("#top-transition-clip-shape");
+    clip-path: url("#top-transition-clip-shape");
+
+    /*
+     * For some reason, clip path makes the whole page
+     * flicker in Mobile Safari. 
+     * So we disable it for mobile.
+     */
+    @media all and (max-width: $phablet-width) {
+      -webkit-clip-path: none;
+      clip-path: none;
+    }
+  }
+
+  .swal-modal-example {
+    transform: none;
+    opacity: 1;
+    height: 292px;
+    width: $modal-width;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 5px 22px 0 rgba(0,0,0,0.20);
+    border-radius: 8px;
+    margin-top: 59px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: height 0.3s;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    @media all and (max-width: $tablet-width) {
+      position: relative;
+      display: block;
+      margin: 20px auto;
+    }
+    @media all and (max-width: $mobile-width) {
+      width: 100%;
+    }
+
+    &[data-type="success"] {
+      height: 292px;
+    }
+    &[data-type="warning"] {
+      height: 325px;
+    }
+
+    .swal-title {
+      padding-top: 10px;
+    }
+
+    .swal-text {
+      color: rgba(0,0,0,0.48);
+      margin-top: 6px;
+    }
+  }
+
+  .modal-content-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .example-content {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+
+  .desc {
+    display: inline-block;
+    position: relative;
+    color: white;
+    margin-left: 50px;
+    max-width: s('calc(100% - %s - 112px)', $modal-width);
+    vertical-align: middle;
+    margin-top: 61px;
+    padding-left: 473px;
+    @media all and (max-width: $tablet-width) {
+      display: block;
+      max-width: none;
+      padding-left: 0;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 51px;
+    font-weight: 300;
+    @media all and (max-width: $small-width) {
+      font-size: 25px;
+      margin-top: -20px;
+    }
+  }
+
+  .text-rotater {
+    display: block;
+    height: 57px;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    &.slide-up span {
+      transform: translateY(-51px);
+    }
+  }
+
+  .install {
+    background: rgba(120,40,40,0.32);
+    border-radius: 7px;
+    max-width: 357px;
+    padding: 12px;
+    @media all and (max-width: $tablet-width) {
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .button {
+      background: rgba(255,255,255,0.39);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .command {
+      font-family: $code-font;
+      padding: 12px;
+      padding-left: 30px;
+      &::before {
+        content: "$";
+        opacity: 0.5;
+        transform: rotate(8deg);
+        font-size: 20px;
+        position: absolute;
+        margin-left: -27px;
+        margin-top: -2px;
+      }
+    }
+  }
+}
+
+.comparison-container {
+  padding-bottom: 70px;
+  text-align: center;
+
+  h3 {
+    font-size: 22px;
+    color: #B49993;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    margin-top: 93px;
+    margin-bottom: 80px;
+  }
+
+  .code-container {
+    text-align: center;
+    width: calc(50% - 60px);
+    display: inline-block;
+    vertical-align: middle;
+    @media all and (max-width: $phablet-width) {
+      width: 100%;
+    }
+  }
+
+  .versus {
+    width: 35px;
+    height: 33px;
+    background-image: url("/assets/images/vs.svg");
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px;
+    @media all and (max-width: $phablet-width) {
+      margin: 30px;
+      margin-bottom: -10px;
+    }
+  }
+
+  h5 {
+    font-size: 13px;
+    color: rgba(0,0,0,0.21);
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 15px;
+    &.swal-logo {
+      text-indent: -9999999px;
+      margin-top: 2px;
+      &::after {
+        content: "";
+        background-image: url("/assets/images/logo-small.svg");
+        width: 91px;
+        height: 20px;
+        display: block;
+      }
+    }
+  }
+
+  .highlight {
+    text-align: left;
+    padding: 16px 23px;
+    span {
+      margin: 0 -4px;
+    }
+  }
+
+  .remark {
+    font-size: 20px;
+    color: $main-color;
+    margin-top: 80px;
+  }
+
+  .get-started-button {
+    background-color: $main-color;
+    color: white;
+    border-radius: 8px;
+    font-size: 22px;
+    padding: 14px 55px;
+    margin: 20px 0;
+    display: inline-block;
+  }
+
+}
+
+retina-bg(namespace, extension = 'png') {
+  $path = "/assets/images/";
+	background-image: url($path + namespace + '.' + extension);
+  background-image: -webkit-image-set(url($path + namespace + '.' + extension) 1x, url($path + namespace + '@2x' + '.' + extension) 2x);
+}
+
+.customize-container {
+  background-color: #999EAF;
+  text-align: center;
+  color: white;
+  text-align: center;
+  retina-bg("pattern")
+  padding: 40px 0;
+  -webkit-clip-path: url("#customization-transition-clip-shape");
+  clip-path: url("#customization-transition-clip-shape");
+  @media all and (max-width: $phablet-width) {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 20px;
+    padding: 50px 0;
+  }
+
+  .example-modals {
+    retina-bg("modal-examples")
+    height: 284px;
+    background-size: auto 100%;
+    background-position: 0 0;
+    animation: scrollExamples 80s infinite linear;
+  }
+
+  .view-api-button {
+    border: 3px solid #FFFFFF;
+    border-radius: 6px;
+    color: white;
+    padding: 12px 52px;
+    font-size: 18px;
+    margin-top: 60px;
+    display: inline-block;
+  }
+}
+
+@keyframes scrollExamples {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2146px 0;
+  }
+}
+

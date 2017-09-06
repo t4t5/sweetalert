@@ -1,8 +1,4 @@
 language: node_js
 node_js:
-  - "0.12"
-before script:
-  - npm install -g gulp
-  - npm install -g bower
-  - bower install
-script: gulp test
+  - "6.9.1"
+script: npm run buildtest

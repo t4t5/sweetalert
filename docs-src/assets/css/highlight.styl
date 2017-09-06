@@ -1,0 +1,99 @@
+.highlight {
+  $code-color = rgba(0,0,0,0.62);
+
+  background-color: #F8F8F8;
+  padding: 10px 23px;
+  font-size: 14px;
+  line-height: normal;
+  color: $code-color;
+  overflow-x: scroll;
+
+  .editor {
+    font-family: $code-font;
+  }
+
+  .line {
+    margin: 6px 0;
+  }
+
+  &.bash .line::before {
+    content: "$ ";
+    opacity: 0.5;
+  }
+
+  // Colors:
+  $purple = #8858d2;
+  $green = #4ac14a;
+  $pink = #b646c1;
+  $blue = #00a9ff;
+  $orange = #f7af00;
+  $gray = rgba(0, 0, 0, 0.3);
+
+  .string {
+    color: $purple;
+  }
+
+  .html {
+    &.name.tag {
+      color: $green;
+    }
+    &.attribute-name {
+      color: $pink;
+    }
+  }
+
+  .js {
+    &.name.function {
+      color: $main-color;
+    }
+    &.boolean,
+    &.numeric {
+      color: $green;
+    }
+    &.control,
+    &.assignment {
+      color: $pink;
+    }
+    &.storage,
+    &.storage,
+    &.variable {
+      color: $blue;
+    }
+    &.comment {
+      color: $gray;
+    }
+
+    &.function {
+      color: inherit;
+    }
+
+    &.variable {
+      &.other,
+      &.parameter {
+        color: inherit;
+      }
+    }
+
+    &.storage.class,
+    // "extends":
+    &.class + * + .storage.modifier {
+      color: $pink;
+    }
+  }
+
+  .css {
+    &.selector {
+      color: $green;
+    }
+    &.property-name {
+      color: $blue;
+    }
+    &.property-value {
+      color: $purple;
+    }
+    &.separator,
+    &.terminator {
+      color: $code-color;
+    }
+  }
+}
