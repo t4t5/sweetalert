@@ -38,7 +38,7 @@ var injectedHTML =
     `<h2>Title</h2>
     <p>Text</p>
     <fieldset>
-      <input type="text" tabIndex="3" />
+      <input type="text" tabIndex="3" autocomplete="" />
       <div class="sa-input-error"></div>
     </fieldset>` +
 
