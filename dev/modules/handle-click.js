@@ -107,11 +107,10 @@ var handleConfirm = function(modal, params) {
  *  User clicked on "Cancel"
  */
 var handleCancel = function(modal, params) {
-  // Check if callback function expects a parameter (to track cancel actions)
-  var functionAsStr = String(params.doneFunction).replace(/\s/g, '');
-  var functionHandlesCancel = functionAsStr.substring(0, 9) === 'function(' && functionAsStr.substring(9, 10) !== ')';
+  // If the length is greater than 0, there is a method.
+  var hasArgumentsInDoneFunction = params.doneFunction.length;
 
-  if (functionHandlesCancel) {
+  if (hasArgumentsInDoneFunction) {
     params.doneFunction(false);
   }
 
@@ -121,7 +120,7 @@ var handleCancel = function(modal, params) {
 };
 
 
-export default {
+export {
   handleButton,
   handleConfirm,
   handleCancel

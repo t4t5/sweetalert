@@ -23,8 +23,8 @@ import {
 var setParameters = function(params) {
   var modal = getModal();
 
-  var $title = modal.querySelector('h2');
-  var $text = modal.querySelector('p');
+  var $title = modal.querySelector('h2#sa-title');
+  var $text = modal.querySelector('p#sa-text');
   var $cancelBtn = modal.querySelector('button.cancel');
   var $confirmBtn = modal.querySelector('button.confirm');
 

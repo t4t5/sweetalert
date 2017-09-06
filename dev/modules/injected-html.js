@@ -35,8 +35,8 @@ var injectedHTML =
     `<div class="sa-icon sa-custom"></div>` +
 
     // Title, text and input
-    `<h2>Title</h2>
-    <p>Text</p>
+    `<h2 id="sa-title">Title</h2>
+    <p id="sa-text">Text</p>
     <fieldset>
       <input type="text" tabIndex="3" />
       <div class="sa-input-error"></div>
