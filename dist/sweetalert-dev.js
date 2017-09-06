@@ -947,7 +947,7 @@ var injectedHTML =
 "<div class=\"sa-icon sa-success\">\n      <span class=\"sa-line sa-tip\"></span>\n      <span class=\"sa-line sa-long\"></span>\n\n      <div class=\"sa-placeholder\"></div>\n      <div class=\"sa-fix\"></div>\n    </div>" + "<div class=\"sa-icon sa-custom\"></div>" +
 
 // Title, text and input
-"<h2>Title</h2>\n    <p>Text</p>\n    <fieldset>\n      <input type=\"text\" tabIndex=\"3\" />\n      <div class=\"sa-input-error\"></div>\n    </fieldset>" +
+"<h2>Title</h2>\n    <div id='replace-p>Text</div>\n    <fieldset>\n      <input type=\"text\" tabIndex=\"3\" />\n      <div class=\"sa-input-error\"></div>\n    </fieldset>" +
 
 // Input errors
 "<div class=\"sa-error-container\">\n      <div class=\"icon\">!</div>\n      <p>Not valid!</p>\n    </div>" +
@@ -986,7 +986,7 @@ var setParameters = function setParameters(params) {
   var modal = _getModal$getInput$setFocusStyle.getModal();
 
   var $title = modal.querySelector('h2');
-  var $text = modal.querySelector('p');
+  var $text = modal.querySelector('#replace-p');
   var $cancelBtn = modal.querySelector('button.cancel');
   var $confirmBtn = modal.querySelector('button.confirm');
 
