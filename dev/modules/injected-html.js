@@ -37,10 +37,12 @@ var injectedHTML =
     // Title, text and input
     `<h2>Title</h2>
     <p>Text</p>
-    <fieldset>
-      <input type="text" tabIndex="3" />
-      <div class="sa-input-error"></div>
-    </fieldset>` +
+    <form>
+        <fieldset>
+          <input type="text" tabIndex="3" />
+          <div class="sa-input-error"></div>
+        </fieldset>
+    </form>` +
 
     // Input errors
     `<div class="sa-error-container">
