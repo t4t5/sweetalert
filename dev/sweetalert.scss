@@ -77,6 +77,7 @@ body.stop-scrolling {
     margin: 0;
     padding: 0;
     line-height: normal;
+    word-break: break-word;
   }
 
   fieldset {
@@ -189,6 +190,9 @@ body.stop-scrolling {
     }
     &::-moz-placeholder {
       color: lighten(#575757, 40);
+    }
+    &::-ms-clear {
+      display: none;
     }
     &:-ms-input-placeholder {
       color: lighten(#575757, 40);
@@ -379,6 +383,7 @@ body.stop-scrolling {
         margin-left: -3px;
         top: 19px;
         background-color: $blue;
+        left: 50%;
       }
     }
     &.sa-success {
