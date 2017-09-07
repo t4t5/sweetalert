@@ -7,11 +7,11 @@ export const getNode = (className: string): HTMLElement => {
   return <HTMLElement>document.querySelector(selector);
 };
 
-export const stringToNode = (html: string): Element => {
-  let wrapper: Element = document.createElement('div');
+export const stringToNode = (html: string): HTMLElement => {
+  let wrapper: HTMLElement = document.createElement('div');
   wrapper.innerHTML = html.trim();
 
-  return <Element>wrapper.firstChild;
+  return <HTMLElement>wrapper.firstChild;
 };
 
 export const insertAfter = (newNode: Node, referenceNode: Node) => {

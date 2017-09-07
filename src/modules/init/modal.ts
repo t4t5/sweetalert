@@ -10,9 +10,9 @@ import { initTitle, initText } from './text';
 import initButtons from './buttons';
 import initContent from './content';
 
-export const injectElIntoModal = (markup: string): Element => {
+export const injectElIntoModal = (markup: string): HTMLElement => {
   const modal: Element = getNode(MODAL);
-  const el: Element = stringToNode(markup);
+  const el: HTMLElement = stringToNode(markup);
 
   modal.appendChild(el);
 

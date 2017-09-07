@@ -27,12 +27,14 @@
   line-height: normal;
   vertical-align: top;
   text-align: left;
-  padding: 0;
   display: inline-block;
   margin: 0;
-  padding: 0 28px;
+  padding: 0 10px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.64);
+  max-width: calc(100% - 20px);
+  overflow-wrap: break-word;
+  box-sizing: border-box;
   &:first-child {
     margin-top: 45px;
   }
