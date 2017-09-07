@@ -286,7 +286,7 @@ class MyInput extends Component {
      * This will update the value that the confirm
      * button resolves to:
      */
-    swal.setActionValue('confirm', text);
+    swal.setActionValue(text);
   }
 
   render() {
