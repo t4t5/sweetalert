@@ -146,7 +146,7 @@ var MyInput = function (_Component) {
        * This will update the value that the confirm
        * button resolves to:
        */
-      swal.setActionValue('confirm', text);
+      swal.setActionValue(text);
     }
   }, {
     key: 'render',
