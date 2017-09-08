@@ -1,6 +1,7 @@
 .swal-content {
   padding: 0 20px;
   margin-top: 20px;
+  font-size: initial;
 
   &:last-child {
     margin-bottom: 20px;

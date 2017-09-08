@@ -65,9 +65,15 @@ module.exports = (_env, args) => {
           /* Use PostCSS */
           test: /\.css$/,
           use: [
-            'style-loader',
+            {
+              loader: 'style-loader',
+              options: {
+                insertAt: 'top',
+              },
+            },
             { 
-              loader: 'css-loader', options: { 
+              loader: 'css-loader', 
+              options: { 
                 importLoaders: 1 
               } 
             },
