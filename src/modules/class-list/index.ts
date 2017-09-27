@@ -4,7 +4,7 @@
  * manipulate the DOM.
  */
 
-interface ClassNameList {
+export interface ClassNameList {
   [key: string]: string,
 };
 
