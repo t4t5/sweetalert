@@ -3,15 +3,23 @@ import { CONFIRM_KEY } from './options/buttons';
 export interface SwalState {
   isOpen: boolean,
   promise: {
-    resolve?: Function,
-    reject?: Function,
+    resolve?(value: string): void,
+    reject?(): void,
   },
-  actions: any,
+  actions: {
+    [namespace: string]: {
+      value?: string | any,
+      closeModal?: boolean
+    },
+  },
   timer: number,
 };
 
 export interface ActionOptions {
-  [buttonNamespace: string]: any,
+  [buttonNamespace: string]: {
+    value?: string,
+    closeModal?: boolean
+  },
 };
 
 const defaultState: SwalState = {
@@ -42,7 +50,7 @@ export const setActionValue = (opts: string|ActionOptions) => {
   }
 };
 
-const setActionValueForButton = (namespace: string, value: any) => {
+const setActionValueForButton = (namespace: string, value: string | any) => {
   if (!state.actions[namespace]) {
     state.actions[namespace] = {};
   }

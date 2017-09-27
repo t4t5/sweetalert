@@ -25,10 +25,10 @@ import {
   setDefaults,
 } from './modules/options';
 
-export type SwalParams = (string|object)[];
+export type SwalParams = (string|Partial<SwalOptions>)[];
 
-interface SweetAlert {
-  (...params: SwalParams): object,
+export interface SweetAlert {
+  (...params: SwalParams): Promise<any>,
   close? (namespace: string): void,
   getState? (): SwalState,
   setActionValue? (opts: string|ActionOptions): void,
@@ -43,7 +43,7 @@ const swal:SweetAlert = (...args) => {
 
   const opts: SwalOptions = getOpts(...args);
 
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     state.promise = { resolve, reject };
 
     init(opts);
