@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (_env, args) => {
 
@@ -15,6 +16,9 @@ module.exports = (_env, args) => {
     entry: './sweetalert.js',
     plugins: [
       new webpack.optimize.ModuleConcatenationPlugin(),
+      new CopyWebpackPlugin([{
+        from: "sweetalert.d.ts"
+      }])
       //new BundleAnalyzerPlugin(),
     ],
 
