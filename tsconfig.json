@@ -3,9 +3,11 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "dist",
     "target": "es5",
     "outDir": "tmp",
-    "lib": ["es2015", "es2016", "DOM"]
+    "lib": ["es2015", "es2016", "dom"]
   },
   "include": [
     "./src/*.ts"
