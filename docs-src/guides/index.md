@@ -20,7 +20,7 @@ import swal from 'sweetalert';
 
 ## CDN
 
-You can also find SweetAlert on [unpkg](https://unpkg.com/sweetalert) and [cdnjs](https://cdnjs.com/libraries/sweetalert) and use the global `swal` variable.
+You can also find SweetAlert on [unpkg](https://unpkg.com/sweetalert) and [jsDelivr](https://cdn.jsdelivr.net/npm/sweetalert) and use the global `swal` variable.
 
 ```html
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
