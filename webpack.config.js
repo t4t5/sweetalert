@@ -11,16 +11,28 @@ module.exports = (_env, args) => {
   const JS_FILE_NAME = 'sweetalert.min.js';
   const devtool = IS_PROD ? false : 'source-map';
 
+  const plugins = [
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    //new BundleAnalyzerPlugin(),
+  ];
+
+  if (IS_PROD) {
+    plugins.push(
+      new CopyWebpackPlugin([{
+        from: 'sweetalert.d.ts',
+        to: '../types/sweetalert.d.ts',
+      }])
+    );
+
+    plugins.push(
+      new DtsBundlePlugin()
+    );
+  }
+
   return {
     context: path.resolve(__dirname, 'src'),
     entry: './sweetalert.js',
-    plugins: [
-      new webpack.optimize.ModuleConcatenationPlugin(),
-      new CopyWebpackPlugin([{
-        from: "sweetalert.d.ts"
-      }])
-      //new BundleAnalyzerPlugin(),
-    ],
+    plugins,
 
     output: {
       path: path.resolve(__dirname, BUILD_PATH),
@@ -95,3 +107,18 @@ module.exports = (_env, args) => {
   }
 };
 
+function DtsBundlePlugin(){}
+
+DtsBundlePlugin.prototype.apply = function (compiler) {
+  compiler.plugin('done', function(){
+    var dts = require('dts-bundle');
+
+    dts.bundle({
+      name: 'sweetalert',
+      main: 'types/sweetalert.d.ts',
+      out: '../index.d.ts',
+      removeSource: false,
+      outputAsModuleFolder: true // to use npm in-package typings
+    });
+  });
+};

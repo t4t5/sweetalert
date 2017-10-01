@@ -3,5 +3,6 @@
 *.DS_STORE
 node_modules
 npm-debug.log
+types
 
 dist

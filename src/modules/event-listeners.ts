@@ -116,7 +116,7 @@ const setTimer = (ms: number): void => {
   }
 
   if (ms) {
-    state.timer = setTimeout(() => {
+    state.timer = window.setTimeout(() => {
       return onAction(CANCEL_KEY);
     }, ms);
   }
