@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (_env, args) => {
 
@@ -20,12 +19,8 @@ module.exports = (_env, args) => {
     plugins.push(
       new CopyWebpackPlugin([{
         from: 'sweetalert.d.ts',
-        to: '../types/sweetalert.d.ts',
+        to: '../typings/sweetalert.d.ts',
       }])
-    );
-
-    plugins.push(
-      new DtsBundlePlugin()
     );
   }
 
@@ -105,20 +100,4 @@ module.exports = (_env, args) => {
 
     devtool,
   }
-};
-
-function DtsBundlePlugin(){}
-
-DtsBundlePlugin.prototype.apply = function (compiler) {
-  compiler.plugin('done', function(){
-    var dts = require('dts-bundle');
-
-    dts.bundle({
-      name: 'sweetalert',
-      main: 'types/sweetalert.d.ts',
-      out: '../index.d.ts',
-      removeSource: false,
-      outputAsModuleFolder: true // to use npm in-package typings
-    });
-  });
 };
