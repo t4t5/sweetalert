@@ -90,5 +90,10 @@
     "LICENSE.md",
     "README.md",
     "typings"
-  ]
+  ],
+  "dependencies": {
+    "es6-object-assign": "^1.1.0",
+    "promise-polyfill": "^6.0.2",
+    "whatwg-fetch": "^2.0.3"
+  }
 }

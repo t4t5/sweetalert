@@ -53,7 +53,8 @@ var setStyles = function setStyles(code) {
   el.style.cssText = css;
 };
 
-previewPlaceholders.forEach(function (placeholder) {
+var _loop = function _loop(i) {
+  var placeholder = previewPlaceholders[i];
   var highlightEl = getCodeEl(placeholder);
   var code = getCode(highlightEl);
 
@@ -78,7 +79,11 @@ previewPlaceholders.forEach(function (placeholder) {
     }
   });
 
-  placeholder.remove();
-});
+  placeholder.parentNode.removeChild(placeholder);
+};
+
+for (var i = 0; i < previewPlaceholders.length; i++) {
+  _loop(i);
+}
 
 },{}]},{},[1]);

@@ -93,8 +93,8 @@ If the user clicks the confirm button, the promise resolves to `true`. If the al
 
 ```js
 swal("Click on either the button or outside the modal.")
-.then((value) => {
-  swal(`The returned value is: ${value}`);
+.then(function(value) {
+  swal('The returned value is: ' + value);
 });
 ```
 <preview-button></preview-button>
@@ -112,13 +112,13 @@ swal({
   buttons: true,
   dangerMode: true,
 })
-.then((willDelete) => {
+.then(function(willDelete) {
   if (willDelete) {
     swal("Poof! Your imaginary file has been deleted!", {
-      icon: "success", 
+      icon: "success",
     });
   } else {
-    swal("Your imaginary file is safe!"); 
+    swal("Your imaginary file is safe!");
   }
 });
 ```
@@ -129,7 +129,7 @@ swal({
 
 ## Customizing buttons
 
-We've already seen how we can set the text on the confirm button using `button: "Aww yiss!"`. 
+We've already seen how we can set the text on the confirm button using `button: "Aww yiss!"`.
 
 If we also want to show and customize the *cancel button*, we can instead set `buttons` to an *array of strings*, where the first value is the cancel button's text and the second one is the confirm button's text:
 
@@ -169,7 +169,7 @@ swal("A wild Pikachu appeared! What do you want to do?", {
     defeat: true,
   },
 })
-.then((value) => {
+.then(function(value) {
   switch (value) {
 
     case "defeat":
@@ -202,15 +202,15 @@ swal({
     closeModal: false,
   },
 })
-.then(name => {
+.then(function(name) {
   if (!name) throw null;
 
-  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+  return fetch('https://itunes.apple.com/search?term=' + name + '&entity=movie');
 })
-.then(results => {
+.then(function(results) {
   return results.json();
 })
-.then(json => {
+.then(function(json) {
   const movie = json.results[0];
 
   if (!movie) {
@@ -226,7 +226,7 @@ swal({
     icon: imageURL,
   });
 })
-.catch(err => {
+.catch(function(err) {
   if (err) {
     swal("Oh noes!", "The AJAX request failed!", "error");
   } else {
@@ -239,7 +239,7 @@ swal({
 
 ## Using DOM nodes as content
 
-Sometimes, you might run into a scenario where it would be nice to use the out-of-the box functionality that SweetAlert offers, but with some custom UI that goes beyond just styling buttons and text. For that, there's the `content` option. 
+Sometimes, you might run into a scenario where it would be nice to use the out-of-the box functionality that SweetAlert offers, but with some custom UI that goes beyond just styling buttons and text. For that, there's the `content` option.
 
 In the previous example, we saw how we could set `content` to `"input"` to get an `<input />` element in our modal that changes the resolved value of the confirm button based on its value.
 `"input"` is a predefined option that exists for convenience, but you can also set `content` to any DOM node!
@@ -250,8 +250,8 @@ Let's see how we can recreate the functionality of the following modal...
 swal("Write something here:", {
   content: "input",
 })
-.then((value) => {
-  swal(`You typed: ${value}`);
+.then(function(value) {
+  swal('You typed: ' + value);
 });
 ```
 <preview-button></preview-button>
@@ -291,8 +291,8 @@ class MyInput extends Component {
 
   render() {
     return (
-      <input 
-        value={this.state.text} 
+      <input
+        value={this.state.text}
         onChange={this.changeText.bind(this)}
       />
     )
@@ -317,8 +317,8 @@ swal({
     },
   },
 })
-.then((value) => {
-  swal(`You typed: ${value}`);
+.then(function(value) {
+  swal('You typed: ' + value);
 });
 ```
 <preview-button data-function="reactExample"></preview-button>

@@ -29,9 +29,9 @@ const resetStyles = () => {
 
   swalOverlay.removeAttribute('style');
 
-  allSwalEls.forEach((el) => {
-    el.removeAttribute('style');
-  });
+  for (let i = 0; i < allSwalEls.length; i++) {
+    allSwalEls[i].removeAttribute('style');
+  }
 };
 
 const setStyles = (code) => {
@@ -48,7 +48,8 @@ const setStyles = (code) => {
   el.style.cssText = css;
 };
 
-previewPlaceholders.forEach((placeholder) => {
+for (let i = 0; i < previewPlaceholders.length; i++) {
+  const placeholder = previewPlaceholders[i];
   const highlightEl = getCodeEl(placeholder);
   const code = getCode(highlightEl);
 
@@ -74,5 +75,5 @@ previewPlaceholders.forEach((placeholder) => {
   });
 
   placeholder.remove();
-});
+}
 
