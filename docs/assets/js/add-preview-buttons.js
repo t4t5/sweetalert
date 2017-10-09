@@ -53,8 +53,7 @@ var setStyles = function setStyles(code) {
   el.style.cssText = css;
 };
 
-var _loop = function _loop(i) {
-  var placeholder = previewPlaceholders[i];
+previewPlaceholders.forEach(function (placeholder) {
   var highlightEl = getCodeEl(placeholder);
   var code = getCode(highlightEl);
 
@@ -75,15 +74,12 @@ var _loop = function _loop(i) {
       resetStyles();
       setStyles(code);
     } else {
-      eval(code);
+      var transpiledCode = Babel.transform(code, { presets: ['es2015'] }).code;
+      eval(transpiledCode);
     }
   });
 
-  placeholder.parentNode.removeChild(placeholder);
-};
-
-for (var i = 0; i < previewPlaceholders.length; i++) {
-  _loop(i);
-}
+  placeholder.remove();
+});
 
 },{}]},{},[1]);
