@@ -93,8 +93,8 @@ If the user clicks the confirm button, the promise resolves to `true`. If the al
 
 ```js
 swal("Click on either the button or outside the modal.")
-.then(function(value) {
-  swal('The returned value is: ' + value);
+.then((value) => {
+  swal(`The returned value is: ${value}`);
 });
 ```
 <preview-button></preview-button>
@@ -112,7 +112,7 @@ swal({
   buttons: true,
   dangerMode: true,
 })
-.then(function(willDelete) {
+.then((willDelete) => {
   if (willDelete) {
     swal("Poof! Your imaginary file has been deleted!", {
       icon: "success",
@@ -169,7 +169,7 @@ swal("A wild Pikachu appeared! What do you want to do?", {
     defeat: true,
   },
 })
-.then(function(value) {
+.then((value) => {
   switch (value) {
 
     case "defeat":
@@ -202,15 +202,15 @@ swal({
     closeModal: false,
   },
 })
-.then(function(name) {
+.then(name => {
   if (!name) throw null;
 
-  return fetch('https://itunes.apple.com/search?term=' + name + '&entity=movie');
+  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
 })
-.then(function(results) {
+.then(results => {
   return results.json();
 })
-.then(function(json) {
+.then(json => {
   const movie = json.results[0];
 
   if (!movie) {
@@ -226,7 +226,7 @@ swal({
     icon: imageURL,
   });
 })
-.catch(function(err) {
+.catch(err => {
   if (err) {
     swal("Oh noes!", "The AJAX request failed!", "error");
   } else {
@@ -250,8 +250,8 @@ Let's see how we can recreate the functionality of the following modal...
 swal("Write something here:", {
   content: "input",
 })
-.then(function(value) {
-  swal('You typed: ' + value);
+.then((value) => {
+  swal(`You typed: ${value}`);
 });
 ```
 <preview-button></preview-button>
@@ -317,8 +317,8 @@ swal({
     },
   },
 })
-.then(function(value) {
-  swal('You typed: ' + value);
+.then((value) => {
+  swal(`You typed: ${value}`);
 });
 ```
 <preview-button data-function="reactExample"></preview-button>
@@ -357,4 +357,3 @@ Below are some additional deprecated options along with their replacements:
 - `html` is no longer used. Instead use the [content object](/docs#content).
 - `allowEscapeKey` is now `closeOnEsc` for clarity.
 - `allowClickOutside` is now `closeOnClickOutside` for clarity.
-

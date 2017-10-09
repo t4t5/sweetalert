@@ -29,9 +29,9 @@ const resetStyles = () => {
 
   swalOverlay.removeAttribute('style');
 
-  for (let i = 0; i < allSwalEls.length; i++) {
-    allSwalEls[i].removeAttribute('style');
-  }
+  allSwalEls.forEach((el) => {
+    el.removeAttribute('style');
+  });
 };
 
 const setStyles = (code) => {
@@ -48,8 +48,7 @@ const setStyles = (code) => {
   el.style.cssText = css;
 };
 
-for (let i = 0; i < previewPlaceholders.length; i++) {
-  const placeholder = previewPlaceholders[i];
+previewPlaceholders.forEach((placeholder) => {
   const highlightEl = getCodeEl(placeholder);
   const code = getCode(highlightEl);
 
@@ -70,10 +69,11 @@ for (let i = 0; i < previewPlaceholders.length; i++) {
       resetStyles();
       setStyles(code);
     } else {
-      eval(code);
+      const transpiledCode = Babel.transform(code, { presets: ['es2015'] }).code;
+      eval(transpiledCode);
     }
   });
 
   placeholder.remove();
-}
+});
 

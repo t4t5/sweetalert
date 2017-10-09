@@ -1,6 +1,12 @@
 // Fetch polyfill
 import 'whatwg-fetch';
 
+// NodeList.forEach() polyfill
+import 'nodelist-foreach-polyfill';
+
+// babel-standalone for transforms in the browser
+window.Babel = require('babel-standalone');
+
 import './add-preview-buttons';
 
 import './landing-text-rotater';
