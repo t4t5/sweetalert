@@ -8,6 +8,8 @@ if (typeof window !== 'undefined') {
   require('./sweetalert.css');
 }
 
+require('./polyfills');
+
 var swal = require('./core').default;
 
 module.exports = swal;

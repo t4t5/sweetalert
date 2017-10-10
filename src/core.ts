@@ -13,8 +13,8 @@ import {
   stopLoading,
 } from './modules/actions';
 
-import state, { 
-  setActionValue, 
+import state, {
+  setActionValue,
   ActionOptions,
   SwalState,
 } from './modules/state';

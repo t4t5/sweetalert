@@ -115,10 +115,10 @@ swal({
 .then((willDelete) => {
   if (willDelete) {
     swal("Poof! Your imaginary file has been deleted!", {
-      icon: "success", 
+      icon: "success",
     });
   } else {
-    swal("Your imaginary file is safe!"); 
+    swal("Your imaginary file is safe!");
   }
 });
 ```
@@ -129,7 +129,7 @@ swal({
 
 ## Customizing buttons
 
-We've already seen how we can set the text on the confirm button using `button: "Aww yiss!"`. 
+We've already seen how we can set the text on the confirm button using `button: "Aww yiss!"`.
 
 If we also want to show and customize the *cancel button*, we can instead set `buttons` to an *array of strings*, where the first value is the cancel button's text and the second one is the confirm button's text:
 
@@ -239,7 +239,7 @@ swal({
 
 ## Using DOM nodes as content
 
-Sometimes, you might run into a scenario where it would be nice to use the out-of-the box functionality that SweetAlert offers, but with some custom UI that goes beyond just styling buttons and text. For that, there's the `content` option. 
+Sometimes, you might run into a scenario where it would be nice to use the out-of-the box functionality that SweetAlert offers, but with some custom UI that goes beyond just styling buttons and text. For that, there's the `content` option.
 
 In the previous example, we saw how we could set `content` to `"input"` to get an `<input />` element in our modal that changes the resolved value of the confirm button based on its value.
 `"input"` is a predefined option that exists for convenience, but you can also set `content` to any DOM node!
@@ -291,8 +291,8 @@ class MyInput extends Component {
 
   render() {
     return (
-      <input 
-        value={this.state.text} 
+      <input
+        value={this.state.text}
         onChange={this.changeText.bind(this)}
       />
     )
@@ -357,4 +357,3 @@ Below are some additional deprecated options along with their replacements:
 - `html` is no longer used. Instead use the [content object](/docs#content).
 - `allowEscapeKey` is now `closeOnEsc` for clarity.
 - `allowClickOutside` is now `closeOnClickOutside` for clarity.
-

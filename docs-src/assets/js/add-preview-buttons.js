@@ -69,7 +69,8 @@ previewPlaceholders.forEach((placeholder) => {
       resetStyles();
       setStyles(code);
     } else {
-      eval(code);
+      const transpiledCode = Babel.transform(code, { presets: ['es2015'] }).code;
+      eval(transpiledCode);
     }
   });
 
