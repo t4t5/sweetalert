@@ -33,7 +33,11 @@ const getButton = (namespace: string, {
   buttonEl.classList.add(btnNamespaceClass);
 
   if (className) {
-    buttonEl.classList.add(className);
+    className.split(' ')
+      .filter(className_ => className_length > 0)
+       .forEach(className_ => {
+         buttonEl.classList.add(className);
+       });
   }
 
   if (dangerMode && namespace === CONFIRM_KEY) {
