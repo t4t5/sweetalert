@@ -1,3 +1,5 @@
+const Babel = require('babel-standalone');
+
 /*
  * In our Markdown files, we have some <preview-button /> tags.
  * We want to transform these into button.preview,
