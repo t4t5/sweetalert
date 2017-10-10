@@ -34,7 +34,7 @@ const getButton = (namespace: string, {
 
   if (className) {
     className.split(' ')
-      .filter(className_ => className_length > 0)
+      .filter(className_ => className_.length > 0)
        .forEach(className_ => {
          buttonEl.classList.add(className);
        });
