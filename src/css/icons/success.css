@@ -7,7 +7,7 @@
   border-color: var(--swal-green);
 
   /* Moving circular line */
-  &::before, 
+  &::before,
   &::after {
     content: '';
     border-radius: 50%;
@@ -53,6 +53,7 @@
     width: 5px;
     height: 90px;
     background-color: white;
+    padding: 1px;
     position: absolute;
     left: 28px;
     top: 8px;
