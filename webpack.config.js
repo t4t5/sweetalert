@@ -2,13 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = (_env, args) => {
 
   const IS_PROD = args.p;
 
   const BUILD_PATH = 'dist';
-  const JS_FILE_NAME = 'sweetalert.min.js';
   const devtool = IS_PROD ? false : 'source-map';
 
   const plugins = [
@@ -17,22 +17,32 @@ module.exports = (_env, args) => {
   ];
 
   if (IS_PROD) {
-    plugins.push(
+    const prodPlugins = [
       new CopyWebpackPlugin([{
         from: 'sweetalert.d.ts',
         to: '../typings/sweetalert.d.ts',
-      }])
-    );
+      }]),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        }
+      }),
+      new UnminifiedWebpackPlugin()
+    ];
+
+    plugins.push(...prodPlugins);
   }
 
   return {
     context: path.resolve(__dirname, 'src'),
-    entry: './sweetalert.js',
+    entry: {
+      index: './sweetalert.js',
+    },
     plugins,
 
     output: {
       path: path.resolve(__dirname, BUILD_PATH),
-      filename: JS_FILE_NAME,
+      filename: 'sweetalert.min.js',
       library: 'swal',
       libraryTarget: 'umd',
     },
