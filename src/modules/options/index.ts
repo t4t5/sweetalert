@@ -17,6 +17,11 @@ import {
   ContentOptions,
 } from './content';
 
+import {
+  DEPRECATED_OPTS,
+  logDeprecation,
+} from './deprecations';
+
 
 /*
  * The final object that we transform the given params into
@@ -187,5 +192,14 @@ export const getOpts = (...params: SwalParams): SwalOptions => {
 
   opts.content = getContentOpts(opts.content);
 
-  return Object.assign({}, defaultOpts, userDefaults, opts);
+  const finalOptions: SwalOptions = Object.assign({}, defaultOpts, userDefaults, opts);
+
+  // Check if the users uses any deprecated options:
+  Object.keys(finalOptions).forEach(optionName => {
+    if (DEPRECATED_OPTS[optionName]) {
+      logDeprecation(optionName);
+    }
+  });
+
+  return finalOptions;
 };
