@@ -67,7 +67,6 @@
     "tslint": "5.1.0",
     "tslint-loader": "3.5.2",
     "typescript": "2.2.2",
-    "unminified-webpack-plugin": "1.4.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "3.5.5",
