@@ -321,6 +321,33 @@ swal({
   swal(`You typed: ${value}`);
 });
 ```
+
+/*dealing with response from server 
+for instance, if you're getting a response from server, it the response can be parsed among the output as shown below
+Communicating with php script using jquery ajax
+example, I'm sending data that has vavlue 200 to sendData.php
+first, I put it into a datastring
+then, I point my url to the location of the file on my server
+then whatever is echoed on the server is returned as result
+ordinarily, alert(result) will display the result as normal javascript
+but to beautify it, i use sweetalert where result is the first paramenter and other parameters can follow as you deem fit
+*/
+var data = 200;
+var dataString = 'myData=' + data;
+var j = jQuery.noConflict();
+					j(document).ready(function() {
+						j.ajax({
+							url: "https://myserver.ext/sendData.php", 
+							data:dataString,
+							cache: false,
+							success: function(result){
+							//alert(result);
+							swal(result, "Your payment was succesful", "success");
+							}
+							});
+						});
+
+
 <preview-button data-function="reactExample"></preview-button>
 
 This might look very complex at first, but it's actually pretty simple. All we're doing is creating an input tag as a React component. We then extract its DOM node and pass it into under the `swal` function's `content` option to render it as an unstyled element.
