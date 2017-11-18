@@ -33,17 +33,12 @@ const getButton = (namespace: string, {
   buttonEl.classList.add(btnNamespaceClass);
 
   if (className) {
-    if (typeof className === 'string') {
-      className.split(' ')
-        .filter(name => name.length > 0)
-        .forEach(name => {
-          buttonEl.classList.add(name);
-        });
-    } else if (Array.isArray(className)) {
-      className.forEach(name => {
+    const classNameArray = Array.isArray(className) ? className : className.split(' ');
+    classNameArray
+      .filter(name => name.length > 0)
+      .forEach(name => {
         buttonEl.classList.add(name);
       });
-    }
   }
 
   if (dangerMode && namespace === CONFIRM_KEY) {
