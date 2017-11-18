@@ -2,7 +2,8 @@
  * Promise polyfill
  */
 var Promise = require('promise-polyfill');
-if (!window.Promise) {
+
+if (typeof window !== 'undefined' && !window.Promise) {
   window.Promise = Promise;
 }
 
@@ -89,18 +90,21 @@ if (!Array.prototype.includes) {
  * ChildNode.remove() polyfill
  * @see https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
  */
-(function (arr) {
-  arr.forEach(function (item) {
-    if (item.hasOwnProperty('remove')) {
-      return;
-    }
-    Object.defineProperty(item, 'remove', {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function remove() {
-        this.parentNode.removeChild(this);
+
+if (typeof window !== 'undefined') {
+  (function (arr) {
+    arr.forEach(function (item) {
+      if (item.hasOwnProperty('remove')) {
+        return;
       }
+      Object.defineProperty(item, 'remove', {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        value: function remove() {
+          this.parentNode.removeChild(this);
+        }
+      });
     });
-  });
-})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+  })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+}

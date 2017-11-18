@@ -8,7 +8,7 @@ import {
   delay,
 } from './utils';
 
-const { 
+const {
   BUTTON,
   CONFIRM_BUTTON,
   CANCEL_BUTTON,
@@ -185,6 +185,51 @@ describe("loading", () => {
     $button.click();
 
     expect($button.hasClass('swal-button--loading')).toBeTruthy();
+  });
+
+});
+
+describe("set class name", () => {
+
+  test("sets single class name as string", async () => {
+    swal({
+      button: {
+        text: "TEST",
+        closeModal: true,
+        className: 'single-class'
+      },
+    });
+
+    const $button = $(`.${BUTTON}--confirm`);
+    expect($button.hasClass('single-class')).toBeTruthy();
+  });
+
+  test("sets multiple class names as string", async () => {
+    swal({
+      button: {
+        text: "TEST",
+        closeModal: true,
+        className: 'class1 class2'
+      },
+    });
+
+    const $button = $(`.${BUTTON}--confirm`);
+    expect($button.hasClass('class1')).toBeTruthy();
+    expect($button.hasClass('class2')).toBeTruthy();
+  });
+
+  test("sets multiple class names as array", async () => {
+    swal({
+      button: {
+        text: "TEST",
+        closeModal: true,
+        className: ["class1", "class2"]
+      },
+    });
+
+    const $button = $(`.${BUTTON}--confirm`);
+    expect($button.hasClass('class1')).toBeTruthy();
+    expect($button.hasClass('class2')).toBeTruthy();
   });
 
 });
