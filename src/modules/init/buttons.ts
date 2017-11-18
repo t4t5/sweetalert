@@ -8,9 +8,9 @@ import { ButtonList, ButtonOptions, CONFIRM_KEY } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
 
 import { onAction } from '../actions';
-import { 
-  setActionValue, 
-  setActionOptionsFor, 
+import {
+  setActionValue,
+  setActionOptionsFor,
   ActionOptions,
 } from '../state';
 
@@ -33,7 +33,17 @@ const getButton = (namespace: string, {
   buttonEl.classList.add(btnNamespaceClass);
 
   if (className) {
-    buttonEl.classList.add(className);
+    if (typeof className === 'string') {
+      className.split(' ')
+        .filter(name => name.length > 0)
+        .forEach(name => {
+          buttonEl.classList.add(name);
+        });
+    } else if (Array.isArray(className)) {
+      className.forEach(name => {
+        buttonEl.classList.add(name);
+      });
+    }
   }
 
   if (dangerMode && namespace === CONFIRM_KEY) {
