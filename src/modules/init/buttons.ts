@@ -33,7 +33,9 @@ const getButton = (namespace: string, {
   buttonEl.classList.add(btnNamespaceClass);
 
   if (className) {
-    const classNameArray = Array.isArray(className) ? className : className.split(' ');
+    const classNameArray = Array.isArray(className)
+      ? className
+      : className.split(' ');
     classNameArray
       .filter(name => name.length > 0)
       .forEach(name => {
