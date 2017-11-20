@@ -9,7 +9,7 @@ export interface ButtonOptions {
 };
 
 export interface ButtonList {
-  [buttonNamespace: string]: ButtonOptions,
+  [buttonNamespace: string]: ButtonOptions | boolean,
 };
 
 export const CONFIRM_KEY = 'confirm';
