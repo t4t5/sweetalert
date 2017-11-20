@@ -30,14 +30,12 @@ const addInputEvents = (input: HTMLElement): void => {
 
   /*
    * FIXME (this is a bit hacky)
-   * Set the focus to the input
-   * Overwrite the submit value with the 
-   * value of the input element ("" or value/defaultValue)
+   * We're overwriting the default value of confirm button,
+   * as well as overwriting the default focus on the button
    */
   setTimeout(() => {
     input.focus();
-    const defaultValue = (input as HTMLInputElement).value;
-    setActionValue(defaultValue)
+    setActionValue('');
   }, 0);
 
 };
