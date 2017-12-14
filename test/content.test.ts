@@ -1,12 +1,14 @@
 import {
   swal,
   removeSwal,
+  $,
   $$,
   CLASS_NAMES,
 } from './utils';
 
-const { 
+const {
   CONTENT,
+  MODAL_TEXT
 } = CLASS_NAMES;
 
 afterEach(() => removeSwal());
@@ -64,3 +66,18 @@ describe("show content", () => {
 
 });
 
+describe("show modal text", () => {
+  test("transforms newline to break", () => {
+    swal('Hello\nWorld\n');
+
+    expect($(`.${MODAL_TEXT} br`).length).toBe(2);
+  });
+
+  test("escapes HTML elements", () => {
+    const text = '<script>bad stuff</script>';
+    swal(text);
+
+    expect($(`.${MODAL_TEXT} script`).length).toBe(0);
+    expect($$(MODAL_TEXT).text()).toEqual(expect.stringMatching(text));
+  });
+});
