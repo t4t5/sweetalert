@@ -4,7 +4,7 @@ export interface SwalOptions {
     title: string;
     text: string;
     icon: string;
-    buttons: ButtonList;
+    buttons: ButtonList | Array<string | boolean>;
     content: ContentOptions;
     className: string;
     closeOnClickOutside: boolean;

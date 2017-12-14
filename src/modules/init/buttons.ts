@@ -74,7 +74,7 @@ const initButtons = (buttons: ButtonList, dangerMode: boolean): void => {
   const footerEl: Element = injectElIntoModal(footerMarkup);
 
   for (let key in buttons) {
-    const buttonOpts: ButtonOptions = buttons[key];
+    const buttonOpts: ButtonOptions = buttons[key] as ButtonOptions;
     const buttonEl: Node = getButton(key, buttonOpts, dangerMode);
 
     if (buttonOpts.visible) {

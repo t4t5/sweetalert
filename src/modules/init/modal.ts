@@ -1,3 +1,4 @@
+import { ButtonList } from './../options/buttons';
 import { stringToNode, getNode } from '../utils';
 import { modalMarkup } from '../markup';
 import { SwalOptions } from '../options';
@@ -54,7 +55,7 @@ export const initModalContent = (opts: SwalOptions): void => {
   initTitle(opts.title);
   initText(opts.text);
   initContent(opts.content);
-  initButtons(opts.buttons, opts.dangerMode);
+  initButtons(opts.buttons as ButtonList, opts.dangerMode);
 };
 
 const initModalOnce = (): void => {
