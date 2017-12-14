@@ -2,7 +2,7 @@ export interface ButtonOptions {
     visible?: boolean;
     text?: string;
     value?: any;
-    className?: string;
+    className?: string | Array<string>;
     closeModal?: boolean;
 }
 export interface ButtonList {

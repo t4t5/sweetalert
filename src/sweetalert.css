@@ -16,7 +16,7 @@
   right: 0;
   text-align: center;
   font-size: 0; /* Remove gap between inline-block elements */
-  overflow-y: scroll;
+  overflow-y: auto;
 
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10000;
@@ -31,7 +31,7 @@
   }
 
   &--show-modal {
-    opacity: 1; 
+    opacity: 1;
     pointer-events: auto;
 
     & .swal-modal {
