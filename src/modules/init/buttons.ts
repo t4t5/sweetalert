@@ -8,9 +8,9 @@ import { ButtonList, ButtonOptions, CONFIRM_KEY } from '../options/buttons';
 import { footerMarkup, buttonMarkup } from '../markup';
 
 import { onAction } from '../actions';
-import { 
-  setActionValue, 
-  setActionOptionsFor, 
+import {
+  setActionValue,
+  setActionOptionsFor,
   ActionOptions,
 } from '../state';
 
@@ -33,7 +33,14 @@ const getButton = (namespace: string, {
   buttonEl.classList.add(btnNamespaceClass);
 
   if (className) {
-    buttonEl.classList.add(className);
+    const classNameArray = Array.isArray(className)
+      ? className
+      : className.split(' ');
+    classNameArray
+      .filter(name => name.length > 0)
+      .forEach(name => {
+        buttonEl.classList.add(name);
+      });
   }
 
   if (dangerMode && namespace === CONFIRM_KEY) {
@@ -67,7 +74,7 @@ const initButtons = (buttons: ButtonList, dangerMode: boolean): void => {
   const footerEl: Element = injectElIntoModal(footerMarkup);
 
   for (let key in buttons) {
-    const buttonOpts: ButtonOptions = buttons[key];
+    const buttonOpts: ButtonOptions = buttons[key] as ButtonOptions;
     const buttonEl: Node = getButton(key, buttonOpts, dangerMode);
 
     if (buttonOpts.visible) {

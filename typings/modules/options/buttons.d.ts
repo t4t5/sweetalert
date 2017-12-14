@@ -1,12 +1,12 @@
 export interface ButtonOptions {
-    visible: boolean;
-    text: string;
-    value: any;
-    className: string;
-    closeModal: boolean;
+    visible?: boolean;
+    text?: string;
+    value?: any;
+    className?: string | Array<string>;
+    closeModal?: boolean;
 }
 export interface ButtonList {
-    [buttonNamespace: string]: ButtonOptions;
+    [buttonNamespace: string]: ButtonOptions | boolean;
 }
 export declare const CONFIRM_KEY = "confirm";
 export declare const CANCEL_KEY = "cancel";

@@ -5,5 +5,5 @@ declare global {
   const sweetAlert: SweetAlert;
 }
 
-export = swal;
+export default swal;
 export as namespace swal;

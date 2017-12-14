@@ -1,19 +1,19 @@
 import { isPlainObject, throwErr } from '../utils';
 
 export interface ButtonOptions {
-  visible: boolean,
-  text: string,
-  value: any,
-  className: string,
-  closeModal: boolean,
+  visible?: boolean,
+  text?: string,
+  value?: any,
+  className?: string | Array<string>,
+  closeModal?: boolean,
 };
 
 export interface ButtonList {
-  [buttonNamespace: string]: ButtonOptions,
+  [buttonNamespace: string]: ButtonOptions | boolean,
 };
 
 export const CONFIRM_KEY = 'confirm';
-export const CANCEL_KEY  = 'cancel';
+export const CANCEL_KEY = 'cancel';
 
 const defaultButton: ButtonOptions = {
   visible: true,
@@ -62,7 +62,7 @@ const getDefaultButton = (key: string): ButtonOptions => {
   }
 };
 
-const normalizeButton = (key: string, param: string|object|boolean): ButtonOptions => {
+const normalizeButton = (key: string, param: string | object | boolean): ButtonOptions => {
   const button: ButtonOptions = getDefaultButton(key);
 
   /*
@@ -147,7 +147,7 @@ const normalizeButtonArray = (arr: any[]): ButtonList => {
   return buttonListObj;
 };
 
-export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
+export const getButtonListOpts = (opts: string | object | boolean): ButtonList => {
   let buttonListObj: ButtonList = defaultButtonList;
 
   if (typeof opts === "string") {
@@ -160,7 +160,7 @@ export const getButtonListOpts = (opts: string|object|boolean): ButtonList => {
     buttonListObj = normalizeButtonArray([true, true]);
   } else if (opts === false) {
     buttonListObj = normalizeButtonArray([false, false]);
-  } else if (opts === undefined){
+  } else if (opts === undefined) {
     buttonListObj = defaultButtonList;
   }
 
