@@ -5,7 +5,7 @@ const {
 } = CLASS_NAMES;
 
 export const modalMarkup: string =`
-  <div class="${MODAL}">` +
+  <div class="${MODAL}" role="dialog" aria-modal="true">` +
     
     // Icon
 
