@@ -9,14 +9,15 @@
 </p>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/sweetalert"><img src="https://badge.fury.io/js/sweetalert.svg" alt="npm version" height="18"></a>
+  <a href="https://badge.fury.io/js/sweetalert"> <img src="https://badge.fury.io/js/sweetalert.svg" alt="npm version" height="18"></a>
   <a href="https://travis-ci.org/t4t5/sweetalert"><img src="https://travis-ci.org/t4t5/sweetalert.svg" alt="Build status" /><a>
   <a href="https://www.npmjs.com/package/sweetalert">
     <img src="https://img.shields.io/npm/dm/sweetalert.svg" />
   </a>
   <a href="https://github.com/t4t5/sweetalert/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/t4t5/sweetalert.svg" />
-  </a>
+  </a> 
+  <a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/SweetAlert/backers/badge.svg" /></a> <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/SweetAlert/sponsors/badge.svg" /></a>
 </p>
 
 <p align="center">
@@ -164,3 +165,33 @@ swal("Oops!", "Something went wrong!", "error")
 2. Preview changes by running `npm run docs`
 3. Run `npm run builddocs` to compile the changes to the `docs` folder
 4. Submit pull request
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/SweetAlert/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/SweetAlert#backer)]
+
+<a href="https://opencollective.com/SweetAlert#backers" target="_blank"><img src="https://opencollective.com/SweetAlert/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/SweetAlert#sponsor)]
+
+<a href="https://opencollective.com/SweetAlert/sponsor/0/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/1/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/2/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/3/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/4/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/5/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/6/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/7/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/8/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/SweetAlert/sponsor/9/website" target="_blank"><img src="https://opencollective.com/SweetAlert/sponsor/9/avatar.svg"></a>
+
+
