@@ -29,7 +29,7 @@ export type SwalParams = (string|Partial<SwalOptions>)[];
 
 export interface SweetAlert {
   (...params: SwalParams): Promise<any>,
-  close? (namespace: string): void,
+  close? (namespace?: string): void,
   getState? (): SwalState,
   setActionValue? (opts: string|ActionOptions): void,
   stopLoading? (): void,
@@ -63,4 +63,3 @@ swal.stopLoading = stopLoading;
 swal.setDefaults = setDefaults;
 
 export default swal;
-
