@@ -172,8 +172,8 @@ const paramToOption = (opts: any, param: any, index: number, allParams: SwalPara
 
 /*
  * No matter if the user calls swal with
- * - swal("Oops!", "An error occured!", "error") or
- * - swal({ title: "Oops!", text: "An error occured!", icon: "error" })
+ * - swal("Oops!", "An error occurred!", "error") or
+ * - swal({ title: "Oops!", text: "An error occurred!", icon: "error" })
  * ... we always want to transform the params into the second version
  */
 export const getOpts = (...params: SwalParams): SwalOptions => {

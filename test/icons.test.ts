@@ -14,7 +14,7 @@ afterEach(() => removeSwal());
 describe("show icons", () => {
 
   test("shows icon depending on third argument", () => {
-    swal("Error", "An error occured!", "error");
+    swal("Error", "An error occurred!", "error");
 
     expect($$(ICON).length).toBe(1);
     expect($$(ICON).hasClass(`${ICON}--error`)).toBeTruthy();

@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://badge.fury.io/js/sweetalert"><img src="https://badge.fury.io/js/sweetalert.svg" alt="npm version" height="18"></a>
-  <a href="https://travis-ci.org/t4t5/sweetalert"><img src="https://travis-ci.org/t4t5/sweetalert.svg" alt="Build status" /><a>
+  <a href="https://travis-ci.org/t4t5/sweetalert"><img src="https://travis-ci.org/t4t5/sweetalert.svg" alt="Build status" /></a>
   <a href="https://www.npmjs.com/package/sweetalert">
     <img src="https://img.shields.io/npm/dm/sweetalert.svg" />
   </a>
