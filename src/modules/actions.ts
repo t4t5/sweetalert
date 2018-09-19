@@ -17,6 +17,7 @@ export const openModal = (): void => {
   overlay.classList.add(SHOW_MODAL); 
 
   state.isOpen = true;
+  document.dispatchEvent(new CustomEvent('swal:modal:opened', { bubbles: true, detail: {} }));
 };
 
 const hideModal = (): void => {
@@ -24,6 +25,7 @@ const hideModal = (): void => {
   overlay.classList.remove(SHOW_MODAL); 
 
   state.isOpen = false;
+  document.dispatchEvent(new CustomEvent('swal:modal:closed', { bubbles: true, detail: {} }));
 };
 
 /*
