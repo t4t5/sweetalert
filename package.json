@@ -11,7 +11,7 @@
     "builddocs": "node_modules/jus/cli.js build docs-src docs",
     "docs": "npm run build && node_modules/jus/cli.js serve docs-src",
     "prepare": "npm run build && npm run builddocs",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -52,6 +52,7 @@
     "jquery": "3.2.1",
     "jus": "0.24.1",
     "nodelist-foreach-polyfill": "^1.2.0",
+    "opencollective": "^1.0.3",
     "path": "^0.11.14",
     "postcss-color-function": "3.0.0",
     "postcss-custom-properties": "5.0.2",
@@ -97,5 +98,9 @@
   "dependencies": {
     "es6-object-assign": "^1.1.0",
     "promise-polyfill": "^6.0.2"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/SweetAlert"
   }
 }
