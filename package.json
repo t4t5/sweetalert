@@ -11,8 +11,7 @@
     "builddocs": "node_modules/jus/cli.js build docs-src docs",
     "docs": "npm run build && node_modules/jus/cli.js serve docs-src",
     "prepare": "npm run build && npm run builddocs",
-    "prepublishOnly": "npm run build",
-    "postinstall": "opencollective postinstall"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
