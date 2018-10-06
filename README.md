@@ -34,9 +34,9 @@ $ npm install --save sweetalert
 ## Usage
 
 ```javascript
-import swal from 'sweetalert'
+import swal from 'sweetalert';
 
-swal("Hello world!")
+swal("Hello world!");
 ```
 
 ## Upgrading from 1.X
@@ -60,7 +60,7 @@ Many improvements and breaking changes have been introduced in the 2.0 release. 
 
 ### An error message:
 ```javascript
-swal("Oops!", "Something went wrong!", "error")
+swal("Oops!", "Something went wrong!", "error");
 ```
 
 ### A warning message, with a function attached to the confirm message:
@@ -85,7 +85,7 @@ swal("Oops!", "Something went wrong!", "error")
     text: "Are you sure that you want to delete this file?",
     icon: "warning",
     dangerMode: true,
-  })
+  });
 
   if (willDelete) {
     swal("Deleted!", "Your imaginary file has been deleted!", "success");
@@ -100,13 +100,13 @@ swal("Oops!", "Something went wrong!", "error")
   })
   .then((value) => {
     swal(`You typed: ${value}`);
-  })
+  });
   ```
   - Using async/await:
   ```javascript
   const value = await swal("Type something:", {
     content: "input",
-  })
+  });
 
   swal(`You typed: ${value}`);
   ```
@@ -115,7 +115,7 @@ swal("Oops!", "Something went wrong!", "error")
   - Using promises:
   ```javascript
   swal({
-    text: 'Wanna log some information about Bulbasaur?',
+    text: "Wanna log some information about Bulbasaur?",
     button: {
       text: "Search!",
       closeModal: false,
@@ -123,32 +123,32 @@ swal("Oops!", "Something went wrong!", "error")
   })
   .then(willSearch => {
     if (willSearch) {
-      return fetch(`http://pokeapi.co/api/v2/pokemon/1`)
+      return fetch("http://pokeapi.co/api/v2/pokemon/1");
     }
   })
   .then(result => result.json())
   .then(json => console.log(json))
   .catch(err => {
-    swal("Oops!", "Seems like we couldn't fetch the info", "error")
-  })
+    swal("Oops!", "Seems like we couldn't fetch the info", "error");
+  });
   ```
   - Using async/await:
   ```javascript
   const willSearch = await swal({
-    text: 'Wanna log some information about Bulbasaur?',
+    text: "Wanna log some information about Bulbasaur?",
     button: {
       text: "Search!",
       closeModal: false,
     },
-  })
+  });
   
   if (willSearch) {
     try {
-      const result = await fetch(`http://pokeapi.co/api/v2/pokemon/1`)
-      const json = await result.json()
-      console.log(json)
+      const result = await fetch("http://pokeapi.co/api/v2/pokemon/1");
+      const json = await result.json();
+      console.log(json);
     } catch (err) {
-      swal("Oops!", "Seems like we couldn't fetch the info", "error")
+      swal("Oops!", "Seems like we couldn't fetch the info", "error");
     }
   }
   ```
