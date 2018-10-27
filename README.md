@@ -168,8 +168,8 @@ swal("Oops!", "Something went wrong!", "error")
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="graphs/contributors"><img src="https://opencollective.com/SweetAlert/contributors.svg?width=890&button=false" /></a>
+This project exists thanks to all the people who contribute. [[Contribute](https://github.com/t4t5/sweetalert#contributing)].
+<a href="https://github.com/t4t5/sweetalert/graphs/contributors"><img src="https://opencollective.com/SweetAlert/contributors.svg?width=890&button=false" /></a>
 
 
 ## Backers
