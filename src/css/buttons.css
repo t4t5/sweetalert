@@ -41,7 +41,7 @@
   padding: 10px 24px;
   margin: 0;
   cursor: pointer;
-  &[not:disabled]:hover {
+  &:not([disabled]):hover {
     background-color: var(--swal-btn-confirm-hover);
   }
   &:active {
@@ -65,7 +65,7 @@
   &--cancel {
     color: #555555;
     background-color: var(--swal-btn-cancel);
-    &[not:disabled]:hover {
+    &:not([disabled]):hover {
       background-color: var(--swal-btn-cancel-hover);
     }
     &:active {
@@ -80,7 +80,7 @@
 
   &--danger {
     background-color: var(--swal-btn-danger);
-    &[not:disabled]:hover {
+    &:not([disabled]):hover {
       background-color: var(--swal-btn-danger-hover);
     }
     &:active {
