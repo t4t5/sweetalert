@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/t4t5/sweetalert/issues"
   },
-  "homepage": "http://tristanedwards.me/sweetalert",
+  "homepage": "https://sweetalert.js.org/",
   "devDependencies": {
     "@types/jest": "19.2.3",
     "autoprefixer": "6.7.7",
