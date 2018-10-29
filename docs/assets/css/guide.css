@@ -232,3 +232,34 @@
 .swal-modal.red-bg {
   background-color: rgba(255,0,0,0.28);
 }
+.mood-btn {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  background-image: url("/assets/images/mood-sad.png");
+  background-size: 28px 28px;
+  padding: 4px;
+  background-position: center center;
+  box-sizing: content-box;
+  background-repeat: no-repeat;
+  margin: 0 7px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.mood-btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.03);
+}
+.mood-btn[data-rating="2"] {
+  background-image: url("/assets/images/mood-neutral.png");
+}
+.mood-btn[data-rating="3"] {
+  background-image: url("/assets/images/mood-happy.png");
+}

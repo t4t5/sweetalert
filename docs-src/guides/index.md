@@ -335,6 +335,76 @@ The only code that's specific to SweetAlert is the `swal.setActionValue()` and t
 </figure>
 
 
+# Using with libraries
+
+While the method documented above for creating more advanced modal designs works, it gets quite tedious to manually create nested DOM nodes. That's why we've also made it easy to integrate your favourite template library into SweetAlert, using the [SweetAlert Transformer](https://github.com/sweetalert/transformer).
+
+## Using React
+
+In order to use SweetAlert with JSX syntax, you need to install [SweetAlert with React](https://www.npmjs.com/package/@sweetalert/with-react). Note that you need to have both `sweetalert` and `@sweetalert/with-react` as dependencies in your `package.json`.
+
+After that, it's easy. Whenever you want to use JSX in your SweetAlert modal, simply import swal from `@sweetalert/with-react` instead of from `sweetalert`.
+
+```js
+import React from 'react'
+import swal from '@sweetalert/with-react'
+
+swal(
+  <div>
+    <h1>Hello world!</h1>
+    <p>
+      This is now rendered with JSX!
+    </p>
+  </div>
+)
+```
+<preview-button data-function="withReactExample"></preview-button>
+
+The JSX syntax replaces the modal's `content` option, so you can still use all of SweetAlert's other features. Here's how you could implement that Facebook modal that we saw earlier:
+
+```js
+import React from 'react'
+import swal from '@sweetalert/with-react'
+
+const onPick = value => {
+  swal("Thanks for your rating!", `You rated us ${value}/3`, "success")
+}
+
+const MoodButton = ({ rating, onClick }) => (
+  <button 
+    data-rating={rating}
+    className="mood-btn" 
+    onClick={() => onClick(rating)}
+  />
+)
+
+swal({
+  text: "How was your experience getting help with this issue?",
+  buttons: {
+    cancel: "Close",
+  },
+  content: (
+    <div>
+      <MoodButton 
+        rating={1} 
+        onClick={onPick}
+      />
+      <MoodButton 
+        rating={2} 
+        onClick={onPick}
+      />
+      <MoodButton 
+        rating={3} 
+        onClick={onPick}
+      />
+    </div>
+  )
+})
+```
+
+<preview-button data-function="withReactOptionsExample"></preview-button>
+
+
 # Upgrading from 1.X
 
 SweetAlert 2.0 introduces some important breaking changes in order to make the library easier to use and more flexible.

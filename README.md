@@ -48,6 +48,7 @@ Many improvements and breaking changes have been introduced in the 2.0 release. 
 - [Installation](https://sweetalert.js.org/guides/#installation)
 - [Getting started](https://sweetalert.js.org/guides/#getting-started)
 - [Advanced examples](https://sweetalert.js.org/guides/#advanced-examples)
+- [Using with libraries](https://sweetalert.js.org/guides/#using-with-libraries)
 - [Upgrading from 1.X](https://sweetalert.js.org/guides/#upgrading-from-1x)
 
 ## Documentation
@@ -152,6 +153,28 @@ swal("Oops!", "Something went wrong!", "error");
     }
   }
   ```
+
+## Using with React
+
+SweetAlert has tools for [integrating with your favourite rendering library.](https://sweetalert.js.org/guides/#using-with-libraries).
+
+If you're using React, you can install [SweetAlert with React](https://www.npmjs.com/package/@sweetalert/with-react) in addition to the main library, and easily add React components to your alerts like this:
+
+```javascript
+import React from 'react'
+import swal from '@sweetalert/with-react'
+
+swal(
+  <div>
+    <h1>Hello world!</h1>
+    <p>
+      This is now rendered with JSX!
+    </p>
+  </div>
+)
+```
+
+[Read more about integrating with React](http://localhost:3000/guides#using-react)
 
 ## Contributing
 

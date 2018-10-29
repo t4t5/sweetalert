@@ -1,6 +1,6 @@
 {
   "name": "sweetalert",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A beautiful replacement for JavaScript's \"alert\"",
   "main": "dist/sweetalert.min.js",
   "types": "typings/sweetalert.d.ts",
@@ -23,7 +23,7 @@
     "modal",
     "popup"
   ],
-  "author": "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
+  "author": "Tristan Edwards <tristan.edwards@me.com> (https://tristanedwards.me)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/t4t5/sweetalert/issues"
@@ -62,6 +62,8 @@
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "source-map-loader": "0.2.1",
+    "sweetalert": "file:./",
+    "@sweetalert/with-react": "^0.1.1",
     "style-loader": "0.18.2",
     "ts-jest": "19.0.14",
     "ts-loader": "2.0.3",
