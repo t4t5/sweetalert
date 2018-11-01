@@ -45,7 +45,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "0.28.7",
     "dts-bundle": "0.7.3",
-    "exports-loader": "0.6.4",
+    "exports-loader": "0.7.0",
     "expose-loader": "0.7.3",
     "glob": "^5.0.3",
     "jest": "19.0.2",
