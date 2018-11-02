@@ -54,7 +54,7 @@
     "nodelist-foreach-polyfill": "^1.2.0",
     "opencollective": "^1.0.3",
     "path": "^0.11.14",
-    "postcss-color-function": "3.0.0",
+    "postcss-color-function": "4.0.1",
     "postcss-custom-properties": "5.0.2",
     "postcss-easy-import": "2.0.0",
     "postcss-loader": "1.3.3",
