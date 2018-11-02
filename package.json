@@ -71,7 +71,7 @@
     "tslint-loader": "3.5.2",
     "typescript": "2.2.2",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
+    "vinyl-source-stream": "^2.0.0",
     "webpack": "4.23.1",
     "webpack-bundle-analyzer": "2.9.0",
     "webpack-dev-server": "2.4.2",
