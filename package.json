@@ -76,7 +76,7 @@
     "webpack-bundle-analyzer": "2.9.0",
     "webpack-dev-server": "2.4.2",
     "webpack-merge": "4.1.4",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^3.0.0"
   },
   "jest": {
     "verbose": true,
