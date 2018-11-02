@@ -67,7 +67,7 @@
     "style-loader": "0.18.2",
     "ts-jest": "19.0.14",
     "ts-loader": "5.3.0",
-    "tslint": "5.1.0",
+    "tslint": "5.11.0",
     "tslint-loader": "3.5.2",
     "typescript": "2.2.2",
     "vinyl-buffer": "^1.0.0",
