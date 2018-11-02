@@ -42,7 +42,7 @@
     "babel-standalone": "^6.26.0",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
-    "copy-webpack-plugin": "^4.0.1",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "0.28.7",
     "dts-bundle": "0.7.3",
     "exports-loader": "0.7.0",
