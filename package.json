@@ -61,7 +61,7 @@
     "postcss-nesting": "7.0.0",
     "react": "16.6.0",
     "react-dom": "15.5.4",
-    "source-map-loader": "0.2.1",
+    "source-map-loader": "0.2.4",
     "sweetalert": "file:./",
     "@sweetalert/with-react": "^0.1.1",
     "style-loader": "0.18.2",
