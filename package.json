@@ -72,7 +72,7 @@
     "typescript": "3.1.6",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0",
-    "webpack": "4.24.0",
+    "webpack": "4.25.0",
     "webpack-bundle-analyzer": "2.9.0",
     "webpack-dev-server": "2.4.2",
     "webpack-merge": "4.1.4",
