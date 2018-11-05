@@ -41,7 +41,7 @@
     "babel-preset-react": "6.24.1",
     "babel-standalone": "^6.26.0",
     "babelify": "^6.0.2",
-    "browserify": "^9.0.8",
+    "browserify": "^16.2.3",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "0.28.7",
     "dts-bundle": "0.7.3",
