@@ -87,3 +87,29 @@
     transform: scale(1);
   }
 }
+
+/*
+Target IE8-IE10 due to incompability with the css `pointer-event` property.
+@see https://github.com/t4t5/sweetalert/issues/863
+*/
+@media screen\0 {
+  .swal-overlay {
+    visibility: hidden;
+  }
+
+  .swal-overlay--show-modal {
+    visibility: visible;
+  }
+
+  .swal-button__loader {
+    visibility: hidden;
+  }
+
+  .swal-overlay--show-modal .swal-modal {
+    visibility: visible;
+  }
+
+  .swal-modal {
+    visibility: hidden;
+  }
+}
