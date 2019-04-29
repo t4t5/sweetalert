@@ -38,8 +38,16 @@ const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
   const { className } = opts;
 
   if (className) {
-    modal.classList.add(className);
+    const classNameArray = Array.isArray(className)
+      ? className
+      : className.split(' ');
+    classNameArray
+      .filter(name => name.length > 0)
+      .forEach(name => {
+        modal.classList.add(name);
+      });
   }
+
 };
 
 /*
