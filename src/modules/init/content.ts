@@ -4,6 +4,7 @@ import { injectElIntoModal } from './modal';
 import { contentMarkup } from '../markup';
 import { setActionValue } from '../state';
 import { onAction } from '../actions';
+import { stringToNode } from '../utils';
 
 import CLASS_NAMES from '../class-list';
 const { CONTENT } = CLASS_NAMES;
@@ -68,7 +69,12 @@ const initContent = (opts: ContentOptions): void => {
   const { element, attributes } = opts;
 
   if (typeof element === "string") {
-    initPredefinedContent(content, element, attributes);
+    if (/^<([a-z]+)[^>]*>[\S\s]*<\/\1>$/img.test(element)) {
+        const _el: HTMLElement = stringToNode(element);
+        content.appendChild(_el);
+    }
+    else
+      initPredefinedContent(content, element, attributes);
   } else {
     content.appendChild(element);
   }
