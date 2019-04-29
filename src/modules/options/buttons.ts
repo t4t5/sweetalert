@@ -62,8 +62,24 @@ const getDefaultButton = (key: string): ButtonOptions => {
   }
 };
 
+let userButtonDefaults: ButtonList = {};
+
+/*
+ * Sets user level defaults that apply to all buttons with same key
+ */
+export const setUserButtonsDefaults = (opts: ButtonOptions = {}): void => {
+  userButtonDefaults = Object.assign({}, userButtonDefaults, opts);
+};
+
+/*
+ * Retrieve user level defaults for a given key, if any
+ */
+export const getUserButtonDefaults = (key: string): ButtonOptions => {
+  return userButtonDefaults[key] || {};
+};
+
 const normalizeButton = (key: string, param: string | object | boolean): ButtonOptions => {
-  const button: ButtonOptions = getDefaultButton(key);
+  const button: ButtonOptions = Object.assign({}, getDefaultButton(key), getUserButtonDefaults(key));
 
   /*
    * Use the default button + make it visible

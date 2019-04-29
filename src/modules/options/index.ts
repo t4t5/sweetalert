@@ -9,7 +9,8 @@ import {
 import {
   ButtonList,
   getButtonListOpts,
-  defaultButtonList
+  defaultButtonList,
+  setUserButtonsDefaults,
 } from './buttons';
 
 import {
@@ -21,7 +22,6 @@ import {
   DEPRECATED_OPTS,
   logDeprecation,
 } from './deprecations';
-
 
 /*
  * The final object that we transform the given params into
@@ -59,6 +59,9 @@ let userDefaults: SwalOptions = Object.assign({}, defaultOpts);
 
 export const setDefaults = (opts: object): void => {
   userDefaults = Object.assign({}, defaultOpts, opts);
+
+  // set user level button defaults
+  setUserButtonsDefaults(userDefaults.buttons);
 };
 
 

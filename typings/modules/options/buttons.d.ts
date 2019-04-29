@@ -11,4 +11,5 @@ export interface ButtonList {
 export declare const CONFIRM_KEY = "confirm";
 export declare const CANCEL_KEY = "cancel";
 export declare const defaultButtonList: ButtonList;
+export declare const setUserButtonsDefaults: (opts?: ButtonOptions) => void;
 export declare const getButtonListOpts: (opts: string | boolean | object) => ButtonList;

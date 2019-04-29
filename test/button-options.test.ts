@@ -1,5 +1,7 @@
 import {
-  getButtonListOpts
+  getButtonListOpts,
+  setUserButtonsDefaults,
+  getUserButtonDefaults,
 } from '../src/modules/options/buttons';
 
 describe("return buttons options", () => {
@@ -85,6 +87,45 @@ describe("return buttons options", () => {
       },
       confirm: {
         visible: false,
+      },
+    });
+  });
+
+  test("provides button defaults to buttons setUserButtonsDefaults method", () => {
+    const SOMETHING = "something";
+    const somethingText = "somethinng to execute";
+    const somethingClass = "some class";
+    const defaultOpts = {
+      [SOMETHING]: {
+        text: somethingText,
+        className: somethingClass
+      },
+    };
+
+    const userDefaultOpts = setUserButtonsDefaults(defaultOpts);
+    const savedDefaultOpts = getUserButtonDefaults(SOMETHING);
+
+    expect(savedDefaultOpts).toMatchObject({
+      text: somethingText,
+      className: somethingClass
+    });
+  });
+
+  test("returns options using user set defaults as fallback", () => {
+    const cancelClass = "cancel-user-default-class";
+    const cancelText = "Just Cancel";
+    const userDefaultOpts = setUserButtonsDefaults({
+      cancel: { className: cancelClass },
+    });
+
+    const opts = getButtonListOpts({ cancel: { text: cancelText } });
+
+    expect(opts).toMatchObject({
+      cancel: {
+        text: cancelText,
+        className: cancelClass,
+        visible: false,
+        value: null,
       },
     });
   });
