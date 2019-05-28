@@ -41,7 +41,7 @@ swal("Hello world!");
 
 ## Upgrading from 1.X
 
-Many improvements and breaking changes have been introduced in the 2.0 release. Make sure you read the [upgrade guide](https://sweetalert.js.org/guides/#upgrading-from-1x) to avoid nasty suprises!
+Many improvements and breaking changes have been introduced in the 2.0 release. Make sure you read the [upgrade guide](https://sweetalert.js.org/guides/#upgrading-from-1x) to avoid nasty surprises!
 
 ## Guides
 
