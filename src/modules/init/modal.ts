@@ -38,7 +38,8 @@ const customizeModalElement = (modal: Element, opts: SwalOptions): void => {
   const { className } = opts;
 
   if (className) {
-    modal.classList.add(className);
+    const list = className.split(' ');
+    modal.classList.add(...list);
   }
 };
 
