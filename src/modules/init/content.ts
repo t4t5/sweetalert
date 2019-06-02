@@ -44,7 +44,8 @@ const initPredefinedContent = (content: Node, elName: string, attrs: any): void 
   const el: HTMLElement = document.createElement(elName);
 
   const elClass = `${CONTENT}__${elName}`;
-  el.classList.add(elClass);
+  const list = elClass.split(' ');
+  el.classList.add(...list);
 
   // Set things like "placeholder":
   for (let key in attrs) {
