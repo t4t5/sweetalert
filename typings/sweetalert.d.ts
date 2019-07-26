@@ -1,7 +1,6 @@
 import swal, { SweetAlert } from "./core";
 
-declare global {
-  const swal: SweetAlert;
+declare global { 
   const sweetAlert: SweetAlert;
 }
 
