@@ -207,6 +207,8 @@ layout: docs
   ```js
   swal({
     content: "input",
+  }).then(result=>{
+    swal("Your text:",result);
   });
   ```
   <preview-button></preview-button>
@@ -220,6 +222,8 @@ layout: docs
         type: "password",
       },
     },
+  }).then(password=>{
+    swal("Your password:",password);
   });
   ```
   <preview-button></preview-button>
