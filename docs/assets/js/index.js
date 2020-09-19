@@ -2319,7 +2319,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
 	            return cachedSetTimeout.call(null, fun, 0);
 	        } catch (e) {
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopefully our context correct otherwise it will throw a global error
 	            return cachedSetTimeout.call(this, fun, 0);
 	        }
 	    }
@@ -2342,7 +2342,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
 	            return cachedClearTimeout.call(null, marker);
 	        } catch (e) {
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopefully our context correct otherwise it will throw a global error.
 	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
 	            return cachedClearTimeout.call(this, marker);
 	        }
@@ -64566,7 +64566,7 @@ function runTimeout(fun) {
             // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
             return cachedSetTimeout.call(null, fun, 0);
         } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopefully our context correct otherwise it will throw a global error
             return cachedSetTimeout.call(this, fun, 0);
         }
     }
@@ -64591,7 +64591,7 @@ function runClearTimeout(marker) {
             // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
             return cachedClearTimeout.call(null, marker);
         } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopefully our context correct otherwise it will throw a global error.
             // Some versions of I.E. have different rules for clearTimeout vs setTimeout
             return cachedClearTimeout.call(this, marker);
         }
