@@ -12,6 +12,7 @@ import './landing-text-rotater';
  */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import swalWithReact from '@sweetalert/with-react';
 
 const DEFAULT_INPUT_TEXT = "";
 
@@ -69,3 +70,52 @@ window.reactExample = () => {
   });
 
 };
+
+window.withReactExample = () => {
+  swalWithReact(
+    <div>
+      <h1>Hello world!</h1>
+      <p>
+        This is now rendered with JSX!
+      </p>
+    </div>
+  );
+};
+
+window.withReactOptionsExample = () => {
+  const onPick = value => {
+    swal("Thanks for your rating!", `You rated us ${value}/3`, "success")
+  }
+
+  const MoodButton = ({ rating, onClick }) => (
+    <button 
+      data-rating={rating}
+      className="mood-btn" 
+      onClick={() => onClick(rating)}
+    />
+  )
+
+  swalWithReact({
+    text: "How was your experience getting help with this issue?",
+    buttons: {
+      cancel: "Close",
+    },
+    content: (
+      <div>
+        <MoodButton 
+          rating={1} 
+          onClick={onPick}
+        />
+        <MoodButton 
+          rating={2} 
+          onClick={onPick}
+        />
+        <MoodButton 
+          rating={3} 
+          onClick={onPick}
+        />
+      </div>
+    )
+  })
+};
+
