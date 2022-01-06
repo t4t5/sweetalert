@@ -1,9 +1,8 @@
-import swal, { SweetAlert } from "./core";
+import { SweetAlert } from "./core";
 
 declare global {
-  const swal: SweetAlert;
   const sweetAlert: SweetAlert;
 }
-
+declare const swal: SweetAlert;
 export default swal;
 export as namespace swal;
