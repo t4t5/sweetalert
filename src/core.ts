@@ -34,7 +34,7 @@ export interface SweetAlert {
   setActionValue? (opts: string|ActionOptions): void,
   stopLoading? (): void,
   setDefaults? (opts: object): void,
-};
+}
 
 const swal:SweetAlert = (...args) => {
 

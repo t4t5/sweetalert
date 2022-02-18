@@ -21,7 +21,7 @@ export interface ActionOptions {
 declare let state: SwalState;
 export declare const resetState: () => void;
 export declare const setActionValue: (opts: string | ActionOptions) => void;
-export declare const setActionOptionsFor: (buttonKey: string, {closeModal}?: {
+export declare const setActionOptionsFor: (buttonKey: string, { closeModal, }?: {
     closeModal?: boolean;
 }) => void;
 export default state;
