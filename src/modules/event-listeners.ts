@@ -129,6 +129,13 @@ const addEventListeners = (opts: SwalOptions):void => {
     document.removeEventListener('keyup', onKeyUp);
   }
 
+  if(opts.onOpen){
+    document.addEventListener('swal:modal:opened', opts.onOpen);
+  }
+  if(opts.onClose){
+    document.addEventListener('swal:modal:closed', opts.onClose);
+  }
+
   /* So that you don't accidentally confirm something
    * dangerous by clicking enter
    */
