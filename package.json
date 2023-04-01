@@ -49,7 +49,7 @@
     "expose-loader": "0.7.3",
     "glob": "^5.0.3",
     "jest": "19.0.2",
-    "jquery": "3.2.1",
+    "jquery": "3.5.0",
     "jus": "0.24.1",
     "nodelist-foreach-polyfill": "^1.2.0",
     "opencollective": "^1.0.3",
